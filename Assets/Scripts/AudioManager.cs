@@ -1,4 +1,10 @@
 using UnityEngine;
+public enum AudioChannel
+{
+    Music,
+    SFX,
+    UI
+}
 
 public class AudioManager : MonoBehaviour
 {
@@ -14,6 +20,11 @@ public class AudioManager : MonoBehaviour
     private bool isSFXMuted = false;
 
     public static AudioManager Instance { get; private set; }
+    public bool IsMusicMuted { get => isMusicMuted; }
+    public bool IsUIEffectsMuted { get => isUIEffectsMuted; }
+    public bool IsSFXMuted { get => isSFXMuted; }
+
+
 
     private void Awake()
     {
@@ -48,19 +59,19 @@ public class AudioManager : MonoBehaviour
     // Mute toggles
     public void ToggleMusicMute()
     {
-        isMusicMuted = !isMusicMuted;
-        musicChannel.mute = isMusicMuted;
+        isMusicMuted = !IsMusicMuted;
+        musicChannel.mute = IsMusicMuted;
     }
 
     public void ToggleUIEffectsMute()
     {
-        isUIEffectsMuted = !isUIEffectsMuted;
-        uiEffectsChannel.mute = isUIEffectsMuted;
+        isUIEffectsMuted = !IsUIEffectsMuted;
+        uiEffectsChannel.mute = IsUIEffectsMuted;
     }
 
     public void ToggleSFXMute()
     {
-        isSFXMuted = !isSFXMuted;
-        sfxChannel.mute = isSFXMuted;
+        isSFXMuted = !IsSFXMuted;
+        sfxChannel.mute = IsSFXMuted;
     }
 }
