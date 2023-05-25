@@ -11,9 +11,9 @@ public class PersistentLink : MonoBehaviour
 
     private void Awake()
     {
-        ApplicationManager = FindAnyObjectByType<ApplicationManager>();
-        GameManager = FindAnyObjectByType<GameManager>();
-        AudioManager = FindAnyObjectByType<AudioManager>();
+        ApplicationManager = ApplicationManager.Instance;
+        GameManager = GameManager.Instance;
+        AudioManager = AudioManager.Instance;
     }
 
     private void Start()
@@ -27,12 +27,21 @@ public class PersistentLink : MonoBehaviour
     {
         AudioManager.SetMusicVolume(volume);
     }
+
     public void SetSFXVolume(float volume)
     {
         AudioManager.SetSFXVolume(volume);
     }
+
     public void SetUIEffectsVolume(float volume)
     {
         AudioManager.SetUIEffectsVolume(volume);
+    }
+
+
+    public void Quit()
+    {
+        Debug.Log("Quitting Application");
+        Application.Quit();
     }
 }

@@ -1,9 +1,11 @@
 using UnityEngine;
 using System.Collections.Generic;
+using System.Text;
 
 public class GameManager : MonoBehaviour
 {
-    public List<Player> players = new();
+    public List<Player> Players = new();
+
 
     public static GameManager Instance { get; private set; }
 
@@ -21,13 +23,27 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void AddPlayer(string playerName)
+    public void AddPlayer(Player player)
     {
-        players.Add(new Player(playerName));
+        Players.Add(player);
     }
 
     public void RemovePlayer(Player player)
     {
-        players.Remove(player);
+        Players.Remove(player);
+    }
+
+    [ContextMenu("Print Players")]
+    public void PrintPlayers()
+    {
+        if (Players.Count == 0) { print("No Players in list"); }
+
+        StringBuilder sb = new StringBuilder();
+        foreach (var item in Players)
+        {
+            sb.AppendLine($"{item.PlayerName} : Team {item.TeamID}");
+        }
+
+        print(sb);
     }
 }
