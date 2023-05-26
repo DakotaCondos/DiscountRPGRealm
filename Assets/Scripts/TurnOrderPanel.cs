@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class TurnOrderPanel : MonoBehaviour
@@ -11,15 +12,13 @@ public class TurnOrderPanel : MonoBehaviour
     [SerializeField] TurnManager turnManager;
     public Color[] colorIDs;
 
-    [SerializeField] int defalutActivePlayerTextSize;
-    [SerializeField] int defalutUpcomingTextSize;
-
     [ContextMenu("Update Panel")]
-
     private void Start()
     {
-        foreach (var item in turnManager.GetUpcomingPlayers())
+        List<TurnActor> list = turnManager.GetUpcomingPlayers();
+        for (int i = 0; i < list.Count; i++)
         {
+            TurnActor item = list[i];
             GameObject g = Instantiate(playerBlockPrefab, playerBlockLocation);
             upcomingPlayerBlocks.Add(g.GetComponent<NameBlock>());
         }
@@ -31,13 +30,11 @@ public class TurnOrderPanel : MonoBehaviour
     {
         //update Active Player Block
         UpdateBlock(activePlayer, turnManager.GetCurrentPlayer().player);
-        ResizeTextToFitContainer(activePlayer);
 
         List<TurnActor> upcomingPlayers = turnManager.GetUpcomingPlayers();
         for (int i = 0; i < upcomingPlayers.Count; i++)
         {
             UpdateBlock(upcomingPlayerBlocks[i], upcomingPlayers[i].player);
-            ResizeTextToFitContainer(upcomingPlayerBlocks[i]);
         }
     }
 
@@ -45,26 +42,7 @@ public class TurnOrderPanel : MonoBehaviour
     {
         nameBlock.SetGradient(colorIDs[player.TeamID]);
         nameBlock.SetLabel(player.PlayerName);
-        if (nameBlock.Equals(activePlayer))
-        {
-            nameBlock.labelBlock.TMP.fontSize = defalutActivePlayerTextSize;
-        }
-        else
-        {
-            nameBlock.labelBlock.TMP.fontSize = defalutUpcomingTextSize;
-        }
     }
 
-    private void ResizeTextToFitContainer(NameBlock nameBlock)
-    {
-        float containerSizeX = nameBlock.containerBlock.Size.X.Raw;
-        float labelSizeX = nameBlock.labelBlock.Size.X.Raw;
 
-        if (labelSizeX > containerSizeX)
-        {
-            nameBlock.labelBlock.TMP.fontSize -= 5;
-            nameBlock.labelBlock.CalculateLayout();
-            ResizeTextToFitContainer(nameBlock);
-        }
-    }
 }
