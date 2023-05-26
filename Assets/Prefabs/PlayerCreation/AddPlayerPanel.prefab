@@ -675,9 +675,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playersStartupPanel: {fileID: 0}
-  playerName: 
   inputTextBlock: {fileID: 4289515767771648752}
   team: 0
+  playerName: 
   dropdown: {fileID: 2967090663318351730}
 --- !u!1 &7412406470513121880
 GameObject:
@@ -2088,16 +2088,20 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6214360919537304744, guid: 82ae1bf49a64b914e931d75648e34348, type: 3}
+      propertyPath: OnClicked.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 7412406470358112532}
+    - target: {fileID: 6214360919537304744, guid: 82ae1bf49a64b914e931d75648e34348, type: 3}
       propertyPath: OnClicked.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6214360919537304744, guid: 82ae1bf49a64b914e931d75648e34348, type: 3}
       propertyPath: OnClicked.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: DestroyMenu
+      value: CloseMenu
       objectReference: {fileID: 0}
     - target: {fileID: 6214360919537304744, guid: 82ae1bf49a64b914e931d75648e34348, type: 3}
       propertyPath: OnClicked.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: PlayersStartupPanel, Assembly-CSharp
+      value: AddPlayerPanel, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 6214360919537304744, guid: 82ae1bf49a64b914e931d75648e34348, type: 3}
       propertyPath: OnClicked.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName

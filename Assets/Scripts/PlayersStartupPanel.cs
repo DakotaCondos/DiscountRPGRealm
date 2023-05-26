@@ -73,6 +73,7 @@ public class PlayersStartupPanel : MonoBehaviour
 
     public void CreateMenu()
     {
+        if (menuPrefabInstance != null) { return; }
         menuPrefabInstance = Instantiate(menuPrefab, gameObject.transform);
         menuPrefabInstance.GetComponent<AddPlayerPanel>().playersStartupPanel = this;
     }
