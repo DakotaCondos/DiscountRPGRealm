@@ -1,0 +1,134 @@
+using Nova;
+using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
+using UnityEngine;
+
+public class Space : MonoBehaviour
+{
+    public List<Space> ConnectedSpaces { get; set; }
+    public bool IsBlocking { get; private set; }
+    public UIBlock2D spaceBackingPanel;
+    public GameObject playerPiecePrefab;
+    public Transform playerPieceLocation;
+    public List<Player> playersAtSpace;
+    public List<GameObject> playersPieces = new();
+
+    private Coroutine colorCoroutine; // Reference to the coroutine
+    [SerializeField] bool isStartingSpace = false;
+    public Space(bool isBlocking = false)
+    {
+        ConnectedSpaces = new List<Space>();
+        IsBlocking = isBlocking;
+    }
+
+
+    private void Awake()
+    {
+        playersAtSpace = new();
+    }
+
+    private void Start()
+    {
+        if (!isStartingSpace) return;
+        TurnManager tm = FindObjectOfType<TurnManager>();
+        foreach (TurnActor turnActor in tm.GetUpcomingPlayers())
+        {
+
+            if (turnActor.player.TeamID != 7)
+            {
+                AddPlayerToSpace(turnActor.player);
+            }
+        }
+
+        // Ensures current players token is visible
+        AddPlayerToSpace(tm.GetCurrentPlayer().player);
+    }
+
+    public void SelectSpace()
+    {
+        // Code to handle space selection here.
+        print($"selected {gameObject.name}");
+        if (colorCoroutine != null)
+        {
+            StopColorCycle();
+        }
+        else
+        {
+            StartColorCycle();
+        }
+    }
+
+    public void SetSpaceBlocked(bool value)
+    {
+        IsBlocking = value;
+    }
+
+    #region ShadowColor
+    public void SetBackingShadowColor(Color color)
+    {
+        spaceBackingPanel.Shadow.Color = color;
+    }
+
+    [ContextMenu("StartColorCycle")]
+    public void StartColorCycle()
+    {
+        spaceBackingPanel.Shadow.Enabled = true;
+        colorCoroutine ??= StartCoroutine(ColorCycleCoroutine());
+    }
+
+    [ContextMenu("StopColorCycle")]
+    public void StopColorCycle()
+    {
+        if (colorCoroutine != null)
+        {
+            StopCoroutine(colorCoroutine);
+            colorCoroutine = null;
+            spaceBackingPanel.Shadow.Enabled = false;
+        }
+    }
+
+    private IEnumerator ColorCycleCoroutine()
+    {
+        while (true)
+        {
+            Color color = RainbowColorCycler.GetColor();
+            SetBackingShadowColor(color);
+            yield return null;
+        }
+    }
+    #endregion
+
+    public void AddPlayerToSpace(Player player)
+    {
+        playersAtSpace.Add(player);
+        GameObject piece = Instantiate(playerPiecePrefab, playerPieceLocation);
+        piece.GetComponent<PlayerPiece>().player = player;
+        playersPieces.Add(piece);
+    }
+
+    public void RemovePlayerFromSpace(Player player)
+    {
+        playersAtSpace.Remove(player);
+        foreach (GameObject piece in playersPieces)
+        {
+            if (piece.GetComponent<PlayerPiece>().player.Equals(player))
+            {
+                playersPieces.Remove(piece);
+                Destroy(piece);
+                return;
+            }
+        }
+    }
+
+    public void ShowActiveCharacter(Player player)
+    {
+        // delete and re add token to be last in hierarchy which is displayed on top
+        if (playersAtSpace.Contains(player))
+        {
+            RemovePlayerFromSpace(player);
+            AddPlayerToSpace(player);
+        }
+
+    }
+}

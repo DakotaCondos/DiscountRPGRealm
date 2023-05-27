@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class EventNotification : MonoBehaviour
 {
+    // development script 
+
     private void OnEnable()
     {
         TurnState.BeginTurn += OnBeginTurn;
@@ -28,41 +30,41 @@ public class EventNotification : MonoBehaviour
 
     private void OnBeginTurn(TurnActor actor)
     {
-        Debug.Log($"BeginTurn: {actor.player.PlayerName}");
+        Debug.Log($"Notification BeginTurn: {actor.player.PlayerName}");
     }
 
     private void OnEndTurn(TurnActor actor)
     {
-        Debug.Log($"EndTurn: {actor.player.PlayerName}");
+        Debug.Log($"Notification EndTurn: {actor.player.PlayerName}");
     }
 
     private void OnBeginMovement(TurnActor actor)
     {
-        Debug.Log($"BeginMovement: {actor.player.PlayerName}");
+        Debug.Log($"Notification BeginMovement: {actor.player.PlayerName}");
     }
 
     private void OnEndMovement(TurnActor actor)
     {
-        Debug.Log($"EndMovement: {actor.player.PlayerName}");
+        Debug.Log($"Notification EndMovement: {actor.player.PlayerName}");
     }
 
     private void OnBeginBattle(TurnActor actor)
     {
-        Debug.Log($"BeginBattle: {actor.player.PlayerName}");
+        Debug.Log($"Notification BeginBattle: {actor.player.PlayerName}");
     }
 
     private void OnEndBattle(TurnActor actor)
     {
-        Debug.Log($"EndBattle: {actor.player.PlayerName}");
+        Debug.Log($"Notification EndBattle: {actor.player.PlayerName}");
     }
 
     private void OnBeginChallenge(TurnActor actor)
     {
-        Debug.Log($"BeginChallenge: {actor.player.PlayerName}");
+        Debug.Log($"Notification BeginChallenge: {actor.player.PlayerName}");
     }
 
     private void OnEndChallenge(TurnActor actor)
     {
-        Debug.Log($"EndChallenge: {actor.player.PlayerName}");
+        Debug.Log($"Notification EndChallenge: {actor.player.PlayerName}");
     }
 }

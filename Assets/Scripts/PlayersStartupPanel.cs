@@ -1,5 +1,5 @@
 using Nova;
-using System.Collections;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -65,10 +65,15 @@ public class PlayersStartupPanel : MonoBehaviour
         "Sir Stay-in-Bed",
         "Master of Inertia"
     };
+    private List<Texture2D> playerTokens = new();
 
     private void Start()
     {
         CreateMenu();
+        foreach (Texture2D item in ApplicationManager.Instance.playerTokens)
+        {
+            playerTokens.Add(item);
+        }
     }
 
     public void CreateMenu()
@@ -83,11 +88,10 @@ public class PlayersStartupPanel : MonoBehaviour
         Destroy(menuPrefabInstance);
     }
 
-    public void CreatePlayer(string playerName, int team)
+    public void CreatePlayer(string playerName, int team, Color color)
     {
-        print("Creating Player!");
         //create player in GameManager
-        Player player = new(playerName, team);
+        Player player = new(playerName, team, color, SelectAndRemove(playerTokens));
         GameManager.Instance.AddPlayer(player);
 
         //create ui for player
@@ -102,7 +106,7 @@ public class PlayersStartupPanel : MonoBehaviour
 
     public string GetRandomFunnyName()
     {
-        int randomIndex = Random.Range(0, funnyNames.Count);
+        int randomIndex = UnityEngine.Random.Range(0, funnyNames.Count);
         string name = funnyNames[randomIndex];
         funnyNames.Remove(name);
         return name;
@@ -123,5 +127,20 @@ public class PlayersStartupPanel : MonoBehaviour
         }
 
         SceneManager.LoadScene(2);
+    }
+
+    public T SelectAndRemove<T>(List<T> list)
+    {
+        if (list.Count == 0)
+        {
+            Debug.LogWarning("List is empty.");
+            return default;
+        }
+
+        int randomIndex = UnityEngine.Random.Range(0, list.Count);
+        T selectedItem = list[randomIndex];
+        list.RemoveAt(randomIndex);
+
+        return selectedItem;
     }
 }

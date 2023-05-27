@@ -24,13 +24,22 @@ public class TurnManager : MonoBehaviour
         ShufflePlayers();
 
         // Add Creatures TurnActor to end
-        players.Add(new TurnActor(new Player("Monsters", 7), false));
+        players.Add(new TurnActor(new Player("Monsters", 7, Color.red), false));
 
         // Fill the turn order queue
         foreach (TurnActor player in players)
         {
             turnOrder.Enqueue(player);
         }
+
+        BeginGame();
+    }
+
+    private void BeginGame()
+    {
+        // Add things to the start of the game scene
+
+        TurnState.TriggerBeginTurn(turnOrder.Peek());
     }
 
     // Method to shuffle players using Fisher-Yates algorithm
@@ -63,8 +72,11 @@ public class TurnManager : MonoBehaviour
             TurnActor currentPlayer = turnOrder.Dequeue();
             turnOrder.Enqueue(currentPlayer);
 
-            // Invoke the EndTurn event with the new player
-            TurnState.TriggerEndTurn(GetCurrentPlayer());
+            // Invoke the EndTurn event with the former player
+            TurnState.TriggerEndTurn(currentPlayer);
+
+            // Invoke the EndTurn event with the current player
+            TurnState.TriggerBeginTurn(GetCurrentPlayer());
         }
     }
 

@@ -1,11 +1,13 @@
+using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Playables;
 using UnityEngine.SceneManagement;
 
 public class ApplicationManager : MonoBehaviour
 {
     // Making the ApplicationManager a Singleton
     public static ApplicationManager Instance { get; private set; }
+
+    public List<Texture2D> playerTokens = new();
 
     private void Awake()
     {

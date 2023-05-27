@@ -12,7 +12,6 @@ public class TurnOrderPanel : MonoBehaviour
     [SerializeField] TurnManager turnManager;
     public Color[] colorIDs;
 
-    [ContextMenu("Update Panel")]
     private void Start()
     {
         List<TurnActor> list = turnManager.GetUpcomingPlayers();
@@ -40,7 +39,7 @@ public class TurnOrderPanel : MonoBehaviour
 
     private void UpdateBlock(NameBlock nameBlock, Player player)
     {
-        nameBlock.SetGradient(colorIDs[player.TeamID]);
+        nameBlock.SetGradient(player.playerColor);
         nameBlock.SetLabel(player.PlayerName);
     }
 

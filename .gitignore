@@ -74,3 +74,4 @@ crashlytics-build.properties
 # Specific Unity Packages
 /[Aa]ssets/Nova/*
 /[Aa]ssets/TextMesh Pro/*
+/[Aa]ssets/Pictures/*
