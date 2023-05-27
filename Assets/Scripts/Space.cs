@@ -13,9 +13,16 @@ public class Space : MonoBehaviour
     public Transform playerPieceLocation;
     public List<Player> playersAtSpace;
     public List<GameObject> playersPieces = new();
-
-    private Coroutine colorCoroutine; // Reference to the coroutine
+    public GameObject monsterPiecePrefab;
+    public Transform monsterPieceLocation;
+    public bool canMonstersTraverse = true;
+    public bool canSpawnMonsters = true;
+    public Monster monsterAtSpace;
+    public GameObject monsterPieceAtSpace;
     [SerializeField] bool isStartingSpace = false;
+    private Coroutine colorCoroutine; // Reference to the coroutine
+    public GameObject lineDrawPoint;
+
     public Space(bool isBlocking = false)
     {
         ConnectedSpaces = new List<Space>();
@@ -129,6 +136,20 @@ public class Space : MonoBehaviour
             RemovePlayerFromSpace(player);
             AddPlayerToSpace(player);
         }
+    }
 
+    public void AddMonsterToSpace(Monster monster)
+    {
+        monsterAtSpace = monster;
+        GameObject piece = Instantiate(monsterPiecePrefab, monsterPieceLocation);
+        piece.GetComponent<MonsterPiece>().monster = monster;
+        monsterPieceAtSpace = piece;
+    }
+
+    public void RemoveMonsterFromSpace()
+    {
+        monsterAtSpace = null;
+        Destroy(monsterPieceAtSpace);
+        monsterPieceAtSpace = null;
     }
 }
