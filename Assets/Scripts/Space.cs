@@ -1,4 +1,5 @@
 using Nova;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -35,20 +36,19 @@ public class Space : MonoBehaviour
         playersAtSpace = new();
     }
 
-    private void Start()
+    public void Initialize()
     {
         if (!isStartingSpace) return;
         TurnManager tm = FindObjectOfType<TurnManager>();
         foreach (TurnActor turnActor in tm.GetUpcomingPlayers())
         {
-
-            if (turnActor.player.TeamID != 7)
+            if (turnActor.isPlayer)
             {
                 AddPlayerToSpace(turnActor.player);
             }
         }
 
-        // Ensures current players token is visible
+        // Add last so current players token is visible
         AddPlayerToSpace(tm.GetCurrentPlayer().player);
     }
 

@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class TurnState : MonoBehaviour
 {
+    public static event Action StartGame;
+    public static event Action EndGame;
     public static event Action<TurnActor> BeginTurn;
     public static event Action<TurnActor> EndTurn;
     public static event Action<TurnActor> BeginMovement;
@@ -12,6 +14,14 @@ public class TurnState : MonoBehaviour
     public static event Action<TurnActor> BeginChallenge;
     public static event Action<TurnActor> EndChallenge;
 
+    public static void TriggerStartGame()
+    {
+        StartGame?.Invoke();
+    }
+    public static void TriggerEndGame()
+    {
+        EndGame?.Invoke();
+    }
     public static void TriggerBeginTurn(TurnActor actor)
     {
         BeginTurn?.Invoke(actor);

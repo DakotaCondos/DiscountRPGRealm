@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,6 +7,7 @@ using UnityEngine;
 public class GameBoard : MonoBehaviour
 {
     public List<Space> Spaces { get; set; }
+    private bool isInitialized = false;
 
     public GameBoard()
     {
@@ -15,6 +17,25 @@ public class GameBoard : MonoBehaviour
     public void Awake()
     {
         Spaces = FindObjectsOfType<Space>(true).ToList();
+    }
+
+    private void Update()
+    {
+        if (!isInitialized)
+        {
+            InitializeGameBoard();
+        }
+    }
+
+    private void InitializeGameBoard()
+    {
+        foreach (var space in Spaces)
+        {
+            space.Initialize();
+        }
+
+
+        isInitialized = true;
     }
 
     public void ConnectSpaces(Space a, Space b)
