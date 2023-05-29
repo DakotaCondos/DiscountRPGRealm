@@ -7,8 +7,8 @@ using UnityEngine;
 
 public class Space : MonoBehaviour
 {
-    public List<Space> ConnectedSpaces { get; set; }
-    public bool IsBlocking { get; private set; }
+    public List<Space> ConnectedSpaces = new List<Space>();
+    public bool IsBlocking = false;
     public UIBlock2D spaceBackingPanel;
     public GameObject playerPiecePrefab;
     public Transform playerPieceLocation;
@@ -24,12 +24,6 @@ public class Space : MonoBehaviour
     private Coroutine colorCoroutine; // Reference to the coroutine
     public GameObject lineDrawPoint;
 
-    public Space(bool isBlocking = false)
-    {
-        ConnectedSpaces = new List<Space>();
-        IsBlocking = isBlocking;
-    }
-
 
     private void Awake()
     {
@@ -38,6 +32,21 @@ public class Space : MonoBehaviour
 
     public void Initialize()
     {
+        // Draw Lines to connected Spaces
+        LineDrawer lineDrawer = FindObjectOfType<LineDrawer>();
+        if (lineDrawer == null)
+        {
+            Debug.LogWarning($"{name} could not find LineDrawer");
+        }
+        else
+        {
+            foreach (Space space in ConnectedSpaces)
+            {
+                lineDrawer.DrawLine(lineDrawPoint, space.lineDrawPoint);
+            }
+        }
+
+        // Set Players at starting space
         if (!isStartingSpace) return;
         TurnManager tm = FindObjectOfType<TurnManager>();
         foreach (TurnActor turnActor in tm.GetUpcomingPlayers())
@@ -47,9 +56,8 @@ public class Space : MonoBehaviour
                 AddPlayerToSpace(turnActor.player);
             }
         }
-
-        // Add last so current players token is visible
         AddPlayerToSpace(tm.GetCurrentPlayer().player);
+        ShowActiveCharacter(tm.GetCurrentPlayer().player);
     }
 
     public void SelectSpace()
@@ -135,6 +143,11 @@ public class Space : MonoBehaviour
         {
             RemovePlayerFromSpace(player);
             AddPlayerToSpace(player);
+        }
+
+        foreach (GameObject item in playersPieces)
+        {
+            item.GetComponent<PlayerPiece>().ActivePlayerEffects(player);
         }
     }
 

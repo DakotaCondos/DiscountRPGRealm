@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class EventNotification : MonoBehaviour
@@ -6,6 +7,8 @@ public class EventNotification : MonoBehaviour
 
     private void OnEnable()
     {
+        TurnState.StartGame += OnStartGame;
+        TurnState.EndGame += OnEndGame;
         TurnState.BeginTurn += OnBeginTurn;
         TurnState.EndTurn += OnEndTurn;
         TurnState.BeginMovement += OnBeginMovement;
@@ -18,7 +21,8 @@ public class EventNotification : MonoBehaviour
 
     private void OnDisable()
     {
-        TurnState.BeginTurn -= OnBeginTurn;
+        TurnState.StartGame -= OnStartGame;
+        TurnState.EndGame -= OnEndGame;
         TurnState.EndTurn -= OnEndTurn;
         TurnState.BeginMovement -= OnBeginMovement;
         TurnState.EndMovement -= OnEndMovement;
@@ -26,6 +30,15 @@ public class EventNotification : MonoBehaviour
         TurnState.EndBattle -= OnEndBattle;
         TurnState.BeginChallenge -= OnBeginChallenge;
         TurnState.EndChallenge -= OnEndChallenge;
+    }
+    private void OnStartGame()
+    {
+        Debug.Log($"Notification StartGame");
+    }
+
+    private void OnEndGame()
+    {
+        Debug.Log($"Notification EndGame");
     }
 
     private void OnBeginTurn(TurnActor actor)

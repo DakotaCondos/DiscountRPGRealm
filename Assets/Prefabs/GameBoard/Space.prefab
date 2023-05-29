@@ -258,11 +258,11 @@ MonoBehaviour:
       Rotation: 0
       Enabled: 0
     Border:
-      Color: {r: 1, g: 1, b: 1, a: 1}
+      Color: {r: 0, g: 0.7837446, b: 1, a: 1}
       Width:
-        Raw: 1
-        Type: 0
-      Enabled: 0
+        Raw: 0.05
+        Type: 1
+      Enabled: 1
       Direction: 2
     Shadow:
       Color: {r: 0, g: 0, b: 0, a: 0.5}
@@ -1642,11 +1642,11 @@ MonoBehaviour:
       Rotation: 0
       Enabled: 0
     Border:
-      Color: {r: 1, g: 1, b: 1, a: 1}
+      Color: {r: 0, g: 0.7837446, b: 1, a: 1}
       Width:
-        Raw: 1
-        Type: 0
-      Enabled: 0
+        Raw: 0.05
+        Type: 1
+      Enabled: 1
       Direction: 2
     Shadow:
       Color: {r: 0, g: 0, b: 0, a: 0.5}

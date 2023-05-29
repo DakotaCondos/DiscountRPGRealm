@@ -632,19 +632,19 @@ MonoBehaviour:
       Enabled: 1
       Direction: 0
     Shadow:
-      Color: {r: 0, g: 0, b: 0, a: 0.5}
+      Color: {r: 1, g: 1, b: 1, a: 1}
       Width:
-        Raw: 0
-        Type: 0
+        Raw: 0.25
+        Type: 1
       Blur:
-        Raw: 2
-        Type: 0
+        Raw: 0.2
+        Type: 1
       Offset:
         X:
           Raw: 0
           Type: 0
         Y:
-          Raw: -1
+          Raw: 0
           Type: 0
       Enabled: 0
       Direction: 0
@@ -674,6 +674,8 @@ MonoBehaviour:
   backingBlock: {fileID: 1121418259994116494}
   imageBlock: {fileID: 1121418260159214028}
   hoverLabel: {fileID: 1121418259678889349}
+  minShadowBlur: 0.2
+  maxShadowBlur: 0.9
 --- !u!1 &1121418260159214018
 GameObject:
   m_ObjectHideFlags: 0
