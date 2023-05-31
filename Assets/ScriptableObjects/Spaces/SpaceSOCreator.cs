@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
+using static UnityEditor.FilePathAttribute;
 using static UnityEditor.VersionControl.Asset;
 
 public class SpaceSOCreator : MonoBehaviour
@@ -96,7 +97,21 @@ public class SpaceSOCreator : MonoBehaviour
     };
     private List<string> eventSpaceNames = new List<string>()
     {
-
+        "Floating Isles",
+        "Labyrinthine Dungeon",
+        "Necropolis",
+        "Crystaline Caverns",
+        "Skyreach Spire",
+        "Chronos Ruins",
+        "Moonlit Grove",
+        "The Abyssal Trench",
+        "Solstice Citadel",
+        "Celestial Observatory",
+        "The Molten Forge",
+        "Celestial Falls",
+        "Vortex Pinnacle",
+        "Subterranean Hive",
+        "Twin Peaks"
     };
     private List<string> monsterSpawnSpaceNames = new List<string>()
     {
@@ -142,7 +157,7 @@ public class SpaceSOCreator : MonoBehaviour
     [ContextMenu("BuildSpaces")]
     private void BuildSpaces()
     {
-        foreach (var spaceName in monsterSpawnSpaceNames)
+        foreach (var spaceName in eventSpaceNames)
         {
             CreateSpace(spaceName);
         }
@@ -154,12 +169,12 @@ public class SpaceSOCreator : MonoBehaviour
         SpaceSO newSpace = ScriptableObject.CreateInstance<SpaceSO>();
         newSpace.spaceName = spaceName;
         newSpace.spaceTextures = new List<Texture2D>(); // Initialize with no textures
-        newSpace.canMonstersTraverse = true;
-        newSpace.canSpawnMonsters = true;
+        newSpace.canMonstersTraverse = false;
+        newSpace.canSpawnMonsters = false;
 
         // This line saves the ScriptableObject as an asset in your project's "Assets/ScriptableObjects/Spaces/Trap/" directory.
         // If the directory does not exist, you need to create it first.
-        AssetDatabase.CreateAsset(newSpace, "Assets/ScriptableObjects/Spaces/MonsterSpawn/" + spaceName + ".asset");
+        AssetDatabase.CreateAsset(newSpace, "Assets/ScriptableObjects/Spaces/Event/" + spaceName + ".asset");
         AssetDatabase.SaveAssets();
 
     }
