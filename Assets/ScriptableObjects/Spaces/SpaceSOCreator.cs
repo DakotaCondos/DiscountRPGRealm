@@ -62,7 +62,17 @@ public class SpaceSOCreator : MonoBehaviour
 
     private List<string> townSpaceNames = new List<string>()
     {
-
+        "Haven's Gate",
+        "Ironholm",
+        "Whispering Pines",
+        "Shadowfen",
+        "Emberfall",
+        "Starhaven",
+        "Silverbrook",
+        "Frostholm",
+        "Havenreach",
+        "Stormwatch",
+        "Oakheart Village"
     };
     private List<string> chanceSpaceNames = new List<string>()
     {
@@ -90,7 +100,21 @@ public class SpaceSOCreator : MonoBehaviour
     };
     private List<string> monsterSpawnSpaceNames = new List<string>()
     {
-
+        "Dark Forest",
+        "Abandoned Mines",
+        "Sunken Ruins",
+        "Cursed Graveyard",
+        "Desolate Wastelands",
+        "Ancient Pyramid",
+        "Mysterious Cave",
+        "Frozen Tundra",
+        "Volcanic Lair",
+        "Haunted Castle",
+        "Labyrinthine Sewers",
+        "Astral Plane",
+        "Witch's Bog",
+        "Ancient Battlefield",
+        "Infernal Gateway"
     };
     private List<string> trapSpaceNames = new List<string>()
     {
@@ -118,7 +142,7 @@ public class SpaceSOCreator : MonoBehaviour
     [ContextMenu("BuildSpaces")]
     private void BuildSpaces()
     {
-        foreach (var spaceName in chanceSpaceNames)
+        foreach (var spaceName in monsterSpawnSpaceNames)
         {
             CreateSpace(spaceName);
         }
@@ -131,11 +155,11 @@ public class SpaceSOCreator : MonoBehaviour
         newSpace.spaceName = spaceName;
         newSpace.spaceTextures = new List<Texture2D>(); // Initialize with no textures
         newSpace.canMonstersTraverse = true;
-        newSpace.canSpawnMonsters = false;
+        newSpace.canSpawnMonsters = true;
 
         // This line saves the ScriptableObject as an asset in your project's "Assets/ScriptableObjects/Spaces/Trap/" directory.
         // If the directory does not exist, you need to create it first.
-        AssetDatabase.CreateAsset(newSpace, "Assets/ScriptableObjects/Spaces/Chance/" + spaceName + ".asset");
+        AssetDatabase.CreateAsset(newSpace, "Assets/ScriptableObjects/Spaces/MonsterSpawn/" + spaceName + ".asset");
         AssetDatabase.SaveAssets();
 
     }
