@@ -9,5 +9,5 @@ public class MonsterSO : ScriptableObject
     public int power;
     public bool doesMove;
     public AudioClip battlecry;
-    public List<Texture2D> monsterTexture;
+    public List<Texture2D> monsterTextures;
 }

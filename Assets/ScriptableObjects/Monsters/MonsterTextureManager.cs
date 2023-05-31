@@ -16,13 +16,13 @@ public class MonsterTextureManager : MonoBehaviour
 
         foreach (MonsterSO monster in monsterList)
         {
-            monster.monsterTexture.Clear(); // Clear old textures first, or it will keep adding textures when you re-run this.
+            monster.monsterTextures.Clear(); // Clear old textures first, or it will keep adding textures when you re-run this.
             foreach (Texture2D texture in textureList)
             {
                 string fileName = Path.GetFileNameWithoutExtension(texture.name).ToLower();
                 if (fileName.StartsWith(monster.MonsterName.ToLower()))
                 {
-                    monster.monsterTexture.Add(texture);
+                    monster.monsterTextures.Add(texture);
                     unassignedTextures.Remove(texture); // Remove from unassigned textures
                 }
             }

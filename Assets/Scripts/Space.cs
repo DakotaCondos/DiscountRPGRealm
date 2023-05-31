@@ -13,7 +13,8 @@ public enum SpaceType
     Chance,
     Event,
     MonsterSpawn,
-    Trap
+    Trap,
+    Custom
 }
 
 public class Space : MonoBehaviour

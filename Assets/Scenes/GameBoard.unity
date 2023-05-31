@@ -1106,6 +1106,7 @@ GameObject:
   - component: {fileID: 68988530}
   - component: {fileID: 68988531}
   - component: {fileID: 68988532}
+  - component: {fileID: 68988533}
   m_Layer: 0
   m_Name: GameBoard
   m_TagString: Untagged
@@ -1517,6 +1518,24 @@ LineRenderer:
     generateLightingData: 0
   m_UseWorldSpace: 1
   m_Loop: 0
+--- !u!114 &68988533
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 68988526}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8256480b37fa4c4ca8d901a50e30a5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  emptySpaces: []
+  townSpaces: []
+  chanceSpaces: []
+  eventSpaces: []
+  monsterSpawnSpaces: []
+  trapSpaces: []
 --- !u!1 &74153896
 GameObject:
   m_ObjectHideFlags: 0
@@ -8089,7 +8108,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1760350589}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 496.82547, z: 0}
+  m_LocalPosition: {x: 0, y: 445.5391, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -8114,10 +8133,10 @@ MonoBehaviour:
   layout:
     Size:
       X:
-        Raw: 422.54987
+        Raw: 1165.4945
         Type: 0
       Y:
-        Raw: 58.338287
+        Raw: 160.91104
         Type: 0
       Z:
         Raw: 0
