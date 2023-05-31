@@ -5,25 +5,44 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
+
+public enum SpaceType
+{
+    Empty,
+    Town,
+    Chance,
+    Event,
+    MonsterSpawn,
+    Trap
+}
+
 public class Space : MonoBehaviour
 {
+    // Setup Variable
+    public SpaceType spaceType;
+    public bool canMonstersTraverse = true;
+    public bool canSpawnMonsters = true;
+    [SerializeField] bool isStartingSpace = false;
     public List<Space> ConnectedSpaces = new List<Space>();
-    public bool IsBlocking = false;
+
+    // Setup Static
+    public GameObject lineDrawPoint;
+    public GameObject monsterPiecePrefab;
+    public Transform monsterPieceLocation;
     public UIBlock2D spaceBackingPanel;
     public GameObject playerPiecePrefab;
     public Transform playerPieceLocation;
-    public List<Player> playersAtSpace;
-    public List<GameObject> playersPieces = new();
-    public GameObject monsterPiecePrefab;
-    public Transform monsterPieceLocation;
-    public bool canMonstersTraverse = true;
-    public bool canSpawnMonsters = true;
+    public TextBlock namePlate;
+
+    // Current State
     public Monster monsterAtSpace;
     public GameObject monsterPieceAtSpace;
-    [SerializeField] bool isStartingSpace = false;
-    private Coroutine colorCoroutine; // Reference to the coroutine
-    public GameObject lineDrawPoint;
+    public List<Player> playersAtSpace;
+    public List<GameObject> playersPieces = new();
+    public bool IsBlocking = false;
 
+    // Other
+    private Coroutine colorCoroutine; // Reference to the coroutine
 
     private void Awake()
     {
@@ -46,6 +65,8 @@ public class Space : MonoBehaviour
             }
         }
 
+
+
         // Set Players at starting space
         if (!isStartingSpace) return;
         TurnManager tm = FindObjectOfType<TurnManager>();
@@ -57,7 +78,7 @@ public class Space : MonoBehaviour
             }
         }
         AddPlayerToSpace(tm.GetCurrentPlayer().player);
-        ShowActiveCharacter(tm.GetCurrentPlayer().player);
+        //ShowActiveCharacter(tm.GetCurrentPlayer().player);
     }
 
     public void SelectSpace()
@@ -77,6 +98,11 @@ public class Space : MonoBehaviour
     public void SetSpaceBlocked(bool value)
     {
         IsBlocking = value;
+    }
+
+    public void SetSpaceName(string spaceName)
+    {
+        namePlate.Text = spaceName;
     }
 
     #region ShadowColor

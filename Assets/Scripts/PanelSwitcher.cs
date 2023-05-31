@@ -11,6 +11,8 @@ public class PanelSwitcher : MonoBehaviour
 
     private void Start()
     {
+        if (activePanel != null) return;
+
         // Set the first panel as active at the start
         if (panels.Count > 0)
         {

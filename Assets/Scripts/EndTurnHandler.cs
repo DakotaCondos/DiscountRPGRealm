@@ -8,7 +8,7 @@ public class EndTurnHandler : MonoBehaviour
 
     private void Awake()
     {
-        turnOrderPanel = FindObjectOfType<TurnOrderPanel>();
+        turnOrderPanel = FindObjectOfType<TurnOrderPanel>(true);
     }
 
     private void OnEnable()

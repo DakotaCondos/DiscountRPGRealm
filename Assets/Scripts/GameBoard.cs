@@ -7,7 +7,6 @@ using UnityEngine;
 public class GameBoard : MonoBehaviour
 {
     public List<Space> Spaces { get; set; }
-    private bool isInitialized = false;
 
     public GameBoard()
     {
@@ -19,23 +18,12 @@ public class GameBoard : MonoBehaviour
         Spaces = FindObjectsOfType<Space>(true).ToList();
     }
 
-    private void Update()
-    {
-        if (!isInitialized)
-        {
-            InitializeGameBoard();
-        }
-    }
-
-    private void InitializeGameBoard()
+    public void InitializeGameBoard()
     {
         foreach (var space in Spaces)
         {
             space.Initialize();
         }
-
-
-        isInitialized = true;
     }
 
     public void ConnectSpaces(Space a, Space b)

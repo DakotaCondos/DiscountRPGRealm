@@ -31,15 +31,6 @@ public class TurnManager : MonoBehaviour
         {
             turnOrder.Enqueue(player);
         }
-
-        BeginGame();
-    }
-
-    private void BeginGame()
-    {
-        // Add things to the start of the game scene
-
-        TurnState.TriggerBeginTurn(turnOrder.Peek());
     }
 
     // Method to shuffle players using Fisher-Yates algorithm

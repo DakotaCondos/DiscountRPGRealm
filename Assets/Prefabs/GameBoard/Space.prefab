@@ -1008,18 +1008,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a510cbbb259d594997de915701c5354, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spaceType: 0
+  canMonstersTraverse: 1
+  canSpawnMonsters: 1
+  isStartingSpace: 0
+  ConnectedSpaces: []
+  lineDrawPoint: {fileID: 7700039954475058900}
+  monsterPiecePrefab: {fileID: 1121418259994116492, guid: 4fdd60b3be24c1a46acf2f701ec6621f, type: 3}
+  monsterPieceLocation: {fileID: 6796673610885982881}
   spaceBackingPanel: {fileID: 6796673611948371078}
   playerPiecePrefab: {fileID: 1121418259994116492, guid: 58eff2686d845ec4b9b263b06f457e65, type: 3}
   playerPieceLocation: {fileID: 6796673612246262850}
-  playersPieces: []
-  monsterPiecePrefab: {fileID: 1121418259994116492, guid: 4fdd60b3be24c1a46acf2f701ec6621f, type: 3}
-  monsterPieceLocation: {fileID: 6796673610885982881}
-  canMonstersTraverse: 1
-  canSpawnMonsters: 1
+  namePlate: {fileID: 6796673612070076722}
   monsterAtSpace: {fileID: 0}
   monsterPieceAtSpace: {fileID: 0}
-  isStartingSpace: 0
-  lineDrawPoint: {fileID: 7700039954475058900}
+  playersPieces: []
+  IsBlocking: 0
 --- !u!1 &6796673612070076721
 GameObject:
   m_ObjectHideFlags: 0
