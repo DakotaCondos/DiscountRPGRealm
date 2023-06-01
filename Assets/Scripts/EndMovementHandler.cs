@@ -4,6 +4,12 @@ using UnityEngine;
 
 public class EndMovementHandler : MonoBehaviour
 {
+    GameBoard gameBoard;
+    private void Awake()
+    {
+        gameBoard = FindObjectOfType<GameBoard>();
+    }
+
     private void OnEnable()
     {
         TurnState.EndMovement += HandleEndMovement;
@@ -14,8 +20,18 @@ public class EndMovementHandler : MonoBehaviour
         TurnState.EndMovement -= HandleEndMovement;
     }
 
-    private void HandleEndMovement(TurnActor actor)
+    private void HandleEndMovement(TurnActor actor, Space space)
     {
-        // Handle EndMovement event here
+        // remove from current space
+        actor.player.currentSpace.RemovePlayerFromSpace(actor.player);
+        // add to new space
+        space.AddPlayerToSpace(actor.player);
+        // stop all space movement effects
+        foreach (Space item in gameBoard.Spaces)
+        {
+            item.TriggerSelectable(false);
+        }
+        // update player hasMoved
+        actor.player.hasMoved = true;
     }
 }

@@ -8,7 +8,7 @@ public class TurnState : MonoBehaviour
     public static event Action<TurnActor> BeginTurn;
     public static event Action<TurnActor> EndTurn;
     public static event Action<TurnActor> BeginMovement;
-    public static event Action<TurnActor> EndMovement;
+    public static event Action<TurnActor, Space> EndMovement;
     public static event Action<TurnActor> BeginBattle;
     public static event Action<TurnActor> EndBattle;
     public static event Action<TurnActor> BeginChallenge;
@@ -37,9 +37,9 @@ public class TurnState : MonoBehaviour
         BeginMovement?.Invoke(actor);
     }
 
-    public static void TriggerEndMovement(TurnActor actor)
+    public static void TriggerEndMovement(TurnActor actor, Space space)
     {
-        EndMovement?.Invoke(actor);
+        EndMovement?.Invoke(actor, space);
     }
 
     public static void TriggerBeginBattle(TurnActor actor)

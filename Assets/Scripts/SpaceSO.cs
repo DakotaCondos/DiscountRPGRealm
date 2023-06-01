@@ -9,4 +9,5 @@ public class SpaceSO : ScriptableObject
     public bool canMonstersTraverse = true;
     public bool canSpawnMonsters = false;
     public int shopLevel = 0;
+    public bool hasMandatoryEvent = false;
 }

@@ -31,10 +31,13 @@ public class BeginMovementHandler : MonoBehaviour
             {
                 space.TriggerSelectable(true);
             }
+
+            //possibly begin coroutine to 'Cancel' movement on right-click
         }
         else
         {
-
+            // Foreach monster, if moveable has x% chance to move to adjecent space that is not blocked
+            // unblock current space and block moved to space (if any)
         }
 
     }

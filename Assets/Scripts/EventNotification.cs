@@ -56,7 +56,7 @@ public class EventNotification : MonoBehaviour
         Debug.Log($"Notification BeginMovement: {actor.player.PlayerName}");
     }
 
-    private void OnEndMovement(TurnActor actor)
+    private void OnEndMovement(TurnActor actor, Space space)
     {
         Debug.Log($"Notification EndMovement: {actor.player.PlayerName}");
     }

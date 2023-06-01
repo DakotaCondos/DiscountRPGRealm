@@ -24,6 +24,7 @@ public class Space : MonoBehaviour
     public bool canMonstersTraverse = true;
     public bool canSpawnMonsters = true;
     public int shopLevel = 0;
+    public bool hasMandatoryEvent = false;
     [SerializeField] bool isStartingSpace = false;
     public List<Space> ConnectedSpaces = new List<Space>();
 
@@ -44,6 +45,7 @@ public class Space : MonoBehaviour
     public List<GameObject> playersPieces = new();
     public bool IsBlocking = false;
     public Interactable interactableNova;
+    private TurnManager turnManager;
 
     // Other
     private Coroutine colorCoroutine; // Reference to the coroutine
@@ -51,6 +53,7 @@ public class Space : MonoBehaviour
     private void Awake()
     {
         playersAtSpace = new();
+        turnManager = FindObjectOfType<TurnManager>();
     }
 
     public void Initialize()
@@ -73,23 +76,21 @@ public class Space : MonoBehaviour
 
         // Set Players at starting space
         if (!isStartingSpace) return;
-        TurnManager tm = FindObjectOfType<TurnManager>();
-        foreach (TurnActor turnActor in tm.GetUpcomingPlayers())
+
+        foreach (TurnActor turnActor in turnManager.GetUpcomingPlayers())
         {
             if (turnActor.isPlayer)
             {
                 AddPlayerToSpace(turnActor.player);
             }
         }
-        AddPlayerToSpace(tm.GetCurrentPlayer().player);
+        AddPlayerToSpace(turnManager.GetCurrentPlayer().player);
         //ShowActiveCharacter(tm.GetCurrentPlayer().player);
     }
 
     public void SelectSpace()
     {
-        // Code to handle space selection here.
-        print($"Selected {namePlate.Text}");
-        //send message with selected space to somewhere
+        TurnState.TriggerEndMovement(turnManager.GetCurrentPlayer(), this);
     }
 
     public void TriggerSelectable(bool value)

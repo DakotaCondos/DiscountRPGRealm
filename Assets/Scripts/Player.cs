@@ -17,6 +17,7 @@ public class Player : IMoveable
     public int powerBonusPlayer = 0;
     public int powerBonusItems = 0;
     public Space currentSpace = null;
+    public bool hasMoved = false;
 
 
 

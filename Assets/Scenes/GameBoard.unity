@@ -2305,7 +2305,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &136196512
 Transform:
   m_ObjectHideFlags: 0
@@ -2592,6 +2592,11 @@ GameObject:
 Transform:
   m_CorrespondingSourceObject: {fileID: 8215425293182977637, guid: 44a68a8cb14e69245812f8c62100911e, type: 3}
   m_PrefabInstance: {fileID: 1846674676}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &253713348 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8215425293182977632, guid: 44a68a8cb14e69245812f8c62100911e, type: 3}
+  m_PrefabInstance: {fileID: 1061881351}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &271905250
 GameObject:
@@ -3321,6 +3326,7 @@ MonoBehaviour:
   tradeButton: {fileID: 181359708}
   moveButton: {fileID: 730231071}
   menuButton: {fileID: 1003839302}
+  endTurnButton: {fileID: 253713348}
 --- !u!1 &352091255
 GameObject:
   m_ObjectHideFlags: 0
@@ -8212,7 +8218,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1760350589}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 432.7175, z: 0}
+  m_LocalPosition: {x: 0, y: 423.10132, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -8237,10 +8243,10 @@ MonoBehaviour:
   layout:
     Size:
       X:
-        Raw: 1351.2308
+        Raw: 1490.5331
         Type: 0
       Y:
-        Raw: 186.55423
+        Raw: 205.78662
         Type: 0
       Z:
         Raw: 0
@@ -8781,6 +8787,10 @@ PrefabInstance:
     - target: {fileID: 8215425293182977632, guid: 44a68a8cb14e69245812f8c62100911e, type: 3}
       propertyPath: m_Name
       value: ButtonCustom (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8215425293182977632, guid: 44a68a8cb14e69245812f8c62100911e, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8215425293182977635, guid: 44a68a8cb14e69245812f8c62100911e, type: 3}
       propertyPath: layout.AutoSize.X
