@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player
+public class Player : IMoveable
 {
     public string PlayerName { get; private set; }
     public int TeamID { get; private set; }
@@ -16,6 +16,7 @@ public class Player
     public int movementBonusItems = 0;
     public int powerBonusPlayer = 0;
     public int powerBonusItems = 0;
+    public Space currentSpace = null;
 
 
 
@@ -44,5 +45,10 @@ public class Player
     {
         int movementLevel = (level / 2 > 1) ? level / 2 : 1;
         return movementLevel + movementBonusItems + movementBonusPlayer;
+    }
+
+    public void Move(Space space, int speed)
+    {
+        throw new System.NotImplementedException();
     }
 }

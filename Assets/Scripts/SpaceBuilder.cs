@@ -1,4 +1,4 @@
-using System.Collections;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -12,69 +12,58 @@ public class SpaceBuilder : MonoBehaviour
     public List<SpaceSO> trapSpaces = new();
 
 
-    public void BuildSpace(Space space, SpaceType spaceType)
+    public void BuildSpace(Space space)
     {
-        switch (spaceType)
+        switch (space.spaceType)
         {
             case SpaceType.Empty:
-                HandleEmptySpace(space);
+                BuildSpace(space, emptySpaces);
                 break;
             case SpaceType.Town:
-                HandleTownSpace(space);
+                BuildSpace(space, townSpaces);
                 break;
             case SpaceType.Chance:
-                HandleChanceSpace(space);
+                BuildSpace(space, chanceSpaces);
                 break;
             case SpaceType.Event:
-                HandleEventSpace(space);
+                BuildSpace(space, eventSpaces);
                 break;
             case SpaceType.MonsterSpawn:
-                HandleMonsterSpawnSpace(space);
+                BuildSpace(space, monsterSpawnSpaces);
                 break;
             case SpaceType.Trap:
-                HandleTrapSpace(space);
+                BuildSpace(space, trapSpaces);
                 break;
             default:
+                // Types not listed above are not randomly generated
                 break;
         }
     }
 
-    public void HandleEmptySpace(Space space)
+    public void BuildSpace(Space space, List<SpaceSO> listSOs)
     {
-        Debug.Log("Handling Empty Space");
-        // Add code to handle the 'space' object here.
+        SpaceSO blueprint = GetRandomItem(listSOs, true);
+        space.SetSpaceName(blueprint.spaceName);
+        space.SetSpaceTexture(GetRandomItem(blueprint.spaceTextures));
+        space.canMonstersTraverse = blueprint.canMonstersTraverse;
+        space.canSpawnMonsters = blueprint.canSpawnMonsters;
+        space.shopLevel = blueprint.shopLevel;
     }
 
-    public void HandleTownSpace(Space space)
+    public T GetRandomItem<T>(List<T> items, bool removeFromListAfterSelecting = false)
     {
-        Debug.Log("Handling Town Space");
-        // Add code to handle the 'space' object here.
-    }
+        if (items == null || items.Count == 0)
+        {
+            throw new ArgumentException("List cannot be null or empty.", nameof(items));
+        }
 
-    public void HandleChanceSpace(Space space)
-    {
-        Debug.Log("Handling Chance Space");
-        // Add code to handle the 'space' object here.
-    }
+        int randomIndex = UnityEngine.Random.Range(0, items.Count);
+        T item = items[randomIndex];
 
-    public void HandleEventSpace(Space space)
-    {
-        Debug.Log("Handling Event Space");
-        // Add code to handle the 'space' object here.
-    }
+        if (removeFromListAfterSelecting) { items.Remove(item); }
 
-    public void HandleMonsterSpawnSpace(Space space)
-    {
-        Debug.Log("Handling Monster Spawn Space");
-        // Add code to handle the 'space' object here.
+        return item;
     }
-
-    public void HandleTrapSpace(Space space)
-    {
-        Debug.Log("Handling Trap Space");
-        // Add code to handle the 'space' object here.
-    }
-
 
 }
 

@@ -8,4 +8,5 @@ public class SpaceSO : ScriptableObject
     public List<Texture2D> spaceTextures;
     public bool canMonstersTraverse = true;
     public bool canSpawnMonsters = false;
+    public int shopLevel = 0;
 }

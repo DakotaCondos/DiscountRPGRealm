@@ -23,6 +23,7 @@ public class Space : MonoBehaviour
     public SpaceType spaceType;
     public bool canMonstersTraverse = true;
     public bool canSpawnMonsters = true;
+    public int shopLevel = 0;
     [SerializeField] bool isStartingSpace = false;
     public List<Space> ConnectedSpaces = new List<Space>();
 
@@ -31,6 +32,7 @@ public class Space : MonoBehaviour
     public GameObject monsterPiecePrefab;
     public Transform monsterPieceLocation;
     public UIBlock2D spaceBackingPanel;
+    public UIBlock2D spaceGraphicPanel;
     public GameObject playerPiecePrefab;
     public Transform playerPieceLocation;
     public TextBlock namePlate;
@@ -41,6 +43,7 @@ public class Space : MonoBehaviour
     public List<Player> playersAtSpace;
     public List<GameObject> playersPieces = new();
     public bool IsBlocking = false;
+    public Interactable interactableNova;
 
     // Other
     private Coroutine colorCoroutine; // Reference to the coroutine
@@ -85,14 +88,20 @@ public class Space : MonoBehaviour
     public void SelectSpace()
     {
         // Code to handle space selection here.
-        print($"selected {gameObject.name}");
-        if (colorCoroutine != null)
-        {
-            StopColorCycle();
-        }
-        else
+        print($"Selected {namePlate.Text}");
+        //send message with selected space to somewhere
+    }
+
+    public void TriggerSelectable(bool value)
+    {
+        interactableNova.enabled = value;
+        if (value)
         {
             StartColorCycle();
+        }
+        else if (colorCoroutine != null)
+        {
+            StopColorCycle();
         }
     }
 
@@ -106,7 +115,12 @@ public class Space : MonoBehaviour
         namePlate.Text = spaceName;
     }
 
-    #region ShadowColor
+    public void SetSpaceTexture(Texture2D texture)
+    {
+        spaceGraphicPanel.SetImage(texture);
+    }
+
+    #region HighlightAndSelectable
     public void SetBackingShadowColor(Color color)
     {
         spaceBackingPanel.Shadow.Color = color;
@@ -144,6 +158,7 @@ public class Space : MonoBehaviour
     public void AddPlayerToSpace(Player player)
     {
         playersAtSpace.Add(player);
+        player.currentSpace = this;
         GameObject piece = Instantiate(playerPiecePrefab, playerPieceLocation);
         piece.GetComponent<PlayerPiece>().player = player;
         playersPieces.Add(piece);
@@ -181,6 +196,7 @@ public class Space : MonoBehaviour
     public void AddMonsterToSpace(Monster monster)
     {
         monsterAtSpace = monster;
+        monster.currentSpace = this;
         GameObject piece = Instantiate(monsterPiecePrefab, monsterPieceLocation);
         piece.GetComponent<MonsterPiece>().monster = monster;
         monsterPieceAtSpace = piece;

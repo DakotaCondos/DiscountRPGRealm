@@ -24,6 +24,15 @@ public class BeginTurnHandler : MonoBehaviour
     {
         if (gameBoard == null) { Debug.LogWarning("BeginTurnHandler could not find GameBoard"); }
         // Handle BeginTurn event here
+        if (actor.isPlayer)
+        {
+            // determin actions player can take
+        }
+        else
+        {
+            // move the monsters
+        }
+
         foreach (Space space in gameBoard.Spaces)
         {
             space.ShowActiveCharacter(actor.player);
