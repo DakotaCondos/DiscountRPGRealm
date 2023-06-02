@@ -45,7 +45,8 @@ public class CameraController : MonoBehaviour
         transform.position = newPosition;
 
         // Zoom the camera
-        float newOrthographicSize = mainCamera.orthographicSize - zoomInput * zoomSpeed;
+        float AdditionalZoom = (zoomInput == 0) ? 0 : zoomInput * (5 * mainCamera.orthographicSize / maxOrthographicSize);
+        float newOrthographicSize = mainCamera.orthographicSize - (zoomInput + AdditionalZoom) * zoomSpeed;
         newOrthographicSize = Mathf.Clamp(newOrthographicSize, minOrthographicSize, maxOrthographicSize);
 
         mainCamera.orthographicSize = newOrthographicSize;
