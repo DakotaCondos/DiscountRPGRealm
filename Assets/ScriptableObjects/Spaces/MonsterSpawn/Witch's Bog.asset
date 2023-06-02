@@ -13,6 +13,13 @@ MonoBehaviour:
   m_Name: Witch's Bog
   m_EditorClassIdentifier: 
   spaceName: Witch's Bog
-  spaceTextures: []
+  spaceTextures:
+  - {fileID: 2800000, guid: 7b520c8e1cc2d354a9c665dbf3e016e6, type: 3}
+  - {fileID: 2800000, guid: 38b2c50acb2d6a744b25833423871ef4, type: 3}
+  - {fileID: 2800000, guid: 559fb44f58bb58b4f94e432655ad52ff, type: 3}
+  - {fileID: 2800000, guid: 0a16132cc42e7914c9bc0a15acd05b98, type: 3}
   canMonstersTraverse: 1
   canSpawnMonsters: 1
+  shopLevel: 0
+  hasMandatoryEvent: 0
+  customSpaceTypeOverride: 0

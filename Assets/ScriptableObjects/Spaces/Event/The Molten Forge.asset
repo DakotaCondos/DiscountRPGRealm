@@ -13,6 +13,13 @@ MonoBehaviour:
   m_Name: The Molten Forge
   m_EditorClassIdentifier: 
   spaceName: The Molten Forge
-  spaceTextures: []
+  spaceTextures:
+  - {fileID: 2800000, guid: 7a7a8a6f5a87d1d4ea57f4d081fa27c9, type: 3}
+  - {fileID: 2800000, guid: 9dd290562b5397f46844ebc51bbcdae7, type: 3}
+  - {fileID: 2800000, guid: 7bd7de59479181b4d8515650b7435d60, type: 3}
+  - {fileID: 2800000, guid: c5e78ef6c5b441b4888c3e291239f8c8, type: 3}
   canMonstersTraverse: 0
   canSpawnMonsters: 0
+  shopLevel: 0
+  hasMandatoryEvent: 1
+  customSpaceTypeOverride: 0

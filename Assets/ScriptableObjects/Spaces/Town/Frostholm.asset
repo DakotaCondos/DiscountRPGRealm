@@ -13,6 +13,13 @@ MonoBehaviour:
   m_Name: Frostholm
   m_EditorClassIdentifier: 
   spaceName: Frostholm
-  spaceTextures: []
+  spaceTextures:
+  - {fileID: 2800000, guid: 7f5a711dbd0b9bc4b86759e9c847310c, type: 3}
+  - {fileID: 2800000, guid: b3d1c8853ba9fd843997f39d60a636aa, type: 3}
+  - {fileID: 2800000, guid: 0c10ce802a707984da2f886f96054574, type: 3}
+  - {fileID: 2800000, guid: 9fc7b58b28bee3a4fa762d7e847b0612, type: 3}
   canMonstersTraverse: 0
   canSpawnMonsters: 0
+  shopLevel: 0
+  hasMandatoryEvent: 0
+  customSpaceTypeOverride: 0

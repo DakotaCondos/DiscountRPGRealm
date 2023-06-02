@@ -13,6 +13,13 @@ MonoBehaviour:
   m_Name: Haunted Castle
   m_EditorClassIdentifier: 
   spaceName: Haunted Castle
-  spaceTextures: []
+  spaceTextures:
+  - {fileID: 2800000, guid: 3bf5cc66d3e9dbd4da18bedd86aa99aa, type: 3}
+  - {fileID: 2800000, guid: d97841b374f910d4687427fb62db7831, type: 3}
+  - {fileID: 2800000, guid: 14f6720a3871fe746994f1c02b05804e, type: 3}
+  - {fileID: 2800000, guid: 1c624062ce8dd354d9bae6948abd43d2, type: 3}
   canMonstersTraverse: 1
   canSpawnMonsters: 1
+  shopLevel: 0
+  hasMandatoryEvent: 0
+  customSpaceTypeOverride: 0

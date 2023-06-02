@@ -13,6 +13,13 @@ MonoBehaviour:
   m_Name: Windswept Dunes
   m_EditorClassIdentifier: 
   spaceName: Windswept Dunes
-  spaceTextures: []
+  spaceTextures:
+  - {fileID: 2800000, guid: 29c194c3ecfa17543a8e088f7235f2ce, type: 3}
+  - {fileID: 2800000, guid: cca08485fabf5574dbf17d104de77af5, type: 3}
+  - {fileID: 2800000, guid: b30b7f5b88b8d2847859e656470b47f7, type: 3}
+  - {fileID: 2800000, guid: 26740eb8042646c4baa02f4af7026b0b, type: 3}
   canMonstersTraverse: 1
   canSpawnMonsters: 0
+  shopLevel: 0
+  hasMandatoryEvent: 0
+  customSpaceTypeOverride: 0

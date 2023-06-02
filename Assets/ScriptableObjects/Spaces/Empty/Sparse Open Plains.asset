@@ -13,6 +13,13 @@ MonoBehaviour:
   m_Name: Sparse Open Plains
   m_EditorClassIdentifier: 
   spaceName: Sparse Open Plains
-  spaceTextures: []
+  spaceTextures:
+  - {fileID: 2800000, guid: babac629e8fae754787e96bc12afcf71, type: 3}
+  - {fileID: 2800000, guid: ea64a580f4309c1499576eab9e522ac2, type: 3}
+  - {fileID: 2800000, guid: afe2917d755fee8448b26a8512e9b016, type: 3}
+  - {fileID: 2800000, guid: 5da150bc92641134ba834c9e2fa69c1b, type: 3}
   canMonstersTraverse: 1
   canSpawnMonsters: 0
+  shopLevel: 0
+  hasMandatoryEvent: 0
+  customSpaceTypeOverride: 0

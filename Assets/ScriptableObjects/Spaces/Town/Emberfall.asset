@@ -13,6 +13,13 @@ MonoBehaviour:
   m_Name: Emberfall
   m_EditorClassIdentifier: 
   spaceName: Emberfall
-  spaceTextures: []
+  spaceTextures:
+  - {fileID: 2800000, guid: a6a2787195d35914eb3cbc73fff70b97, type: 3}
+  - {fileID: 2800000, guid: 932fccb7586782c4abaa930eeb3fd6a5, type: 3}
+  - {fileID: 2800000, guid: e2ac479b63becff40a22bc1efabdc578, type: 3}
+  - {fileID: 2800000, guid: 98cd0a6da7d948b4d8dedbfeee45fd92, type: 3}
   canMonstersTraverse: 0
   canSpawnMonsters: 0
+  shopLevel: 0
+  hasMandatoryEvent: 0
+  customSpaceTypeOverride: 0

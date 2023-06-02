@@ -13,6 +13,13 @@ MonoBehaviour:
   m_Name: Pitfall Pass
   m_EditorClassIdentifier: 
   spaceName: Pitfall Pass
-  spaceTextures: []
+  spaceTextures:
+  - {fileID: 2800000, guid: 1c65d354eead8844bb9b97b414a21e91, type: 3}
+  - {fileID: 2800000, guid: 5d6e475b62a79c6439265da50c8b36d2, type: 3}
+  - {fileID: 2800000, guid: 50d3e73acb6ab6b45903775ac7fc4186, type: 3}
+  - {fileID: 2800000, guid: 49a52c68990520043ab68acf167d70cc, type: 3}
   canMonstersTraverse: 1
   canSpawnMonsters: 0
+  shopLevel: 0
+  hasMandatoryEvent: 0
+  customSpaceTypeOverride: 0

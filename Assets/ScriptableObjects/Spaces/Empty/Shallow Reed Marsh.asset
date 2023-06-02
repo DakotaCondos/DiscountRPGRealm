@@ -13,6 +13,13 @@ MonoBehaviour:
   m_Name: Shallow Reed Marsh
   m_EditorClassIdentifier: 
   spaceName: Shallow Reed Marsh
-  spaceTextures: []
+  spaceTextures:
+  - {fileID: 2800000, guid: 2580ae676dc707b4da93d83b79af0b4f, type: 3}
+  - {fileID: 2800000, guid: b354e9ae4bbcbbe4d810509fdda8e69e, type: 3}
+  - {fileID: 2800000, guid: ecbc00cd2e4a1504e9a6f0e8262c08e9, type: 3}
+  - {fileID: 2800000, guid: 99f1189117c3c4d42a5d1ca18f0c761f, type: 3}
   canMonstersTraverse: 1
   canSpawnMonsters: 0
+  shopLevel: 0
+  hasMandatoryEvent: 0
+  customSpaceTypeOverride: 0

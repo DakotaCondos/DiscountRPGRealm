@@ -13,6 +13,13 @@ MonoBehaviour:
   m_Name: Ancient Standing Stones
   m_EditorClassIdentifier: 
   spaceName: Ancient Standing Stones
-  spaceTextures: []
+  spaceTextures:
+  - {fileID: 2800000, guid: 4da23aa69e5261846a5ac6ccbcaf43a2, type: 3}
+  - {fileID: 2800000, guid: 96385d695054f174dbacd20664037de7, type: 3}
+  - {fileID: 2800000, guid: d363113bc70b6f745adeb74c1f500609, type: 3}
+  - {fileID: 2800000, guid: 3844a409a3e16bc4b8b264e32347614d, type: 3}
   canMonstersTraverse: 1
   canSpawnMonsters: 0
+  shopLevel: 0
+  hasMandatoryEvent: 0
+  customSpaceTypeOverride: 0

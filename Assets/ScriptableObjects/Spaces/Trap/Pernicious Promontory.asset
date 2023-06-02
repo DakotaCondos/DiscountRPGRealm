@@ -13,6 +13,13 @@ MonoBehaviour:
   m_Name: Pernicious Promontory
   m_EditorClassIdentifier: 
   spaceName: Pernicious Promontory
-  spaceTextures: []
+  spaceTextures:
+  - {fileID: 2800000, guid: 3e3b2fb18bfffa649b6d472333e9d01b, type: 3}
+  - {fileID: 2800000, guid: 95dd495f454604f4aa2626f4b63e7393, type: 3}
+  - {fileID: 2800000, guid: 3850a822c0dd17b41af95eb40bf0e00d, type: 3}
+  - {fileID: 2800000, guid: 8e213cd5f8d1fae478514abe94548e4f, type: 3}
   canMonstersTraverse: 1
   canSpawnMonsters: 0
+  shopLevel: 0
+  hasMandatoryEvent: 0
+  customSpaceTypeOverride: 0

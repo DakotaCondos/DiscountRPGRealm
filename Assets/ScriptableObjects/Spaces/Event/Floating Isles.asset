@@ -13,6 +13,13 @@ MonoBehaviour:
   m_Name: Floating Isles
   m_EditorClassIdentifier: 
   spaceName: Floating Isles
-  spaceTextures: []
+  spaceTextures:
+  - {fileID: 2800000, guid: 46cbd9c2792137d4b824b3bbca117824, type: 3}
+  - {fileID: 2800000, guid: 907382653a49dcf45a02886c8eb86972, type: 3}
+  - {fileID: 2800000, guid: 13e1acf6cac42dc46b74ea3c839c63cb, type: 3}
+  - {fileID: 2800000, guid: f1c7cf2b4cc0c7e4fab77cfc1fbdb510, type: 3}
   canMonstersTraverse: 0
   canSpawnMonsters: 0
+  shopLevel: 0
+  hasMandatoryEvent: 1
+  customSpaceTypeOverride: 0

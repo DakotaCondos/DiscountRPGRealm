@@ -13,6 +13,13 @@ MonoBehaviour:
   m_Name: Infernal Gateway
   m_EditorClassIdentifier: 
   spaceName: Infernal Gateway
-  spaceTextures: []
+  spaceTextures:
+  - {fileID: 2800000, guid: c035079d41fc4e34d8c407be96b14c86, type: 3}
+  - {fileID: 2800000, guid: c57a1fa78e227cd4a860bda9191f6cb2, type: 3}
+  - {fileID: 2800000, guid: 997176a44abdeb54c93ea3a123ac55c2, type: 3}
+  - {fileID: 2800000, guid: ed47a747f80013a428d5e07f290ecfe8, type: 3}
   canMonstersTraverse: 1
   canSpawnMonsters: 1
+  shopLevel: 0
+  hasMandatoryEvent: 0
+  customSpaceTypeOverride: 0

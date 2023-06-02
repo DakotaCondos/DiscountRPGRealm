@@ -13,6 +13,13 @@ MonoBehaviour:
   m_Name: Tranquil Meadow
   m_EditorClassIdentifier: 
   spaceName: Tranquil Meadow
-  spaceTextures: []
+  spaceTextures:
+  - {fileID: 2800000, guid: fbd4a84cb58ecda4d93e0651b061240c, type: 3}
+  - {fileID: 2800000, guid: 843b99ab005be0d49a429187b4a9a0a0, type: 3}
+  - {fileID: 2800000, guid: 1108e1cb6553db644ab64e7bea71ca8b, type: 3}
+  - {fileID: 2800000, guid: 14f796e3d5024fb4aa9b4eb33e221dad, type: 3}
   canMonstersTraverse: 1
   canSpawnMonsters: 0
+  shopLevel: 0
+  hasMandatoryEvent: 0
+  customSpaceTypeOverride: 0

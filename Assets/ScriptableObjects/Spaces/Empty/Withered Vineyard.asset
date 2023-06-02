@@ -13,6 +13,13 @@ MonoBehaviour:
   m_Name: Withered Vineyard
   m_EditorClassIdentifier: 
   spaceName: Withered Vineyard
-  spaceTextures: []
+  spaceTextures:
+  - {fileID: 2800000, guid: a695cb39c91507a4dbb0874c45e63cd0, type: 3}
+  - {fileID: 2800000, guid: 7b233375eb41534409481642ffa65e1d, type: 3}
+  - {fileID: 2800000, guid: cb4f5721e8a1ba248b84d7bb69e48a3f, type: 3}
+  - {fileID: 2800000, guid: 929d5fa23de9bdb4cb55ee5df6e234e1, type: 3}
   canMonstersTraverse: 1
   canSpawnMonsters: 0
+  shopLevel: 0
+  hasMandatoryEvent: 0
+  customSpaceTypeOverride: 0

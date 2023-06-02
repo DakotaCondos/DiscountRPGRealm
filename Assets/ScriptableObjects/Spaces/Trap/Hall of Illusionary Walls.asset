@@ -13,6 +13,13 @@ MonoBehaviour:
   m_Name: Hall of Illusionary Walls
   m_EditorClassIdentifier: 
   spaceName: Hall of Illusionary Walls
-  spaceTextures: []
+  spaceTextures:
+  - {fileID: 2800000, guid: df075fbe482499248bc872574137e777, type: 3}
+  - {fileID: 2800000, guid: a19b8d95adb8045459ffb4a1d52df326, type: 3}
+  - {fileID: 2800000, guid: e91e371bd109df14abb2acae75de0e60, type: 3}
+  - {fileID: 2800000, guid: 00f03b838a0b39f41ba9812f70cc2b1b, type: 3}
   canMonstersTraverse: 1
   canSpawnMonsters: 0
+  shopLevel: 0
+  hasMandatoryEvent: 0
+  customSpaceTypeOverride: 0

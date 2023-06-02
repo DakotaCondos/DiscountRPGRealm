@@ -13,6 +13,21 @@ MonoBehaviour:
   m_Name: Beginner Town
   m_EditorClassIdentifier: 
   spaceName: Beginner Town
-  spaceTextures: []
+  spaceTextures:
+  - {fileID: 2800000, guid: 80e45fe35da4e50458830dabdcd1dea2, type: 3}
+  - {fileID: 2800000, guid: 70c92bede67d9b64180e08421b9ae21c, type: 3}
+  - {fileID: 2800000, guid: 92932a4d1b9d9c44bb78ea51220eff43, type: 3}
+  - {fileID: 2800000, guid: e5150fa2c8fa4f54da52a5e794af9128, type: 3}
+  - {fileID: 2800000, guid: 1d3986a1c9dd4b84dbf7a4b120c3d784, type: 3}
+  - {fileID: 2800000, guid: 4e061294336948649857b5e2dbc6ac9f, type: 3}
+  - {fileID: 2800000, guid: 20850c92c8294754687408cef07cf6d1, type: 3}
+  - {fileID: 2800000, guid: 9df6f2fbee8e51643b6a4b1930003dfd, type: 3}
+  - {fileID: 2800000, guid: 3e765727c2740fc4d9817912a6d9e9e6, type: 3}
+  - {fileID: 2800000, guid: 81b78c7e4af040c439caf9e259c65cfe, type: 3}
+  - {fileID: 2800000, guid: 93fdafc4a92cdd14c9bfe7213fd238cc, type: 3}
+  - {fileID: 2800000, guid: 3afa77d9a2b72d54ebd6ea6932146589, type: 3}
   canMonstersTraverse: 0
   canSpawnMonsters: 0
+  shopLevel: 1
+  hasMandatoryEvent: 0
+  customSpaceTypeOverride: 1

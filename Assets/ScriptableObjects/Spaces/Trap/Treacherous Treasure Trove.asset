@@ -13,6 +13,13 @@ MonoBehaviour:
   m_Name: Treacherous Treasure Trove
   m_EditorClassIdentifier: 
   spaceName: Treacherous Treasure Trove
-  spaceTextures: []
+  spaceTextures:
+  - {fileID: 2800000, guid: ccf7ddc1317c8ca4ea359fd85fb685c3, type: 3}
+  - {fileID: 2800000, guid: 75e4357d9cf8bfd448c7597989a3dc2f, type: 3}
+  - {fileID: 2800000, guid: 590e67039e9a57748b3e424114e2d9d1, type: 3}
+  - {fileID: 2800000, guid: 18fda56bf5f08af4598ad996870d90aa, type: 3}
   canMonstersTraverse: 1
   canSpawnMonsters: 0
+  shopLevel: 0
+  hasMandatoryEvent: 0
+  customSpaceTypeOverride: 0

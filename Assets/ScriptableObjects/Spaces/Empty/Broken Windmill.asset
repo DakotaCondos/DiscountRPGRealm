@@ -13,6 +13,13 @@ MonoBehaviour:
   m_Name: Broken Windmill
   m_EditorClassIdentifier: 
   spaceName: Broken Windmill
-  spaceTextures: []
+  spaceTextures:
+  - {fileID: 2800000, guid: e0024857b23070c45826b777ccdf9353, type: 3}
+  - {fileID: 2800000, guid: 37b8dfb0ca7915a42ab333ee0472bba5, type: 3}
+  - {fileID: 2800000, guid: 17fc756a426ff564db8663c7ce7d2b9d, type: 3}
+  - {fileID: 2800000, guid: ea113fbae8cd02f43b406fa21cd517c3, type: 3}
   canMonstersTraverse: 1
   canSpawnMonsters: 0
+  shopLevel: 0
+  hasMandatoryEvent: 0
+  customSpaceTypeOverride: 0

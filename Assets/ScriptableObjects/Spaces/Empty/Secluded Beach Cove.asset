@@ -13,6 +13,13 @@ MonoBehaviour:
   m_Name: Secluded Beach Cove
   m_EditorClassIdentifier: 
   spaceName: Secluded Beach Cove
-  spaceTextures: []
+  spaceTextures:
+  - {fileID: 2800000, guid: 93fcbdd389ab08141b33dcd94dd5b92f, type: 3}
+  - {fileID: 2800000, guid: 7848093af2b74c6448c54907266c22e4, type: 3}
+  - {fileID: 2800000, guid: cfd60b0af45b50943889a9a0d7715d89, type: 3}
+  - {fileID: 2800000, guid: facf8c3235a65d7418c0fc2a3bda2da2, type: 3}
   canMonstersTraverse: 1
   canSpawnMonsters: 0
+  shopLevel: 0
+  hasMandatoryEvent: 0
+  customSpaceTypeOverride: 0

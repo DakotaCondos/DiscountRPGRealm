@@ -13,6 +13,13 @@ MonoBehaviour:
   m_Name: Twisted Tree Grove
   m_EditorClassIdentifier: 
   spaceName: Twisted Tree Grove
-  spaceTextures: []
+  spaceTextures:
+  - {fileID: 2800000, guid: e7a0c1f036e6f8d48ad71122251273fb, type: 3}
+  - {fileID: 2800000, guid: fc1cd8d911241c548a19e17f22c13fa9, type: 3}
+  - {fileID: 2800000, guid: 9c15e0363f53e8644845bc20cce7e1fd, type: 3}
+  - {fileID: 2800000, guid: 9892ffb0dd80be747b2f6ec7ad94c240, type: 3}
   canMonstersTraverse: 1
   canSpawnMonsters: 0
+  shopLevel: 0
+  hasMandatoryEvent: 0
+  customSpaceTypeOverride: 0

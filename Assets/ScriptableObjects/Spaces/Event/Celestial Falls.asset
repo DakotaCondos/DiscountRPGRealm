@@ -13,6 +13,13 @@ MonoBehaviour:
   m_Name: Celestial Falls
   m_EditorClassIdentifier: 
   spaceName: Celestial Falls
-  spaceTextures: []
+  spaceTextures:
+  - {fileID: 2800000, guid: 8fdf45d1af2d98b478054835b0c9cf35, type: 3}
+  - {fileID: 2800000, guid: b30f53d7da866dc48b89d28e1b28237f, type: 3}
+  - {fileID: 2800000, guid: 600a53f70a44a864eafdfd87d8b81518, type: 3}
+  - {fileID: 2800000, guid: 995dd19d7f9df7f4a89e720733030a9d, type: 3}
   canMonstersTraverse: 0
   canSpawnMonsters: 0
+  shopLevel: 0
+  hasMandatoryEvent: 1
+  customSpaceTypeOverride: 0

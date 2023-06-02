@@ -13,6 +13,13 @@ MonoBehaviour:
   m_Name: Forgotten Old Well
   m_EditorClassIdentifier: 
   spaceName: Forgotten Old Well
-  spaceTextures: []
+  spaceTextures:
+  - {fileID: 2800000, guid: 8380865c64e8eb042af603f6d71caa70, type: 3}
+  - {fileID: 2800000, guid: 55806a01cdd403344920964de10aa853, type: 3}
+  - {fileID: 2800000, guid: d74164bdf2bb1ba4688d56492be6eab1, type: 3}
+  - {fileID: 2800000, guid: d96ef8c4f31df0b46a8aab388024b90b, type: 3}
   canMonstersTraverse: 1
   canSpawnMonsters: 0
+  shopLevel: 0
+  hasMandatoryEvent: 0
+  customSpaceTypeOverride: 0

@@ -13,6 +13,13 @@ MonoBehaviour:
   m_Name: Celestial Observatory
   m_EditorClassIdentifier: 
   spaceName: Celestial Observatory
-  spaceTextures: []
+  spaceTextures:
+  - {fileID: 2800000, guid: cdfe9182c6a3879478b8209f5778bd05, type: 3}
+  - {fileID: 2800000, guid: 86721aa9688ca9f4888adda8703a5a7d, type: 3}
+  - {fileID: 2800000, guid: d32c294da8ccc0d418143364b780da1a, type: 3}
+  - {fileID: 2800000, guid: 8a6a6de9ff564bc4db873cec60acea2e, type: 3}
   canMonstersTraverse: 0
   canSpawnMonsters: 0
+  shopLevel: 0
+  hasMandatoryEvent: 1
+  customSpaceTypeOverride: 0

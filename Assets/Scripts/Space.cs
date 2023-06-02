@@ -27,6 +27,7 @@ public class Space : MonoBehaviour
     public bool hasMandatoryEvent = false;
     [SerializeField] bool isStartingSpace = false;
     public List<Space> ConnectedSpaces = new List<Space>();
+    public SpaceSO blueprint = null;
 
     // Setup Static
     public GameObject lineDrawPoint;
@@ -37,6 +38,7 @@ public class Space : MonoBehaviour
     public GameObject playerPiecePrefab;
     public Transform playerPieceLocation;
     public TextBlock namePlate;
+    public Interactable interactableNova;
 
     // Current State
     public Monster monsterAtSpace;
@@ -44,7 +46,6 @@ public class Space : MonoBehaviour
     public List<Player> playersAtSpace;
     public List<GameObject> playersPieces = new();
     public bool IsBlocking = false;
-    public Interactable interactableNova;
     private TurnManager turnManager;
 
     // Other

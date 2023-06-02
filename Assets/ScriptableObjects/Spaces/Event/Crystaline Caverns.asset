@@ -13,6 +13,13 @@ MonoBehaviour:
   m_Name: Crystaline Caverns
   m_EditorClassIdentifier: 
   spaceName: Crystaline Caverns
-  spaceTextures: []
+  spaceTextures:
+  - {fileID: 2800000, guid: 6ebd1fcf597d3f347b88d551cf7a438b, type: 3}
+  - {fileID: 2800000, guid: 9e830b7b1215e2841b23bbced05e8845, type: 3}
+  - {fileID: 2800000, guid: d3bf294265faec244a743308afba0f09, type: 3}
+  - {fileID: 2800000, guid: 1e98c6573e27f5a46bba8e10cc3cbff8, type: 3}
   canMonstersTraverse: 0
   canSpawnMonsters: 0
+  shopLevel: 0
+  hasMandatoryEvent: 1
+  customSpaceTypeOverride: 0

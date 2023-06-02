@@ -13,6 +13,13 @@ MonoBehaviour:
   m_Name: Veil of Vanishing Vistas
   m_EditorClassIdentifier: 
   spaceName: Veil of Vanishing Vistas
-  spaceTextures: []
+  spaceTextures:
+  - {fileID: 2800000, guid: 0599c5dcf11d59e49ad0c3e226a57c7c, type: 3}
+  - {fileID: 2800000, guid: ab740940acafc2b40aeb25b840cace6a, type: 3}
+  - {fileID: 2800000, guid: 5f2365e7875f2a346a1b64fedfcb3e74, type: 3}
+  - {fileID: 2800000, guid: 638507e9386f2bb449d85642c9a65611, type: 3}
   canMonstersTraverse: 1
   canSpawnMonsters: 0
+  shopLevel: 0
+  hasMandatoryEvent: 0
+  customSpaceTypeOverride: 0

@@ -13,6 +13,13 @@ MonoBehaviour:
   m_Name: Ancient Battlefield
   m_EditorClassIdentifier: 
   spaceName: Ancient Battlefield
-  spaceTextures: []
+  spaceTextures:
+  - {fileID: 2800000, guid: efd3e1e9435f2eb47850e6b527714609, type: 3}
+  - {fileID: 2800000, guid: 6d3a6a7dff053174eaf6ab2773392df6, type: 3}
+  - {fileID: 2800000, guid: 9ce4aeab6339b014ab0ca77a79bcec8a, type: 3}
+  - {fileID: 2800000, guid: 3202326d664b9e148b059cd227240124, type: 3}
   canMonstersTraverse: 1
   canSpawnMonsters: 1
+  shopLevel: 0
+  hasMandatoryEvent: 0
+  customSpaceTypeOverride: 0

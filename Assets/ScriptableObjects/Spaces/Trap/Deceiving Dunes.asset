@@ -13,6 +13,13 @@ MonoBehaviour:
   m_Name: Deceiving Dunes
   m_EditorClassIdentifier: 
   spaceName: Deceiving Dunes
-  spaceTextures: []
+  spaceTextures:
+  - {fileID: 2800000, guid: f7b7b7874f7239b4eb5e698bce71e2d3, type: 3}
+  - {fileID: 2800000, guid: 4c25539820539534cadc2e6ff8d5ed9a, type: 3}
+  - {fileID: 2800000, guid: 6bfb244ac55cc654682d6e1b7dc9f680, type: 3}
+  - {fileID: 2800000, guid: 966260cacd9b6404784a0e1b276c23ae, type: 3}
   canMonstersTraverse: 1
   canSpawnMonsters: 0
+  shopLevel: 0
+  hasMandatoryEvent: 0
+  customSpaceTypeOverride: 0

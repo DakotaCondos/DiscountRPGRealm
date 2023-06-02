@@ -13,6 +13,13 @@ MonoBehaviour:
   m_Name: Dusty Desert Oasis
   m_EditorClassIdentifier: 
   spaceName: Dusty Desert Oasis
-  spaceTextures: []
+  spaceTextures:
+  - {fileID: 2800000, guid: ed0013a99ac417f43ac41e21835f022b, type: 3}
+  - {fileID: 2800000, guid: 279cd6479936f7e448207ae813c35229, type: 3}
+  - {fileID: 2800000, guid: 71674389c3c89ac49a13a9f35c1c286e, type: 3}
+  - {fileID: 2800000, guid: afc2f6942c95a0b47bbd7a52ff42eff1, type: 3}
   canMonstersTraverse: 1
   canSpawnMonsters: 0
+  shopLevel: 0
+  hasMandatoryEvent: 0
+  customSpaceTypeOverride: 0

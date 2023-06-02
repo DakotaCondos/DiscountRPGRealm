@@ -13,6 +13,13 @@ MonoBehaviour:
   m_Name: Desolate Wastelands
   m_EditorClassIdentifier: 
   spaceName: Desolate Wastelands
-  spaceTextures: []
+  spaceTextures:
+  - {fileID: 2800000, guid: 5b99595dbd707014497bcf2e70d27e65, type: 3}
+  - {fileID: 2800000, guid: 977e918fb38f0604a8f4723178dc9cee, type: 3}
+  - {fileID: 2800000, guid: ba8ad044b125a0d4ca3f932abbeda6b4, type: 3}
+  - {fileID: 2800000, guid: b2aa771de5cda9542849a17343421b3d, type: 3}
   canMonstersTraverse: 1
   canSpawnMonsters: 1
+  shopLevel: 0
+  hasMandatoryEvent: 0
+  customSpaceTypeOverride: 0

@@ -13,6 +13,13 @@ MonoBehaviour:
   m_Name: Local Festival
   m_EditorClassIdentifier: 
   spaceName: Local Festival
-  spaceTextures: []
+  spaceTextures:
+  - {fileID: 2800000, guid: 25454ed424ebc4046a880fb4ef5b352b, type: 3}
+  - {fileID: 2800000, guid: 5e04e1cb908ebcc498e58e76a1e016c6, type: 3}
+  - {fileID: 2800000, guid: c81c4de06f24db64a803f77b8a481229, type: 3}
+  - {fileID: 2800000, guid: 4737e32e3ee81404b88df67c310dee4f, type: 3}
   canMonstersTraverse: 1
   canSpawnMonsters: 0
+  shopLevel: 0
+  hasMandatoryEvent: 0
+  customSpaceTypeOverride: 0

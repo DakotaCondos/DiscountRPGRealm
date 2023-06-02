@@ -13,6 +13,13 @@ MonoBehaviour:
   m_Name: Overgrown Orchard
   m_EditorClassIdentifier: 
   spaceName: Overgrown Orchard
-  spaceTextures: []
+  spaceTextures:
+  - {fileID: 2800000, guid: 7745ab3a78f999a4daa9d6dbd2828a69, type: 3}
+  - {fileID: 2800000, guid: 2002c5ab5e1353f41986384dc29150f4, type: 3}
+  - {fileID: 2800000, guid: c6c45f0219a68084a9dba16072949145, type: 3}
+  - {fileID: 2800000, guid: e3e01a894e72f8442a76969f189d6b07, type: 3}
   canMonstersTraverse: 1
   canSpawnMonsters: 0
+  shopLevel: 0
+  hasMandatoryEvent: 0
+  customSpaceTypeOverride: 0

@@ -5,9 +5,11 @@ using UnityEngine;
 public class BeginTurnHandler : MonoBehaviour
 {
     GameBoard gameBoard;
+    ActionsManager actionsManager;
     private void Awake()
     {
         gameBoard = FindObjectOfType<GameBoard>();
+        actionsManager = FindObjectOfType<ActionsManager>();
     }
 
     private void OnEnable()
@@ -26,14 +28,15 @@ public class BeginTurnHandler : MonoBehaviour
         // Handle BeginTurn event here
         if (actor.isPlayer)
         {
-            // determin actions player can take
+            actor.player.hasMoved = false;
+            actionsManager.DetermineActions(actor);
         }
         else
         {
             // move the monsters
         }
 
-        foreach (Space space in gameBoard.Spaces)
+        foreach (Space space in gameBoard.spaces)
         {
             space.ShowActiveCharacter(actor.player);
         }

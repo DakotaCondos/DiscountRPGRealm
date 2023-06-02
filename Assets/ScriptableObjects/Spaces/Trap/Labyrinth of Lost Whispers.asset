@@ -13,6 +13,13 @@ MonoBehaviour:
   m_Name: Labyrinth of Lost Whispers
   m_EditorClassIdentifier: 
   spaceName: Labyrinth of Lost Whispers
-  spaceTextures: []
+  spaceTextures:
+  - {fileID: 2800000, guid: 3acc67c074fd27144a463090452f8587, type: 3}
+  - {fileID: 2800000, guid: 474329e89fe67e947aaa086a06f088ef, type: 3}
+  - {fileID: 2800000, guid: 6c027c3bb44cf934abcb50b8da2971e1, type: 3}
+  - {fileID: 2800000, guid: 5429d5bd51f66914e8776718e0251218, type: 3}
   canMonstersTraverse: 1
   canSpawnMonsters: 0
+  shopLevel: 0
+  hasMandatoryEvent: 0
+  customSpaceTypeOverride: 0

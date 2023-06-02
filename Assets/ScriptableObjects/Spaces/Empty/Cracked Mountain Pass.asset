@@ -13,6 +13,13 @@ MonoBehaviour:
   m_Name: Cracked Mountain Pass
   m_EditorClassIdentifier: 
   spaceName: Cracked Mountain Pass
-  spaceTextures: []
+  spaceTextures:
+  - {fileID: 2800000, guid: f5145b09324d31b4187b378e014e4dbc, type: 3}
+  - {fileID: 2800000, guid: ccfe5ccc35156d64bafe70b2646c2ba5, type: 3}
+  - {fileID: 2800000, guid: 83720e576a1887c4f8400fdd2831b793, type: 3}
+  - {fileID: 2800000, guid: 9e066976b4d9abd40ae28ce82416c3db, type: 3}
   canMonstersTraverse: 1
   canSpawnMonsters: 0
+  shopLevel: 0
+  hasMandatoryEvent: 0
+  customSpaceTypeOverride: 0

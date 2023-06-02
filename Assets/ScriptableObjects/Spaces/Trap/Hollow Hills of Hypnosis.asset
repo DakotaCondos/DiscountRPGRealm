@@ -13,6 +13,13 @@ MonoBehaviour:
   m_Name: Hollow Hills of Hypnosis
   m_EditorClassIdentifier: 
   spaceName: Hollow Hills of Hypnosis
-  spaceTextures: []
+  spaceTextures:
+  - {fileID: 2800000, guid: 4cd2491c11f03ea41b6966e00498b1e8, type: 3}
+  - {fileID: 2800000, guid: b58d0896074ae814ea20c05f1a09708f, type: 3}
+  - {fileID: 2800000, guid: d3f38a8aab8f15d42ab1094d7682d22a, type: 3}
+  - {fileID: 2800000, guid: 8c86ac6880d9b5b4ca0fd1a28d888a76, type: 3}
   canMonstersTraverse: 1
   canSpawnMonsters: 0
+  shopLevel: 0
+  hasMandatoryEvent: 0
+  customSpaceTypeOverride: 0

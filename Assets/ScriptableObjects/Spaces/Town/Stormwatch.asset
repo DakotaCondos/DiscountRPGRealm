@@ -13,6 +13,13 @@ MonoBehaviour:
   m_Name: Stormwatch
   m_EditorClassIdentifier: 
   spaceName: Stormwatch
-  spaceTextures: []
+  spaceTextures:
+  - {fileID: 2800000, guid: 50f55f745fb396a4bad2fe294789c7b0, type: 3}
+  - {fileID: 2800000, guid: 5e265dca61264c740b66cc15eda5e8c7, type: 3}
+  - {fileID: 2800000, guid: 3283805a096473e43bb6ede1c03fbcb8, type: 3}
+  - {fileID: 2800000, guid: 94f5df045db19e74a9551350680479b9, type: 3}
   canMonstersTraverse: 0
   canSpawnMonsters: 0
+  shopLevel: 0
+  hasMandatoryEvent: 0
+  customSpaceTypeOverride: 0

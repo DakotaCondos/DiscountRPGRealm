@@ -13,6 +13,13 @@ MonoBehaviour:
   m_Name: Subterranean Hive
   m_EditorClassIdentifier: 
   spaceName: Subterranean Hive
-  spaceTextures: []
+  spaceTextures:
+  - {fileID: 2800000, guid: 21cc126b904294044bd3fd502265cc07, type: 3}
+  - {fileID: 2800000, guid: 7bdd59e776074a04bb3abfb4ee58665f, type: 3}
+  - {fileID: 2800000, guid: 01b37fec38cbdd14fa79de6c9b12cdf3, type: 3}
+  - {fileID: 2800000, guid: 46e0aebb745d5ef4080d0db59ec23c14, type: 3}
   canMonstersTraverse: 0
   canSpawnMonsters: 0
+  shopLevel: 0
+  hasMandatoryEvent: 1
+  customSpaceTypeOverride: 0

@@ -13,6 +13,13 @@ MonoBehaviour:
   m_Name: Whispering Pine Woods
   m_EditorClassIdentifier: 
   spaceName: Whispering Pine Woods
-  spaceTextures: []
+  spaceTextures:
+  - {fileID: 2800000, guid: faccc241fd11e0f408b61da757c6166c, type: 3}
+  - {fileID: 2800000, guid: 7454f07e39e5071499c0ba3a1efb746b, type: 3}
+  - {fileID: 2800000, guid: 207bf58f5ea02fd468eaf9f14270d20b, type: 3}
+  - {fileID: 2800000, guid: eae3dc1f965d3fe4fbf27221dbb0a720, type: 3}
   canMonstersTraverse: 1
   canSpawnMonsters: 0
+  shopLevel: 0
+  hasMandatoryEvent: 0
+  customSpaceTypeOverride: 0

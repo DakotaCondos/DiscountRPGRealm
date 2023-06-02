@@ -13,6 +13,13 @@ MonoBehaviour:
   m_Name: Snarespire Citadel
   m_EditorClassIdentifier: 
   spaceName: Snarespire Citadel
-  spaceTextures: []
+  spaceTextures:
+  - {fileID: 2800000, guid: f9d23619e6539434e9119ebe77ea979f, type: 3}
+  - {fileID: 2800000, guid: 62201953a1f146c4a9f39558bb6f47a4, type: 3}
+  - {fileID: 2800000, guid: 1bdf80bc42437f041baf0f9e4c3b7fcb, type: 3}
+  - {fileID: 2800000, guid: d69dd67ecb2e551479c0fc25e906df68, type: 3}
   canMonstersTraverse: 1
   canSpawnMonsters: 0
+  shopLevel: 0
+  hasMandatoryEvent: 0
+  customSpaceTypeOverride: 0

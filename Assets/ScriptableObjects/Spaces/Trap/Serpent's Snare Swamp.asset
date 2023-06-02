@@ -13,6 +13,13 @@ MonoBehaviour:
   m_Name: Serpent's Snare Swamp
   m_EditorClassIdentifier: 
   spaceName: Serpent's Snare Swamp
-  spaceTextures: []
+  spaceTextures:
+  - {fileID: 2800000, guid: 94d388a60b6f29f439e7c0482123c588, type: 3}
+  - {fileID: 2800000, guid: 03b149675eecddc4194c503086ff514c, type: 3}
+  - {fileID: 2800000, guid: 1b200dd58d5881c46b5ec2e270c50966, type: 3}
+  - {fileID: 2800000, guid: 74353d5a97804a046905bc427e9ebb3b, type: 3}
   canMonstersTraverse: 1
   canSpawnMonsters: 0
+  shopLevel: 0
+  hasMandatoryEvent: 0
+  customSpaceTypeOverride: 0

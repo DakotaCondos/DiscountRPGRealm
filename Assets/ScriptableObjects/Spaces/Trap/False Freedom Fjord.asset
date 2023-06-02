@@ -13,6 +13,13 @@ MonoBehaviour:
   m_Name: False Freedom Fjord
   m_EditorClassIdentifier: 
   spaceName: False Freedom Fjord
-  spaceTextures: []
+  spaceTextures:
+  - {fileID: 2800000, guid: 29602dc614b0aa949a5d93808581c6f1, type: 3}
+  - {fileID: 2800000, guid: 3de3f3869164d804cb7d90d10047397e, type: 3}
+  - {fileID: 2800000, guid: a0cebca36dd83c44b934f6fec59cf786, type: 3}
+  - {fileID: 2800000, guid: 5c2996964bf4308488f6fae9c144ba2e, type: 3}
   canMonstersTraverse: 1
   canSpawnMonsters: 0
+  shopLevel: 0
+  hasMandatoryEvent: 0
+  customSpaceTypeOverride: 0

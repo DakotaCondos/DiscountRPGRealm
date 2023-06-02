@@ -13,6 +13,13 @@ MonoBehaviour:
   m_Name: Moss-Covered Cliffside
   m_EditorClassIdentifier: 
   spaceName: Moss-Covered Cliffside
-  spaceTextures: []
+  spaceTextures:
+  - {fileID: 2800000, guid: 5d5456ef396469249abfa1f4b07ba886, type: 3}
+  - {fileID: 2800000, guid: 9c22862e7194aec4a9089037de67ea03, type: 3}
+  - {fileID: 2800000, guid: 15fd6efc8be01c544aa230f44bb053f0, type: 3}
+  - {fileID: 2800000, guid: 2d8e5bf8f47757143ba870b75cd7604e, type: 3}
   canMonstersTraverse: 1
   canSpawnMonsters: 0
+  shopLevel: 0
+  hasMandatoryEvent: 0
+  customSpaceTypeOverride: 0

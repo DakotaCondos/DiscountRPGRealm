@@ -1,5 +1,297 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6423207228249060750
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6056491024000201072}
+  - component: {fileID: 2430889379659169150}
+  - component: {fileID: 6464492135310234415}
+  m_Layer: 0
+  m_Name: Highlightable
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6056491024000201072
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6423207228249060750}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6796673611948371074}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2430889379659169150
+MonoBehaviour:
+  m_ObjectHideFlags: 10
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6423207228249060750}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9117b6d975111c47b064a4373cc67ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &6464492135310234415
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6423207228249060750}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c395591f6f08fb41897eb437d91b587, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sourceID:
+    val: 0
+  layout:
+    Size:
+      X:
+        Raw: 11.111111
+        Type: 0
+      Y:
+        Raw: 11.111111
+        Type: 0
+      Z:
+        Raw: 0
+        Type: 0
+    Position:
+      X:
+        Raw: 0
+        Type: 0
+      Y:
+        Raw: 0
+        Type: 0
+      Z:
+        Raw: 0
+        Type: 0
+    Padding:
+      Left:
+        Raw: 0.05
+        Type: 1
+      Right:
+        Raw: 0.05
+        Type: 1
+      Bottom:
+        Raw: 0.05
+        Type: 1
+      Top:
+        Raw: 0.05
+        Type: 1
+      Front:
+        Raw: 0
+        Type: 0
+      Back:
+        Raw: 0
+        Type: 0
+    Margin:
+      Left:
+        Raw: 0
+        Type: 0
+      Right:
+        Raw: 0
+        Type: 0
+      Bottom:
+        Raw: 0
+        Type: 0
+      Top:
+        Raw: 0
+        Type: 0
+      Front:
+        Raw: 0
+        Type: 0
+      Back:
+        Raw: 0
+        Type: 0
+    SizeMinMax:
+      X:
+        Min: 0
+        Max: Infinity
+      Y:
+        Min: 0
+        Max: Infinity
+      Z:
+        Min: 0
+        Max: Infinity
+    PositionMinMax:
+      X:
+        Min: -Infinity
+        Max: Infinity
+      Y:
+        Min: -Infinity
+        Max: Infinity
+      Z:
+        Min: -Infinity
+        Max: Infinity
+    PaddingMinMax:
+      Left:
+        Min: 0
+        Max: Infinity
+      Right:
+        Min: 0
+        Max: Infinity
+      Bottom:
+        Min: 0
+        Max: Infinity
+      Top:
+        Min: 0
+        Max: Infinity
+      Front:
+        Min: 0
+        Max: Infinity
+      Back:
+        Min: 0
+        Max: Infinity
+    MarginMinMax:
+      Left:
+        Min: -Infinity
+        Max: Infinity
+      Right:
+        Min: -Infinity
+        Max: Infinity
+      Bottom:
+        Min: -Infinity
+        Max: Infinity
+      Top:
+        Min: -Infinity
+        Max: Infinity
+      Front:
+        Min: -Infinity
+        Max: Infinity
+      Back:
+        Min: -Infinity
+        Max: Infinity
+    Alignment:
+      X: 0
+      Y: 0
+      Z: 0
+    AutoSize:
+      X: 0
+      Y: 0
+      Z: 0
+    RotateSize: 0
+    AspectRatio: {x: 0, y: 0, z: 0}
+    AspectRatioAxis: 0
+  autoLayout:
+    Axis: 0
+    Spacing:
+      Raw: 0
+      Type: 0
+    SpacingMinMax:
+      Min: 0
+      Max: Infinity
+    AutoSpace: 0
+    ReverseOrder: 0
+    alignment: -1
+    Offset: 0
+    Cross:
+      Axis: 0
+      Spacing:
+        Raw: 0
+        Type: 0
+      SpacingMinMax:
+        Min: 0
+        Max: Infinity
+      AutoSpace: 0
+      ReverseOrder: 0
+      alignment: -1
+      ExpandToGrid: 0
+  visibility:
+    ZIndex: 0
+    BlockType: 1
+    Visible: 1
+  surface:
+    specularColor: {r: 1, g: 1, b: 1, a: 1}
+    param1: 0.5
+    param2: 0.5
+    LightingModel: 0
+    ShadowCastingMode: 2
+    ReceiveShadows: 1
+  PreviewSize: {x: 11.111111, y: 11.111111, z: 0}
+  visuals:
+    Color: {r: 0.198, g: 0.198, b: 0.198, a: 1}
+    CornerRadius:
+      Raw: 0.2
+      Type: 1
+    RadialFill:
+      Center:
+        X:
+          Raw: 0
+          Type: 1
+        Y:
+          Raw: 0
+          Type: 1
+      Rotation: 0
+      FillAngle: 90
+      Enabled: 0
+    Gradient:
+      Color: {r: 1, g: 1, b: 1, a: 1}
+      Center:
+        X:
+          Raw: 0
+          Type: 1
+        Y:
+          Raw: 0
+          Type: 1
+      Radius:
+        X:
+          Raw: 0.5
+          Type: 1
+        Y:
+          Raw: 0.5
+          Type: 1
+      Rotation: 0
+      Enabled: 0
+    Border:
+      Color: {r: 0.198, g: 0.198, b: 0.198, a: 1}
+      Width:
+        Raw: 0.03
+        Type: 1
+      Enabled: 1
+      Direction: 0
+    Shadow:
+      Color: {r: 0, g: 0, b: 0, a: 1}
+      Width:
+        Raw: 0.08
+        Type: 1
+      Blur:
+        Raw: 0.15
+        Type: 1
+      Offset:
+        X:
+          Raw: 0
+          Type: 0
+        Y:
+          Raw: 0
+          Type: 0
+      Enabled: 0
+      Direction: 0
+    Image:
+      Adjustment:
+        CenterUV: {x: 0, y: 0}
+        UVScale: {x: 1, y: 1}
+        PixelsPerUnitMultiplier: 1
+        scaleMode: 0
+      Mode: 1
+    SoftenEdges: 1
+    FillEnabled: 1
+  texture: {fileID: 0}
+  sprite: {fileID: 0}
 --- !u!1 &6796673610885983070
 GameObject:
   m_ObjectHideFlags: 0
@@ -11,6 +303,7 @@ GameObject:
   - component: {fileID: 6796673610885982881}
   - component: {fileID: 6796673610885982883}
   - component: {fileID: 6796673610885982880}
+  - component: {fileID: 4227698972830026626}
   m_Layer: 0
   m_Name: MonsterPieces
   m_TagString: Untagged
@@ -26,12 +319,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6796673610885983070}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.5, y: 0, z: 0}
+  m_LocalPosition: {x: -8, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6796673611948371074}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6796673610885982883
 MonoBehaviour:
@@ -72,8 +365,8 @@ MonoBehaviour:
         Type: 0
     Position:
       X:
-        Raw: -0.75
-        Type: 1
+        Raw: -8
+        Type: 0
       Y:
         Raw: 0
         Type: 0
@@ -177,7 +470,7 @@ MonoBehaviour:
         Min: -Infinity
         Max: Infinity
     Alignment:
-      X: -1
+      X: 0
       Y: 0
       Z: 0
     AutoSize:
@@ -292,6 +585,55 @@ MonoBehaviour:
     FillEnabled: 0
   texture: {fileID: 0}
   sprite: {fileID: 0}
+--- !u!114 &4227698972830026626
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6796673610885983070}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd0e5f112b0a05b43b4ba50233a47743, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObstructDrags: 0
+  DragThreshold: 1
+  LowAccuracyDragThreshold: 30
+  ClickBehavior: 2
+  navigable: 0
+  onSelect: 0
+  autoSelect: 0
+  Navigation:
+    Left:
+      Type: 0
+      Fallback: 0
+      Target: {fileID: 0}
+    Right:
+      Type: 0
+      Fallback: 0
+      Target: {fileID: 0}
+    Down:
+      Type: 0
+      Fallback: 0
+      Target: {fileID: 0}
+    Up:
+      Type: 0
+      Fallback: 0
+      Target: {fileID: 0}
+    Forward:
+      Type: 1
+      Fallback: 1
+      Target: {fileID: 0}
+    Back:
+      Type: 1
+      Fallback: 1
+      Target: {fileID: 0}
+  draggable:
+    X: 0
+    Y: 0
+    Z: 0
+  GestureSpace: 0
 --- !u!1 &6796673611022286993
 GameObject:
   m_ObjectHideFlags: 0
@@ -355,7 +697,7 @@ MonoBehaviour:
   layout:
     Size:
       X:
-        Raw: 12.040163
+        Raw: 11.632964
         Type: 0
       Y:
         Raw: 2.227867
@@ -596,12 +938,9 @@ GameObject:
   - component: {fileID: 6796673611948371074}
   - component: {fileID: 6796673611948371081}
   - component: {fileID: 6796673611948371078}
-  - component: {fileID: 6796673611948371079}
-  - component: {fileID: 6796673611948371076}
-  - component: {fileID: 6796673611948371077}
-  - component: {fileID: 6796673611948371080}
+  - component: {fileID: 3770613301400985526}
   m_Layer: 0
-  m_Name: Space
+  m_Name: Space_Default
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -619,6 +958,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 6056491024000201072}
   - {fileID: 6796673612478084850}
   - {fileID: 6796673612246262850}
   - {fileID: 6796673610885982881}
@@ -655,10 +995,10 @@ MonoBehaviour:
   layout:
     Size:
       X:
-        Raw: 11.111111
+        Raw: 0
         Type: 0
       Y:
-        Raw: 11.111111
+        Raw: 0
         Type: 0
       Z:
         Raw: 0
@@ -675,17 +1015,17 @@ MonoBehaviour:
         Type: 0
     Padding:
       Left:
-        Raw: 0.05
-        Type: 1
+        Raw: 0
+        Type: 0
       Right:
-        Raw: 0.05
-        Type: 1
+        Raw: 0
+        Type: 0
       Bottom:
-        Raw: 0.05
-        Type: 1
+        Raw: 0
+        Type: 0
       Top:
-        Raw: 0.05
-        Type: 1
+        Raw: 0
+        Type: 0
       Front:
         Raw: 0
         Type: 0
@@ -775,7 +1115,7 @@ MonoBehaviour:
       Z: 0
     AutoSize:
       X: 0
-      Y: 2
+      Y: 0
       Z: 0
     RotateSize: 0
     AspectRatio: {x: 0, y: 0, z: 0}
@@ -815,12 +1155,12 @@ MonoBehaviour:
     LightingModel: 0
     ShadowCastingMode: 2
     ReceiveShadows: 1
-  PreviewSize: {x: 11.111111, y: 11.111111, z: 0}
+  PreviewSize: {x: 0, y: 0, z: 0}
   visuals:
-    Color: {r: 0.198, g: 0.198, b: 0.198, a: 1}
+    Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
     CornerRadius:
-      Raw: 0.2
-      Type: 1
+      Raw: 0
+      Type: 0
     RadialFill:
       Center:
         X:
@@ -851,26 +1191,26 @@ MonoBehaviour:
       Rotation: 0
       Enabled: 0
     Border:
-      Color: {r: 0.198, g: 0.198, b: 0.198, a: 1}
+      Color: {r: 1, g: 1, b: 1, a: 1}
       Width:
-        Raw: 0.03
-        Type: 1
-      Enabled: 1
-      Direction: 0
+        Raw: 1
+        Type: 0
+      Enabled: 0
+      Direction: 2
     Shadow:
-      Color: {r: 0, g: 0, b: 0, a: 1}
+      Color: {r: 0, g: 0, b: 0, a: 0.5}
       Width:
-        Raw: 0.08
-        Type: 1
+        Raw: 0
+        Type: 0
       Blur:
-        Raw: 0.15
-        Type: 1
+        Raw: 2
+        Type: 0
       Offset:
         X:
           Raw: 0
           Type: 0
         Y:
-          Raw: 0
+          Raw: -1
           Type: 0
       Enabled: 0
       Direction: 0
@@ -879,124 +1219,13 @@ MonoBehaviour:
         CenterUV: {x: 0, y: 0}
         UVScale: {x: 1, y: 1}
         PixelsPerUnitMultiplier: 1
-        scaleMode: 0
+        scaleMode: 1
       Mode: 1
     SoftenEdges: 1
     FillEnabled: 1
   texture: {fileID: 0}
   sprite: {fileID: 0}
---- !u!114 &6796673611948371079
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6796673611948371075}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b0a75001f00536d40ad613f41ed2bdc0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  visuals:
-    rid: 1742174583998644233
-  references:
-    version: 2
-    RefIds:
-    - rid: 1742174583998644233
-      type: {class: ButtonVisuals, ns: NovaSamples.UIControls, asm: Nova.UIControls}
-      data:
-        TransitionType: 1
-        transitionTarget: {fileID: 0}
-        DefaultColor: {r: 0.198, g: 0.198, b: 0.198, a: 1}
-        HoveredColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-        PressedColor: {r: 0.8, g: 0.8, b: 0.8, a: 1}
-        Sprites:
-          DefaultSprite: {fileID: 0}
-          HoveredSprite: {fileID: 0}
-          PressedSprite: {fileID: 0}
-        Animations:
-          DefaultAnimation: Normal
-          HoveredAnimation: Highlighted
-          PressedAnimation: Pressed
-        Background: {fileID: 6796673611948371078}
-        Label: {fileID: 0}
---- !u!114 &6796673611948371076
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6796673611948371075}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5e8eaa600bb80d04992471d49e941b0b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  OnClicked:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 6796673611948371080}
-        m_TargetAssemblyTypeName: Space, Assembly-CSharp
-        m_MethodName: SelectSpace
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &6796673611948371077
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6796673611948371075}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bd0e5f112b0a05b43b4ba50233a47743, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ObstructDrags: 0
-  DragThreshold: 1
-  LowAccuracyDragThreshold: 30
-  ClickBehavior: 0
-  navigable: 1
-  onSelect: 0
-  autoSelect: 0
-  Navigation:
-    Left:
-      Type: 0
-      Fallback: 0
-      Target: {fileID: 0}
-    Right:
-      Type: 0
-      Fallback: 0
-      Target: {fileID: 0}
-    Down:
-      Type: 0
-      Fallback: 0
-      Target: {fileID: 0}
-    Up:
-      Type: 0
-      Fallback: 0
-      Target: {fileID: 0}
-    Forward:
-      Type: 1
-      Fallback: 1
-      Target: {fileID: 0}
-    Back:
-      Type: 1
-      Fallback: 1
-      Target: {fileID: 0}
-  draggable:
-    X: 0
-    Y: 0
-    Z: 0
-  GestureSpace: 0
---- !u!114 &6796673611948371080
+--- !u!114 &3770613301400985526
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1012,21 +1241,23 @@ MonoBehaviour:
   canMonstersTraverse: 1
   canSpawnMonsters: 0
   shopLevel: 0
+  hasMandatoryEvent: 0
   isStartingSpace: 0
   ConnectedSpaces: []
+  blueprint: {fileID: 0}
   lineDrawPoint: {fileID: 7700039954475058900}
   monsterPiecePrefab: {fileID: 1121418259994116492, guid: 4fdd60b3be24c1a46acf2f701ec6621f, type: 3}
   monsterPieceLocation: {fileID: 6796673610885982881}
-  spaceBackingPanel: {fileID: 6796673611948371078}
+  spaceBackingPanel: {fileID: 6464492135310234415}
   spaceGraphicPanel: {fileID: 6796673612478084852}
   playerPiecePrefab: {fileID: 1121418259994116492, guid: 58eff2686d845ec4b9b263b06f457e65, type: 3}
   playerPieceLocation: {fileID: 6796673612246262850}
   namePlate: {fileID: 6796673612070076722}
+  interactableNova: {fileID: 4341353522670308453}
   monsterAtSpace: {fileID: 0}
   monsterPieceAtSpace: {fileID: 0}
   playersPieces: []
   IsBlocking: 0
-  interactableNova: {fileID: 0}
 --- !u!1 &6796673612070076721
 GameObject:
   m_ObjectHideFlags: 0
@@ -1138,7 +1369,7 @@ MonoBehaviour:
   layout:
     Size:
       X:
-        Raw: 10.836146
+        Raw: 10.469667
         Type: 0
       Y:
         Raw: 2.0050802
@@ -1319,7 +1550,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Beginner Town
+  m_text: Default Space!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f1eaba59f4eef0646af1d2c27a22cde8, type: 2}
   m_sharedMaterial: {fileID: -8232903261261657317, guid: f1eaba59f4eef0646af1d2c27a22cde8, type: 2}
@@ -1402,6 +1633,7 @@ GameObject:
   - component: {fileID: 6796673612246262850}
   - component: {fileID: 6796673612246262852}
   - component: {fileID: 6796673612246262853}
+  - component: {fileID: 2987038687425803928}
   m_Layer: 0
   m_Name: PlayerPieces
   m_TagString: Untagged
@@ -1417,12 +1649,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6796673612246262851}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.5, y: 0, z: 0.1}
+  m_LocalPosition: {x: 8, y: 0, z: 0.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6796673611948371074}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6796673612246262852
 MonoBehaviour:
@@ -1463,8 +1695,8 @@ MonoBehaviour:
         Type: 0
     Position:
       X:
-        Raw: -0.5
-        Type: 1
+        Raw: 8
+        Type: 0
       Y:
         Raw: 0
         Type: 0
@@ -1568,7 +1800,7 @@ MonoBehaviour:
         Min: -Infinity
         Max: Infinity
     Alignment:
-      X: 1
+      X: 0
       Y: 0
       Z: 0
     AutoSize:
@@ -1683,6 +1915,55 @@ MonoBehaviour:
     FillEnabled: 0
   texture: {fileID: 0}
   sprite: {fileID: 0}
+--- !u!114 &2987038687425803928
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6796673612246262851}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd0e5f112b0a05b43b4ba50233a47743, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObstructDrags: 0
+  DragThreshold: 1
+  LowAccuracyDragThreshold: 30
+  ClickBehavior: 2
+  navigable: 0
+  onSelect: 0
+  autoSelect: 0
+  Navigation:
+    Left:
+      Type: 0
+      Fallback: 0
+      Target: {fileID: 0}
+    Right:
+      Type: 0
+      Fallback: 0
+      Target: {fileID: 0}
+    Down:
+      Type: 0
+      Fallback: 0
+      Target: {fileID: 0}
+    Up:
+      Type: 0
+      Fallback: 0
+      Target: {fileID: 0}
+    Forward:
+      Type: 1
+      Fallback: 1
+      Target: {fileID: 0}
+    Back:
+      Type: 1
+      Fallback: 1
+      Target: {fileID: 0}
+  draggable:
+    X: 0
+    Y: 0
+    Z: 0
+  GestureSpace: 0
 --- !u!1 &6796673612478084851
 GameObject:
   m_ObjectHideFlags: 0
@@ -1694,6 +1975,9 @@ GameObject:
   - component: {fileID: 6796673612478084850}
   - component: {fileID: 6796673612478084855}
   - component: {fileID: 6796673612478084852}
+  - component: {fileID: 4146234213019494156}
+  - component: {fileID: 4909836022918249840}
+  - component: {fileID: 4341353522670308453}
   m_Layer: 0
   m_Name: Graphic
   m_TagString: Untagged
@@ -1715,7 +1999,7 @@ Transform:
   m_Children:
   - {fileID: 6796673611022286992}
   m_Father: {fileID: 6796673611948371074}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6796673612478084855
 MonoBehaviour:
@@ -1974,8 +2258,119 @@ MonoBehaviour:
       Mode: 0
     SoftenEdges: 1
     FillEnabled: 1
-  texture: {fileID: 2800000, guid: 85cd31e89cb4f874aa5038985ff5355b, type: 3}
+  texture: {fileID: 2800000, guid: b78715247b0618c45a01ae3b766cb378, type: 3}
   sprite: {fileID: 0}
+--- !u!114 &4146234213019494156
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6796673612478084851}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0a75001f00536d40ad613f41ed2bdc0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  visuals:
+    rid: 3255022852488560640
+  references:
+    version: 2
+    RefIds:
+    - rid: 3255022852488560640
+      type: {class: ButtonVisuals, ns: NovaSamples.UIControls, asm: Nova.UIControls}
+      data:
+        TransitionType: 1
+        transitionTarget: {fileID: 6464492135310234415}
+        DefaultColor: {r: 1, g: 1, b: 1, a: 1}
+        HoveredColor: {r: 0.75, g: 0.75, b: 0.75, a: 1}
+        PressedColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+        Sprites:
+          DefaultSprite: {fileID: 0}
+          HoveredSprite: {fileID: 0}
+          PressedSprite: {fileID: 0}
+        Animations:
+          DefaultAnimation: Normal
+          HoveredAnimation: Highlighted
+          PressedAnimation: Pressed
+        Background: {fileID: 6796673612478084852}
+        Label: {fileID: 0}
+--- !u!114 &4909836022918249840
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6796673612478084851}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e8eaa600bb80d04992471d49e941b0b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnClicked:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3770613301400985526}
+        m_TargetAssemblyTypeName: Space, Assembly-CSharp
+        m_MethodName: SelectSpace
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &4341353522670308453
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6796673612478084851}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd0e5f112b0a05b43b4ba50233a47743, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObstructDrags: 0
+  DragThreshold: 1
+  LowAccuracyDragThreshold: 30
+  ClickBehavior: 0
+  navigable: 1
+  onSelect: 0
+  autoSelect: 0
+  Navigation:
+    Left:
+      Type: 0
+      Fallback: 0
+      Target: {fileID: 0}
+    Right:
+      Type: 0
+      Fallback: 0
+      Target: {fileID: 0}
+    Down:
+      Type: 0
+      Fallback: 0
+      Target: {fileID: 0}
+    Up:
+      Type: 0
+      Fallback: 0
+      Target: {fileID: 0}
+    Forward:
+      Type: 1
+      Fallback: 1
+      Target: {fileID: 0}
+    Back:
+      Type: 1
+      Fallback: 1
+      Target: {fileID: 0}
+  draggable:
+    X: 0
+    Y: 0
+    Z: 0
+  GestureSpace: 0
 --- !u!1 &7700039954475058900
 GameObject:
   m_ObjectHideFlags: 0
@@ -2005,5 +2400,5 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6796673611948371074}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

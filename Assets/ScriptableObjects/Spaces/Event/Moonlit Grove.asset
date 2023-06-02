@@ -13,6 +13,13 @@ MonoBehaviour:
   m_Name: Moonlit Grove
   m_EditorClassIdentifier: 
   spaceName: Moonlit Grove
-  spaceTextures: []
+  spaceTextures:
+  - {fileID: 2800000, guid: 6d807e5c9c0123c4fae2e88e18b3e096, type: 3}
+  - {fileID: 2800000, guid: 620d2fcc9feb12e4393e392e4bd8832c, type: 3}
+  - {fileID: 2800000, guid: 073c36aaec717f3449692f578a06d998, type: 3}
+  - {fileID: 2800000, guid: 45ce41d0821e6004ba90692f933b3c30, type: 3}
   canMonstersTraverse: 0
   canSpawnMonsters: 0
+  shopLevel: 0
+  hasMandatoryEvent: 1
+  customSpaceTypeOverride: 0

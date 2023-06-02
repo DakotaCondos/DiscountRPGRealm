@@ -13,6 +13,13 @@ MonoBehaviour:
   m_Name: Havenreach
   m_EditorClassIdentifier: 
   spaceName: Havenreach
-  spaceTextures: []
+  spaceTextures:
+  - {fileID: 2800000, guid: fcffd069958e28f428415f84bfa20c0f, type: 3}
+  - {fileID: 2800000, guid: 26724813b1ffaa74dbf5558dbaea44e4, type: 3}
+  - {fileID: 2800000, guid: c45d88189a2833e4ea6c213909ae5942, type: 3}
+  - {fileID: 2800000, guid: 55aff926f2ae5db4eb2d80de7f2e8c0a, type: 3}
   canMonstersTraverse: 0
   canSpawnMonsters: 0
+  shopLevel: 0
+  hasMandatoryEvent: 0
+  customSpaceTypeOverride: 0

@@ -13,6 +13,13 @@ MonoBehaviour:
   m_Name: Mysterious Wanderer
   m_EditorClassIdentifier: 
   spaceName: Mysterious Wanderer
-  spaceTextures: []
+  spaceTextures:
+  - {fileID: 2800000, guid: 793592cf9607ab248a10b8ea4e86946f, type: 3}
+  - {fileID: 2800000, guid: ddafaee50820cbe4db7886f5ed0af8d2, type: 3}
+  - {fileID: 2800000, guid: 996e339572e23734d8df2f77d5afa2b0, type: 3}
+  - {fileID: 2800000, guid: ea6039e5ef82edc489c811b9cad3df7d, type: 3}
   canMonstersTraverse: 1
   canSpawnMonsters: 0
+  shopLevel: 0
+  hasMandatoryEvent: 0
+  customSpaceTypeOverride: 0

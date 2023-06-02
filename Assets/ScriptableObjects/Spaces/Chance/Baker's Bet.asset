@@ -13,6 +13,13 @@ MonoBehaviour:
   m_Name: Baker's Bet
   m_EditorClassIdentifier: 
   spaceName: Baker's Bet
-  spaceTextures: []
+  spaceTextures:
+  - {fileID: 2800000, guid: 4547a1b62bd0948448b4cb832630fb60, type: 3}
+  - {fileID: 2800000, guid: f9baf17697d15434b941a9514cd23ee5, type: 3}
+  - {fileID: 2800000, guid: c2038ce8bc5b255428f188453652f5fd, type: 3}
+  - {fileID: 2800000, guid: 503a523ac5c7c9d4db0bab514ace6ffe, type: 3}
   canMonstersTraverse: 1
   canSpawnMonsters: 0
+  shopLevel: 0
+  hasMandatoryEvent: 0
+  customSpaceTypeOverride: 0

@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class SpaceBuilder : MonoBehaviour
 {
-    public List<SpaceSO> emptySpaces = new();
-    public List<SpaceSO> townSpaces = new();
-    public List<SpaceSO> chanceSpaces = new();
-    public List<SpaceSO> eventSpaces = new();
-    public List<SpaceSO> monsterSpawnSpaces = new();
-    public List<SpaceSO> trapSpaces = new();
+    public List<SpaceSO> emptySpaces;
+    public List<SpaceSO> townSpaces;
+    public List<SpaceSO> chanceSpaces;
+    public List<SpaceSO> eventSpaces;
+    public List<SpaceSO> monsterSpawnSpaces;
+    public List<SpaceSO> trapSpaces;
 
 
     public void BuildSpace(Space space)
@@ -34,17 +34,35 @@ public class SpaceBuilder : MonoBehaviour
             case SpaceType.Trap:
                 BuildSpace(space, trapSpaces);
                 break;
+            case SpaceType.Custom:
+                BuildCustomSpace(space);
+                break;
             default:
-                // Types not listed above are not randomly generated
                 break;
         }
     }
 
+    private void BuildCustomSpace(Space space)
+    {
+        space.SetSpaceName(space.blueprint.spaceName);
+        print("Checking for textures");
+        space.SetSpaceTexture(GetRandomItem(space.blueprint.spaceTextures));
+        space.canMonstersTraverse = space.blueprint.canMonstersTraverse;
+        space.canSpawnMonsters = space.blueprint.canSpawnMonsters;
+        space.shopLevel = space.blueprint.shopLevel;
+        space.spaceType = space.blueprint.customSpaceTypeOverride;
+    }
+
     public void BuildSpace(Space space, List<SpaceSO> listSOs)
     {
+        print("Checking for Blueprints in list");
+        print(listSOs.Count);
         SpaceSO blueprint = GetRandomItem(listSOs, true);
         space.SetSpaceName(blueprint.spaceName);
-        space.SetSpaceTexture(GetRandomItem(blueprint.spaceTextures));
+        print(blueprint.spaceName);
+        print("Checking for textures");
+        List<Texture2D> textures = blueprint.spaceTextures;
+        space.SetSpaceTexture(GetRandomItem(textures));
         space.canMonstersTraverse = blueprint.canMonstersTraverse;
         space.canSpawnMonsters = blueprint.canSpawnMonsters;
         space.shopLevel = blueprint.shopLevel;

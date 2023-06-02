@@ -13,6 +13,13 @@ MonoBehaviour:
   m_Name: Vortex Pinnacle
   m_EditorClassIdentifier: 
   spaceName: Vortex Pinnacle
-  spaceTextures: []
+  spaceTextures:
+  - {fileID: 2800000, guid: a996dda12c1eac144badc7865218243d, type: 3}
+  - {fileID: 2800000, guid: 70bbf18601477d54a83f1597f336844d, type: 3}
+  - {fileID: 2800000, guid: 29614a84a828a004c9a987ac3b76ab42, type: 3}
+  - {fileID: 2800000, guid: 42eac058d4c96404dba94c290aebc9ad, type: 3}
   canMonstersTraverse: 0
   canSpawnMonsters: 0
+  shopLevel: 0
+  hasMandatoryEvent: 1
+  customSpaceTypeOverride: 0

@@ -13,6 +13,13 @@ MonoBehaviour:
   m_Name: Faintly Glowing Mushroom Field
   m_EditorClassIdentifier: 
   spaceName: Faintly Glowing Mushroom Field
-  spaceTextures: []
+  spaceTextures:
+  - {fileID: 2800000, guid: e0a713476139d104d98bc73616a9bc91, type: 3}
+  - {fileID: 2800000, guid: fa69bd82d40921643a84aa4e403832d7, type: 3}
+  - {fileID: 2800000, guid: a3969c7882ab19b4ebfd08869f09809a, type: 3}
+  - {fileID: 2800000, guid: e6abeced65e080842ab247abc9344a15, type: 3}
   canMonstersTraverse: 1
   canSpawnMonsters: 0
+  shopLevel: 0
+  hasMandatoryEvent: 0
+  customSpaceTypeOverride: 0

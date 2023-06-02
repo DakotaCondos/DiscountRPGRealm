@@ -13,6 +13,13 @@ MonoBehaviour:
   m_Name: Cavern of False Echoes
   m_EditorClassIdentifier: 
   spaceName: Cavern of False Echoes
-  spaceTextures: []
+  spaceTextures:
+  - {fileID: 2800000, guid: 40df192974c81264090a9645abdaa56a, type: 3}
+  - {fileID: 2800000, guid: 69873d9bfd3fafb49ba4529f1e7c6bec, type: 3}
+  - {fileID: 2800000, guid: 39d136043e2b64b4e9a206632fd600e2, type: 3}
+  - {fileID: 2800000, guid: b077e4c6b51e8454092c5d3a80afc479, type: 3}
   canMonstersTraverse: 1
   canSpawnMonsters: 0
+  shopLevel: 0
+  hasMandatoryEvent: 0
+  customSpaceTypeOverride: 0

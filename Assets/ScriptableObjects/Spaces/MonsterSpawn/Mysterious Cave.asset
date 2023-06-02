@@ -13,6 +13,13 @@ MonoBehaviour:
   m_Name: Mysterious Cave
   m_EditorClassIdentifier: 
   spaceName: Mysterious Cave
-  spaceTextures: []
+  spaceTextures:
+  - {fileID: 2800000, guid: b87e51ad29c9670409dccdcd5f24dfcc, type: 3}
+  - {fileID: 2800000, guid: ff890ab73828a1c47ad86f5bdf2b6cec, type: 3}
+  - {fileID: 2800000, guid: d8b89bc6ce820da409604f81322c06fb, type: 3}
+  - {fileID: 2800000, guid: f9cf8f961c9d06a4795884da6bec76f4, type: 3}
   canMonstersTraverse: 1
   canSpawnMonsters: 1
+  shopLevel: 0
+  hasMandatoryEvent: 0
+  customSpaceTypeOverride: 0

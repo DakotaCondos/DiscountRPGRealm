@@ -27,7 +27,7 @@ public class EndMovementHandler : MonoBehaviour
         // add to new space
         space.AddPlayerToSpace(actor.player);
         // stop all space movement effects
-        foreach (Space item in gameBoard.Spaces)
+        foreach (Space item in gameBoard.spaces)
         {
             item.TriggerSelectable(false);
         }

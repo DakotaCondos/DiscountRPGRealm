@@ -13,6 +13,13 @@ MonoBehaviour:
   m_Name: Silverbrook
   m_EditorClassIdentifier: 
   spaceName: Silverbrook
-  spaceTextures: []
+  spaceTextures:
+  - {fileID: 2800000, guid: a3ba293398b59ea4f8d332c24bad2ce3, type: 3}
+  - {fileID: 2800000, guid: e94a4aaaa9c1bb94ea6ba9126465d599, type: 3}
+  - {fileID: 2800000, guid: 64c3d0aff4f50e6449d3c17292dc461c, type: 3}
+  - {fileID: 2800000, guid: 0ee108833b0697740872938e74b45caf, type: 3}
   canMonstersTraverse: 0
   canSpawnMonsters: 0
+  shopLevel: 0
+  hasMandatoryEvent: 0
+  customSpaceTypeOverride: 0

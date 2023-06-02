@@ -13,6 +13,13 @@ MonoBehaviour:
   m_Name: Solstice Citadel
   m_EditorClassIdentifier: 
   spaceName: Solstice Citadel
-  spaceTextures: []
+  spaceTextures:
+  - {fileID: 2800000, guid: 2fcec07a033fd7643915ea41f49480a0, type: 3}
+  - {fileID: 2800000, guid: fa8fb9a1465ed7d408e1fa2c4f6bdace, type: 3}
+  - {fileID: 2800000, guid: 06147df69ac3c50449096f35c0107b2d, type: 3}
+  - {fileID: 2800000, guid: a7efb831700efee49a7cb92440f5392d, type: 3}
   canMonstersTraverse: 0
   canSpawnMonsters: 0
+  shopLevel: 0
+  hasMandatoryEvent: 1
+  customSpaceTypeOverride: 0

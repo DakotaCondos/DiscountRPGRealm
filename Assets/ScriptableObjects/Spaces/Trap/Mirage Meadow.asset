@@ -13,6 +13,13 @@ MonoBehaviour:
   m_Name: Mirage Meadow
   m_EditorClassIdentifier: 
   spaceName: Mirage Meadow
-  spaceTextures: []
+  spaceTextures:
+  - {fileID: 2800000, guid: d79f6304f5730a545b1202b6f05728e3, type: 3}
+  - {fileID: 2800000, guid: bbc09e7cb4bebba408c97017abc79e62, type: 3}
+  - {fileID: 2800000, guid: 7420c1af0e29425458dbbc3c7ba9ce8a, type: 3}
+  - {fileID: 2800000, guid: a4c4f612baa7b2b439698aa801020e29, type: 3}
   canMonstersTraverse: 1
   canSpawnMonsters: 0
+  shopLevel: 0
+  hasMandatoryEvent: 0
+  customSpaceTypeOverride: 0

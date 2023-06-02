@@ -13,6 +13,13 @@ MonoBehaviour:
   m_Name: Hidden Waterfall Grotto
   m_EditorClassIdentifier: 
   spaceName: Hidden Waterfall Grotto
-  spaceTextures: []
+  spaceTextures:
+  - {fileID: 2800000, guid: c012e75350eec2b4094a717e97fa543b, type: 3}
+  - {fileID: 2800000, guid: b03de038a60b1994081b3c019e4a32b7, type: 3}
+  - {fileID: 2800000, guid: ec32d17328e265b46ae1860aa9421d70, type: 3}
+  - {fileID: 2800000, guid: 2c4f9c589a2824c4fa8646f859873434, type: 3}
   canMonstersTraverse: 1
   canSpawnMonsters: 0
+  shopLevel: 0
+  hasMandatoryEvent: 0
+  customSpaceTypeOverride: 0

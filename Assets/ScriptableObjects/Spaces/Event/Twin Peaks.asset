@@ -13,6 +13,13 @@ MonoBehaviour:
   m_Name: Twin Peaks
   m_EditorClassIdentifier: 
   spaceName: Twin Peaks
-  spaceTextures: []
+  spaceTextures:
+  - {fileID: 2800000, guid: 9940aa3b1bea9d9488e340dfc1d2a4ec, type: 3}
+  - {fileID: 2800000, guid: 2fb8b42e0c3331843ae8607492af5f32, type: 3}
+  - {fileID: 2800000, guid: 9c3071002fc339f4c9abece2ac4a8b09, type: 3}
+  - {fileID: 2800000, guid: 3794ee389f0da6844bd9b573fb70a4d1, type: 3}
   canMonstersTraverse: 0
   canSpawnMonsters: 0
+  shopLevel: 0
+  hasMandatoryEvent: 1
+  customSpaceTypeOverride: 0

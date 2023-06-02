@@ -13,6 +13,13 @@ MonoBehaviour:
   m_Name: Oakheart Village
   m_EditorClassIdentifier: 
   spaceName: Oakheart Village
-  spaceTextures: []
+  spaceTextures:
+  - {fileID: 2800000, guid: 2d8e2c6f3270b1144bda23580cee2e8d, type: 3}
+  - {fileID: 2800000, guid: 05f7663d825fb3a4aa34f94206b82ed0, type: 3}
+  - {fileID: 2800000, guid: dbd31703af5c6974fa04dd45e54fe031, type: 3}
+  - {fileID: 2800000, guid: 0af4939bbfd42de4893fa1a7e5a8adc3, type: 3}
   canMonstersTraverse: 0
   canSpawnMonsters: 0
+  shopLevel: 0
+  hasMandatoryEvent: 0
+  customSpaceTypeOverride: 0

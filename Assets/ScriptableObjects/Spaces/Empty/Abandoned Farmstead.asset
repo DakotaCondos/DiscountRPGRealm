@@ -13,6 +13,13 @@ MonoBehaviour:
   m_Name: Abandoned Farmstead
   m_EditorClassIdentifier: 
   spaceName: Abandoned Farmstead
-  spaceTextures: []
+  spaceTextures:
+  - {fileID: 2800000, guid: 253c65d4eae3c8048a92a062af8030cc, type: 3}
+  - {fileID: 2800000, guid: 9e84def8aea06a04dbc58d417888050d, type: 3}
+  - {fileID: 2800000, guid: 5b549588b570bb14abb9ac60dbbeba85, type: 3}
+  - {fileID: 2800000, guid: 2283b28436848dd4297b6cfe2a8b1e36, type: 3}
   canMonstersTraverse: 1
   canSpawnMonsters: 0
+  shopLevel: 0
+  hasMandatoryEvent: 0
+  customSpaceTypeOverride: 0

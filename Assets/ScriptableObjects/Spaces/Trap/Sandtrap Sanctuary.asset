@@ -13,6 +13,13 @@ MonoBehaviour:
   m_Name: Sandtrap Sanctuary
   m_EditorClassIdentifier: 
   spaceName: Sandtrap Sanctuary
-  spaceTextures: []
+  spaceTextures:
+  - {fileID: 2800000, guid: ada84b69e7a99f048b273c88c8d43438, type: 3}
+  - {fileID: 2800000, guid: 7c375556134f2ff40a3fb5d672f30f6a, type: 3}
+  - {fileID: 2800000, guid: b49136ad48100104594beb45fbdab071, type: 3}
+  - {fileID: 2800000, guid: 870d6f3cffd07c4428436da6eec2763a, type: 3}
   canMonstersTraverse: 1
   canSpawnMonsters: 0
+  shopLevel: 0
+  hasMandatoryEvent: 0
+  customSpaceTypeOverride: 0

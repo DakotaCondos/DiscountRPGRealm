@@ -13,6 +13,13 @@ MonoBehaviour:
   m_Name: Haven's Gate
   m_EditorClassIdentifier: 
   spaceName: Haven's Gate
-  spaceTextures: []
+  spaceTextures:
+  - {fileID: 2800000, guid: 4a791a3acbf13814fa3886e133e14c0c, type: 3}
+  - {fileID: 2800000, guid: 00e0e6efb429de44fa167424c68b0cf8, type: 3}
+  - {fileID: 2800000, guid: 8be21343db9bacb4a9bafe161951fdf7, type: 3}
+  - {fileID: 2800000, guid: e2ca18bfe8cc4ec43a3b4fc57f4e1fee, type: 3}
   canMonstersTraverse: 0
   canSpawnMonsters: 0
+  shopLevel: 0
+  hasMandatoryEvent: 0
+  customSpaceTypeOverride: 0

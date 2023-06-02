@@ -13,6 +13,13 @@ MonoBehaviour:
   m_Name: Lost Spirit
   m_EditorClassIdentifier: 
   spaceName: Lost Spirit
-  spaceTextures: []
+  spaceTextures:
+  - {fileID: 2800000, guid: 14bff5314903bb3418761a38d8d9e18c, type: 3}
+  - {fileID: 2800000, guid: d1ca2236b2af6644d84ffaacd84b9543, type: 3}
+  - {fileID: 2800000, guid: 04963e64083f7084b89457d09bec3bbf, type: 3}
+  - {fileID: 2800000, guid: 52d5ccf975614034d9448b1bcd2e5bc9, type: 3}
   canMonstersTraverse: 1
   canSpawnMonsters: 0
+  shopLevel: 0
+  hasMandatoryEvent: 0
+  customSpaceTypeOverride: 0

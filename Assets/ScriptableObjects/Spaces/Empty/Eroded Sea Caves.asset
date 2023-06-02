@@ -13,6 +13,13 @@ MonoBehaviour:
   m_Name: Eroded Sea Caves
   m_EditorClassIdentifier: 
   spaceName: Eroded Sea Caves
-  spaceTextures: []
+  spaceTextures:
+  - {fileID: 2800000, guid: c901b1d48ffd90a46887b85612e2461a, type: 3}
+  - {fileID: 2800000, guid: e9647255a7720fb458d81787a7f650db, type: 3}
+  - {fileID: 2800000, guid: 72ce11156379969428651438eafa09df, type: 3}
+  - {fileID: 2800000, guid: 6db4ecac84440c24f975477fb0271a49, type: 3}
   canMonstersTraverse: 1
   canSpawnMonsters: 0
+  shopLevel: 0
+  hasMandatoryEvent: 0
+  customSpaceTypeOverride: 0

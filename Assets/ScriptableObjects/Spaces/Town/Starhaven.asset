@@ -13,6 +13,13 @@ MonoBehaviour:
   m_Name: Starhaven
   m_EditorClassIdentifier: 
   spaceName: Starhaven
-  spaceTextures: []
+  spaceTextures:
+  - {fileID: 2800000, guid: a2aaee6e3546f04489ecb2d0adbdfa9a, type: 3}
+  - {fileID: 2800000, guid: d1d5cb1087fec13448bd0e856595576f, type: 3}
+  - {fileID: 2800000, guid: 157df11c6b796244b80cd7fe80cc2462, type: 3}
+  - {fileID: 2800000, guid: 0ac79296a9b61de48a67341aabd0b6aa, type: 3}
   canMonstersTraverse: 0
   canSpawnMonsters: 0
+  shopLevel: 0
+  hasMandatoryEvent: 0
+  customSpaceTypeOverride: 0

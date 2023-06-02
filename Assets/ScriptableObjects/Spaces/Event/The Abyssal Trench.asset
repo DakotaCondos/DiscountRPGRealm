@@ -13,6 +13,13 @@ MonoBehaviour:
   m_Name: The Abyssal Trench
   m_EditorClassIdentifier: 
   spaceName: The Abyssal Trench
-  spaceTextures: []
+  spaceTextures:
+  - {fileID: 2800000, guid: 8e59612acf9af5a41970fe638412dd8f, type: 3}
+  - {fileID: 2800000, guid: 9ed7288f63466434ca9b2f716a71067f, type: 3}
+  - {fileID: 2800000, guid: a03ed08aa533da643bd71150a9b4d6ce, type: 3}
+  - {fileID: 2800000, guid: 2b1bb34776b40584f9980a7b48db4084, type: 3}
   canMonstersTraverse: 0
   canSpawnMonsters: 0
+  shopLevel: 0
+  hasMandatoryEvent: 1
+  customSpaceTypeOverride: 0

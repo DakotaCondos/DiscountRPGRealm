@@ -13,6 +13,13 @@ MonoBehaviour:
   m_Name: Suspended Rope Bridge
   m_EditorClassIdentifier: 
   spaceName: Suspended Rope Bridge
-  spaceTextures: []
+  spaceTextures:
+  - {fileID: 2800000, guid: 235a16df910fd584699c1a567930a33b, type: 3}
+  - {fileID: 2800000, guid: 68fef0c4ab11b1345963627391380252, type: 3}
+  - {fileID: 2800000, guid: 988947572c3003549aca75de0d04f4c6, type: 3}
+  - {fileID: 2800000, guid: d8dbaa41044099f48a00518d8f78b101, type: 3}
   canMonstersTraverse: 1
   canSpawnMonsters: 0
+  shopLevel: 0
+  hasMandatoryEvent: 0
+  customSpaceTypeOverride: 0

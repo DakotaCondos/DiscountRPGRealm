@@ -13,6 +13,13 @@ MonoBehaviour:
   m_Name: Dilapidated Stone Archway
   m_EditorClassIdentifier: 
   spaceName: Dilapidated Stone Archway
-  spaceTextures: []
+  spaceTextures:
+  - {fileID: 2800000, guid: 828c7613055e80a4a8274dbf6262fb39, type: 3}
+  - {fileID: 2800000, guid: e7acf2323e7ead74aaf384a94bb8abae, type: 3}
+  - {fileID: 2800000, guid: d95aae9c101ed6f4bbbbb7385ccc6ea5, type: 3}
+  - {fileID: 2800000, guid: f7d07be0266880e48ac5a0535ac451c4, type: 3}
   canMonstersTraverse: 1
   canSpawnMonsters: 0
+  shopLevel: 0
+  hasMandatoryEvent: 0
+  customSpaceTypeOverride: 0

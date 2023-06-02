@@ -13,6 +13,13 @@ MonoBehaviour:
   m_Name: Chronos Ruins
   m_EditorClassIdentifier: 
   spaceName: Chronos Ruins
-  spaceTextures: []
+  spaceTextures:
+  - {fileID: 2800000, guid: 423dd851cde883140866a37ed8c3ac01, type: 3}
+  - {fileID: 2800000, guid: 2f3a813ecd8df2d48b47051285f22e64, type: 3}
+  - {fileID: 2800000, guid: 80a67c68d2dc1df43abf9674c39e7503, type: 3}
+  - {fileID: 2800000, guid: d01ac528555cc954eb50b8bb65663120, type: 3}
   canMonstersTraverse: 0
   canSpawnMonsters: 0
+  shopLevel: 0
+  hasMandatoryEvent: 1
+  customSpaceTypeOverride: 0

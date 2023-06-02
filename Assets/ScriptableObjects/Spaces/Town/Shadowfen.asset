@@ -13,6 +13,13 @@ MonoBehaviour:
   m_Name: Shadowfen
   m_EditorClassIdentifier: 
   spaceName: Shadowfen
-  spaceTextures: []
+  spaceTextures:
+  - {fileID: 2800000, guid: 9fd4f3c006580774e9b154b5102cc992, type: 3}
+  - {fileID: 2800000, guid: ff6e9a5b60d751a48b00da654920be71, type: 3}
+  - {fileID: 2800000, guid: c184266ae76c8a948a0ca2b5f387f366, type: 3}
+  - {fileID: 2800000, guid: cf2cbb8453fce48439453f18f7ed54b0, type: 3}
   canMonstersTraverse: 0
   canSpawnMonsters: 0
+  shopLevel: 0
+  hasMandatoryEvent: 0
+  customSpaceTypeOverride: 0

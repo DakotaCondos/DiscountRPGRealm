@@ -13,6 +13,13 @@ MonoBehaviour:
   m_Name: Cold Mountain Lake
   m_EditorClassIdentifier: 
   spaceName: Cold Mountain Lake
-  spaceTextures: []
+  spaceTextures:
+  - {fileID: 2800000, guid: 825c9ff8e9a5ef145bdd8db4b80a72b8, type: 3}
+  - {fileID: 2800000, guid: f1458e12f981713469a525dd8c68b9c4, type: 3}
+  - {fileID: 2800000, guid: e1af442dd77428a42a576633bc777b87, type: 3}
+  - {fileID: 2800000, guid: c804550cfd0f4b44f9c984cdc1b4465e, type: 3}
   canMonstersTraverse: 1
   canSpawnMonsters: 0
+  shopLevel: 0
+  hasMandatoryEvent: 0
+  customSpaceTypeOverride: 0

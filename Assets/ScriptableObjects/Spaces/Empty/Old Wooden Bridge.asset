@@ -13,6 +13,13 @@ MonoBehaviour:
   m_Name: Old Wooden Bridge
   m_EditorClassIdentifier: 
   spaceName: Old Wooden Bridge
-  spaceTextures: []
+  spaceTextures:
+  - {fileID: 2800000, guid: 063265cc0f80f1a45ab1725afbb35797, type: 3}
+  - {fileID: 2800000, guid: bf6a4dcc5294a544b94e0b0ff72158fb, type: 3}
+  - {fileID: 2800000, guid: 572bc33bf83d268439eaa49be38e7df4, type: 3}
+  - {fileID: 2800000, guid: f06cd5443c5bd4948ad8cfca3445e3f0, type: 3}
   canMonstersTraverse: 1
   canSpawnMonsters: 0
+  shopLevel: 0
+  hasMandatoryEvent: 0
+  customSpaceTypeOverride: 0

@@ -13,6 +13,13 @@ MonoBehaviour:
   m_Name: Sunken Ruins
   m_EditorClassIdentifier: 
   spaceName: Sunken Ruins
-  spaceTextures: []
+  spaceTextures:
+  - {fileID: 2800000, guid: b9cb98ac46098084c9b951c4bf638eac, type: 3}
+  - {fileID: 2800000, guid: 9659f77a618352e41b392e4f4a375b8d, type: 3}
+  - {fileID: 2800000, guid: 0b1a89ce7a9e0674daa2c106cceba4e7, type: 3}
+  - {fileID: 2800000, guid: 14211bca382c67b408fd93ac2428e8ad, type: 3}
   canMonstersTraverse: 1
   canSpawnMonsters: 1
+  shopLevel: 0
+  hasMandatoryEvent: 0
+  customSpaceTypeOverride: 0

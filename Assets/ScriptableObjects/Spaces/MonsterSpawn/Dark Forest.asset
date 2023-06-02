@@ -13,6 +13,13 @@ MonoBehaviour:
   m_Name: Dark Forest
   m_EditorClassIdentifier: 
   spaceName: Dark Forest
-  spaceTextures: []
+  spaceTextures:
+  - {fileID: 2800000, guid: 3f9b3b9d2a3c39f42b6ecd836e7e38c3, type: 3}
+  - {fileID: 2800000, guid: 3069cff4cc4f3ba4db72fb23d8b604b4, type: 3}
+  - {fileID: 2800000, guid: 9ea94a9cb6ed7cd469fbbdd7fbb8a9b4, type: 3}
+  - {fileID: 2800000, guid: cd44f7ba5844de44e84879efadd1cf26, type: 3}
   canMonstersTraverse: 1
   canSpawnMonsters: 1
+  shopLevel: 0
+  hasMandatoryEvent: 0
+  customSpaceTypeOverride: 0

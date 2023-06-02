@@ -13,6 +13,13 @@ MonoBehaviour:
   m_Name: Labyrinthine Sewers
   m_EditorClassIdentifier: 
   spaceName: Labyrinthine Sewers
-  spaceTextures: []
+  spaceTextures:
+  - {fileID: 2800000, guid: 66e9d177b8911d844aa8382ac3967fe5, type: 3}
+  - {fileID: 2800000, guid: 6614fbc5acc072d4aa7ba615c524ce01, type: 3}
+  - {fileID: 2800000, guid: 4a4ffd491511ce148b742e97739ae1cf, type: 3}
+  - {fileID: 2800000, guid: 93a6026e89811d6488e087a3ee8eaa35, type: 3}
   canMonstersTraverse: 1
   canSpawnMonsters: 1
+  shopLevel: 0
+  hasMandatoryEvent: 0
+  customSpaceTypeOverride: 0

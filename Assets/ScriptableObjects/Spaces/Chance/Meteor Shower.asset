@@ -13,6 +13,13 @@ MonoBehaviour:
   m_Name: Meteor Shower
   m_EditorClassIdentifier: 
   spaceName: Meteor Shower
-  spaceTextures: []
+  spaceTextures:
+  - {fileID: 2800000, guid: 19a434aa994eecb4da25370c1c28a1e2, type: 3}
+  - {fileID: 2800000, guid: 6627bad7afbf22f4494e6e12d14abe0d, type: 3}
+  - {fileID: 2800000, guid: b23eaa32d61a3ea458fe08013281e7a6, type: 3}
+  - {fileID: 2800000, guid: 85c33e50238c7994f9864ae5161c7e5f, type: 3}
   canMonstersTraverse: 1
   canSpawnMonsters: 0
+  shopLevel: 0
+  hasMandatoryEvent: 0
+  customSpaceTypeOverride: 0

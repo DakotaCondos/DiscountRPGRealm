@@ -13,6 +13,13 @@ MonoBehaviour:
   m_Name: Labyrinthine Dungeon
   m_EditorClassIdentifier: 
   spaceName: Labyrinthine Dungeon
-  spaceTextures: []
+  spaceTextures:
+  - {fileID: 2800000, guid: 0aac3b6f5c181b043a77d33e8867c21f, type: 3}
+  - {fileID: 2800000, guid: e643051fbe2cb5f49950a519f2298bf2, type: 3}
+  - {fileID: 2800000, guid: 651d3dc1fec060849a7069efca4d674f, type: 3}
+  - {fileID: 2800000, guid: fc7c5c69c959d9744951079729dca270, type: 3}
   canMonstersTraverse: 0
   canSpawnMonsters: 0
+  shopLevel: 0
+  hasMandatoryEvent: 1
+  customSpaceTypeOverride: 0

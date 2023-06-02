@@ -13,6 +13,13 @@ MonoBehaviour:
   m_Name: Weathered Statue
   m_EditorClassIdentifier: 
   spaceName: Weathered Statue
-  spaceTextures: []
+  spaceTextures:
+  - {fileID: 2800000, guid: a5f1e0f0efeba1642bfe28516f4e3cae, type: 3}
+  - {fileID: 2800000, guid: 96168e813f7d5874394ab53f02ff30a0, type: 3}
+  - {fileID: 2800000, guid: 3d496e1a312b2bc49935f88dfc978c3e, type: 3}
+  - {fileID: 2800000, guid: 33e798ffa833709468cd32c4ccaec77d, type: 3}
   canMonstersTraverse: 1
   canSpawnMonsters: 0
+  shopLevel: 0
+  hasMandatoryEvent: 0
+  customSpaceTypeOverride: 0

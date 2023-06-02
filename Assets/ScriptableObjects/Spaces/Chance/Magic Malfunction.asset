@@ -13,6 +13,15 @@ MonoBehaviour:
   m_Name: Magic Malfunction
   m_EditorClassIdentifier: 
   spaceName: Magic Malfunction
-  spaceTextures: []
+  spaceTextures:
+  - {fileID: 2800000, guid: fe4636dc08bb1ae4bab79c638f368239, type: 3}
+  - {fileID: 2800000, guid: 95c6f57559085d2418ed003a4ecb0ed8, type: 3}
+  - {fileID: 2800000, guid: b528fd6d4a430404baa696a2154c9224, type: 3}
+  - {fileID: 2800000, guid: ed0c92dc190f58f448e34cd53a955b2a, type: 3}
+  - {fileID: 2800000, guid: 5276ece1e2f66fc46be64faeb8affe0f, type: 3}
+  - {fileID: 2800000, guid: 0fddd123bef9ffb4286594a103f19660, type: 3}
   canMonstersTraverse: 1
   canSpawnMonsters: 0
+  shopLevel: 0
+  hasMandatoryEvent: 0
+  customSpaceTypeOverride: 0

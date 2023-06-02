@@ -13,6 +13,13 @@ MonoBehaviour:
   m_Name: Abandoned Mines
   m_EditorClassIdentifier: 
   spaceName: Abandoned Mines
-  spaceTextures: []
+  spaceTextures:
+  - {fileID: 2800000, guid: c48cd95130f4a5b41860b27cfaffd624, type: 3}
+  - {fileID: 2800000, guid: 35b138140632ab749a2ab8b5ec182b68, type: 3}
+  - {fileID: 2800000, guid: e73011b4f0d4801468582bddfb4525f5, type: 3}
+  - {fileID: 2800000, guid: 8d5a958541233374d9591358109a7cc7, type: 3}
   canMonstersTraverse: 1
   canSpawnMonsters: 1
+  shopLevel: 0
+  hasMandatoryEvent: 0
+  customSpaceTypeOverride: 0

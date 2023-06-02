@@ -13,6 +13,13 @@ MonoBehaviour:
   m_Name: Ancient Portal
   m_EditorClassIdentifier: 
   spaceName: Ancient Portal
-  spaceTextures: []
+  spaceTextures:
+  - {fileID: 2800000, guid: a805ca39f01bc8e4993b82ebe0ccd3d1, type: 3}
+  - {fileID: 2800000, guid: 927947a089faaac4ca92f5d71367f82b, type: 3}
+  - {fileID: 2800000, guid: 87fb18633b465224c8b1bfe6c2f95375, type: 3}
+  - {fileID: 2800000, guid: d1fdcf9f1e642b94e88104a5aa6bbb4d, type: 3}
   canMonstersTraverse: 1
   canSpawnMonsters: 0
+  shopLevel: 0
+  hasMandatoryEvent: 0
+  customSpaceTypeOverride: 0

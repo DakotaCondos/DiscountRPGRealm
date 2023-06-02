@@ -13,6 +13,13 @@ MonoBehaviour:
   m_Name: Quicksand Quagmire
   m_EditorClassIdentifier: 
   spaceName: Quicksand Quagmire
-  spaceTextures: []
+  spaceTextures:
+  - {fileID: 2800000, guid: 481526ea2133a6a43a83a08354d765a9, type: 3}
+  - {fileID: 2800000, guid: 50c424fe1aae2d146a1c8d8820d55f21, type: 3}
+  - {fileID: 2800000, guid: 5cd009eb3ae670d4bb9a7b4212d8083e, type: 3}
+  - {fileID: 2800000, guid: 7e681b0d22142de468f8448d34fb7160, type: 3}
   canMonstersTraverse: 1
   canSpawnMonsters: 0
+  shopLevel: 0
+  hasMandatoryEvent: 0
+  customSpaceTypeOverride: 0

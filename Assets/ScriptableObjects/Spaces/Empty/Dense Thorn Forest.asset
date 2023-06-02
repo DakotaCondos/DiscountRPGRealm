@@ -13,6 +13,13 @@ MonoBehaviour:
   m_Name: Dense Thorn Forest
   m_EditorClassIdentifier: 
   spaceName: Dense Thorn Forest
-  spaceTextures: []
+  spaceTextures:
+  - {fileID: 2800000, guid: 1fc346b78e5f0274e928db04d73de1f8, type: 3}
+  - {fileID: 2800000, guid: b10c5dd8a07f2004f9b7f8e0fcb3068c, type: 3}
+  - {fileID: 2800000, guid: 483b3178042e543478b072cb48ccddb4, type: 3}
+  - {fileID: 2800000, guid: cb6f755e42cba2749a8b2eca4992fa45, type: 3}
   canMonstersTraverse: 1
   canSpawnMonsters: 0
+  shopLevel: 0
+  hasMandatoryEvent: 0
+  customSpaceTypeOverride: 0

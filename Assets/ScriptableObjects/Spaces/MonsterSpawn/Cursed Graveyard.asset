@@ -13,6 +13,13 @@ MonoBehaviour:
   m_Name: Cursed Graveyard
   m_EditorClassIdentifier: 
   spaceName: Cursed Graveyard
-  spaceTextures: []
+  spaceTextures:
+  - {fileID: 2800000, guid: 2df54875a63e8be40a759e03a420a027, type: 3}
+  - {fileID: 2800000, guid: 6a04b2e4f2f0c6348b883127623d513b, type: 3}
+  - {fileID: 2800000, guid: 68cd55d8982b16e44b43fd68523c4503, type: 3}
+  - {fileID: 2800000, guid: b94c3b4ef819a5d4fb7f6d6e203dfc55, type: 3}
   canMonstersTraverse: 1
   canSpawnMonsters: 1
+  shopLevel: 0
+  hasMandatoryEvent: 0
+  customSpaceTypeOverride: 0

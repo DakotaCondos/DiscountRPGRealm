@@ -157,7 +157,7 @@ public class SpaceSOCreator : MonoBehaviour
     [ContextMenu("BuildSpaces")]
     private void BuildSpaces()
     {
-        foreach (var spaceName in eventSpaceNames)
+        foreach (var spaceName in emptySpaceNames)
         {
             CreateSpace(spaceName);
         }

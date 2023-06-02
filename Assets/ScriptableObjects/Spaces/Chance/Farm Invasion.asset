@@ -13,6 +13,13 @@ MonoBehaviour:
   m_Name: Farm Invasion
   m_EditorClassIdentifier: 
   spaceName: Farm Invasion
-  spaceTextures: []
+  spaceTextures:
+  - {fileID: 2800000, guid: 8cab8d71a737d994f868465eae459a0b, type: 3}
+  - {fileID: 2800000, guid: d3f64902fbb042447adb5d5b8722e76f, type: 3}
+  - {fileID: 2800000, guid: 3612bdaa460b8e84b875bf8e7a4f4abc, type: 3}
+  - {fileID: 2800000, guid: 9e9d5c7515cd9c149b6e59b7a3ef2b95, type: 3}
   canMonstersTraverse: 1
   canSpawnMonsters: 0
+  shopLevel: 0
+  hasMandatoryEvent: 0
+  customSpaceTypeOverride: 0

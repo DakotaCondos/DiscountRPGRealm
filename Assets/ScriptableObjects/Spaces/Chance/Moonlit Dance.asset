@@ -13,6 +13,13 @@ MonoBehaviour:
   m_Name: Moonlit Dance
   m_EditorClassIdentifier: 
   spaceName: Moonlit Dance
-  spaceTextures: []
+  spaceTextures:
+  - {fileID: 2800000, guid: 835e89212ef02d6418e409eee169054f, type: 3}
+  - {fileID: 2800000, guid: 20521a2f0ee78bf46a30b3f1756ffd38, type: 3}
+  - {fileID: 2800000, guid: b088dd85a0246b34a95861679120e259, type: 3}
+  - {fileID: 2800000, guid: 3ee23a642e42c5c4aa5c57c8d5a028a2, type: 3}
   canMonstersTraverse: 1
   canSpawnMonsters: 0
+  shopLevel: 0
+  hasMandatoryEvent: 0
+  customSpaceTypeOverride: 0
