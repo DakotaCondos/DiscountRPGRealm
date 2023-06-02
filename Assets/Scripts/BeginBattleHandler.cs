@@ -4,6 +4,15 @@ using UnityEngine;
 
 public class BeginBattleHandler : MonoBehaviour
 {
+    GameBoard gameBoard;
+    ActionsManager actionsManager;
+    StatDisplay statDisplay;
+    private void Awake()
+    {
+        gameBoard = FindObjectOfType<GameBoard>();
+        actionsManager = FindObjectOfType<ActionsManager>();
+        statDisplay = FindObjectOfType<StatDisplay>();
+    }
     private void OnEnable()
     {
         TurnState.BeginBattle += HandleBeginBattle;

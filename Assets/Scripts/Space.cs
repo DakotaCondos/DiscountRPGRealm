@@ -69,13 +69,13 @@ public class Space : MonoBehaviour
                     AddPlayerToSpace(turnActor.player);
                 }
             }
-            AddPlayerToSpace(turnManager.GetCurrentPlayer().player);
+            AddPlayerToSpace(turnManager.GetCurrentActor().player);
         }
     }
 
     public void SelectSpace()
     {
-        TurnState.TriggerEndMovement(turnManager.GetCurrentPlayer(), this);
+        TurnState.TriggerEndMovement(turnManager.GetCurrentActor(), this);
     }
 
     public void TriggerSelectable(bool value)

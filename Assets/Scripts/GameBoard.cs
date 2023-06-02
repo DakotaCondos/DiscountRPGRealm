@@ -123,7 +123,6 @@ public class GameBoard : MonoBehaviour
         visited[start] = true;
         distance[start] = 0;
         queue.Enqueue(start);
-        spacesWithinDistance.Add(start);
 
         while (queue.Count != 0)
         {

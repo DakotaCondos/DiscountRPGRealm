@@ -44,7 +44,7 @@ public class TurnManager : MonoBehaviour
     }
 
     // Method to return the current player's turn
-    public TurnActor GetCurrentPlayer()
+    public TurnActor GetCurrentActor()
     {
         if (turnOrder.Count > 0)
         {
@@ -67,7 +67,7 @@ public class TurnManager : MonoBehaviour
             TurnState.TriggerEndTurn(currentPlayer);
 
             // Invoke the EndTurn event with the current player
-            TurnState.TriggerBeginTurn(GetCurrentPlayer());
+            TurnState.TriggerBeginTurn(GetCurrentActor());
         }
     }
 

@@ -28,7 +28,7 @@ public class TurnOrderPanel : MonoBehaviour
     public void UpdatePanel()
     {
         //update Active Player Block
-        UpdateBlock(activePlayer, turnManager.GetCurrentPlayer().player);
+        UpdateBlock(activePlayer, turnManager.GetCurrentActor().player);
 
         List<TurnActor> upcomingPlayers = turnManager.GetUpcomingPlayers();
         for (int i = 0; i < upcomingPlayers.Count; i++)

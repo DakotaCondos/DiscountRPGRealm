@@ -6,10 +6,12 @@ public class BeginTurnHandler : MonoBehaviour
 {
     GameBoard gameBoard;
     ActionsManager actionsManager;
+    StatDisplay statDisplay;
     private void Awake()
     {
         gameBoard = FindObjectOfType<GameBoard>();
         actionsManager = FindObjectOfType<ActionsManager>();
+        statDisplay = FindObjectOfType<StatDisplay>();
     }
 
     private void OnEnable()
@@ -30,6 +32,7 @@ public class BeginTurnHandler : MonoBehaviour
         {
             actor.player.hasMoved = false;
             actionsManager.DetermineActions(actor);
+            statDisplay.DisplayStats(actor.player.GetPower(), actor.player.GetMovement());
         }
         else
         {

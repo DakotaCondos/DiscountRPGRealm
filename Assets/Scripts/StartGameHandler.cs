@@ -30,6 +30,6 @@ public class StartGameHandler : MonoBehaviour
 
         // Trigger BeginTurn
         if (gameBoard == null) { Debug.LogWarning("StartGameHandler could not find TurnManager"); }
-        TurnState.TriggerBeginTurn(turnManager.GetCurrentPlayer());
+        TurnState.TriggerBeginTurn(turnManager.GetCurrentActor());
     }
 }

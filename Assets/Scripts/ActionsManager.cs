@@ -11,10 +11,12 @@ public class ActionsManager : MonoBehaviour
     private bool canEndTurn = false;
 
     private ActionButtonsPanel actionButtonsPanel = null;
+    private TurnManager turnManager = null;
 
     private void Awake()
     {
         actionButtonsPanel = FindObjectOfType<ActionButtonsPanel>(true);
+        turnManager = FindObjectOfType<TurnManager>(true);
         if (actionButtonsPanel == null) { Debug.LogError("ActionsManager could not find ActionButtonsPanel"); }
     }
 
@@ -103,7 +105,7 @@ public class ActionsManager : MonoBehaviour
     }
     public void SelectMove()
     {
-
+        TurnState.TriggerBeginMovement(turnManager.GetCurrentActor());
     }
     public void SelectMenu()
     {

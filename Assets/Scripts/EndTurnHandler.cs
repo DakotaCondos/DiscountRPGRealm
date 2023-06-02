@@ -4,10 +4,16 @@ using UnityEngine;
 
 public class EndTurnHandler : MonoBehaviour
 {
+    GameBoard gameBoard;
+    ActionsManager actionsManager;
+    StatDisplay statDisplay;
     TurnOrderPanel turnOrderPanel;
 
     private void Awake()
     {
+        gameBoard = FindObjectOfType<GameBoard>();
+        actionsManager = FindObjectOfType<ActionsManager>();
+        statDisplay = FindObjectOfType<StatDisplay>();
         turnOrderPanel = FindObjectOfType<TurnOrderPanel>(true);
     }
 
