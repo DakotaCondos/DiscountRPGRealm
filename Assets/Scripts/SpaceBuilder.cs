@@ -45,7 +45,6 @@ public class SpaceBuilder : MonoBehaviour
     private void BuildCustomSpace(Space space)
     {
         space.SetSpaceName(space.blueprint.spaceName);
-        print("Checking for textures");
         space.SetSpaceTexture(GetRandomItem(space.blueprint.spaceTextures));
         space.canMonstersTraverse = space.blueprint.canMonstersTraverse;
         space.canSpawnMonsters = space.blueprint.canSpawnMonsters;
@@ -55,12 +54,8 @@ public class SpaceBuilder : MonoBehaviour
 
     public void BuildSpace(Space space, List<SpaceSO> listSOs)
     {
-        print("Checking for Blueprints in list");
-        print(listSOs.Count);
         SpaceSO blueprint = GetRandomItem(listSOs, true);
         space.SetSpaceName(blueprint.spaceName);
-        print(blueprint.spaceName);
-        print("Checking for textures");
         List<Texture2D> textures = blueprint.spaceTextures;
         space.SetSpaceTexture(GetRandomItem(textures));
         space.canMonstersTraverse = blueprint.canMonstersTraverse;

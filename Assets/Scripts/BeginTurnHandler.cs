@@ -36,7 +36,7 @@ public class BeginTurnHandler : MonoBehaviour
             // move the monsters
         }
 
-        foreach (Space space in gameBoard.spaces)
+        foreach (Space space in gameBoard.allSpaces)
         {
             space.ShowActiveCharacter(actor.player);
         }

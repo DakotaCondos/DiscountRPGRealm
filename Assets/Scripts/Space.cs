@@ -59,34 +59,18 @@ public class Space : MonoBehaviour
 
     public void Initialize()
     {
-        // Draw Lines to connected Spaces
-        LineDrawer lineDrawer = FindObjectOfType<LineDrawer>();
-        if (lineDrawer == null)
-        {
-            Debug.LogWarning($"{name} could not find LineDrawer");
-        }
-        else
-        {
-            foreach (Space space in ConnectedSpaces)
-            {
-                lineDrawer.DrawLine(lineDrawPoint, space.lineDrawPoint);
-            }
-        }
-
-
-
         // Set Players at starting space
-        if (!isStartingSpace) return;
-
-        foreach (TurnActor turnActor in turnManager.GetUpcomingPlayers())
+        if (isStartingSpace)
         {
-            if (turnActor.isPlayer)
+            foreach (TurnActor turnActor in turnManager.GetUpcomingPlayers())
             {
-                AddPlayerToSpace(turnActor.player);
+                if (turnActor.isPlayer)
+                {
+                    AddPlayerToSpace(turnActor.player);
+                }
             }
+            AddPlayerToSpace(turnManager.GetCurrentPlayer().player);
         }
-        AddPlayerToSpace(turnManager.GetCurrentPlayer().player);
-        //ShowActiveCharacter(tm.GetCurrentPlayer().player);
     }
 
     public void SelectSpace()

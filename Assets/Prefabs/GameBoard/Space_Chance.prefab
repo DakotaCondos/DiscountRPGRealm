@@ -15,6 +15,42 @@ PrefabInstance:
       propertyPath: hasMandatoryEvent
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4146234213019494156, guid: 55911f8bfabc90e40adc3463685b9f45, type: 3}
+      propertyPath: managedReferences[3255022852488560640].DefaultColor.b
+      value: 0.198
+      objectReference: {fileID: 0}
+    - target: {fileID: 4146234213019494156, guid: 55911f8bfabc90e40adc3463685b9f45, type: 3}
+      propertyPath: managedReferences[3255022852488560640].DefaultColor.g
+      value: 0.198
+      objectReference: {fileID: 0}
+    - target: {fileID: 4146234213019494156, guid: 55911f8bfabc90e40adc3463685b9f45, type: 3}
+      propertyPath: managedReferences[3255022852488560640].DefaultColor.r
+      value: 0.198
+      objectReference: {fileID: 0}
+    - target: {fileID: 4146234213019494156, guid: 55911f8bfabc90e40adc3463685b9f45, type: 3}
+      propertyPath: managedReferences[3255022852488560640].HoveredColor.b
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4146234213019494156, guid: 55911f8bfabc90e40adc3463685b9f45, type: 3}
+      propertyPath: managedReferences[3255022852488560640].HoveredColor.g
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4146234213019494156, guid: 55911f8bfabc90e40adc3463685b9f45, type: 3}
+      propertyPath: managedReferences[3255022852488560640].HoveredColor.r
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4146234213019494156, guid: 55911f8bfabc90e40adc3463685b9f45, type: 3}
+      propertyPath: managedReferences[3255022852488560640].PressedColor.b
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4146234213019494156, guid: 55911f8bfabc90e40adc3463685b9f45, type: 3}
+      propertyPath: managedReferences[3255022852488560640].PressedColor.g
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4146234213019494156, guid: 55911f8bfabc90e40adc3463685b9f45, type: 3}
+      propertyPath: managedReferences[3255022852488560640].PressedColor.r
+      value: 0.4
+      objectReference: {fileID: 0}
     - target: {fileID: 6796673611948371074, guid: 55911f8bfabc90e40adc3463685b9f45, type: 3}
       propertyPath: m_RootOrder
       value: 0

@@ -2,48 +2,45 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using UnityEngine;
 
 [RequireComponent(typeof(SpaceBuilder))]
+[RequireComponent(typeof(LineDrawer))]
 public class GameBoard : MonoBehaviour
 {
-    public List<Space> spaces = new List<Space>();
+    public List<Space> allSpaces = new List<Space>();
     private SpaceBuilder spaceBuilder;
+    private LineDrawer lineDrawer;
     [SerializeField] float spaceConnectionRadius;
 
     public GameBoard()
     {
-        spaces = new List<Space>();
+        allSpaces = new List<Space>();
     }
 
     public void Awake()
     {
-        // May manually assign spaces to groups later for different Zones related to game areas
-        spaces = FindObjectsOfType<Space>(true).ToList();
-        print(spaces.Count);
-
         spaceBuilder = GetComponent<SpaceBuilder>();
+        lineDrawer = GetComponent<LineDrawer>();
+
+        // May manually assign spaces to groups later for different Zones related to game areas
+        allSpaces = FindObjectsOfType<Space>(true).ToList();
     }
 
     public void InitializeGameBoard()
     {
-        print("Building Spaces");
-        foreach (Space space in spaces)
+        foreach (Space space in allSpaces)
         {
             // build space
             spaceBuilder.BuildSpace(space);
-        }
 
-        print("Building Connections");
-        // Build Connections
-        ConnectNearbySpaces(spaces, spaceConnectionRadius);
-
-        print("Initializing Spaces");
-        foreach (Space space in spaces)
-        {
             // initialize space
             space.Initialize();
+
         }
+        // Build Connections
+        ConnectNearbySpaces(allSpaces, spaceConnectionRadius);
     }
 
     public void ConnectSpaces(Space a, Space b)
@@ -52,22 +49,27 @@ public class GameBoard : MonoBehaviour
         b.ConnectedSpaces.Add(a);
     }
 
-    public void ConnectNearbySpaces(List<Space> spaces, float maxDistance)
-    {
-        for (int i = 0; i < spaces.Count; i++)
-        {
-            for (int j = i + 1; j < spaces.Count; j++)
-            {
-                // debug step display distances
-                float distance = Vector3.Distance(spaces[i].transform.position, spaces[j].transform.position);
-                print($"{spaces[i].namePlate.Text} -> {spaces[j].namePlate.Text} = {distance}");
+    // debug step display distances
+    //float distance = Vector3.Distance(spaces[i].transform.position, spaces[j].transform.position);
 
-                if (Vector3.Distance(spaces[i].transform.position, spaces[j].transform.position) <= maxDistance)
+    public void ConnectNearbySpaces(List<Space> allSpaces, float maxDistance)
+    {
+        StringBuilder stringBuilder = new StringBuilder();
+        foreach (Space currentSpace in allSpaces)
+        {
+            foreach (Space space in allSpaces)
+            {
+                if (currentSpace.Equals(space)) { continue; }
+                if (currentSpace.ConnectedSpaces.Contains(space)) { continue; }
+                stringBuilder.AppendLine($"{currentSpace.namePlate.Text} -> {space.namePlate.Text} = {Vector3.Distance(currentSpace.lineDrawPoint.transform.position, space.lineDrawPoint.transform.position)}");
+                if (Vector3.Distance(currentSpace.lineDrawPoint.transform.position, space.lineDrawPoint.transform.position) <= spaceConnectionRadius)
                 {
-                    ConnectSpaces(spaces[i], spaces[j]);
+                    ConnectSpaces(currentSpace, space);
+                    lineDrawer.DrawLine(currentSpace.lineDrawPoint, space.lineDrawPoint);
                 }
             }
         }
+        print(stringBuilder);
     }
 
     public Dictionary<Space, int> CalculateDistances(Space start)
@@ -76,7 +78,7 @@ public class GameBoard : MonoBehaviour
         Dictionary<Space, bool> visited = new Dictionary<Space, bool>();
         Dictionary<Space, int> distance = new Dictionary<Space, int>();
 
-        foreach (var space in spaces)
+        foreach (var space in allSpaces)
         {
             visited[space] = false;
             distance[space] = int.MaxValue;
@@ -113,7 +115,7 @@ public class GameBoard : MonoBehaviour
         Dictionary<Space, int> distance = new Dictionary<Space, int>();
         List<Space> spacesWithinDistance = new List<Space>();
 
-        foreach (var space in spaces)
+        foreach (var space in allSpaces)
         {
             visited[space] = false;
         }
