@@ -33,10 +33,13 @@ public class BeginTurnHandler : MonoBehaviour
             actor.player.hasMoved = false;
             actionsManager.DetermineActions(actor);
             statDisplay.DisplayStats(actor.player.GetPower(), actor.player.GetMovement());
+            Vector3 playerSpacePos = actor.player.currentSpace.transform.position;
+            Camera.main.transform.position = new Vector3(playerSpacePos.x, playerSpacePos.y, Camera.main.transform.position.z);
         }
         else
         {
             // move the monsters
+            actionsManager.DetermineActions(actor);
         }
 
         foreach (Space space in gameBoard.allSpaces)

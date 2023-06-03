@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Monster : MonoBehaviour, IMoveable
+public class Monster : MonoBehaviour, IMoveable, IFightable
 {
     public string MonsterName { get; private set; }
     public Texture2D monsterTexture;

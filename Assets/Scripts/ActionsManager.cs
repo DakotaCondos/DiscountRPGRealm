@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
@@ -8,6 +9,7 @@ public class ActionsManager : MonoBehaviour
     private bool canFight = false;
     private bool canTrade = false;
     private bool canMove = false;
+    private bool canCancelMove = false;
     private bool canEndTurn = false;
 
     private ActionButtonsPanel actionButtonsPanel = null;
@@ -27,6 +29,7 @@ public class ActionsManager : MonoBehaviour
         actionButtonsPanel.EnableFightButton(canFight);
         actionButtonsPanel.EnableTradeButton(canTrade);
         actionButtonsPanel.EnableMoveButton(canMove);
+        actionButtonsPanel.EnableMoveCancelButton(canCancelMove);
         actionButtonsPanel.EnableEndTurnButton(canEndTurn);
     }
 
@@ -37,6 +40,7 @@ public class ActionsManager : MonoBehaviour
         canFight = false;
         canTrade = false;
         canMove = false;
+        canCancelMove = false;
         canEndTurn = false;
     }
 
@@ -46,7 +50,13 @@ public class ActionsManager : MonoBehaviour
 
         if (!actor.isPlayer)
         {
-            // Enable Nothing
+            {   // enable end turn until monster turns are automated
+
+                Debug.LogWarning("Disable non player actions");
+                canEndTurn = true;
+            }
+
+            // keep buttons disabled
             SetButtons();
             return;
         }
@@ -69,17 +79,23 @@ public class ActionsManager : MonoBehaviour
             return;
         }
 
+        //if mid movement
+        if (TurnState.TurnStage == TurnStages.BeginMovement)
+        {
+            canCancelMove = true;
+            SetButtons();
+            return;
+        }
+
         canInventory = true;
         canTrade = space.shopLevel > 0;
         canMove = !actor.player.hasMoved;
         canEndTurn = !canMove;
 
-        // If space has Team0(No Team) players or other teams players
-        if (space.spaceType != SpaceType.Town
-            && (space.playersAtSpace.Select(x => x.TeamID == 0).Count() > 0
-            || space.playersAtSpace.Select(x => x.TeamID != actor.player.TeamID).Count() > 0))
+        // If space has >1 Team0(No Team) players or other teams players
+        if (space.spaceType != SpaceType.Town)
         {
-            canFight = true;
+            canFight = space.GetFightableEntities(actor.player).Count > 0;
         }
 
         SetButtons();
@@ -106,6 +122,10 @@ public class ActionsManager : MonoBehaviour
     public void SelectMove()
     {
         TurnState.TriggerBeginMovement(turnManager.GetCurrentActor());
+    }
+    public void SelectCancelMove()
+    {
+        TurnState.TriggerEndMovement(turnManager.GetCurrentActor(), turnManager.GetCurrentActor().player.currentSpace);
     }
     public void SelectMenu()
     {

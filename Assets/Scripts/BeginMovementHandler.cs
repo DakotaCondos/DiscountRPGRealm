@@ -5,10 +5,15 @@ using UnityEngine;
 public class BeginMovementHandler : MonoBehaviour
 {
     GameBoard gameBoard;
+    ActionsManager actionsManager;
+    StatDisplay statDisplay;
     private void Awake()
     {
         gameBoard = FindObjectOfType<GameBoard>();
+        actionsManager = FindObjectOfType<ActionsManager>();
+        statDisplay = FindObjectOfType<StatDisplay>();
     }
+
     private void OnEnable()
     {
         TurnState.BeginMovement += HandleBeginMovement;
@@ -32,7 +37,8 @@ public class BeginMovementHandler : MonoBehaviour
                 space.TriggerSelectable(true);
             }
 
-            //possibly begin coroutine to 'Cancel' movement on right-click
+            actionsManager.DetermineActions(actor);
+            statDisplay.DisplayStats(actor.player.GetPower(), actor.player.GetMovement());
         }
         else
         {

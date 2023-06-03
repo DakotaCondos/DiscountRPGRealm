@@ -26,19 +26,24 @@ public class EndMovementHandler : MonoBehaviour
 
     private void HandleEndMovement(TurnActor actor, Space space)
     {
-        actor.player.currentSpace.RemovePlayerFromSpace(actor.player);
-        space.AddPlayerToSpace(actor.player);
-
         // stop all space movement effects
         foreach (Space item in gameBoard.allSpaces)
         {
             item.TriggerSelectable(false);
         }
 
-        // update player hasMoved
-        actor.player.hasMoved = true;
+        // if moving to the same space as player is occupying condider this as 'Cancled Movement'
+        if (!space.Equals(actor.player.currentSpace))
+        {
+            // move player
+            actor.player.currentSpace.RemovePlayerFromSpace(actor.player);
+            space.AddPlayerToSpace(actor.player);
+
+            // update player hasMoved
+            actor.player.hasMoved = true;
+        }
+
         actionsManager.DetermineActions(actor);
         statDisplay.DisplayStats(actor.player.GetPower(), actor.player.GetMovement());
-
     }
 }

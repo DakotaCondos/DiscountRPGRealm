@@ -7,6 +7,7 @@ public class ActionButtonsPanel : MonoBehaviour
     [SerializeField] GameObject fightButton;
     [SerializeField] GameObject tradeButton;
     [SerializeField] GameObject moveButton;
+    [SerializeField] GameObject moveCancelButton;
     [SerializeField] GameObject menuButton;
     [SerializeField] GameObject endTurnButton;
 
@@ -41,6 +42,11 @@ public class ActionButtonsPanel : MonoBehaviour
     public void EnableMoveButton(bool value)
     {
         EnableButton(moveButton, value);
+    }
+
+    public void EnableMoveCancelButton(bool value)
+    {
+        EnableButton(moveCancelButton, value);
     }
 
     public void EnableEndTurnButton(bool value)

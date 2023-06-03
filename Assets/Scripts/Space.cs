@@ -194,4 +194,28 @@ public class Space : MonoBehaviour
         Destroy(monsterPieceAtSpace);
         monsterPieceAtSpace = null;
     }
+
+    public List<IFightable> GetFightableEntities(Player playerFighting)
+    {
+        List<IFightable> returnable = new();
+
+        // Add Monster
+        if (monsterAtSpace != null) { returnable.Add(monsterAtSpace); }
+
+        // Add Valid Players
+        foreach (Player player in playersAtSpace)
+        {
+            if (player.Equals(playerFighting)) { continue; }
+
+            if (playerFighting.TeamID == 0)
+            {
+                returnable.Add(player);
+                continue;
+            }
+
+            if (playerFighting.TeamID != player.TeamID) { returnable.Add(player); }
+        }
+
+        return returnable;
+    }
 }

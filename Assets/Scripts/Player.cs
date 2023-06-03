@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [Serializable]
-public class Player : IMoveable
+public class Player : IMoveable, IFightable
 {
     public string PlayerName { get; private set; }
     public int TeamID { get; private set; }
