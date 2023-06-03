@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -5,12 +6,19 @@ using UnityEngine;
 
 public class CardMiniGame : MonoBehaviour
 {
+    [SerializeField] float cycleRateMinTime = 0.05f;
+    [SerializeField] float cycleRateMaxTime = 1f;
+    [SerializeField] float cycleDelayMultiplier = 0.5f;
     private bool isCardCycleRunning = false;
     private IEnumerator cardCycleCoroutine;
     [SerializeField] CardFlip cardFlip;
     [SerializeField] CardUI cardUI;
     public List<Texture2D> cardBacks = new();
     private int currentCardBackIndex = 0;
+    [SerializeField] float cardMovementMultiplier = 1;
+    private Vector3 startPos;
+
+    [SerializeField] AudioClip moveCardSound;
 
     // Start the Coroutine
     public void StartCardCycle(float duration)
@@ -20,7 +28,7 @@ public class CardMiniGame : MonoBehaviour
             Debug.Log("Card cycle is already running");
             return;
         }
-
+        startPos = cardUI.transform.position;
         cardCycleCoroutine = BeginCardCycle(duration);
         StartCoroutine(cardCycleCoroutine);
     }
@@ -39,6 +47,7 @@ public class CardMiniGame : MonoBehaviour
             StopCoroutine(cardCycleCoroutine);
             cardCycleCoroutine = null;
             isCardCycleRunning = false;
+            MoveCard(true);
         }
     }
 
@@ -51,20 +60,39 @@ public class CardMiniGame : MonoBehaviour
         while (timeElapsed < duration)
         {
             CycleCard();
-
+            MoveCard();
+            PlayCardMovementSound();
             yield return new WaitForSeconds(delay);
             timeElapsed += delay;
-            delay = (timeElapsed / duration) * 0.5f; // Increasing the delay after each call
+            delay = Mathf.Clamp((timeElapsed / duration) * cycleDelayMultiplier, cycleRateMinTime, cycleRateMaxTime); // Increasing the delay after each call
         }
+        MoveCard(true);
+        PlayCardMovementSound();
         CycleCard();
         FlipCard();
         isCardCycleRunning = false;
+    }
+
+    private void MoveCard(bool returnToStart = false)
+    {
+        if (returnToStart)
+        {
+            cardUI.transform.position = startPos;
+            return;
+        }
+
+        cardUI.transform.position = startPos + (Vector3)UnityEngine.Random.insideUnitCircle * cardMovementMultiplier;
     }
 
     private void CycleCard()
     {
         currentCardBackIndex = (currentCardBackIndex + 1 >= cardBacks.Count) ? 0 : currentCardBackIndex + 1;
         cardUI.SetCardDisplayBack(cardBacks[currentCardBackIndex]);
+    }
+
+    private void PlayCardMovementSound()
+    {
+        AudioManager.Instance.PlaySound(moveCardSound, AudioChannel.SFX);
     }
 
     private void FlipCard()

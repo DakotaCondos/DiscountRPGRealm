@@ -74,4 +74,59 @@ public class AudioManager : MonoBehaviour
         isSFXMuted = !IsSFXMuted;
         sfxChannel.mute = IsSFXMuted;
     }
+
+    // Play methods
+    public void PlaySound(AudioClip clip, AudioChannel channel)
+    {
+        switch (channel)
+        {
+            case AudioChannel.Music:
+                if (!isMusicMuted)
+                {
+                    musicChannel.clip = clip;
+                    musicChannel.Play();
+                }
+                break;
+            case AudioChannel.UI:
+                if (!isUIEffectsMuted)
+                {
+                    uiEffectsChannel.clip = clip;
+                    uiEffectsChannel.Play();
+                }
+                break;
+            case AudioChannel.SFX:
+                if (!isSFXMuted)
+                {
+                    sfxChannel.clip = clip;
+                    sfxChannel.Play();
+                }
+                break;
+        }
+    }
+
+    // Stop methods
+    public void StopSound(AudioChannel channel)
+    {
+        switch (channel)
+        {
+            case AudioChannel.Music:
+                musicChannel.Stop();
+                break;
+            case AudioChannel.UI:
+                uiEffectsChannel.Stop();
+                break;
+            case AudioChannel.SFX:
+                sfxChannel.Stop();
+                break;
+        }
+    }
+
+    // Method to stop all audio
+    public void StopAllSound()
+    {
+        musicChannel.Stop();
+        uiEffectsChannel.Stop();
+        sfxChannel.Stop();
+    }
+
 }
