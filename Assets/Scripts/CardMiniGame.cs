@@ -56,7 +56,7 @@ public class CardMiniGame : MonoBehaviour
             timeElapsed += delay;
             delay = (timeElapsed / duration) * 0.5f; // Increasing the delay after each call
         }
-
+        CycleCard();
         FlipCard();
         isCardCycleRunning = false;
     }

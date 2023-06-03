@@ -175,8 +175,8 @@ Camera:
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
-  orthographic: 0
-  orthographic size: 5
+  orthographic: 1
+  orthographic size: 0.24
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -823,7 +823,7 @@ Transform:
   m_GameObject: {fileID: 1377536807}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 1, z: -9}
-  m_LocalScale: {x: 0.0010685936, y: 0.0010685936, z: 0.0010685936}
+  m_LocalScale: {x: 0.000444206, y: 0.000444206, z: 0.000444206}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1631232857}
@@ -2270,10 +2270,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8215425293182977633, guid: 44a68a8cb14e69245812f8c62100911e, type: 3}
       propertyPath: OnClicked.m_PersistentCalls.m_Calls.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8215425293182977633, guid: 44a68a8cb14e69245812f8c62100911e, type: 3}
       propertyPath: OnClicked.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8215425293182977633, guid: 44a68a8cb14e69245812f8c62100911e, type: 3}
+      propertyPath: OnClicked.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8215425293182977633, guid: 44a68a8cb14e69245812f8c62100911e, type: 3}
@@ -2281,7 +2285,15 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1631232861}
     - target: {fileID: 8215425293182977633, guid: 44a68a8cb14e69245812f8c62100911e, type: 3}
+      propertyPath: OnClicked.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1631232862}
+    - target: {fileID: 8215425293182977633, guid: 44a68a8cb14e69245812f8c62100911e, type: 3}
       propertyPath: OnClicked.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8215425293182977633, guid: 44a68a8cb14e69245812f8c62100911e, type: 3}
+      propertyPath: OnClicked.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8215425293182977633, guid: 44a68a8cb14e69245812f8c62100911e, type: 3}
@@ -2289,11 +2301,23 @@ PrefabInstance:
       value: StopCardCycle
       objectReference: {fileID: 0}
     - target: {fileID: 8215425293182977633, guid: 44a68a8cb14e69245812f8c62100911e, type: 3}
+      propertyPath: OnClicked.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: ResetCard
+      objectReference: {fileID: 0}
+    - target: {fileID: 8215425293182977633, guid: 44a68a8cb14e69245812f8c62100911e, type: 3}
       propertyPath: OnClicked.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: CardMiniGame, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 8215425293182977633, guid: 44a68a8cb14e69245812f8c62100911e, type: 3}
+      propertyPath: OnClicked.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: CardFlip, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8215425293182977633, guid: 44a68a8cb14e69245812f8c62100911e, type: 3}
       propertyPath: OnClicked.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 8215425293182977633, guid: 44a68a8cb14e69245812f8c62100911e, type: 3}
+      propertyPath: OnClicked.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 8215425293182977635, guid: 44a68a8cb14e69245812f8c62100911e, type: 3}
@@ -2350,7 +2374,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8215425293189650344, guid: 44a68a8cb14e69245812f8c62100911e, type: 3}
       propertyPath: m_text
-      value: Stop
+      value: Reset
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 44a68a8cb14e69245812f8c62100911e, type: 3}
