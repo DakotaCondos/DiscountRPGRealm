@@ -13,6 +13,7 @@ public class GameBoard : MonoBehaviour
     private SpaceBuilder spaceBuilder;
     private LineDrawer lineDrawer;
     [SerializeField] float spaceConnectionRadius;
+    public ActorPieceMovement actorPieceMovement;
 
     public GameBoard()
     {
@@ -26,6 +27,7 @@ public class GameBoard : MonoBehaviour
 
         // May manually assign spaces to groups later for different Zones related to game areas
         allSpaces = FindObjectsOfType<Space>(true).ToList();
+        actorPieceMovement = FindObjectOfType<ActorPieceMovement>(true);
     }
 
     public void InitializeGameBoard()
@@ -147,5 +149,49 @@ public class GameBoard : MonoBehaviour
         }
 
         return spacesWithinDistance;
+    }
+
+    public List<Space> FindPath(Space start, Space end)
+    {
+        // Using BFS algorithm
+        var previousSpaces = new Dictionary<Space, Space>();
+        var queue = new Queue<Space>();
+        var visited = new HashSet<Space>();
+
+        queue.Enqueue(start);
+
+        while (queue.Count > 0)
+        {
+            var currentSpace = queue.Dequeue();
+
+            // We have reached the destination
+            if (currentSpace == end)
+            {
+                var path = new List<Space>();
+                while (currentSpace != null)
+                {
+                    path.Add(currentSpace);
+                    previousSpaces.TryGetValue(currentSpace, out currentSpace);
+                }
+                path.Reverse();
+                return path;
+            }
+
+            visited.Add(currentSpace);
+
+            foreach (var neighbor in currentSpace.ConnectedSpaces)
+            {
+                if (visited.Contains(neighbor) || neighbor.IsBlocking) continue;
+
+                if (!queue.Contains(neighbor))
+                {
+                    queue.Enqueue(neighbor);
+                    previousSpaces[neighbor] = currentSpace;
+                }
+            }
+        }
+
+        // No path found
+        throw new Exception($"No path found between {start.namePlate.Text} and {end.namePlate.Text}");
     }
 }

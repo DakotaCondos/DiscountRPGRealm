@@ -12,7 +12,8 @@ public enum TurnStages
     BeginBattle,
     EndBattle,
     BeginChallenge,
-    EndChallenge
+    EndChallenge,
+    MonsterTurn
 }
 
 public class TurnState : MonoBehaviour
@@ -20,6 +21,7 @@ public class TurnState : MonoBehaviour
     public static event Action StartGame;
     public static event Action EndGame;
     public static event Action<TurnActor> BeginTurn;
+    public static event Action<TurnActor> MonsterTurn;
     public static event Action<TurnActor> EndTurn;
     public static event Action<TurnActor> BeginMovement;
     public static event Action<TurnActor, Space> EndMovement;
@@ -48,6 +50,11 @@ public class TurnState : MonoBehaviour
     {
         turnStage = TurnStages.BeginTurn;
         BeginTurn?.Invoke(actor);
+    }
+    public static void TriggerMonsterTurn(TurnActor actor)
+    {
+        turnStage = TurnStages.MonsterTurn;
+        MonsterTurn?.Invoke(actor);
     }
 
     public static void TriggerEndTurn(TurnActor actor)
