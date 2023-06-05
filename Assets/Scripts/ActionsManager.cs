@@ -50,7 +50,7 @@ public class ActionsManager : MonoBehaviour
 
         if (!actor.isPlayer)
         {
-            {   // enable end turn until monster turns are automated
+            {   // enabling end-turn option until monster turns are automated
 
                 Debug.LogWarning("Disable non player actions");
                 canEndTurn = true;
@@ -105,19 +105,19 @@ public class ActionsManager : MonoBehaviour
 
     public void SelectInventory()
     {
-
+        print("SelectInventory");
     }
     public void SelectInteract()
     {
-
+        print("SelectInteract");
     }
     public void SelectFight()
     {
-
+        print("SelectFight");
     }
     public void SelectTrade()
     {
-
+        print("SelectTrade");
     }
     public void SelectMove()
     {
@@ -129,11 +129,11 @@ public class ActionsManager : MonoBehaviour
     }
     public void SelectMenu()
     {
-
+        print("SelectMenu");
     }
     public void SelectEndTurn()
     {
-
+        turnManager.NextTurn();
     }
     #endregion
 }

@@ -76,7 +76,7 @@ public class AudioManager : MonoBehaviour
     }
 
     // Play methods
-    public void PlaySound(AudioClip clip, AudioChannel channel)
+    public void PlaySound(AudioClip clip, AudioChannel channel, bool looped = false)
     {
         switch (channel)
         {
@@ -84,6 +84,7 @@ public class AudioManager : MonoBehaviour
                 if (!isMusicMuted)
                 {
                     musicChannel.clip = clip;
+                    musicChannel.loop = looped;
                     musicChannel.Play();
                 }
                 break;
@@ -91,6 +92,7 @@ public class AudioManager : MonoBehaviour
                 if (!isUIEffectsMuted)
                 {
                     uiEffectsChannel.clip = clip;
+                    uiEffectsChannel.loop = looped;
                     uiEffectsChannel.Play();
                 }
                 break;
@@ -98,6 +100,7 @@ public class AudioManager : MonoBehaviour
                 if (!isSFXMuted)
                 {
                     sfxChannel.clip = clip;
+                    sfxChannel.loop = looped;
                     sfxChannel.Play();
                 }
                 break;

@@ -46,10 +46,8 @@ public class Player : IMoveable, IFightable
 
     public int GetMovement()
     {
-        Debug.LogWarning("Revert Movement Changed"); return 3;
-
-        //int movementLevel = (level / 2 > 1) ? level / 2 : 1;
-        //return movementLevel + movementBonusItems + movementBonusPlayer;
+        int movementLevel = (level / 3 >= 1) ? level / 3 : 1;
+        return movementLevel + movementBonusItems + movementBonusPlayer;
     }
 
     public void Move(Space space, int speed)
