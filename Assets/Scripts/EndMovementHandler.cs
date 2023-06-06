@@ -27,6 +27,8 @@ public class EndMovementHandler : MonoBehaviour
 
     private async void HandleEndMovement(TurnActor actor, Space endSpace)
     {
+        if (ApplicationManager.Instance.handlerNotifications) { ConsolePrinter.PrintToConsole($"HandleEndMovement({actor.player.PlayerName})", Color.cyan); }
+
         // stop all space movement effects
         foreach (Space item in gameBoard.allSpaces)
         {

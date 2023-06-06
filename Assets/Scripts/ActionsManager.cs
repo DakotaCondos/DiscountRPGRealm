@@ -1,3 +1,5 @@
+using Nova;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -7,6 +9,7 @@ public class ActionsManager : MonoBehaviour
     private bool canInventory = false;
     private bool canInteract = false;
     private bool canFight = false;
+    private bool hasFought = false;
     private bool canTrade = false;
     private bool canMove = false;
     private bool canCancelMove = false;
@@ -15,12 +18,33 @@ public class ActionsManager : MonoBehaviour
     private ActionButtonsPanel actionButtonsPanel = null;
     private TurnManager turnManager = null;
 
+    public PanelSwitcher panelSwitcher;
+    [Header("Panels")]
+    public UIBlock2D mainPanel;
+    public UIBlock2D inventoryPanel;
+    public UIBlock2D shopPanel;
+    public UIBlock2D fightPanelPvP;
+    public UIBlock2D fightPanelPvM;
+    public UIBlock2D optionsPanel;
+
+    public static ActionsManager Instance { get; private set; }
+
     private void Awake()
     {
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+            return;
+        }
+
         actionButtonsPanel = FindObjectOfType<ActionButtonsPanel>(true);
         turnManager = FindObjectOfType<TurnManager>(true);
-        if (actionButtonsPanel == null) { Debug.LogError("ActionsManager could not find ActionButtonsPanel"); }
     }
+
 
     public void SetButtons()
     {
@@ -35,6 +59,7 @@ public class ActionsManager : MonoBehaviour
 
     private void ResetState()
     {
+        if (TurnState.TurnStage == TurnStages.BeginTurn) { hasFought = false; }
         canInventory = false;
         canInteract = false;
         canFight = false;
@@ -47,6 +72,7 @@ public class ActionsManager : MonoBehaviour
     public void DetermineActions(TurnActor actor)
     {
         ResetState();
+        panelSwitcher.SetActivePanel(mainPanel);
 
         if (!actor.isPlayer)
         {
@@ -65,9 +91,8 @@ public class ActionsManager : MonoBehaviour
 
         if (space.hasMonster)
         {
-            canInventory = true;
-            canFight = true;
             SetButtons();
+            TriggerMonsterFightUI(actor.player, space.monsterAtSpace);
             return;
         }
 
@@ -93,12 +118,23 @@ public class ActionsManager : MonoBehaviour
         canEndTurn = !canMove;
 
         // If space has >1 Team0(No Team) players or other teams players
-        if (space.spaceType != SpaceType.Town)
+        if (space.spaceType != SpaceType.Town && !hasFought)
         {
             canFight = space.GetFightableEntities(actor.player).Count > 0;
         }
 
         SetButtons();
+    }
+
+    private void TriggerMonsterFightUI(Player player, Monster monsterAtSpace)
+    {
+        panelSwitcher.SetActivePanel(fightPanelPvM);
+        fightPanelPvM.GetComponent<FightMonsterPanelUI>().CreatePvM(player, monsterAtSpace);
+    }
+
+    public void SetHasFought(bool value)
+    {
+        hasFought = value;
     }
 
     #region ButtonMethods
@@ -114,6 +150,11 @@ public class ActionsManager : MonoBehaviour
     public void SelectFight()
     {
         print("SelectFight");
+        panelSwitcher.SetActivePanel(fightPanelPvP);
+        FightPanelUI fp = fightPanelPvP.GetComponent<FightPanelUI>();
+        fp.CreatePlayer(turnManager.GetCurrentActor().player);
+        List<Player> fightable = turnManager.GetCurrentActor().player.currentSpace.GetFightablePlayers(turnManager.GetCurrentActor().player);
+        fp.CreateButtons(fightable);
     }
     public void SelectTrade()
     {

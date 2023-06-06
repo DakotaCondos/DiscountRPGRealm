@@ -14,6 +14,21 @@ public class MonsterManager : MonoBehaviour
     public float spawnChance = 0.25f; // Percentage chance to spawn a monster
     public float moveChance = 0.25f; // Percentage chance to move a monster
 
+    public static MonsterManager Instance { get; private set; }
+
+    private void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+            return;
+        }
+    }
+
     private void Start()
     {
         spawnableSpaces = GameBoard.Instance.allSpaces.Where(space => space.canSpawnMonsters).ToList();
@@ -80,12 +95,24 @@ public class MonsterManager : MonoBehaviour
         TaskHelper helper = new TaskHelper();
 
         // Perform your game board movement logic asynchronously here
-        print($"Moving {monster.MonsterName} from {monster.currentSpace.namePlate.Text} to {endSpace.namePlate.Text}");
+        //print($"Moving {monster.MonsterName} from {monster.currentSpace.namePlate.Text} to {endSpace.namePlate.Text}");
         GameBoard.Instance.actorPieceMovement.MoveMonster(monster, monster.currentSpace, endSpace, helper);
 
         while (!helper.isComplete)
         {
             await Task.Delay(100); // Wait for 100 milliseconds before checking again
         }
+    }
+
+    public void KillMonster(Monster monster, Player player)
+    {
+        int xpToAdd = monster.power / 20;
+        if (xpToAdd <= 0) { xpToAdd = 1; }
+        int moneyDropped = 4 + (monster.power / 20);
+        player.AddXP(xpToAdd);
+        player.AddMoney(moneyDropped);
+        monsters.Remove(monster);
+        monster.currentSpace.RemoveMonsterFromSpace();
+        defeatedMonsters++;
     }
 }

@@ -8,6 +8,7 @@ public class ApplicationManager : MonoBehaviour
     public static ApplicationManager Instance { get; private set; }
 
     public List<Texture2D> playerTokens = new();
+    public bool handlerNotifications = true;
 
     private void Awake()
     {

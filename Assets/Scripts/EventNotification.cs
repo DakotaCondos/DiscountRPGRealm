@@ -13,8 +13,10 @@ public class EventNotification : MonoBehaviour
         TurnState.EndTurn += OnEndTurn;
         TurnState.BeginMovement += OnBeginMovement;
         TurnState.EndMovement += OnEndMovement;
-        TurnState.BeginBattle += OnBeginBattle;
-        TurnState.EndBattle += OnEndBattle;
+        TurnState.BeginBattlePvP += OnBeginBattlePvP;
+        TurnState.BeginBattlePvM += OnBeginBattlePvM;
+        TurnState.EndBattlePvP += OnEndBattlePvP;
+        TurnState.EndBattlePvM += OnEndBattlePvM;
         TurnState.BeginChallenge += OnBeginChallenge;
         TurnState.EndChallenge += OnEndChallenge;
     }
@@ -26,8 +28,10 @@ public class EventNotification : MonoBehaviour
         TurnState.EndTurn -= OnEndTurn;
         TurnState.BeginMovement -= OnBeginMovement;
         TurnState.EndMovement -= OnEndMovement;
-        TurnState.BeginBattle -= OnBeginBattle;
-        TurnState.EndBattle -= OnEndBattle;
+        TurnState.BeginBattlePvP -= OnBeginBattlePvP;
+        TurnState.BeginBattlePvM -= OnBeginBattlePvM;
+        TurnState.EndBattlePvP -= OnEndBattlePvP;
+        TurnState.EndBattlePvM -= OnEndBattlePvM;
         TurnState.BeginChallenge -= OnBeginChallenge;
         TurnState.EndChallenge -= OnEndChallenge;
     }
@@ -61,14 +65,24 @@ public class EventNotification : MonoBehaviour
         Debug.Log($"Notification EndMovement: {actor.player.PlayerName}");
     }
 
-    private void OnBeginBattle(TurnActor actor)
+    private void OnBeginBattlePvP(Player player, Player oponent)
     {
-        Debug.Log($"Notification BeginBattle: {actor.player.PlayerName}");
+        Debug.Log($"Notification BeginBattlePvP: {player.PlayerName} vs. {oponent.PlayerName}");
     }
 
-    private void OnEndBattle(TurnActor actor)
+    private void OnBeginBattlePvM(Player player, Monster oponent)
     {
-        Debug.Log($"Notification EndBattle: {actor.player.PlayerName}");
+        Debug.Log($"Notification BeginBattlePvM: {player.PlayerName} vs. {oponent.MonsterName}");
+    }
+
+    private void OnEndBattlePvP(Player player, Player oponent, bool won)
+    {
+        Debug.Log($"Notification EndBattlePvP: {player.PlayerName} vs. {oponent.PlayerName}");
+    }
+
+    private void OnEndBattlePvM(Player player, Monster oponent, bool won)
+    {
+        Debug.Log($"Notification EndBattlePvM: {player.PlayerName} vs. {oponent.MonsterName}");
     }
 
     private void OnBeginChallenge(TurnActor actor)

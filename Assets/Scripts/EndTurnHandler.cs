@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
 using UnityEngine;
 
 public class EndTurnHandler : MonoBehaviour
@@ -29,7 +30,8 @@ public class EndTurnHandler : MonoBehaviour
 
     public void HandleEndTurn(TurnActor actor)
     {
-        // Handle EndTurn event here
+        if (ApplicationManager.Instance.handlerNotifications) { ConsolePrinter.PrintToConsole($"HandleEndTurn({actor.player.PlayerName})", Color.cyan); }
+
         turnOrderPanel.UpdatePanel();
     }
 }

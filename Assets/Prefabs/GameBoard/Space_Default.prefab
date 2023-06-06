@@ -318,7 +318,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5056120793686642508}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -1}
+  m_LocalPosition: {x: 0, y: 0, z: -2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1583,7 +1583,13 @@ MonoBehaviour:
   playerPieceLocation: {fileID: 6796673612246262850}
   namePlate: {fileID: 6796673612070076722}
   interactableNova: {fileID: 4341353522670308453}
-  monsterAtSpace: {fileID: 0}
+  monsterAtSpace:
+    monsterTexture: {fileID: 0}
+    power: 0
+    doesMove: 0
+    battlecry: {fileID: 0}
+    currentSpace: {fileID: 0}
+  hasMonster: 0
   monsterPieceAtSpace: {fileID: 0}
   playersAtSpace: []
   playersPieces: []

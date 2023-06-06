@@ -25,6 +25,8 @@ public class BeginChallengeHandler : MonoBehaviour
 
     private void HandleBeginChallenge(TurnActor actor)
     {
+        if (ApplicationManager.Instance.handlerNotifications) { ConsolePrinter.PrintToConsole($"HandleBeginChallenge({actor.player.PlayerName})", Color.cyan); }
+
         // Handle BeginChallenge event here
     }
 }

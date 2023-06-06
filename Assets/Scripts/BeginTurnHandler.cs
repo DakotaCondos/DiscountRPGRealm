@@ -34,6 +34,8 @@ public class BeginTurnHandler : MonoBehaviour
 
     private void HandleBeginTurn(TurnActor actor)
     {
+        if (ApplicationManager.Instance.handlerNotifications) { ConsolePrinter.PrintToConsole($"HandleBeginTurn({actor.player.PlayerName})", Color.cyan); }
+
         if (!actor.isPlayer) { TurnState.TriggerMonsterTurn(actor); return; }
 
         actor.player.hasMoved = false;
@@ -54,7 +56,8 @@ public class BeginTurnHandler : MonoBehaviour
 
     private async void HandleMonsterTurn(TurnActor actor)
     {
-        Debug.LogWarning("Monster Turn Goes Here");
+        if (ApplicationManager.Instance.handlerNotifications) { ConsolePrinter.PrintToConsole($"HandleMonsterTurn({actor.player.PlayerName})", Color.cyan); }
+
         // do monster stuff
         await monsterManager.ProcessMonsterTurn();
         // end turn

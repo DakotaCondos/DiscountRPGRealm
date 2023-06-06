@@ -25,7 +25,7 @@ public class Space : MonoBehaviour
     public bool canSpawnMonsters = true;
     public int shopLevel = 0;
     public bool hasMandatoryEvent = false;
-    [SerializeField] bool isStartingSpace = false;
+    public bool isStartingSpace = false;
     public List<Space> ConnectedSpaces = new List<Space>();
     public SpaceSO blueprint = null;
 
@@ -91,11 +91,6 @@ public class Space : MonoBehaviour
         {
             StopColorCycle();
         }
-    }
-
-    public void SetSpaceBlocked(bool value)
-    {
-        IsBlocking = value;
     }
 
     public void SetSpaceName(string spaceName)
@@ -189,6 +184,7 @@ public class Space : MonoBehaviour
         GameObject piece = Instantiate(monsterPiecePrefab, monsterPieceLocation);
         piece.GetComponent<MonsterPiece>().monster = monster;
         monsterPieceAtSpace = piece;
+        IsBlocking = true;
     }
 
     public void RemoveMonsterFromSpace()
@@ -197,6 +193,7 @@ public class Space : MonoBehaviour
         hasMonster = false;
         Destroy(monsterPieceAtSpace);
         monsterPieceAtSpace = null;
+        IsBlocking = false;
     }
 
     public List<IFightable> GetFightableEntities(Player playerFighting)
@@ -205,6 +202,15 @@ public class Space : MonoBehaviour
 
         // Add Monster
         if (hasMonster) { returnable.Add(monsterAtSpace); }
+
+        returnable.AddRange(GetFightablePlayers(playerFighting));
+
+        return returnable;
+    }
+
+    public List<Player> GetFightablePlayers(Player playerFighting)
+    {
+        List<Player> returnable = new();
 
         // Add Valid Players
         foreach (Player player in playersAtSpace)

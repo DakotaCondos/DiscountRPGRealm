@@ -18,6 +18,10 @@ public class Player : IMoveable, IFightable
     public int movementBonusItems = 0;
     public int powerBonusPlayer = 0;
     public int powerBonusItems = 0;
+    public int powerBonusItemsVsPlayer = 0;
+    public int powerBonusItemsVsMonster = 0;
+    public int money = 0;
+
     public Space currentSpace = null;
     public bool hasMoved = false;
 
@@ -38,6 +42,10 @@ public class Player : IMoveable, IFightable
         level += levelsGained;
         xp %= xpRequiredToLevel;
     }
+    public void AddMoney(int value)
+    {
+        money = Mathf.Clamp(money + value, 0, int.MaxValue);
+    }
 
     public void AddPower(int value)
     {
@@ -52,6 +60,14 @@ public class Player : IMoveable, IFightable
     public int GetPower()
     {
         return level * 3 + powerBonusItems + powerBonusPlayer;
+    }
+    public int GetPowerVsPlayer()
+    {
+        return level * 3 + powerBonusItems + powerBonusPlayer + powerBonusItemsVsPlayer;
+    }
+    public int GetPowerVsMonster()
+    {
+        return level * 3 + powerBonusItems + powerBonusPlayer + powerBonusItemsVsMonster;
     }
 
     public int GetMovement()

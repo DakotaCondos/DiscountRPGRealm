@@ -190,6 +190,13 @@ public class GameBoard : MonoBehaviour
             foreach (var neighbor in currentSpace.ConnectedSpaces)
             {
                 if (visited.Contains(neighbor)) continue;
+
+                if (neighbor.Equals(start))
+                {
+                    queue.Enqueue(neighbor);
+                    previousSpaces[neighbor] = currentSpace;
+                }
+
                 if (neighbor.IsBlocking && !ignoreBlocking) continue;
 
                 if (!queue.Contains(neighbor))
@@ -200,7 +207,11 @@ public class GameBoard : MonoBehaviour
             }
         }
 
-        // No path found
-        throw new Exception($"No path found between {start.namePlate.Text} and {end.namePlate.Text}");
+        // No path found return direct path
+        Debug.LogWarning($"No path found between {start.namePlate.Text} and {end.namePlate.Text}. Returning Default");
+        var defaultPath = new List<Space>();
+        defaultPath.Add(start);
+        defaultPath.Add(end);
+        return defaultPath;
     }
 }

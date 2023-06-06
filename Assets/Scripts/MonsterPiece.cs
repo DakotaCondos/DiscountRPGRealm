@@ -16,5 +16,6 @@ public class MonsterPiece : MonoBehaviour
         backingBlock.Color = Color.red;
         imageBlock.SetImage(monster.monsterTexture);
         hoverLabel.Text = monster.MonsterName;
+        powerLabel.Text = monster.power.ToString();
     }
 }

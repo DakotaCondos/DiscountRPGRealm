@@ -9,8 +9,10 @@ public enum TurnStages
     EndTurn,
     BeginMovement,
     EndMovement,
-    BeginBattle,
-    EndBattle,
+    BeginBattlePvP,
+    BeginBattlePvM,
+    EndBattlePvP,
+    EndBattlePvM,
     BeginChallenge,
     EndChallenge,
     MonsterTurn
@@ -25,8 +27,10 @@ public class TurnState : MonoBehaviour
     public static event Action<TurnActor> EndTurn;
     public static event Action<TurnActor> BeginMovement;
     public static event Action<TurnActor, Space> EndMovement;
-    public static event Action<TurnActor> BeginBattle;
-    public static event Action<TurnActor> EndBattle;
+    public static event Action<Player, Player> BeginBattlePvP;
+    public static event Action<Player, Monster> BeginBattlePvM;
+    public static event Action<Player, Player, bool> EndBattlePvP;
+    public static event Action<Player, Monster, bool> EndBattlePvM;
     public static event Action<TurnActor> BeginChallenge;
     public static event Action<TurnActor> EndChallenge;
 
@@ -75,16 +79,29 @@ public class TurnState : MonoBehaviour
         EndMovement?.Invoke(actor, space);
     }
 
-    public static void TriggerBeginBattle(TurnActor actor)
+    public static void TriggerBeginBattlePvP(Player player, Player opponent)
     {
-        turnStage = TurnStages.BeginBattle;
-        BeginBattle?.Invoke(actor);
+        print($"TriggerBeginBattlePvP called {player.PlayerName} vs. {opponent.PlayerName}");
+        turnStage = TurnStages.BeginBattlePvP;
+        BeginBattlePvP?.Invoke(player, opponent);
     }
 
-    public static void TriggerEndBattle(TurnActor actor)
+    public static void TriggerBeginBattlePvM(Player player, Monster monster)
     {
-        turnStage = TurnStages.EndBattle;
-        EndBattle?.Invoke(actor);
+        turnStage = TurnStages.BeginBattlePvM;
+        BeginBattlePvM?.Invoke(player, monster);
+    }
+
+    public static void TriggerEndBattlePvP(Player player, Player opponent, bool win)
+    {
+        turnStage = TurnStages.EndBattlePvP;
+        EndBattlePvP?.Invoke(player, opponent, win);
+    }
+
+    public static void TriggerEndBattlePvM(Player player, Monster monster, bool win)
+    {
+        turnStage = TurnStages.EndBattlePvM;
+        EndBattlePvM?.Invoke(player, monster, win);
     }
 
     public static void TriggerBeginChallenge(TurnActor actor)

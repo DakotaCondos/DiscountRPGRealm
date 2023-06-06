@@ -8,7 +8,20 @@ public class TurnManager : MonoBehaviour
     public List<TurnActor> players;
     // A queue to hold the turn order
     public Queue<TurnActor> turnOrder;
+    public static TurnManager Instance { get; private set; }
 
+    private void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+            return;
+        }
+    }
     private void Start()
     {
         // Initialize the player list and the turn order

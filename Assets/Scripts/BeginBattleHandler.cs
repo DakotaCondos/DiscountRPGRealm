@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
 using UnityEngine;
 
 public class BeginBattleHandler : MonoBehaviour
@@ -15,16 +16,28 @@ public class BeginBattleHandler : MonoBehaviour
     }
     private void OnEnable()
     {
-        TurnState.BeginBattle += HandleBeginBattle;
+        TurnState.BeginBattlePvP += HandleBeginBattlePvP;
+        TurnState.BeginBattlePvM += HandleBeginBattlePvM;
     }
 
     private void OnDisable()
     {
-        TurnState.BeginBattle -= HandleBeginBattle;
+        TurnState.BeginBattlePvP -= HandleBeginBattlePvP;
+        TurnState.BeginBattlePvM -= HandleBeginBattlePvM;
     }
 
-    private void HandleBeginBattle(TurnActor actor)
+    private void HandleBeginBattlePvP(Player player, Player opponent)
     {
-        // Handle BeginBattle event here
+        if (ApplicationManager.Instance.handlerNotifications) { ConsolePrinter.PrintToConsole($"HandleBeginBattlePvP({player.PlayerName}, {opponent.PlayerName})", Color.cyan); }
+
+
+        CombatManager.Instance.CreateEncounter(player, opponent);
+    }
+
+    private void HandleBeginBattlePvM(Player player, Monster monster)
+    {
+        if (ApplicationManager.Instance.handlerNotifications) { ConsolePrinter.PrintToConsole($"HandleBeginBattlePvM({player.PlayerName}, {monster.MonsterName})", Color.cyan); }
+
+        CombatManager.Instance.CreateEncounter(player, monster);
     }
 }

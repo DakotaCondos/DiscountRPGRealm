@@ -26,25 +26,20 @@ public class BeginMovementHandler : MonoBehaviour
 
     private void HandleBeginMovement(TurnActor actor)
     {
-        if (actor.isPlayer)
-        {
-            Space current = actor.player.currentSpace;
+        if (ApplicationManager.Instance.handlerNotifications) { ConsolePrinter.PrintToConsole($"HandleBeginMovement({actor.player.PlayerName})", Color.cyan); }
 
-            List<Space> availableSpaces = gameBoard.SpacesInRange(current, actor.player.GetMovement());
-            // apply movement effects
-            foreach (Space space in availableSpaces)
-            {
-                space.TriggerSelectable(true);
-            }
+        Space current = actor.player.currentSpace;
 
-            actionsManager.DetermineActions(actor);
-            statDisplay.DisplayStats(actor.player.GetPower(), actor.player.GetMovement());
-        }
-        else
+        List<Space> availableSpaces = gameBoard.SpacesInRange(current, actor.player.GetMovement());
+        // apply movement effects
+        foreach (Space space in availableSpaces)
         {
-            // Foreach monster, if moveable has x% chance to move to adjecent space that is not blocked
-            // unblock current space and block moved to space (if any)
+            space.TriggerSelectable(true);
         }
+
+        actionsManager.DetermineActions(actor);
+        statDisplay.DisplayStats(actor.player.GetPower(), actor.player.GetMovement());
+
 
     }
 }
