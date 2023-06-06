@@ -9,12 +9,14 @@ public class BeginTurnHandler : MonoBehaviour
     ActionsManager actionsManager;
     StatDisplay statDisplay;
     TurnManager turnManager;
+    MonsterManager monsterManager;
     private void Awake()
     {
         gameBoard = FindObjectOfType<GameBoard>();
         actionsManager = FindObjectOfType<ActionsManager>();
         turnManager = FindObjectOfType<TurnManager>();
         statDisplay = FindObjectOfType<StatDisplay>();
+        monsterManager = FindObjectOfType<MonsterManager>();
     }
 
     private void OnEnable()
@@ -50,11 +52,11 @@ public class BeginTurnHandler : MonoBehaviour
         }
     }
 
-    private void HandleMonsterTurn(TurnActor actor)
+    private async void HandleMonsterTurn(TurnActor actor)
     {
         Debug.LogWarning("Monster Turn Goes Here");
         // do monster stuff
-
+        await monsterManager.ProcessMonsterTurn();
         // end turn
         turnManager.NextTurn();
     }

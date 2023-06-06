@@ -63,7 +63,7 @@ public class ActionsManager : MonoBehaviour
 
         Space space = actor.player.currentSpace;
 
-        if (space.monsterAtSpace != null)
+        if (space.hasMonster)
         {
             canInventory = true;
             canFight = true;

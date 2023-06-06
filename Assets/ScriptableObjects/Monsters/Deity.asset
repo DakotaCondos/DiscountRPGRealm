@@ -16,4 +16,18 @@ MonoBehaviour:
   power: 100
   doesMove: 1
   battlecry: {fileID: 0}
-  monsterTexture: []
+  monsterTextures:
+  - {fileID: 2800000, guid: 4bcb7d401ac248f4e9025ff7afbab91f, type: 3}
+  - {fileID: 2800000, guid: eb01eba95fa97434fa83256125dfc9c5, type: 3}
+  - {fileID: 2800000, guid: 05ec44987a78f754aa642fa19adb1f01, type: 3}
+  - {fileID: 2800000, guid: 0ab0067c147a86146920195313947577, type: 3}
+  - {fileID: 2800000, guid: f544b6c153c5ccc438df892d3ff5d5f4, type: 3}
+  - {fileID: 2800000, guid: 1d730156ecb839d468412a7a5d8d7a9e, type: 3}
+  - {fileID: 2800000, guid: 17bd951729d55a945bcebf71a52d25dd, type: 3}
+  - {fileID: 2800000, guid: de027cda38f655742a3165071e0ef5e6, type: 3}
+  - {fileID: 2800000, guid: d0b0e731e11143546acd3bf3e7de1de9, type: 3}
+  - {fileID: 2800000, guid: 35e68b8d64937bc458bb9dc19fbe00a8, type: 3}
+  - {fileID: 2800000, guid: 95adde1a6ae8f9046886e4a59a1b2aa9, type: 3}
+  - {fileID: 2800000, guid: f564f83b6ff5c264d9e35e9ec9a50702, type: 3}
+  - {fileID: 2800000, guid: 72c824386abd58240922e3a73dd4391b, type: 3}
+  - {fileID: 2800000, guid: 326232f8eae9fd14db5d767677efc365, type: 3}

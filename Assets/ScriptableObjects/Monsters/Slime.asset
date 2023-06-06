@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80f437e1ba0d71140832eaaf33e28913, type: 3}
+  m_Name: Slime
+  m_EditorClassIdentifier: 
+  MonsterName: Slime
+  power: 0
+  doesMove: 1
+  battlecry: {fileID: 8300000, guid: 15fe3556465983d42bcfc2b0453cbdd1, type: 3}
+  monsterTextures:
+  - {fileID: 2800000, guid: 4fc9d768c85081640a42b41526a5541f, type: 3}
+  - {fileID: 2800000, guid: d0357407da36bd246bead95055542b6e, type: 3}
+  - {fileID: 2800000, guid: e0b93e892392c174c83860b737e87817, type: 3}
+  - {fileID: 2800000, guid: 92eb2678b3768654fbc14d5dbc6a1c88, type: 3}

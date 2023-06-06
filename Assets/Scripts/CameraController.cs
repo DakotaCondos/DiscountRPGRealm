@@ -17,14 +17,25 @@ public class CameraController : MonoBehaviour
     public float maxOrthographicSize = 10f; // Maximum orthographic size
 
     private Camera mainCamera;
+    private GameObject focusObject = null;
+    private float defaultZ = 0;
 
     void Start()
     {
         mainCamera = GetComponent<Camera>();
+        defaultZ = transform.position.z;
     }
 
     void Update()
     {
+        if (focusObject != null)
+        {
+            Vector3 focusPosition = focusObject.transform.position;
+            focusPosition.z = defaultZ;
+            transform.position = focusPosition;
+            return;
+        }
+
         // Get input for X and Y movement
         float moveX = Input.GetAxis("Horizontal");
         float moveY = Input.GetAxis("Vertical");
@@ -50,5 +61,15 @@ public class CameraController : MonoBehaviour
         newOrthographicSize = Mathf.Clamp(newOrthographicSize, minOrthographicSize, maxOrthographicSize);
 
         mainCamera.orthographicSize = newOrthographicSize;
+    }
+
+    public void SetFocusObject(GameObject gameObject)
+    {
+        focusObject = gameObject;
+    }
+
+    public void ClearFocusObject()
+    {
+        focusObject = null;
     }
 }

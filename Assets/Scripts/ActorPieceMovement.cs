@@ -18,20 +18,35 @@ public class ActorPieceMovement : MonoBehaviour
     GameBoard GameBoard;
     private int currentPointIndex = 0;
 
+    private CameraController cameraController;
+
     private void Awake()
     {
         GameBoard = FindObjectOfType<GameBoard>();
+        cameraController = FindObjectOfType<CameraController>();
         gameObject.SetActive(false);
     }
 
     public void MoveActor(TurnActor turnActor, Space start, Space end, TaskHelper helper)
     {
         //Change PivotPiece to look like actor
-        backPlate.Color = (turnActor.isPlayer) ? colorIDs[turnActor.player.TeamID] : colorIDs[7];
+        backPlate.Color = colorIDs[turnActor.player.TeamID];
         picture.SetImage(turnActor.player.playerTexture);
+        Moving(start, end, helper);
+    }
+    public void MoveMonster(Monster monster, Space start, Space end, TaskHelper helper)
+    {
+        //Change PivotPiece to look like actor
+        backPlate.Color = colorIDs[7];
+        picture.SetImage(monster.monsterTexture);
+        helper.flag = true; // findpath ignores blocked
+        Moving(start, end, helper);
+    }
 
+    private void Moving(Space start, Space end, TaskHelper helper)
+    {
         //get movement point
-        List<Space> path = GameBoard.FindPath(start, end);
+        List<Space> path = GameBoard.FindPath(start, end, helper.flag);
         List<Transform> points = new();
         foreach (var space in path)
         {
@@ -39,11 +54,12 @@ public class ActorPieceMovement : MonoBehaviour
         }
 
         gameObject.SetActive(true);
+        cameraController.SetFocusObject(gameObject);
         // move piece
-        StartCoroutine(MoveToPoints(points.ToArray(), turnActor, end, helper));
+        StartCoroutine(MoveToPoints(points.ToArray(), helper));
     }
 
-    private IEnumerator MoveToPoints(Transform[] points, TurnActor actor, Space end, TaskHelper helper)
+    private IEnumerator MoveToPoints(Transform[] points, TaskHelper helper)
     {
         // Move to the first point
         if (points.Length > 0)
@@ -69,7 +85,8 @@ public class ActorPieceMovement : MonoBehaviour
         }
 
         // Coroutine finished
-        SetPieces(actor, end, helper);
+        cameraController.ClearFocusObject();
+        helper.isComplete = true;
         gameObject.SetActive(false);
     }
 
@@ -93,13 +110,5 @@ public class ActorPieceMovement : MonoBehaviour
     private void PlaySound()
     {
         AudioManager.Instance.PlaySound(jumpSound, AudioChannel.SFX);
-    }
-
-    private void SetPieces(TurnActor actor, Space end, TaskHelper helper)
-    {
-        // Implement your logic to set the pieces after the movement is complete
-        Debug.Log("Setting pieces!");
-
-        helper.isComplete = true;
     }
 }

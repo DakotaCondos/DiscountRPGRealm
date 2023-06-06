@@ -43,6 +43,7 @@ public class Space : MonoBehaviour
 
     // Current State
     public Monster monsterAtSpace;
+    public bool hasMonster = false;
     public GameObject monsterPieceAtSpace;
     public List<Player> playersAtSpace;
     public List<GameObject> playersPieces = new();
@@ -183,6 +184,7 @@ public class Space : MonoBehaviour
     public void AddMonsterToSpace(Monster monster)
     {
         monsterAtSpace = monster;
+        hasMonster = true;
         monster.currentSpace = this;
         GameObject piece = Instantiate(monsterPiecePrefab, monsterPieceLocation);
         piece.GetComponent<MonsterPiece>().monster = monster;
@@ -192,6 +194,7 @@ public class Space : MonoBehaviour
     public void RemoveMonsterFromSpace()
     {
         monsterAtSpace = null;
+        hasMonster = false;
         Destroy(monsterPieceAtSpace);
         monsterPieceAtSpace = null;
     }
@@ -201,7 +204,7 @@ public class Space : MonoBehaviour
         List<IFightable> returnable = new();
 
         // Add Monster
-        if (monsterAtSpace != null) { returnable.Add(monsterAtSpace); }
+        if (hasMonster) { returnable.Add(monsterAtSpace); }
 
         // Add Valid Players
         foreach (Player player in playersAtSpace)

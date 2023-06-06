@@ -9,19 +9,27 @@ using UnityEngine;
 [RequireComponent(typeof(LineDrawer))]
 public class GameBoard : MonoBehaviour
 {
+    public static GameBoard Instance { get; private set; }
+
     public List<Space> allSpaces = new List<Space>();
     private SpaceBuilder spaceBuilder;
     private LineDrawer lineDrawer;
     [SerializeField] float spaceConnectionRadius;
     public ActorPieceMovement actorPieceMovement;
 
-    public GameBoard()
-    {
-        allSpaces = new List<Space>();
-    }
-
     public void Awake()
     {
+        // Instance setup
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+            return;
+        }
+
         spaceBuilder = GetComponent<SpaceBuilder>();
         lineDrawer = GetComponent<LineDrawer>();
 
@@ -151,7 +159,7 @@ public class GameBoard : MonoBehaviour
         return spacesWithinDistance;
     }
 
-    public List<Space> FindPath(Space start, Space end)
+    public List<Space> FindPath(Space start, Space end, bool ignoreBlocking = false)
     {
         // Using BFS algorithm
         var previousSpaces = new Dictionary<Space, Space>();
@@ -181,7 +189,8 @@ public class GameBoard : MonoBehaviour
 
             foreach (var neighbor in currentSpace.ConnectedSpaces)
             {
-                if (visited.Contains(neighbor) || neighbor.IsBlocking) continue;
+                if (visited.Contains(neighbor)) continue;
+                if (neighbor.IsBlocking && !ignoreBlocking) continue;
 
                 if (!queue.Contains(neighbor))
                 {

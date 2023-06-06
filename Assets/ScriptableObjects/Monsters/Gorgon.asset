@@ -16,4 +16,8 @@ MonoBehaviour:
   power: 70
   doesMove: 1
   battlecry: {fileID: 0}
-  monsterTexture: []
+  monsterTextures:
+  - {fileID: 2800000, guid: 39d78a6a77e46cf4da1e7af4492b94a3, type: 3}
+  - {fileID: 2800000, guid: 8e204d3afc70cfb4198e2435d6f4d27d, type: 3}
+  - {fileID: 2800000, guid: 2d4fcf112256fdb468dbf493c717c9ce, type: 3}
+  - {fileID: 2800000, guid: 7b9edffcd3aebe54a9253dec917e4ba9, type: 3}

@@ -1,8 +1,10 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Monster : MonoBehaviour, IMoveable, IFightable
+[Serializable]
+public class Monster : IMoveable, IFightable
 {
     public string MonsterName { get; private set; }
     public Texture2D monsterTexture;
@@ -18,6 +20,15 @@ public class Monster : MonoBehaviour, IMoveable, IFightable
         this.power = power;
         this.doesMove = doesMove;
         this.battlecry = battlecry;
+    }
+
+    public Monster(MonsterSO so)
+    {
+        MonsterName = so.MonsterName;
+        monsterTexture = so.monsterTextures[UnityEngine.Random.Range(0, so.monsterTextures.Count)];
+        power = so.power;
+        doesMove = so.doesMove;
+        battlecry = so.battlecry;
     }
 
     public void Move(Space space, int speed)

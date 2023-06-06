@@ -1,10 +1,11 @@
-using System.Collections;
+using System;
 using System.Collections.Generic;
-using UnityEngine;
 
+[Serializable]
 public class TaskHelper
 {
     public bool isComplete = false;
+    public bool flag = false;
     public int int1 = 0;
-    public List<Object> objectList = new();
+    public List<object> objectList = new();
 }

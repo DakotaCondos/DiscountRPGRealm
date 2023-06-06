@@ -39,6 +39,16 @@ public class Player : IMoveable, IFightable
         xp %= xpRequiredToLevel;
     }
 
+    public void AddPower(int value)
+    {
+        powerBonusPlayer = Mathf.Clamp(powerBonusPlayer + value, 0, int.MaxValue);
+    }
+
+    public void AddMovement(int value)
+    {
+        movementBonusPlayer = Mathf.Clamp(movementBonusPlayer + value, 0, int.MaxValue);
+    }
+
     public int GetPower()
     {
         return level * 3 + powerBonusItems + powerBonusPlayer;
