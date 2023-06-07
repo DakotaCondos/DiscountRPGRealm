@@ -34,6 +34,7 @@ public class Space : MonoBehaviour
     public GameObject monsterPiecePrefab;
     public Transform monsterPieceLocation;
     public Transform pieceMovePoint;
+    public Transform spawnStartPoint;
     public UIBlock2D spaceBackingPanel;
     public UIBlock2D spaceGraphicPanel;
     public GameObject playerPiecePrefab;

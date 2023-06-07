@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1957674119620701911
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3173416316506924561}
+  m_Layer: 0
+  m_Name: SpawnStart
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3173416316506924561
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1957674119620701911}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -0.25}
+  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6796673611948371074}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3533148298489850336
 GameObject:
   m_ObjectHideFlags: 0
@@ -33,7 +64,7 @@ Transform:
   - {fileID: 8841316664982509993}
   - {fileID: 6796673611022286992}
   m_Father: {fileID: 6796673611948371074}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2538696923781149320
 MonoBehaviour:
@@ -64,10 +95,10 @@ MonoBehaviour:
   layout:
     Size:
       X:
-        Raw: 14.51887
+        Raw: 15.727731
         Type: 0
       Y:
-        Raw: 7.8877
+        Raw: 7.930641
         Type: 0
       Z:
         Raw: 0
@@ -1289,6 +1320,7 @@ Transform:
   - {fileID: 6796673610885982881}
   - {fileID: 1452580536216422631}
   - {fileID: 3924723382839603798}
+  - {fileID: 3173416316506924561}
   - {fileID: 571891530013675167}
   - {fileID: 2673116762246832086}
   m_Father: {fileID: 0}
@@ -1577,6 +1609,7 @@ MonoBehaviour:
   monsterPiecePrefab: {fileID: 1121418259994116492, guid: 4fdd60b3be24c1a46acf2f701ec6621f, type: 3}
   monsterPieceLocation: {fileID: 6796673610885982881}
   pieceMovePoint: {fileID: 3924723382839603798}
+  spawnStartPoint: {fileID: 3173416316506924561}
   spaceBackingPanel: {fileID: 6464492135310234415}
   spaceGraphicPanel: {fileID: 6796673612478084852}
   playerPiecePrefab: {fileID: 1121418259994116492, guid: 58eff2686d845ec4b9b263b06f457e65, type: 3}
@@ -3101,7 +3134,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6796673611948371074}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1018404741988204949
 MonoBehaviour:

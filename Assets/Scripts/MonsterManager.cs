@@ -50,7 +50,7 @@ public class MonsterManager : MonoBehaviour
                 // do async game board movement stuff
                 await PerformGameBoardMovementAsync(monster, randomSpace);
                 randomSpace.AddMonsterToSpace(monster);
-                await Task.Delay(100);
+                await Task.Delay(500); // Let your brain process what just happened
             }
         }
 
@@ -61,19 +61,15 @@ public class MonsterManager : MonoBehaviour
 
             if (space.hasMonster) { continue; }
 
-            if (spawnChance >= Random.value) { SpawnMonster(space); }
+            if (spawnChance >= Random.value)
+            {
+                await SpawnMonster(space);
+                await Task.Delay(500); // Let your brain process what just happened
+            }
         }
     }
 
-    private void SpawnMonster(Space space)
-    {
-        int maxPower = (int)((createdMonsters + defeatedMonsters) * 0.5f * GameManager.Instance.Players.Count);
-        MonsterSO blueprint = GetMonsterSO(maxPower);
-        Monster monster = new Monster(blueprint);
-        monsters.Add(monster);
-        space.AddMonsterToSpace(monster);
-        createdMonsters++;
-    }
+
 
     private MonsterSO GetMonsterSO(int maxPower)
     {
@@ -92,16 +88,30 @@ public class MonsterManager : MonoBehaviour
 
     private async Task PerformGameBoardMovementAsync(Monster monster, Space endSpace)
     {
-        TaskHelper helper = new TaskHelper();
-
-        // Perform your game board movement logic asynchronously here
-        //print($"Moving {monster.MonsterName} from {monster.currentSpace.namePlate.Text} to {endSpace.namePlate.Text}");
+        TaskHelper helper = new();
         GameBoard.Instance.actorPieceMovement.MoveMonster(monster, monster.currentSpace, endSpace, helper);
-
         while (!helper.isComplete)
         {
             await Task.Delay(100); // Wait for 100 milliseconds before checking again
         }
+    }
+
+    private async Task SpawnMonster(Space space)
+    {
+        int maxPower = (int)((createdMonsters + defeatedMonsters) * 0.5f * GameManager.Instance.Players.Count);
+        MonsterSO blueprint = GetMonsterSO(maxPower);
+        Monster monster = new Monster(blueprint);
+
+        TaskHelper helper = new();
+        await MonsterPieceSpawner.Instance.SpawnMonster(monster, space, helper);
+        while (!helper.isComplete)
+        {
+            await Task.Delay(100); // Wait for 100 milliseconds before checking again
+        }
+
+        monsters.Add(monster);
+        space.AddMonsterToSpace(monster);
+        createdMonsters++;
     }
 
     public void KillMonster(Monster monster, Player player)

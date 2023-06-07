@@ -28,6 +28,7 @@ public class ActionsManager : MonoBehaviour
     public UIBlock2D optionsPanel;
     public UIBlock2D chancePanel;
     public UIBlock2D eventPanel;
+    public UIBlock2D startPanel;
 
 
     public static ActionsManager Instance { get; private set; }

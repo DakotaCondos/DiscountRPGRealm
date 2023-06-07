@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using UnityEngine;
 
 public class BeginTurnHandler : MonoBehaviour
@@ -60,6 +61,7 @@ public class BeginTurnHandler : MonoBehaviour
 
         // do monster stuff
         await monsterManager.ProcessMonsterTurn();
+        await Task.Delay(500);
         // end turn
         turnManager.NextTurn();
     }
