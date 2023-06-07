@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 706ffabbc0b81c7478ec6c05c59456e5, type: 3}
+  m_Name: The Gauntlet of Tickles
+  m_EditorClassIdentifier: 
+  CardType: 5
+  cardTitle: The Gauntlet of Tickles
+  images:
+  - {fileID: 2800000, guid: 6b72ae5abf7f55c4c9c18aef437b82f4, type: 3}
+  - {fileID: 2800000, guid: 9050da2c02dde9647b2677f24e7665b5, type: 3}
+  - {fileID: 2800000, guid: 32a93c72ac70072489277a552dbeb994, type: 3}
+  - {fileID: 2800000, guid: 9541682164e7ffb418dea1e80e13ea6b, type: 3}

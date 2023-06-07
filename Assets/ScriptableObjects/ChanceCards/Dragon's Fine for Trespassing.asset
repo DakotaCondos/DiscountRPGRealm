@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 706ffabbc0b81c7478ec6c05c59456e5, type: 3}
+  m_Name: Dragon's Fine for Trespassing
+  m_EditorClassIdentifier: 
+  CardType: 1
+  cardTitle: Dragon's Fine for Trespassing
+  images:
+  - {fileID: 2800000, guid: 0aa6e28a93905a446a781c1edbb58b94, type: 3}
+  - {fileID: 2800000, guid: de6ec5bf45b39ff4d85777114516e28c, type: 3}
+  - {fileID: 2800000, guid: 18a884e08f194c14ab9a7b1df795d29e, type: 3}
+  - {fileID: 2800000, guid: 10b3c6b37c522ab47b55d8283ff2861d, type: 3}

@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 706ffabbc0b81c7478ec6c05c59456e5, type: 3}
+  m_Name: The Tax Collector's Revenge
+  m_EditorClassIdentifier: 
+  CardType: 1
+  cardTitle: The Tax Collector's Revenge
+  images:
+  - {fileID: 2800000, guid: 037b96be3f8c96941877c865780546d4, type: 3}
+  - {fileID: 2800000, guid: 100b868af90f57f429fa6ea90918c4a6, type: 3}
+  - {fileID: 2800000, guid: 48a10616ce817b34ab1cc453108cdb4c, type: 3}
+  - {fileID: 2800000, guid: b5376ef38c0eac245894f46002044ef5, type: 3}

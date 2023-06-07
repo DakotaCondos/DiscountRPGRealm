@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 706ffabbc0b81c7478ec6c05c59456e5, type: 3}
+  m_Name: The Potion of Shrinking
+  m_EditorClassIdentifier: 
+  CardType: 5
+  cardTitle: The Potion of Shrinking
+  images:
+  - {fileID: 2800000, guid: ab76e82aaee46c74f87bae43d000b161, type: 3}
+  - {fileID: 2800000, guid: cb069938cf927d84bb1da39f719adb16, type: 3}
+  - {fileID: 2800000, guid: 2e4b84455f01d654eb1e2f5e91c2eb0b, type: 3}
+  - {fileID: 2800000, guid: 7adb6e10972c7e84cb0304e90da0df5f, type: 3}

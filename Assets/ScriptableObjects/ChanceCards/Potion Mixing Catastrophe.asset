@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 706ffabbc0b81c7478ec6c05c59456e5, type: 3}
+  m_Name: Potion Mixing Catastrophe
+  m_EditorClassIdentifier: 
+  CardType: 3
+  cardTitle: Potion Mixing Catastrophe
+  images:
+  - {fileID: 2800000, guid: cf993c5dd87ff7643a826fed0504e925, type: 3}
+  - {fileID: 2800000, guid: 3678d406a7128ff419094373673150ab, type: 3}
+  - {fileID: 2800000, guid: 61ab36e032631a341b71098545eb9421, type: 3}
+  - {fileID: 2800000, guid: d0b8e2cb6fe2b31439cd490f8abb2f0a, type: 3}

@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 706ffabbc0b81c7478ec6c05c59456e5, type: 3}
+  m_Name: Epic Battle Bragging Rights
+  m_EditorClassIdentifier: 
+  CardType: 2
+  cardTitle: Epic Battle Bragging Rights
+  images:
+  - {fileID: 2800000, guid: d706cae3f7cdbc24c883bff79ef9874e, type: 3}
+  - {fileID: 2800000, guid: e4df6005454e70b48ab6571549bf0af2, type: 3}
+  - {fileID: 2800000, guid: 8546abf4d0c473f49be73641bffed4e8, type: 3}
+  - {fileID: 2800000, guid: 26476d5ad33963346af6cba945061e72, type: 3}

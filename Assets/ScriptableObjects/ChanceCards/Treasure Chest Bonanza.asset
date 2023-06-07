@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 706ffabbc0b81c7478ec6c05c59456e5, type: 3}
+  m_Name: Treasure Chest Bonanza
+  m_EditorClassIdentifier: 
+  CardType: 0
+  cardTitle: Treasure Chest Bonanza
+  images:
+  - {fileID: 2800000, guid: e3b0444f288e6ad4aa8a9d3c231f01f4, type: 3}
+  - {fileID: 2800000, guid: 9269554e40fd6ef4681a0897c06441fd, type: 3}
+  - {fileID: 2800000, guid: e3ecf35748d13a94290379b60f77059c, type: 3}
+  - {fileID: 2800000, guid: f4d8ba34a584ca844a0665aff9f3fd40, type: 3}

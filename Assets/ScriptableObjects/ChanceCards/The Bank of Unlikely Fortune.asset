@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 706ffabbc0b81c7478ec6c05c59456e5, type: 3}
+  m_Name: The Bank of Unlikely Fortune
+  m_EditorClassIdentifier: 
+  CardType: 0
+  cardTitle: The Bank of Unlikely Fortune
+  images:
+  - {fileID: 2800000, guid: 0e7eb41298abaf549a7dfcedbae5289f, type: 3}
+  - {fileID: 2800000, guid: 04a6d2c35fee21549a4f1f4a98c1ab32, type: 3}
+  - {fileID: 2800000, guid: 4dbad01b2c4867e4b81046b480ea3318, type: 3}
+  - {fileID: 2800000, guid: 3769f4b15644a5d41be75def09cfcde5, type: 3}

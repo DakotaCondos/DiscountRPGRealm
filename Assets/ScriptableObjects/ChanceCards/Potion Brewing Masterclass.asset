@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 706ffabbc0b81c7478ec6c05c59456e5, type: 3}
+  m_Name: Potion Brewing Masterclass
+  m_EditorClassIdentifier: 
+  CardType: 4
+  cardTitle: Potion Brewing Masterclass
+  images:
+  - {fileID: 2800000, guid: fe6eb35b1637b924d8120844ff99b124, type: 3}
+  - {fileID: 2800000, guid: c03a79f1adc04064ba300a268a9d4c24, type: 3}
+  - {fileID: 2800000, guid: 8257fcea1ab45d7429b2a62d05bc57f4, type: 3}
+  - {fileID: 2800000, guid: 4718b25206bfe194c9e82f715bfc9b1b, type: 3}

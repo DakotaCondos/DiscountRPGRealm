@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using UnityEngine;
 
 public class CardMiniGame : MonoBehaviour
@@ -17,8 +18,47 @@ public class CardMiniGame : MonoBehaviour
     private int currentCardBackIndex = 0;
     [SerializeField] float cardMovementMultiplier = 1;
     private Vector3 startPos;
+    public List<Texture2D> moneyImagesGood = new();
+    public List<Texture2D> powerImagesGood = new();
+    public List<Texture2D> xpImagesGood = new();
+
 
     [SerializeField] AudioClip moveCardSound;
+
+    public async void CreateChanceGame(TurnActor actor)
+    {
+        Player player = actor.player;
+        // determine result and setup minigame
+        (RewardType, int) chanceResult = ChanceSelector.SelectReward();
+        switch (chanceResult.Item1)
+        {
+            case RewardType.Money:
+                player.AddMoney(chanceResult.Item2);
+                break;
+            case RewardType.Power:
+                player.AddPower(chanceResult.Item2);
+                break;
+            case RewardType.XP:
+                player.AddXP(chanceResult.Item2);
+                break;
+            default:
+                Debug.LogWarning("RewardType not found!");
+                break;
+        }
+
+        await PlayCardMinigame();
+    }
+
+
+    private void SetupCard(Texture2D image, string cardTitle, Texture2D icon)
+    {
+
+    }
+    private async Task PlayCardMinigame()
+    {
+        // Stub out for now
+        await Task.Delay(1000);
+    }
 
     // Start the Coroutine
     public void StartCardCycle(float duration)
@@ -98,5 +138,16 @@ public class CardMiniGame : MonoBehaviour
     private void FlipCard()
     {
         cardFlip.FlipCard();
+    }
+
+    public T SelectRandomItem<T>(List<T> itemList)
+    {
+        if (itemList == null || itemList.Count == 0)
+        {
+            return default;
+        }
+
+        int randomIndex = UnityEngine.Random.Range(0, itemList.Count);
+        return itemList[randomIndex];
     }
 }

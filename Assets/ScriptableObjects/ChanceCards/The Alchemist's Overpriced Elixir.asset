@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 706ffabbc0b81c7478ec6c05c59456e5, type: 3}
+  m_Name: The Alchemist's Overpriced Elixir
+  m_EditorClassIdentifier: 
+  CardType: 1
+  cardTitle: The Alchemist's Overpriced Elixir
+  images:
+  - {fileID: 2800000, guid: a36d96bc885597e408d78cf6573b9b2a, type: 3}
+  - {fileID: 2800000, guid: 85d43c2abb0458e48aa9202e4ff93582, type: 3}
+  - {fileID: 2800000, guid: 051e45750003c8042a98913b1b8efcda, type: 3}
+  - {fileID: 2800000, guid: ca076f6c56ce2914590d790398d290f1, type: 3}

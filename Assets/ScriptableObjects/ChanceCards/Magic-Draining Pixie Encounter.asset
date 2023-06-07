@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 706ffabbc0b81c7478ec6c05c59456e5, type: 3}
+  m_Name: Magic-Draining Pixie Encounter
+  m_EditorClassIdentifier: 
+  CardType: 5
+  cardTitle: Magic-Draining Pixie Encounter
+  images:
+  - {fileID: 2800000, guid: cba657abef0501e49b04e731ffebb3ea, type: 3}
+  - {fileID: 2800000, guid: d71c20ff2be888f408f2d667ccdd96d0, type: 3}
+  - {fileID: 2800000, guid: 0927292f90f9df548a635bcdb79c2885, type: 3}
+  - {fileID: 2800000, guid: c6753d8db2d5edc4eb7172923195390a, type: 3}

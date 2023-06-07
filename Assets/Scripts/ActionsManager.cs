@@ -26,6 +26,9 @@ public class ActionsManager : MonoBehaviour
     public UIBlock2D fightPanelPvP;
     public UIBlock2D fightPanelPvM;
     public UIBlock2D optionsPanel;
+    public UIBlock2D chancePanel;
+    public UIBlock2D eventPanel;
+
 
     public static ActionsManager Instance { get; private set; }
 
@@ -76,12 +79,6 @@ public class ActionsManager : MonoBehaviour
 
         if (!actor.isPlayer)
         {
-            {   // enabling end-turn option until monster turns are automated
-
-                Debug.LogWarning("Disable non player actions");
-                canEndTurn = true;
-            }
-
             // keep buttons disabled
             SetButtons();
             return;
@@ -146,6 +143,21 @@ public class ActionsManager : MonoBehaviour
     public void SelectInteract()
     {
         print("SelectInteract");
+        // Space is either a chance or trap space
+        Space space = turnManager.GetCurrentActor().player.currentSpace;
+        if (space.spaceType == SpaceType.Chance)
+        {
+            TurnState.TriggerBeginChance(turnManager.GetCurrentActor());
+        }
+        else if (space.spaceType == SpaceType.Trap)
+        {
+            TurnState.TriggerBeginChallenge(turnManager.GetCurrentActor());
+        }
+        else
+        {
+            // something is not set up correctly
+            print("Interact type not id'd");
+        }
     }
     public void SelectFight()
     {

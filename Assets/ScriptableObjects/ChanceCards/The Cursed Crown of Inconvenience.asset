@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 706ffabbc0b81c7478ec6c05c59456e5, type: 3}
+  m_Name: The Cursed Crown of Inconvenience
+  m_EditorClassIdentifier: 
+  CardType: 4
+  cardTitle: The Cursed Crown of Inconvenience
+  images:
+  - {fileID: 2800000, guid: b8082d224b93a5943bc581da94ef8a38, type: 3}
+  - {fileID: 2800000, guid: 280ed97f2045e624ab849d12367370a3, type: 3}
+  - {fileID: 2800000, guid: fd7cae29763ab5c4aa9109a5dcf1d1fa, type: 3}
+  - {fileID: 2800000, guid: a7ae5135dece9b541baa23815c4443c9, type: 3}

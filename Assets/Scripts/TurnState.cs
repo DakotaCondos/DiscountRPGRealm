@@ -15,6 +15,8 @@ public enum TurnStages
     EndBattlePvM,
     BeginChallenge,
     EndChallenge,
+    BeginChance,
+    EndChance,
     MonsterTurn
 }
 
@@ -33,6 +35,8 @@ public class TurnState : MonoBehaviour
     public static event Action<Player, Monster, bool> EndBattlePvM;
     public static event Action<TurnActor> BeginChallenge;
     public static event Action<TurnActor> EndChallenge;
+    public static event Action<TurnActor> BeginChance;
+    public static event Action<TurnActor> EndChance;
 
     private static TurnStages turnStage;
 
@@ -114,5 +118,17 @@ public class TurnState : MonoBehaviour
     {
         turnStage = TurnStages.EndChallenge;
         EndChallenge?.Invoke(actor);
+    }
+
+    public static void TriggerBeginChance(TurnActor actor)
+    {
+        turnStage = TurnStages.BeginChance;
+        BeginChance?.Invoke(actor);
+    }
+
+    public static void TriggerEndChance(TurnActor actor)
+    {
+        turnStage = TurnStages.EndChance;
+        EndChance?.Invoke(actor);
     }
 }

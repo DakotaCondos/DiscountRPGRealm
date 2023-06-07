@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 706ffabbc0b81c7478ec6c05c59456e5, type: 3}
+  m_Name: The Bard's Tall Tales
+  m_EditorClassIdentifier: 
+  CardType: 2
+  cardTitle: The Bard's Tall Tales
+  images:
+  - {fileID: 2800000, guid: 203b792f071597d4c834d72250bb01c0, type: 3}
+  - {fileID: 2800000, guid: 85db74bf24c7ba9449d5bdf382704af9, type: 3}
+  - {fileID: 2800000, guid: 96414a285a95a274a9971738a08b2440, type: 3}
+  - {fileID: 2800000, guid: 1395db00370f19b409d8bf67758e6ca3, type: 3}

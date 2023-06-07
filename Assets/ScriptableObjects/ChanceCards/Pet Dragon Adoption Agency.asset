@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 706ffabbc0b81c7478ec6c05c59456e5, type: 3}
+  m_Name: Pet Dragon Adoption Agency
+  m_EditorClassIdentifier: 
+  CardType: 4
+  cardTitle: Pet Dragon Adoption Agency
+  images:
+  - {fileID: 2800000, guid: daaacbda6c7b18e4e8b360bf807318dd, type: 3}
+  - {fileID: 2800000, guid: 69de36fb59225794796f01b1ffaca947, type: 3}
+  - {fileID: 2800000, guid: 46053c90c46ebe340b339247f11a5d06, type: 3}
+  - {fileID: 2800000, guid: 485d81c8dc9090849afeebaf339f677d, type: 3}

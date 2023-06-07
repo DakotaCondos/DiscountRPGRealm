@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 706ffabbc0b81c7478ec6c05c59456e5, type: 3}
+  m_Name: Epic Battle with a Ticklish Troll
+  m_EditorClassIdentifier: 
+  CardType: 3
+  cardTitle: Epic Battle with a Ticklish Troll
+  images:
+  - {fileID: 2800000, guid: 00ab70281506da1459b8d824288de36a, type: 3}
+  - {fileID: 2800000, guid: 3a1e6093a37560b4cb993dac336c2e57, type: 3}
+  - {fileID: 2800000, guid: 2f5f57fd3f9b13b4cb918466a6cb869a, type: 3}
+  - {fileID: 2800000, guid: d343db8ce3835674289f145413d18e99, type: 3}

@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 706ffabbc0b81c7478ec6c05c59456e5, type: 3}
+  m_Name: Slaying the Tax Beast
+  m_EditorClassIdentifier: 
+  CardType: 0
+  cardTitle: Slaying the Tax Beast
+  images:
+  - {fileID: 2800000, guid: cc2bae8372fd0a440845f7f2dcf73c84, type: 3}
+  - {fileID: 2800000, guid: 756bd5ac9fa84f8448fb6f087f944ca7, type: 3}
+  - {fileID: 2800000, guid: ee97fd9e8fcf8e1478ad7aa3c84063fc, type: 3}
+  - {fileID: 2800000, guid: 23917795c3563c94b96420d83e9dc5a3, type: 3}

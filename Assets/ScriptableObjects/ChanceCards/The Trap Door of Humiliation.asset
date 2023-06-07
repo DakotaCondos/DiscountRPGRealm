@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 706ffabbc0b81c7478ec6c05c59456e5, type: 3}
+  m_Name: The Trap Door of Humiliation
+  m_EditorClassIdentifier: 
+  CardType: 3
+  cardTitle: The Trap Door of Humiliation
+  images:
+  - {fileID: 2800000, guid: 96f53d3fea685e944b9b27883780c2eb, type: 3}
+  - {fileID: 2800000, guid: 5d7ca92d7c9300f498c943e0867149b3, type: 3}
+  - {fileID: 2800000, guid: c412ce7d16cb1ab4bb5e5ec1f2ab76ed, type: 3}
+  - {fileID: 2800000, guid: 90b12f21bd9e1a547b51ab5683d2f513, type: 3}

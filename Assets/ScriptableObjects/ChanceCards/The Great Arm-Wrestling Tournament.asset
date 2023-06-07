@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 706ffabbc0b81c7478ec6c05c59456e5, type: 3}
+  m_Name: The Great Arm-Wrestling Tournament
+  m_EditorClassIdentifier: 
+  CardType: 4
+  cardTitle: The Great Arm-Wrestling Tournament
+  images:
+  - {fileID: 2800000, guid: 4dc56f920bdbeae428e60e77720e5a1f, type: 3}
+  - {fileID: 2800000, guid: e002f35f38a2db44cac04f1bc809350e, type: 3}
+  - {fileID: 2800000, guid: a9ad83344bab85c4eb085351f9be4bc7, type: 3}
+  - {fileID: 2800000, guid: 555197a3d9ae0954daa34cef74703117, type: 3}

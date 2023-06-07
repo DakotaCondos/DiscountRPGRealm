@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 706ffabbc0b81c7478ec6c05c59456e5, type: 3}
+  m_Name: Wizarding School Pop Quiz
+  m_EditorClassIdentifier: 
+  CardType: 3
+  cardTitle: Wizarding School Pop Quiz
+  images:
+  - {fileID: 2800000, guid: d6a08a949a5c90f458ba30d25ad50d66, type: 3}
+  - {fileID: 2800000, guid: 1806ede0237c7ce4592755acbaf8f17f, type: 3}
+  - {fileID: 2800000, guid: 02c54a39805fe2a468b0c98c652113f5, type: 3}
+  - {fileID: 2800000, guid: 8b51043e56acd3a4197db2660b9b7ced, type: 3}
+  - {fileID: 2800000, guid: 7de5727ae0bc96941a42af2ee0ea764c, type: 3}
+  - {fileID: 2800000, guid: 76dfb359f01223a40b1fd7f9ad47308a, type: 3}

@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 706ffabbc0b81c7478ec6c05c59456e5, type: 3}
+  m_Name: Spellbook of Unexpected Spells
+  m_EditorClassIdentifier: 
+  CardType: 4
+  cardTitle: Spellbook of Unexpected Spells
+  images:
+  - {fileID: 2800000, guid: fb346e5a63991bc43b6417ebc337e725, type: 3}
+  - {fileID: 2800000, guid: f4f08bd0c4dd5554ea32deb3714d1aae, type: 3}
+  - {fileID: 2800000, guid: 4e8ed09ba0c09a443a600d45a5989086, type: 3}
+  - {fileID: 2800000, guid: d20a0a151c7abc3459dd191c81392de2, type: 3}

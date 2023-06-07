@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 706ffabbc0b81c7478ec6c05c59456e5, type: 3}
+  m_Name: Magical Item Swap Meet
+  m_EditorClassIdentifier: 
+  CardType: 4
+  cardTitle: Magical Item Swap Meet
+  images:
+  - {fileID: 2800000, guid: 933ec9fa5d635cd489806488f97ff083, type: 3}
+  - {fileID: 2800000, guid: 1eceb2d8f3c2e3643a3148e61d5f18d6, type: 3}
+  - {fileID: 2800000, guid: 1b28a5c06cde87a48b59aaea08dd883b, type: 3}
+  - {fileID: 2800000, guid: 9cccd4654d3267f4a8ce16a7178b5d6d, type: 3}

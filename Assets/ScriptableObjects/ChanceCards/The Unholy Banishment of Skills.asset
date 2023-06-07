@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 706ffabbc0b81c7478ec6c05c59456e5, type: 3}
+  m_Name: The Unholy Banishment of Skills
+  m_EditorClassIdentifier: 
+  CardType: 5
+  cardTitle: The Unholy Banishment of Skills
+  images:
+  - {fileID: 2800000, guid: 1a905931139936443b1ae0d914c31590, type: 3}
+  - {fileID: 2800000, guid: e4022ab4309f91f48b1f9505af47cc59, type: 3}
+  - {fileID: 2800000, guid: 884ae942d2a839544ae0c6fa196c9bca, type: 3}
+  - {fileID: 2800000, guid: 26384eb73deea1a418fda975cc838937, type: 3}

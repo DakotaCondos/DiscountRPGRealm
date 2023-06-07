@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 706ffabbc0b81c7478ec6c05c59456e5, type: 3}
+  m_Name: Magician's Failed Experiment
+  m_EditorClassIdentifier: 
+  CardType: 3
+  cardTitle: Magician's Failed Experiment
+  images:
+  - {fileID: 2800000, guid: 2c4b5b11e0f3a5848bd59cf889b898f5, type: 3}
+  - {fileID: 2800000, guid: 2d883e0e28d2c6d49a5349097c30dcc3, type: 3}
+  - {fileID: 2800000, guid: 65da960cc33eb774b8202bdcb012a070, type: 3}
+  - {fileID: 2800000, guid: d630ee7269c728b49b999d70e529d494, type: 3}

@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 706ffabbc0b81c7478ec6c05c59456e5, type: 3}
+  m_Name: Mastering the Art of Potions
+  m_EditorClassIdentifier: 
+  CardType: 2
+  cardTitle: Mastering the Art of Potions
+  images:
+  - {fileID: 2800000, guid: e1fd341f1c41feb48b41263082fd4f34, type: 3}
+  - {fileID: 2800000, guid: 1dfda35274013994c9d8104a3011001d, type: 3}
+  - {fileID: 2800000, guid: 488a66535de6cdf4f963b4643bd0ce52, type: 3}
+  - {fileID: 2800000, guid: d52504419bfe50d44b9322ad3e38912e, type: 3}

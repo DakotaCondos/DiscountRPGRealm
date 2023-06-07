@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 706ffabbc0b81c7478ec6c05c59456e5, type: 3}
+  m_Name: Gambling Goblins
+  m_EditorClassIdentifier: 
+  CardType: 1
+  cardTitle: Gambling Goblins
+  images:
+  - {fileID: 2800000, guid: 39b1f2282a751674bb130834f437f488, type: 3}
+  - {fileID: 2800000, guid: 04b3ab5128ef05d45b6f9204978586fe, type: 3}
+  - {fileID: 2800000, guid: 7d080a9208a59b544a3384920ecb03e3, type: 3}
+  - {fileID: 2800000, guid: b7c1c778b319864419c12afd2f689831, type: 3}

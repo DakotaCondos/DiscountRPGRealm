@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 706ffabbc0b81c7478ec6c05c59456e5, type: 3}
+  m_Name: Wizarding School Shenanigans
+  m_EditorClassIdentifier: 
+  CardType: 2
+  cardTitle: Wizarding School Shenanigans
+  images:
+  - {fileID: 2800000, guid: 16f06a37775b8904b9e5b4aaba83b40f, type: 3}
+  - {fileID: 2800000, guid: f94ead3cf58d849489bdc4196caa5847, type: 3}
+  - {fileID: 2800000, guid: 9f955783bd0fe8340b695217b678d928, type: 3}
+  - {fileID: 2800000, guid: 925781f98bd1eb34a9e55653793a31ab, type: 3}

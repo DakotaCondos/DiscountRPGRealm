@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 706ffabbc0b81c7478ec6c05c59456e5, type: 3}
+  m_Name: Dungeon Delver's Discount
+  m_EditorClassIdentifier: 
+  CardType: 0
+  cardTitle: Dungeon Delver's Discount
+  images:
+  - {fileID: 2800000, guid: 7fc2d4825ca4554439cd469dca8e94e0, type: 3}
+  - {fileID: 2800000, guid: cce87d578e3961145ba46e5d0b0d69a0, type: 3}
+  - {fileID: 2800000, guid: 5944a2ee0791af741bcd22246e5c87dd, type: 3}
+  - {fileID: 2800000, guid: 4b6eca5561936f74baab0abc4c30ee57, type: 3}
+  - {fileID: 2800000, guid: 78d09f2327c15764ab18234a62bbfcf4, type: 3}

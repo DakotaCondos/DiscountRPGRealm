@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 706ffabbc0b81c7478ec6c05c59456e5, type: 3}
+  m_Name: The Ominous Robe of Clumsiness
+  m_EditorClassIdentifier: 
+  CardType: 5
+  cardTitle: The Ominous Robe of Clumsiness
+  images:
+  - {fileID: 2800000, guid: 7f120544355f4fe4998844a79cab7eab, type: 3}
+  - {fileID: 2800000, guid: e1f2efb633e87f64e98ba4b5ffb7c386, type: 3}
+  - {fileID: 2800000, guid: 5548725a6ad2efe49b58eb58208048de, type: 3}
+  - {fileID: 2800000, guid: e2f4ae4701bb8a145b0013c8ecf774a0, type: 3}
