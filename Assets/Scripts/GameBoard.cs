@@ -159,59 +159,45 @@ public class GameBoard : MonoBehaviour
         return spacesWithinDistance;
     }
 
-    public List<Space> FindPath(Space start, Space end, bool ignoreBlocking = false)
+    public List<Space> FindPath(Space startSpace, Space endSpace)
     {
-        // Using BFS algorithm
-        var previousSpaces = new Dictionary<Space, Space>();
-        var queue = new Queue<Space>();
-        var visited = new HashSet<Space>();
+        // Use a dictionary to keep track of visited spaces and their previous spaces
+        Dictionary<Space, Space> visitedSpaces = new Dictionary<Space, Space>();
+        Queue<Space> queue = new Queue<Space>();
 
-        queue.Enqueue(start);
+        // Start by visiting the start space
+        visitedSpaces[startSpace] = null;
+        queue.Enqueue(startSpace);
 
         while (queue.Count > 0)
         {
-            var currentSpace = queue.Dequeue();
+            Space currentSpace = queue.Dequeue();
 
-            // We have reached the destination
-            if (currentSpace == end)
+            // If we've reached the end space, we can construct the path and return it
+            if (currentSpace == endSpace)
             {
-                var path = new List<Space>();
+                List<Space> path = new List<Space>();
                 while (currentSpace != null)
                 {
-                    path.Add(currentSpace);
-                    previousSpaces.TryGetValue(currentSpace, out currentSpace);
+                    path.Insert(0, currentSpace);
+                    currentSpace = visitedSpaces[currentSpace];
                 }
-                path.Reverse();
                 return path;
             }
 
-            visited.Add(currentSpace);
-
-            foreach (var neighbor in currentSpace.ConnectedSpaces)
+            // Otherwise, add all unvisited connected spaces to the queue. If it is the end space, add it even if it is blocked
+            foreach (Space connectedSpace in currentSpace.ConnectedSpaces)
             {
-                if (visited.Contains(neighbor)) continue;
-
-                if (neighbor.Equals(start))
+                if ((!connectedSpace.IsBlocking || connectedSpace == endSpace) && !visitedSpaces.ContainsKey(connectedSpace))
                 {
-                    queue.Enqueue(neighbor);
-                    previousSpaces[neighbor] = currentSpace;
-                }
-
-                if (neighbor.IsBlocking && !ignoreBlocking) continue;
-
-                if (!queue.Contains(neighbor))
-                {
-                    queue.Enqueue(neighbor);
-                    previousSpaces[neighbor] = currentSpace;
+                    visitedSpaces[connectedSpace] = currentSpace;
+                    queue.Enqueue(connectedSpace);
                 }
             }
         }
 
-        // No path found return direct path
-        Debug.LogWarning($"No path found between {start.namePlate.Text} and {end.namePlate.Text}. Returning Default");
-        var defaultPath = new List<Space>();
-        defaultPath.Add(start);
-        defaultPath.Add(end);
-        return defaultPath;
+        // If we haven't returned by now, no path exists
+        Debug.Log("No Valid Path Found");
+        return new List<Space> { startSpace, endSpace };
     }
 }

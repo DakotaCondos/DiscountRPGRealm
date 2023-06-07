@@ -39,14 +39,14 @@ public class ActorPieceMovement : MonoBehaviour
         //Change PivotPiece to look like actor
         backPlate.Color = colorIDs[7];
         picture.SetImage(monster.monsterTexture);
-        helper.flag = true; // findpath ignores blocked
+        helper.flag = true;
         Moving(start, end, helper);
     }
 
     private void Moving(Space start, Space end, TaskHelper helper)
     {
         //get movement point
-        List<Space> path = GameBoard.FindPath(start, end, helper.flag);
+        List<Space> path = GameBoard.FindPath(start, end);
         List<Transform> points = new();
         foreach (var space in path)
         {
