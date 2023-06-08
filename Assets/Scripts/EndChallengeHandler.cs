@@ -4,16 +4,6 @@ using UnityEngine;
 
 public class EndChallengeHandler : MonoBehaviour
 {
-
-    GameBoard gameBoard;
-    ActionsManager actionsManager;
-    StatDisplay statDisplay;
-    private void Awake()
-    {
-        gameBoard = FindObjectOfType<GameBoard>();
-        actionsManager = FindObjectOfType<ActionsManager>();
-        statDisplay = FindObjectOfType<StatDisplay>();
-    }
     private void OnEnable()
     {
         TurnState.EndChallenge += HandleEndChallenge;
@@ -24,11 +14,16 @@ public class EndChallengeHandler : MonoBehaviour
         TurnState.EndChallenge -= HandleEndChallenge;
     }
 
-    private void HandleEndChallenge(TurnActor actor)
+    private void HandleEndChallenge(TurnActor actor, bool loseTurn, bool idkYet)
     {
         if (ApplicationManager.Instance.handlerNotifications) { ConsolePrinter.PrintToConsole($"HandleEndChallenge({actor.player.PlayerName})", Color.cyan); }
         // Handle EndChallenge event here
+        ActionsManager.Instance.panelSwitcher.SetActivePanel(ActionsManager.Instance.mainPanel);
 
-        actionsManager.DetermineActions(actor);
+        if (loseTurn) { TurnManager.Instance.NextTurn(); }
+
+        // Update Actions
+        ActionsManager.Instance.SetHasInteracted(true);
+        ActionsManager.Instance.DetermineActions(actor);
     }
 }

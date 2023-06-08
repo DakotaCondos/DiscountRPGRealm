@@ -1,17 +1,12 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class BeginChallengeHandler : MonoBehaviour
 {
-    GameBoard gameBoard;
-    ActionsManager actionsManager;
-    StatDisplay statDisplay;
+    GuessingGame guessingGame;
     private void Awake()
     {
-        gameBoard = FindObjectOfType<GameBoard>();
-        actionsManager = FindObjectOfType<ActionsManager>();
-        statDisplay = FindObjectOfType<StatDisplay>();
+        guessingGame = FindObjectOfType<GuessingGame>(true);
+
     }
     private void OnEnable()
     {
@@ -26,7 +21,8 @@ public class BeginChallengeHandler : MonoBehaviour
     private void HandleBeginChallenge(TurnActor actor)
     {
         if (ApplicationManager.Instance.handlerNotifications) { ConsolePrinter.PrintToConsole($"HandleBeginChallenge({actor.player.PlayerName})", Color.cyan); }
-
         // Handle BeginChallenge event here
+        int difficulty = UnityEngine.Random.Range(1, 11);
+        guessingGame.SetupGame(difficulty);
     }
 }

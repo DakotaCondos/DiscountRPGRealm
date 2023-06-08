@@ -34,7 +34,7 @@ public class TurnState : MonoBehaviour
     public static event Action<Player, Player, bool> EndBattlePvP;
     public static event Action<Player, Monster, bool> EndBattlePvM;
     public static event Action<TurnActor> BeginChallenge;
-    public static event Action<TurnActor> EndChallenge;
+    public static event Action<TurnActor, bool, bool> EndChallenge; // TurnActor actor, bool loseTurn, bool ???>
     public static event Action<TurnActor> BeginChance;
     public static event Action<TurnActor> EndChance;
 
@@ -114,10 +114,10 @@ public class TurnState : MonoBehaviour
         BeginChallenge?.Invoke(actor);
     }
 
-    public static void TriggerEndChallenge(TurnActor actor)
+    public static void TriggerEndChallenge(TurnActor actor, bool loseTurn, bool idkYet)
     {
         turnStage = TurnStages.EndChallenge;
-        EndChallenge?.Invoke(actor);
+        EndChallenge?.Invoke(actor, loseTurn, idkYet);
     }
 
     public static void TriggerBeginChance(TurnActor actor)

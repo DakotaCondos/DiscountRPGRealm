@@ -164,9 +164,9 @@ public class ActionsManager : MonoBehaviour
             print("ChanceSpace");
             TurnState.TriggerBeginChance(turnManager.GetCurrentActor());
         }
-        else if (space.spaceType == SpaceType.Trap)
+        else if (space.spaceType == SpaceType.Challenge)
         {
-            print("TrapSpace");
+            print("ChallengeSpace");
             TurnState.TriggerBeginChallenge(turnManager.GetCurrentActor());
         }
         else

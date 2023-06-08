@@ -1,4 +1,5 @@
 using Nova;
+using System.Threading.Tasks;
 using UnityEngine;
 
 public class GuessingGame : MonoBehaviour
@@ -18,12 +19,16 @@ public class GuessingGame : MonoBehaviour
     public GameObject upButton;
     public GameObject downButton;
 
+    [Header("Runing Time")]
+    public float numberShuffleTime = 4;
+    public float buttonRevealTime = 0.5f;
 
 
     public void SetupGame(int rounds)
     {
         currentRound = 1;
         totalRounds = rounds;
+        ActionsManager.Instance.panelSwitcher.SetActivePanel(ActionsManager.Instance.challengePanel);
         StartNewRound();
     }
 
@@ -39,18 +44,48 @@ public class GuessingGame : MonoBehaviour
             shownNumber = Random.Range(1, 100);
         }
 
-        Debug.Log("Round " + currentRound);
-        Debug.Log("Secret Number: " + secretNumber);
-        Debug.Log("Shown Number: " + shownNumber);
+        NewRoundVisuals();
+    }
+
+    private async void NewRoundVisuals()
+    {
+        secretNumberTextBlock.Text = "?";
+        bodyTextBlock.Text = "Guess";
+        footerTextBlock.Text = $"Round {currentRound} of {totalRounds}";
+
+        upButton.SetActive(false);
+        downButton.SetActive(false);
+        upButton.transform.localScale = Vector3.zero;
+        downButton.transform.localScale = Vector3.zero;
+
+        StartCoroutine(TextBlockUtility.RandomNumbersCoroutine(shownNumberTextBlock, (1, 101), shownNumber, numberShuffleTime));
+        await Task.Delay((int)(numberShuffleTime * 1000));
+
+        upButton.SetActive(true);
+        downButton.SetActive(true);
+
+        // Create an array of tasks
+        Task[] tasks = new Task[2];
+
+        // Start the tasks
+        tasks[0] = ObjectTransformUtility.ScaleObjectSmooth(upButton, Vector3.one, buttonRevealTime);
+        tasks[1] = ObjectTransformUtility.ScaleObjectSmooth(downButton, Vector3.one, buttonRevealTime);
+
+        // Wait for all tasks to complete
+        Task.WaitAll(tasks);
     }
 
     public void GuessHigher()
     {
         if (currentRound <= totalRounds)
         {
+            secretNumberTextBlock.Text = secretNumber.ToString();
+
             if (secretNumber > shownNumber)
             {
                 Debug.Log("Correct! The secret number was higher.");
+                bodyTextBlock.Text = "Correct";
+
                 currentRound++;
                 if (currentRound > totalRounds)
                 {
@@ -64,6 +99,8 @@ public class GuessingGame : MonoBehaviour
             else
             {
                 Debug.Log("Wrong! The secret number was lower.");
+                bodyTextBlock.Text = "Incorrect";
+
                 Debug.Log("Game Over. You lost.");
             }
         }
@@ -76,6 +113,8 @@ public class GuessingGame : MonoBehaviour
             if (secretNumber < shownNumber)
             {
                 Debug.Log("Correct! The secret number was lower.");
+                bodyTextBlock.Text = "Correct";
+
                 currentRound++;
                 if (currentRound > totalRounds)
                 {
@@ -89,6 +128,8 @@ public class GuessingGame : MonoBehaviour
             else
             {
                 Debug.Log("Wrong! The secret number was higher.");
+                bodyTextBlock.Text = "Incorrect";
+
                 Debug.Log("Game Over. You lost.");
             }
         }

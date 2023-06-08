@@ -13,7 +13,7 @@ public enum SpaceType
     Chance,
     Event,
     MonsterSpawn,
-    Trap,
+    Challenge,
     Custom
 }
 

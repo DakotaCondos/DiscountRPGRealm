@@ -31,7 +31,7 @@ public class SpaceBuilder : MonoBehaviour
             case SpaceType.MonsterSpawn:
                 BuildSpace(space, monsterSpawnSpaces);
                 break;
-            case SpaceType.Trap:
+            case SpaceType.Challenge:
                 BuildSpace(space, trapSpaces);
                 break;
             case SpaceType.Custom:
