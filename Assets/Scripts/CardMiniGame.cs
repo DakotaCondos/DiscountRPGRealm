@@ -19,7 +19,6 @@ public class CardMiniGame : MonoBehaviour
     public List<Texture2D> cardBacks = new();
     private int currentCardBackIndex = 0;
     [SerializeField] float cardMovementMultiplier = 1;
-    private Vector3 startPos;
     public List<ChanceCardSO> chanceCardSOs = new();
     public Texture2D moneyIcon;
     public Texture2D powerIcon;
@@ -35,7 +34,8 @@ public class CardMiniGame : MonoBehaviour
     [SerializeField] AudioClip goodSound;
     [SerializeField] AudioClip badSound;
     [SerializeField] float revealTime = 1f;
-
+    [SerializeField] CameraController cameraController;
+    [SerializeField] Transform cardTransform;
     public void CreateChanceGame(TurnActor actor)
     {
         outcomeDisplay.SetActive(false);
@@ -91,6 +91,8 @@ public class CardMiniGame : MonoBehaviour
         cardFlip.ResetCard();
         // Switch screen here
         ActionsManager.Instance.panelSwitcher.SetActivePanel(ActionsManager.Instance.chancePanel);
+        cameraController.snapToOutOfBoundsView = true;
+
         // Stub out for now
         StartCardCycle(gameTime);
     }
@@ -112,7 +114,6 @@ public class CardMiniGame : MonoBehaviour
             Debug.Log("Card cycle is already running");
             return;
         }
-        startPos = cardUI.transform.position;
         cardCycleCoroutine = BeginCardCycle(duration);
         StartCoroutine(cardCycleCoroutine);
     }
@@ -162,11 +163,11 @@ public class CardMiniGame : MonoBehaviour
     {
         if (returnToStart)
         {
-            cardUI.transform.position = startPos;
+            cardUI.transform.position = cardTransform.position;
             return;
         }
 
-        cardUI.transform.position = startPos + (Vector3)UnityEngine.Random.insideUnitCircle * cardMovementMultiplier;
+        cardUI.transform.position = cardTransform.position + (Vector3)UnityEngine.Random.insideUnitCircle * cardMovementMultiplier;
     }
 
     private void CycleCard()

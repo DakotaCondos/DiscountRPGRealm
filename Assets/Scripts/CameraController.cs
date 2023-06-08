@@ -20,6 +20,11 @@ public class CameraController : MonoBehaviour
     private GameObject focusObject = null;
     private float defaultZ = 0;
 
+    public bool snapToOutOfBoundsView = false;
+    private bool trackingStart = false;
+    public Transform outOfBoundsView;
+    private Vector3 startPos;
+
     void Start()
     {
         mainCamera = GetComponent<Camera>();
@@ -28,6 +33,22 @@ public class CameraController : MonoBehaviour
 
     void Update()
     {
+        if (snapToOutOfBoundsView)
+        {
+            if (!trackingStart)
+            {
+                trackingStart = true;
+                startPos = new(transform.position.x, transform.position.y, defaultZ);
+            }
+            transform.position = outOfBoundsView.position;
+            return;
+        }
+        else if (trackingStart)
+        {
+            transform.position = startPos;
+            trackingStart = false;
+        }
+
         if (focusObject != null)
         {
             Vector3 focusPosition = focusObject.transform.position;
