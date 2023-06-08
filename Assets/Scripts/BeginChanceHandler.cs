@@ -2,16 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BeginHandleChance : MonoBehaviour
+public class BeginChanceHandler : MonoBehaviour
 {
     GameBoard gameBoard;
     ActionsManager actionsManager;
     StatDisplay statDisplay;
+    CardMiniGame cardMiniGame;
     private void Awake()
     {
-        gameBoard = FindObjectOfType<GameBoard>();
-        actionsManager = FindObjectOfType<ActionsManager>();
-        statDisplay = FindObjectOfType<StatDisplay>();
+        gameBoard = FindObjectOfType<GameBoard>(true);
+        actionsManager = FindObjectOfType<ActionsManager>(true);
+        statDisplay = FindObjectOfType<StatDisplay>(true);
+        cardMiniGame = FindObjectOfType<CardMiniGame>(true);
     }
     private void OnEnable()
     {
@@ -27,5 +29,6 @@ public class BeginHandleChance : MonoBehaviour
     {
         if (ApplicationManager.Instance.handlerNotifications) { ConsolePrinter.PrintToConsole($"HandleBeginChance({actor.player.PlayerName})", Color.cyan); }
         // Handle EndChallenge event here
+        cardMiniGame.CreateChanceGame(actor);
     }
 }

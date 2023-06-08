@@ -27,5 +27,8 @@ public class EndChanceHandler : MonoBehaviour
     {
         if (ApplicationManager.Instance.handlerNotifications) { ConsolePrinter.PrintToConsole($"HandleEndChance({actor.player.PlayerName})", Color.cyan); }
         // Handle EndChallenge event here
+        actionsManager.SetHasInteracted(true);
+        actionsManager.panelSwitcher.SetActivePanel(actionsManager.mainPanel);
+        actionsManager.DetermineActions(actor);
     }
 }

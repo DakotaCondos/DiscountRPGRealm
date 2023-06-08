@@ -8,7 +8,6 @@ public class BeginTurnHandler : MonoBehaviour
 {
     GameBoard gameBoard;
     ActionsManager actionsManager;
-    StatDisplay statDisplay;
     TurnManager turnManager;
     MonsterManager monsterManager;
     private void Awake()
@@ -16,7 +15,6 @@ public class BeginTurnHandler : MonoBehaviour
         gameBoard = FindObjectOfType<GameBoard>();
         actionsManager = FindObjectOfType<ActionsManager>();
         turnManager = FindObjectOfType<TurnManager>();
-        statDisplay = FindObjectOfType<StatDisplay>();
         monsterManager = FindObjectOfType<MonsterManager>();
     }
 
@@ -41,7 +39,6 @@ public class BeginTurnHandler : MonoBehaviour
 
         actor.player.hasMoved = false;
         actionsManager.DetermineActions(actor);
-        statDisplay.DisplayStats(actor.player.GetPower(), actor.player.GetMovement());
         Vector3 playerSpacePos = actor.player.currentSpace.transform.position;
         Camera.main.transform.position = new Vector3(playerSpacePos.x, playerSpacePos.y, Camera.main.transform.position.z);
 

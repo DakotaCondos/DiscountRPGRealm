@@ -11,6 +11,8 @@ public class CardFlip : MonoBehaviour
     private bool isFlipped = false; // Flag to track the card's flipped state
 
     private Coroutine flipCoroutine; // Coroutine reference for flipping animation
+    public float duration = 1.0f; // Duration of the flip animation
+
 
     // Method to flip the card
     public void FlipCard()
@@ -39,7 +41,6 @@ public class CardFlip : MonoBehaviour
 
     private IEnumerator FlipCoroutine()
     {
-        const float duration = 1.0f; // Duration of the flip animation
         float elapsedTime = 0.0f;
 
         Quaternion startRotation = gameObject.transform.rotation;

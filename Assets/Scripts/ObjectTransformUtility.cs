@@ -10,9 +10,21 @@ public static class ObjectTransformUtility
         await Task.Delay((int)(1000 * time));
     }
 
+    public static async Task MoveObjectLerp(GameObject targetObject, Vector3 vector3, float time)
+    {
+        targetObject.GetComponent<MonoBehaviour>().StartCoroutine(MoveLerp(targetObject.transform, vector3, time));
+        await Task.Delay((int)(1000 * time));
+    }
+
     public static async Task RotateObjectLerp(GameObject targetObject, float x, float y, float z, float time)
     {
         targetObject.GetComponent<MonoBehaviour>().StartCoroutine(RotateLerp(targetObject.transform, new Quaternion(x, y, z, 1), time));
+        await Task.Delay((int)(1000 * time));
+    }
+
+    public static async Task RotateObjectLerp(GameObject targetObject, Quaternion quaternion, float time)
+    {
+        targetObject.GetComponent<MonoBehaviour>().StartCoroutine(RotateLerp(targetObject.transform, quaternion, time));
         await Task.Delay((int)(1000 * time));
     }
 
@@ -22,9 +34,21 @@ public static class ObjectTransformUtility
         await Task.Delay((int)(1000 * time));
     }
 
+    public static async Task ScaleObjectLerp(GameObject targetObject, Vector3 vector3, float time)
+    {
+        targetObject.GetComponent<MonoBehaviour>().StartCoroutine(ScaleLerp(targetObject.transform, vector3, time));
+        await Task.Delay((int)(1000 * time));
+    }
+
     public static async Task MoveObjectSmooth(GameObject targetObject, float x, float y, float z, float time)
     {
         targetObject.GetComponent<MonoBehaviour>().StartCoroutine(MoveSmooth(targetObject.transform, new Vector3(x, y, z), time));
+        await Task.Delay((int)(1000 * time));
+    }
+
+    public static async Task MoveObjectSmooth(GameObject targetObject, Vector3 vector3, float time)
+    {
+        targetObject.GetComponent<MonoBehaviour>().StartCoroutine(MoveSmooth(targetObject.transform, vector3, time));
         await Task.Delay((int)(1000 * time));
     }
 
@@ -34,9 +58,21 @@ public static class ObjectTransformUtility
         await Task.Delay((int)(1000 * time));
     }
 
+    public static async Task RotateObjectSmooth(GameObject targetObject, Quaternion quaternion, float time)
+    {
+        targetObject.GetComponent<MonoBehaviour>().StartCoroutine(RotateSmooth(targetObject.transform, quaternion, time));
+        await Task.Delay((int)(1000 * time));
+    }
+
     public static async Task ScaleObjectSmooth(GameObject targetObject, float x, float y, float z, float time)
     {
         targetObject.GetComponent<MonoBehaviour>().StartCoroutine(ScaleSmooth(targetObject.transform, new Vector3(x, y, z), time));
+        await Task.Delay((int)(1000 * time));
+    }
+
+    public static async Task ScaleObjectSmooth(GameObject targetObject, Vector3 vector3, float time)
+    {
+        targetObject.GetComponent<MonoBehaviour>().StartCoroutine(ScaleSmooth(targetObject.transform, vector3, time));
         await Task.Delay((int)(1000 * time));
     }
 

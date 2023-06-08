@@ -1,3 +1,4 @@
+using Nova;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -10,6 +11,7 @@ public class CardMiniGame : MonoBehaviour
     [SerializeField] float cycleRateMinTime = 0.05f;
     [SerializeField] float cycleRateMaxTime = 1f;
     [SerializeField] float cycleDelayMultiplier = 0.5f;
+    [SerializeField] float gameTime = 5f;
     private bool isCardCycleRunning = false;
     private IEnumerator cardCycleCoroutine;
     [SerializeField] CardFlip cardFlip;
@@ -18,46 +20,88 @@ public class CardMiniGame : MonoBehaviour
     private int currentCardBackIndex = 0;
     [SerializeField] float cardMovementMultiplier = 1;
     private Vector3 startPos;
-    public List<Texture2D> moneyImagesGood = new();
-    public List<Texture2D> powerImagesGood = new();
-    public List<Texture2D> xpImagesGood = new();
+    public List<ChanceCardSO> chanceCardSOs = new();
+    public Texture2D moneyIcon;
+    public Texture2D powerIcon;
+    public Texture2D xpIcon;
 
+    public GameObject outcomeDisplay;
+    public UIBlock2D rewardTypeIcon;
+    public TextBlock rewardDescription;
+
+    private (RewardType, int) chanceResult;
 
     [SerializeField] AudioClip moveCardSound;
+    [SerializeField] AudioClip goodSound;
+    [SerializeField] AudioClip badSound;
+    [SerializeField] float revealTime = 1f;
 
-    public async void CreateChanceGame(TurnActor actor)
+    public void CreateChanceGame(TurnActor actor)
     {
+        outcomeDisplay.SetActive(false);
         Player player = actor.player;
+        ChanceCardSO chanceCardSO;
         // determine result and setup minigame
-        (RewardType, int) chanceResult = ChanceSelector.SelectReward();
+        chanceResult = ChanceSelector.SelectReward();
+        ChanceCardType cardType;
         switch (chanceResult.Item1)
         {
             case RewardType.Money:
                 player.AddMoney(chanceResult.Item2);
+                cardType = (chanceResult.Item2 > 0) ? ChanceCardType.GainingMoney : ChanceCardType.LosingMoney;
                 break;
             case RewardType.Power:
                 player.AddPower(chanceResult.Item2);
+                cardType = (chanceResult.Item2 > 0) ? ChanceCardType.GainingPower : ChanceCardType.LosingPower;
                 break;
             case RewardType.XP:
                 player.AddXP(chanceResult.Item2);
+                cardType = (chanceResult.Item2 > 0) ? ChanceCardType.GainingExperience : ChanceCardType.LosingExperience;
                 break;
             default:
                 Debug.LogWarning("RewardType not found!");
+                cardType = (chanceResult.Item2 > 0) ? ChanceCardType.GainingMoney : ChanceCardType.LosingMoney;
                 break;
         }
-
-        await PlayCardMinigame();
+        chanceCardSO = SelectRandomItem(chanceCardSOs.Where(card => card.CardType == cardType).ToList());
+        SetupCard(chanceCardSO);
+        SetupResult();
+        PlayCardMinigame();
     }
 
-
-    private void SetupCard(Texture2D image, string cardTitle, Texture2D icon)
+    private void SetupResult()
     {
+        Texture2D image = (chanceResult.Item1 == RewardType.Money) ?
+            image = moneyIcon : (chanceResult.Item1 == RewardType.Power) ?
+            image = powerIcon : image = xpIcon;
 
+
+        rewardTypeIcon.SetImage(image);
+
+        rewardDescription.Text = (chanceResult.Item2 > 0) ? $"+{chanceResult.Item2}" : chanceResult.Item2.ToString();
     }
-    private async Task PlayCardMinigame()
+
+    private void SetupCard(ChanceCardSO chanceCardSO)
     {
+        cardUI.SetCardDisplayFront(chanceCardSO.name, SelectRandomItem(chanceCardSO.images));
+    }
+
+    private void PlayCardMinigame()
+    {
+        cardFlip.ResetCard();
+        // Switch screen here
+        ActionsManager.Instance.panelSwitcher.SetActivePanel(ActionsManager.Instance.chancePanel);
         // Stub out for now
-        await Task.Delay(1000);
+        StartCardCycle(gameTime);
+    }
+
+    public async void DisplayResult()
+    {
+        outcomeDisplay.transform.localScale = Vector3.zero;
+        outcomeDisplay.SetActive(true);
+        await ObjectTransformUtility.ScaleObjectSmooth(outcomeDisplay, Vector3.one, revealTime);
+        AudioClip SoundClip = (chanceResult.Item2 > 0) ? goodSound : badSound;
+        AudioManager.Instance.PlaySound(SoundClip, AudioChannel.SFX);
     }
 
     // Start the Coroutine
@@ -109,6 +153,7 @@ public class CardMiniGame : MonoBehaviour
         MoveCard(true);
         PlayCardMovementSound();
         CycleCard();
+        yield return new WaitForSeconds(0.5f);
         FlipCard();
         isCardCycleRunning = false;
     }
@@ -149,5 +194,10 @@ public class CardMiniGame : MonoBehaviour
 
         int randomIndex = UnityEngine.Random.Range(0, itemList.Count);
         return itemList[randomIndex];
+    }
+
+    public void EndMiniGame()
+    {
+        TurnState.TriggerEndChance(TurnManager.Instance.GetCurrentActor());
     }
 }

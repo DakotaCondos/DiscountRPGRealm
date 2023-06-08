@@ -446,7 +446,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &519025844
 Transform:
   m_ObjectHideFlags: 0
@@ -951,7 +951,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1019086876
 Transform:
   m_ObjectHideFlags: 0
@@ -3247,6 +3247,7 @@ MonoBehaviour:
   cycleRateMinTime: 0.035
   cycleRateMaxTime: 1
   cycleDelayMultiplier: 0.5
+  gameTime: 6
   cardFlip: {fileID: 1631232862}
   cardUI: {fileID: 1631232860}
   cardBacks:
@@ -3257,6 +3258,18 @@ MonoBehaviour:
   - {fileID: 2800000, guid: 3e51661fb2fcabb479df3832c1656122, type: 3}
   - {fileID: 2800000, guid: 4e07e9df281ba4e4ea97c63be7d4602e, type: 3}
   cardMovementMultiplier: 0.01
+  moneyCardSOGood: []
+  powerCardSOGood: []
+  xpCardSOGood: []
+  moneyCardSOBad: []
+  powerCardSOBad: []
+  xpCardSOBad: []
+  moneyIcon: {fileID: 0}
+  powerIcon: {fileID: 0}
+  xpIcon: {fileID: 0}
+  outcomeDisplay: {fileID: 0}
+  rewardTypeIcon: {fileID: 0}
+  rewardDescription: {fileID: 0}
   moveCardSound: {fileID: 8300000, guid: a092ab337429e3540bf110a7d4007128, type: 3}
 --- !u!114 &1631232862
 MonoBehaviour:
@@ -3310,7 +3323,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8215425293182977633, guid: 44a68a8cb14e69245812f8c62100911e, type: 3}
       propertyPath: OnClicked.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_FloatArgument
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8215425293182977633, guid: 44a68a8cb14e69245812f8c62100911e, type: 3}
       propertyPath: OnClicked.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -3621,7 +3634,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a13da1007a7f4544a852d6ac9fe17189, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nums: 
 --- !u!1 &2060154683
 GameObject:
   m_ObjectHideFlags: 0

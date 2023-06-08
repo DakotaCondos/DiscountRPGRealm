@@ -8,6 +8,7 @@ public class ActionsManager : MonoBehaviour
 {
     private bool canInventory = false;
     private bool canInteract = false;
+    private bool hasInteracted = false;
     private bool canFight = false;
     private bool hasFought = false;
     private bool canTrade = false;
@@ -17,7 +18,7 @@ public class ActionsManager : MonoBehaviour
 
     private ActionButtonsPanel actionButtonsPanel = null;
     private TurnManager turnManager = null;
-
+    StatDisplay statDisplay;
     public PanelSwitcher panelSwitcher;
     [Header("Panels")]
     public UIBlock2D mainPanel;
@@ -47,6 +48,7 @@ public class ActionsManager : MonoBehaviour
 
         actionButtonsPanel = FindObjectOfType<ActionButtonsPanel>(true);
         turnManager = FindObjectOfType<TurnManager>(true);
+        statDisplay = FindObjectOfType<StatDisplay>();
     }
 
 
@@ -63,7 +65,11 @@ public class ActionsManager : MonoBehaviour
 
     private void ResetState()
     {
-        if (TurnState.TurnStage == TurnStages.BeginTurn) { hasFought = false; }
+        if (TurnState.TurnStage == TurnStages.BeginTurn)
+        {
+            hasFought = false;
+            hasInteracted = false;
+        }
         canInventory = false;
         canInteract = false;
         canFight = false;
@@ -77,6 +83,7 @@ public class ActionsManager : MonoBehaviour
     {
         ResetState();
         panelSwitcher.SetActivePanel(mainPanel);
+        statDisplay.DisplayStats(actor.player.GetPower(), actor.player.GetMovement());
 
         if (!actor.isPlayer)
         {
@@ -94,7 +101,7 @@ public class ActionsManager : MonoBehaviour
             return;
         }
 
-        if (space.hasMandatoryEvent)
+        if (space.hasMandatoryEvent && (!hasInteracted && actor.player.hasMoved))
         {
             //perhaps just trigger this automatically in the future
             canInteract = true;
@@ -135,6 +142,11 @@ public class ActionsManager : MonoBehaviour
         hasFought = value;
     }
 
+    public void SetHasInteracted(bool value)
+    {
+        hasInteracted = value;
+    }
+
     #region ButtonMethods
 
     public void SelectInventory()
@@ -148,10 +160,12 @@ public class ActionsManager : MonoBehaviour
         Space space = turnManager.GetCurrentActor().player.currentSpace;
         if (space.spaceType == SpaceType.Chance)
         {
+            print("ChanceSpace");
             TurnState.TriggerBeginChance(turnManager.GetCurrentActor());
         }
         else if (space.spaceType == SpaceType.Trap)
         {
+            print("TrapSpace");
             TurnState.TriggerBeginChallenge(turnManager.GetCurrentActor());
         }
         else

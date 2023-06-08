@@ -28,5 +28,7 @@ public class EndChallengeHandler : MonoBehaviour
     {
         if (ApplicationManager.Instance.handlerNotifications) { ConsolePrinter.PrintToConsole($"HandleEndChallenge({actor.player.PlayerName})", Color.cyan); }
         // Handle EndChallenge event here
+
+        actionsManager.DetermineActions(actor);
     }
 }
