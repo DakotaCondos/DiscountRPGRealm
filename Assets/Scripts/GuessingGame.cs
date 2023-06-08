@@ -72,7 +72,7 @@ public class GuessingGame : MonoBehaviour
         tasks[1] = ObjectTransformUtility.ScaleObjectSmooth(downButton, Vector3.one, buttonRevealTime);
 
         // Wait for all tasks to complete
-        Task.WaitAll(tasks);
+        await Task.WhenAll(tasks);
     }
 
     public void GuessHigher()
