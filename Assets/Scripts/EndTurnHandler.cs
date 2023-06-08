@@ -30,7 +30,7 @@ public class EndTurnHandler : MonoBehaviour
 
     public void HandleEndTurn(TurnActor actor)
     {
-        if (ApplicationManager.Instance.handlerNotifications) { ConsolePrinter.PrintToConsole($"HandleEndTurn({actor.player.PlayerName})", Color.cyan); }
+        if (ApplicationManager.Instance.handlerNotificationsEnabled) { ConsolePrinter.PrintToConsole($"HandleEndTurn({actor.player.PlayerName})", Color.cyan); }
 
         turnOrderPanel.UpdatePanel();
     }

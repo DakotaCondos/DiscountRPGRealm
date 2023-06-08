@@ -25,6 +25,22 @@ public class CameraController : MonoBehaviour
     public Transform outOfBoundsView;
     private Vector3 startPos;
 
+
+    public static CameraController Instance { get; private set; }
+
+    private void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+            return;
+        }
+    }
+
     void Start()
     {
         mainCamera = GetComponent<Camera>();

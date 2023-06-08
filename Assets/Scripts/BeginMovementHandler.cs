@@ -24,7 +24,7 @@ public class BeginMovementHandler : MonoBehaviour
 
     private void HandleBeginMovement(TurnActor actor)
     {
-        if (ApplicationManager.Instance.handlerNotifications) { ConsolePrinter.PrintToConsole($"HandleBeginMovement({actor.player.PlayerName})", Color.cyan); }
+        if (ApplicationManager.Instance.handlerNotificationsEnabled) { ConsolePrinter.PrintToConsole($"HandleBeginMovement({actor.player.PlayerName})", Color.cyan); }
 
         Space current = actor.player.currentSpace;
 

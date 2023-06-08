@@ -109,7 +109,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3770613301400985526, guid: 55911f8bfabc90e40adc3463685b9f45, type: 3}
       propertyPath: IsBlocking
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3770613301400985526, guid: 55911f8bfabc90e40adc3463685b9f45, type: 3}
       propertyPath: hasMandatoryEvent
@@ -213,7 +213,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6796673611948371075, guid: 55911f8bfabc90e40adc3463685b9f45, type: 3}
       propertyPath: m_Name
-      value: Space_Trap
+      value: Space_Challenge
       objectReference: {fileID: 0}
     - target: {fileID: 6796673612070076722, guid: 55911f8bfabc90e40adc3463685b9f45, type: 3}
       propertyPath: layout.Size.X.Raw

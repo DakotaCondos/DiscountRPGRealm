@@ -14,16 +14,22 @@ public class EndChallengeHandler : MonoBehaviour
         TurnState.EndChallenge -= HandleEndChallenge;
     }
 
-    private void HandleEndChallenge(TurnActor actor, bool loseTurn, bool idkYet)
+    private void HandleEndChallenge(TurnActor actor, bool endTurn, bool idkYet)
     {
-        if (ApplicationManager.Instance.handlerNotifications) { ConsolePrinter.PrintToConsole($"HandleEndChallenge({actor.player.PlayerName})", Color.cyan); }
+        if (ApplicationManager.Instance.handlerNotificationsEnabled) { ConsolePrinter.PrintToConsole($"HandleEndChallenge({actor.player.PlayerName})", Color.cyan); }
         // Handle EndChallenge event here
         ActionsManager.Instance.panelSwitcher.SetActivePanel(ActionsManager.Instance.mainPanel);
+        CameraController.Instance.snapToOutOfBoundsView = false;
 
-        if (loseTurn) { TurnManager.Instance.NextTurn(); }
-
-        // Update Actions
-        ActionsManager.Instance.SetHasInteracted(true);
-        ActionsManager.Instance.DetermineActions(actor);
+        if (endTurn)
+        {
+            TurnManager.Instance.NextTurn();
+        }
+        else
+        {
+            // Update Actions
+            ActionsManager.Instance.SetHasInteracted(true);
+            ActionsManager.Instance.DetermineActions(actor);
+        }
     }
 }

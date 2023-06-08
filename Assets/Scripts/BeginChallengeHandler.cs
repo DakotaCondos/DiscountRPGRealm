@@ -20,9 +20,10 @@ public class BeginChallengeHandler : MonoBehaviour
 
     private void HandleBeginChallenge(TurnActor actor)
     {
-        if (ApplicationManager.Instance.handlerNotifications) { ConsolePrinter.PrintToConsole($"HandleBeginChallenge({actor.player.PlayerName})", Color.cyan); }
+        if (ApplicationManager.Instance.handlerNotificationsEnabled) { ConsolePrinter.PrintToConsole($"HandleBeginChallenge({actor.player.PlayerName})", Color.cyan); }
         // Handle BeginChallenge event here
-        int difficulty = UnityEngine.Random.Range(1, 11);
+        int difficulty = Random.Range(1, 11);
+        CameraController.Instance.snapToOutOfBoundsView = true;
         guessingGame.SetupGame(difficulty);
     }
 }

@@ -27,7 +27,7 @@ public class BeginChanceHandler : MonoBehaviour
 
     private void HandleBeginChance(TurnActor actor)
     {
-        if (ApplicationManager.Instance.handlerNotifications) { ConsolePrinter.PrintToConsole($"HandleBeginChance({actor.player.PlayerName})", Color.cyan); }
+        if (ApplicationManager.Instance.handlerNotificationsEnabled) { ConsolePrinter.PrintToConsole($"HandleBeginChance({actor.player.PlayerName})", Color.cyan); }
         // Handle EndChallenge event here
         cardMiniGame.CreateChanceGame(actor);
     }

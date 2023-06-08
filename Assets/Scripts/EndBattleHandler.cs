@@ -31,7 +31,7 @@ public class EndBattleHandler : MonoBehaviour
 
     private void HandleEndBattlePvP(Player player, Player opponent, bool won)
     {
-        if (ApplicationManager.Instance.handlerNotifications) { ConsolePrinter.PrintToConsole($"HandleEndBattlePvP({player.PlayerName}, {opponent.PlayerName}, {won})", Color.cyan); }
+        if (ApplicationManager.Instance.handlerNotificationsEnabled) { ConsolePrinter.PrintToConsole($"HandleEndBattlePvP({player.PlayerName}, {opponent.PlayerName}, {won})", Color.cyan); }
 
         Player winner = (won) ? player : opponent;
         Player loser = (!won) ? player : opponent;
@@ -49,7 +49,7 @@ public class EndBattleHandler : MonoBehaviour
 
     private void HandleEndBattlePvM(Player player, Monster monster, bool won)
     {
-        if (ApplicationManager.Instance.handlerNotifications) { ConsolePrinter.PrintToConsole($"HandleEndBattlePvM({player.PlayerName}, {monster.MonsterName}, {won})", Color.cyan); }
+        if (ApplicationManager.Instance.handlerNotificationsEnabled) { ConsolePrinter.PrintToConsole($"HandleEndBattlePvM({player.PlayerName}, {monster.MonsterName}, {won})", Color.cyan); }
 
         if (won)
         {
@@ -77,7 +77,7 @@ public class EndBattleHandler : MonoBehaviour
     private void MovePlayerToStart(Player player)
     {
         // move player
-        if (ApplicationManager.Instance.handlerNotifications) { ConsolePrinter.PrintToConsole($"MovePlayerToStart({player.PlayerName}", Color.cyan); }
+        if (ApplicationManager.Instance.handlerNotificationsEnabled) { ConsolePrinter.PrintToConsole($"MovePlayerToStart({player.PlayerName}", Color.cyan); }
 
         Space startingSpace = GameBoard.Instance.allSpaces.FirstOrDefault(space => space.isStartingSpace == true);
         player.currentSpace.RemovePlayerFromSpace(player);

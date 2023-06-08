@@ -3165,10 +3165,10 @@ MonoBehaviour:
   layout:
     Size:
       X:
-        Raw: 120
+        Raw: 60
         Type: 0
       Y:
-        Raw: 120
+        Raw: 60
         Type: 0
       Z:
         Raw: 0

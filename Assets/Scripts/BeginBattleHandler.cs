@@ -19,7 +19,7 @@ public class BeginBattleHandler : MonoBehaviour
 
     private void HandleBeginBattlePvP(Player player, Player opponent)
     {
-        if (ApplicationManager.Instance.handlerNotifications) { ConsolePrinter.PrintToConsole($"HandleBeginBattlePvP({player.PlayerName}, {opponent.PlayerName})", Color.cyan); }
+        if (ApplicationManager.Instance.handlerNotificationsEnabled) { ConsolePrinter.PrintToConsole($"HandleBeginBattlePvP({player.PlayerName}, {opponent.PlayerName})", Color.cyan); }
 
 
         CombatManager.Instance.CreateEncounter(player, opponent);
@@ -27,7 +27,7 @@ public class BeginBattleHandler : MonoBehaviour
 
     private void HandleBeginBattlePvM(Player player, Monster monster)
     {
-        if (ApplicationManager.Instance.handlerNotifications) { ConsolePrinter.PrintToConsole($"HandleBeginBattlePvM({player.PlayerName}, {monster.MonsterName})", Color.cyan); }
+        if (ApplicationManager.Instance.handlerNotificationsEnabled) { ConsolePrinter.PrintToConsole($"HandleBeginBattlePvM({player.PlayerName}, {monster.MonsterName})", Color.cyan); }
 
         CombatManager.Instance.CreateEncounter(player, monster);
     }
