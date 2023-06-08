@@ -30,6 +30,7 @@ public class ActionsManager : MonoBehaviour
     public UIBlock2D chancePanel;
     public UIBlock2D eventPanel;
     public UIBlock2D startPanel;
+    public UIBlock2D challengePanel;
 
 
     public static ActionsManager Instance { get; private set; }
@@ -48,7 +49,7 @@ public class ActionsManager : MonoBehaviour
 
         actionButtonsPanel = FindObjectOfType<ActionButtonsPanel>(true);
         turnManager = FindObjectOfType<TurnManager>(true);
-        statDisplay = FindObjectOfType<StatDisplay>();
+        statDisplay = FindObjectOfType<StatDisplay>(true);
     }
 
 

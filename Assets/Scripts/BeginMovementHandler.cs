@@ -6,12 +6,10 @@ public class BeginMovementHandler : MonoBehaviour
 {
     GameBoard gameBoard;
     ActionsManager actionsManager;
-    StatDisplay statDisplay;
     private void Awake()
     {
         gameBoard = FindObjectOfType<GameBoard>();
         actionsManager = FindObjectOfType<ActionsManager>();
-        statDisplay = FindObjectOfType<StatDisplay>();
     }
 
     private void OnEnable()
@@ -38,8 +36,5 @@ public class BeginMovementHandler : MonoBehaviour
         }
 
         actionsManager.DetermineActions(actor);
-        statDisplay.DisplayStats(actor.player.GetPower(), actor.player.GetMovement());
-
-
     }
 }
