@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80f437e1ba0d71140832eaaf33e28913, type: 3}
+  m_Name: King Slime
+  m_EditorClassIdentifier: 
+  MonsterName: King Slime
+  power: 115
+  doesMove: 0
+  battlecry: {fileID: 0}
+  monsterTextures:
+  - {fileID: 2800000, guid: a9a23cf682bbd0340a73175edf1890f2, type: 3}
+  - {fileID: 2800000, guid: 18b6c228945e36d4299ced3baa705623, type: 3}
+  - {fileID: 2800000, guid: 0fd77801b0189674eb6e765682a9cfcc, type: 3}
+  - {fileID: 2800000, guid: b374f5c5d9c704a448db0930bdb45530, type: 3}
+  - {fileID: 2800000, guid: 65f798ed0dc044246b57f88a6b9819f4, type: 3}
+  - {fileID: 2800000, guid: 0c29dba429a729d4a82cd9a2abde104c, type: 3}
+  - {fileID: 2800000, guid: 3d92e3cdbc0723d4a887554154880887, type: 3}
+  - {fileID: 2800000, guid: b81bb1a382ea0cb43a21d7078e8d0119, type: 3}
+  - {fileID: 2800000, guid: 70d45561cc8745c41b123593e066d88b, type: 3}

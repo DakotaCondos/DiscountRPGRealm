@@ -73,7 +73,7 @@ public class MonsterManager : MonoBehaviour
 
     private MonsterSO GetMonsterSO(int maxPower)
     {
-        List<MonsterSO> eligibleMonsters = monsterSOs.Where(monster => monster.power <= maxPower).ToList();
+        List<MonsterSO> eligibleMonsters = monsterSOs.Where(monster => monster.power <= maxPower && monster.doesMove).ToList();
 
         if (eligibleMonsters.Count > 0)
         {
