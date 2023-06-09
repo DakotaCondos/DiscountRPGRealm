@@ -70,9 +70,50 @@ public class CombatManager : MonoBehaviour
         else
         {
             ConsolePrinter.PrintToConsole($"{player.PlayerName} Lost!", Color.red);
+            ScaleMonsterPower(opponent);
         }
         TurnState.TriggerEndBattlePvM(player, opponent, win);
     }
 
+    public void ScaleMonsterPower(Monster monster)
+    {
+        // Special monsters first
+        if (monster.MonsterName == "Slime")
+        {
+            monster.power += 1;
+            monster.power *= 2;
+            if (monster.power > 100) { monster.power = 100; }
+            UpdateMonsterPiece(monster);
+            return;
+        }
 
+        switch (monster.power)
+        {
+            case <= 10:
+                monster.power += 2;
+                break;
+            case > 10 and <= 25:
+                monster.power += 3;
+                break;
+            case > 25 and <= 50:
+                monster.power += 5;
+                break;
+            case > 50 and <= 75:
+                monster.power += 8;
+                break;
+            case > 75 and <= 90:
+                monster.power += 10;
+                break;
+            default:
+                monster.power = (int)(1.025 * monster.power);
+                break;
+        }
+
+        UpdateMonsterPiece(monster);
+    }
+
+    public void UpdateMonsterPiece(Monster monster)
+    {
+        monster.currentSpace.monsterPieceAtSpace.GetComponent<MonsterPiece>().powerLabel.Text = monster.power.ToString();
+    }
 }
