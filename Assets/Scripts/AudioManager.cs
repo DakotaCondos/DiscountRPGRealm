@@ -24,7 +24,6 @@ public class AudioManager : MonoBehaviour
     public bool IsSFXMuted { get => isSFXMuted; }
 
     public static event Action MusicTrackEnded;
-    public float musicClipLengthPlayed = 0;
     public bool shouldTriggerEnded;
 
     private void Awake()
@@ -43,9 +42,8 @@ public class AudioManager : MonoBehaviour
 
     private void Update()
     {
-        musicClipLengthPlayed += Time.unscaledDeltaTime;
-
-        if (musicClipLengthPlayed >= musicChannel.clip.length && shouldTriggerEnded)
+        if (musicChannel.isPlaying) { return; }
+        if (shouldTriggerEnded)
         {
             shouldTriggerEnded = false;
             MusicTrackEnded?.Invoke();
@@ -97,8 +95,7 @@ public class AudioManager : MonoBehaviour
                 {
                     musicChannel.clip = clip;
                     musicChannel.loop = looped;
-                    musicClipLengthPlayed = 0;
-                    shouldTriggerEnded = true;
+                    shouldTriggerEnded = !looped;
                     musicChannel.Play();
                 }
                 break;
