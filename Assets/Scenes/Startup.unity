@@ -297,7 +297,7 @@ MonoBehaviour:
   - {fileID: 2800000, guid: 108921819f1ece94f8ffd4a441b4eeac, type: 3}
   - {fileID: 2800000, guid: 008507c25ac2e1446a6ff588b4fc9660, type: 3}
   - {fileID: 2800000, guid: 3238716e15d5dbb47ad9c5962e0f274e, type: 3}
-  handlerNotifications: 0
+  handlerNotificationsEnabled: 1
 --- !u!1 &81435475
 GameObject:
   m_ObjectHideFlags: 0
@@ -308,6 +308,7 @@ GameObject:
   m_Component:
   - component: {fileID: 81435476}
   - component: {fileID: 81435477}
+  - component: {fileID: 81435478}
   m_Layer: 0
   m_Name: AudioManger
   m_TagString: Untagged
@@ -348,6 +349,26 @@ MonoBehaviour:
   musicChannel: {fileID: 1893463441}
   uiEffectsChannel: {fileID: 1963481340}
   sfxChannel: {fileID: 2122918867}
+  musicClipLengthPlayed: 0
+  shouldTriggerEnded: 0
+--- !u!114 &81435478
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 81435475}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46ebc6d7a9ef2cb48b0d39757f3c2b8d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  musicTracks:
+  - {fileID: 8300000, guid: b1d9128cffa59a041996151814757ad7, type: 3}
+  - {fileID: 8300000, guid: d471c33093eb81441b537c5479b08a55, type: 3}
+  - {fileID: 8300000, guid: fcd5a18b1e2f4ea4183a2c079083c7c7, type: 3}
+  - {fileID: 8300000, guid: 618da24dc613f39488bbe9592221b971, type: 3}
+  currentTrack: 0
 --- !u!1 &85667930
 GameObject:
   m_ObjectHideFlags: 0
@@ -1554,7 +1575,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -1682,7 +1703,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -1894,7 +1915,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0

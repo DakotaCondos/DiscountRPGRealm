@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 public enum AudioChannel
 {
@@ -8,12 +9,10 @@ public enum AudioChannel
 
 public class AudioManager : MonoBehaviour
 {
-    [SerializeField]
-    private AudioSource musicChannel;
-    [SerializeField]
-    private AudioSource uiEffectsChannel;
-    [SerializeField]
-    private AudioSource sfxChannel;
+    [Header("AudioSources")]
+    public AudioSource musicChannel;
+    public AudioSource uiEffectsChannel;
+    public AudioSource sfxChannel;
 
     private bool isMusicMuted = false;
     private bool isUIEffectsMuted = false;
@@ -24,7 +23,9 @@ public class AudioManager : MonoBehaviour
     public bool IsUIEffectsMuted { get => isUIEffectsMuted; }
     public bool IsSFXMuted { get => isSFXMuted; }
 
-
+    public static event Action MusicTrackEnded;
+    public float musicClipLengthPlayed = 0;
+    public bool shouldTriggerEnded;
 
     private void Awake()
     {
@@ -37,6 +38,17 @@ public class AudioManager : MonoBehaviour
         {
             Destroy(gameObject);
             return;
+        }
+    }
+
+    private void Update()
+    {
+        musicClipLengthPlayed += Time.unscaledDeltaTime;
+
+        if (musicClipLengthPlayed >= musicChannel.clip.length && shouldTriggerEnded)
+        {
+            shouldTriggerEnded = false;
+            MusicTrackEnded?.Invoke();
         }
     }
 
@@ -85,6 +97,8 @@ public class AudioManager : MonoBehaviour
                 {
                     musicChannel.clip = clip;
                     musicChannel.loop = looped;
+                    musicClipLengthPlayed = 0;
+                    shouldTriggerEnded = true;
                     musicChannel.Play();
                 }
                 break;
