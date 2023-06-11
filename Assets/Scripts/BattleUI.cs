@@ -19,8 +19,13 @@ public class BattleUI : MonoBehaviour
     [Header("Visuals")]
     public GameObject fightButton;
     public GameObject spinner;
+    public UIBlock2D spinnerChanceBlock;
     public TextBlock winningPlayerTextBlock;
 
+    [Header("Spinner")]
+    public float rotationTime = 5f;
+    public int rotationsMin = 15;
+    public int rotationsMax = 30;
 
     private string p1Name;
     private string p2Name;
@@ -40,7 +45,9 @@ public class BattleUI : MonoBehaviour
         opponentTextBlock.Text = p2.PlayerName;
         p2Name = p2.PlayerName;
 
-        BeginBattle(win);
+        float winDegrees = 360f * ((float)p1.GetPowerVsPlayer() / (float)(p1.GetPowerVsPlayer() + p2.GetPowerVsPlayer()));
+        spinnerChanceBlock.RadialFill.FillAngle = winDegrees;
+        BeginBattle(win, winDegrees);
     }
 
     public void BuildBattleUI(Player p1, Monster p2, bool win)
@@ -57,43 +64,46 @@ public class BattleUI : MonoBehaviour
         opponentTextBlock.Text = p2.MonsterName;
         p2Name = p2.MonsterName;
 
-        BeginBattle(win);
+        float winDegrees = 360f * ((float)p1.GetPowerVsPlayer() / (float)(p1.GetPowerVsMonster() + p2.power));
+        spinnerChanceBlock.RadialFill.FillAngle = winDegrees;
+        BeginBattle(win, winDegrees);
     }
 
-    private void BeginBattle(bool win)
+    private void BeginBattle(bool win, float winDegrees)
     {
         winningPlayerTextBlock.Text = "???";
-        int rotations = Random.Range(10, 20);
-        float offset = (win) ? Random.value * 180.0f : 180.0f + (Random.value * 180.0f);
-        //await ObjectTransformUtility.RotateObjectSmooth()
+        int rotations = Random.Range(rotationsMin, rotationsMax);
+        float offset = (win) ? Random.value * winDegrees : winDegrees + (Random.value * 360f - winDegrees);
+        spinner.transform.rotation = Quaternion.identity;
+        float totaolRotation = (rotations * 360f) + offset;
+        print($"TotalRotation: {totaolRotation}");
+        SpinObject(spinner, (rotations * 360f) + offset, rotationTime, winDegrees);
     }
 
-    public void SpinObject(GameObject gameObject, float rotationDegrees, float rotationTime)
+    public void SpinObject(GameObject gameObject, float rotationDegrees, float rotationTime, float winDegrees)
     {
-        StartCoroutine(SpinCoroutine(gameObject, rotationDegrees, rotationTime));
+        StartCoroutine(SpinCoroutine(gameObject, rotationDegrees, rotationTime, winDegrees));
     }
 
-    private IEnumerator SpinCoroutine(GameObject gameObject, float rotationDegrees, float rotationTime)
+    private IEnumerator SpinCoroutine(GameObject gameObject, float rotationDegrees, float rotationTime, float winDegrees)
     {
         float elapsedTime = 0f;
-        float currentRotation = 0f;
-        float roationOffset = gameObject.transform.rotation.z;
-        float speedMultiplier = 1f;
-        float rotationSpeed = rotationDegrees / rotationTime;
+        float initialRotation = gameObject.transform.eulerAngles.z;
+        float targetRotation = initialRotation + rotationDegrees;
 
         while (elapsedTime < rotationTime)
         {
-            float rotationAmount = rotationSpeed * speedMultiplier * Time.deltaTime;
-            currentRotation += rotationAmount;
+            float t = elapsedTime / rotationTime;
+            // Use SmoothStep to make the rotation start fast and end slow
+            float smoothT = Mathf.SmoothStep(0f, 1f, t);
+            float currentRotation = Mathf.Lerp(initialRotation, targetRotation, smoothT);
 
-            Quaternion newRotation = Quaternion.Euler(0f, 0f, currentRotation + roationOffset);
+            Quaternion newRotation = Quaternion.Euler(0f, 0f, currentRotation);
             gameObject.transform.rotation = newRotation;
 
             elapsedTime += Time.deltaTime;
-            speedMultiplier = 1f - (elapsedTime / rotationTime);
 
-
-            if (currentRotation % 360f <= 180)
+            if (currentRotation % 360f <= winDegrees)
             {
                 ShowPlayer1();
             }
@@ -105,12 +115,17 @@ public class BattleUI : MonoBehaviour
             yield return null;
         }
 
+        // Make sure the final rotation is exactly the target rotation
+        gameObject.transform.rotation = Quaternion.Euler(0f, 0f, targetRotation);
+
         DisplayWinner();
     }
+
 
     private void DisplayWinner()
     {
         // make image and namneplate appear
+        //print("Display Winner Stuff Here!");
     }
 
     private void ShowPlayer1()
