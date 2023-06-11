@@ -26,6 +26,7 @@ public class BattleUI : MonoBehaviour
     public float rotationTime = 5f;
     public int rotationsMin = 15;
     public int rotationsMax = 30;
+    public AnimationCurve animationCurve;
 
     private string p1Name;
     private string p2Name;
@@ -73,10 +74,10 @@ public class BattleUI : MonoBehaviour
     {
         winningPlayerTextBlock.Text = "???";
         int rotations = Random.Range(rotationsMin, rotationsMax);
-        float offset = (win) ? Random.value * winDegrees : winDegrees + (Random.value * 360f - winDegrees);
+        float offset = (win) ? Random.value * winDegrees : winDegrees + (Random.value * (360f - winDegrees));
         spinner.transform.rotation = Quaternion.identity;
-        float totaolRotation = (rotations * 360f) + offset;
-        print($"TotalRotation: {totaolRotation}");
+        float totalRotation = (rotations * 360f) + offset;
+        print($"TotalRotation: {totalRotation}");
         SpinObject(spinner, (rotations * 360f) + offset, rotationTime, winDegrees);
     }
 
@@ -88,15 +89,14 @@ public class BattleUI : MonoBehaviour
     private IEnumerator SpinCoroutine(GameObject gameObject, float rotationDegrees, float rotationTime, float winDegrees)
     {
         float elapsedTime = 0f;
-        float initialRotation = gameObject.transform.eulerAngles.z;
-        float targetRotation = initialRotation + rotationDegrees;
+        float targetRotation = rotationDegrees;
 
         while (elapsedTime < rotationTime)
         {
-            float t = elapsedTime / rotationTime;
+            float time = elapsedTime / rotationTime;
             // Use SmoothStep to make the rotation start fast and end slow
-            float smoothT = Mathf.SmoothStep(0f, 1f, t);
-            float currentRotation = Mathf.Lerp(initialRotation, targetRotation, smoothT);
+            float curvedTime = animationCurve.Evaluate(time);
+            float currentRotation = Mathf.Lerp(0, targetRotation, curvedTime);
 
             Quaternion newRotation = Quaternion.Euler(0f, 0f, currentRotation);
             gameObject.transform.rotation = newRotation;

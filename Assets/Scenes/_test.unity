@@ -1038,15 +1038,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 365502370}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -119.00287, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1995403238}
   - {fileID: 588656542}
-  - {fileID: 1616595988}
   m_Father: {fileID: 694894791}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &365502372
 MonoBehaviour:
@@ -1181,7 +1180,7 @@ MonoBehaviour:
         Max: Infinity
     Alignment:
       X: 0
-      Y: 0
+      Y: -1
       Z: 0
     AutoSize:
       X: 1
@@ -2767,6 +2766,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1616595988}
   - {fileID: 365502371}
   m_Father: {fileID: 547179765}
   m_RootOrder: 1
@@ -3987,7 +3987,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2567597221223135800, guid: 3c8943413792d794c8643a36f916d9c8, type: 3}
       propertyPath: layout.Alignment.Y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2567597221223135800, guid: 3c8943413792d794c8643a36f916d9c8, type: 3}
       propertyPath: layout.Position.Y.Raw
@@ -4067,7 +4067,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2567597221223135802, guid: 3c8943413792d794c8643a36f916d9c8, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 30.690002
+      value: 347.51288
       objectReference: {fileID: 0}
     - target: {fileID: 2567597221223135802, guid: 3c8943413792d794c8643a36f916d9c8, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -6791,7 +6791,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2567597221223135800, guid: 3c8943413792d794c8643a36f916d9c8, type: 3}
       propertyPath: layout.Size.X.Raw
-      value: 162.46094
+      value: 657.28906
       objectReference: {fileID: 0}
     - target: {fileID: 2567597221223135800, guid: 3c8943413792d794c8643a36f916d9c8, type: 3}
       propertyPath: layout.Size.Y.Raw
@@ -6803,11 +6803,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2567597221223135800, guid: 3c8943413792d794c8643a36f916d9c8, type: 3}
       propertyPath: layout.Alignment.Y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2567597221223135800, guid: 3c8943413792d794c8643a36f916d9c8, type: 3}
       propertyPath: layout.Position.Y.Raw
-      value: 0
+      value: 61.380005
       objectReference: {fileID: 0}
     - target: {fileID: 2567597221223135800, guid: 3c8943413792d794c8643a36f916d9c8, type: 3}
       propertyPath: layout.Position.Y.Type
@@ -6883,7 +6883,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2567597221223135802, guid: 3c8943413792d794c8643a36f916d9c8, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -30.690002
+      value: 286.13287
       objectReference: {fileID: 0}
     - target: {fileID: 2567597221223135802, guid: 3c8943413792d794c8643a36f916d9c8, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -6952,15 +6952,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1616595987}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1015110913}
   - {fileID: 1422317438}
-  m_Father: {fileID: 365502371}
-  m_RootOrder: 2
+  m_Father: {fileID: 694894791}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1616595989
 MonoBehaviour:
@@ -7095,7 +7095,7 @@ MonoBehaviour:
         Max: Infinity
     Alignment:
       X: 0
-      Y: 0
+      Y: 1
       Z: 0
     AutoSize:
       X: 1
@@ -7105,7 +7105,7 @@ MonoBehaviour:
     AspectRatio: {x: 0, y: 0, z: 0}
     AspectRatioAxis: 0
   autoLayout:
-    Axis: 2
+    Axis: 0
     Spacing:
       Raw: 0
       Type: 0
@@ -7114,7 +7114,7 @@ MonoBehaviour:
       Max: Infinity
     AutoSpace: 0
     ReverseOrder: 0
-    alignment: 0
+    alignment: 1
     Offset: 0
     Cross:
       Axis: 0
@@ -7283,8 +7283,32 @@ MonoBehaviour:
   spinnerChanceBlock: {fileID: 951165171}
   winningPlayerTextBlock: {fileID: 1422317439}
   rotationTime: 4
-  rotationsMin: 15
-  rotationsMax: 30
+  rotationsMin: 5
+  rotationsMax: 8
+  animationCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!114 &1660284558
 MonoBehaviour:
   m_ObjectHideFlags: 0
