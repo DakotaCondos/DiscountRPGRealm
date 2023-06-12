@@ -1,5 +1,6 @@
 using Nova;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class BattleUI : MonoBehaviour
@@ -28,7 +29,9 @@ public class BattleUI : MonoBehaviour
     public int rotationsMax = 30;
     public AnimationCurve animationCurve;
 
-    [Header("ActiveBattleEntities")]
+    [Header("Misc")]
+    public List<AudioClip> winSounds;
+    public List<AudioClip> LoseSounds;
     public BattleDTO battleDTO;
     private string p1Name;
     private string p2Name;
@@ -91,15 +94,15 @@ public class BattleUI : MonoBehaviour
         int rotations = Random.Range(rotationsMin, rotationsMax);
         float offset = (win) ? Random.value * winDegrees : winDegrees + (Random.value * (360f - winDegrees));
         spinner.transform.rotation = Quaternion.identity;
-        SpinObject(spinner, (rotations * 360f) + offset, rotationTime, winDegrees);
+        SpinObject(spinner, (rotations * 360f) + offset, rotationTime, winDegrees, win);
     }
 
-    public void SpinObject(GameObject gameObject, float rotationDegrees, float rotationTime, float winDegrees)
+    public void SpinObject(GameObject gameObject, float rotationDegrees, float rotationTime, float winDegrees, bool win)
     {
-        StartCoroutine(SpinCoroutine(gameObject, rotationDegrees, rotationTime, winDegrees));
+        StartCoroutine(SpinCoroutine(gameObject, rotationDegrees, rotationTime, winDegrees, win));
     }
 
-    private IEnumerator SpinCoroutine(GameObject gameObject, float rotationDegrees, float rotationTime, float winDegrees)
+    private IEnumerator SpinCoroutine(GameObject gameObject, float rotationDegrees, float rotationTime, float winDegrees, bool win)
     {
         float elapsedTime = 0f;
         float targetRotation = rotationDegrees;
@@ -132,6 +135,9 @@ public class BattleUI : MonoBehaviour
         gameObject.transform.rotation = Quaternion.Euler(0f, 0f, targetRotation);
 
         continueButton.SetActive(true);
+        // Play Sound
+        var clipList = (win) ? winSounds : LoseSounds;
+        AudioManager.Instance.PlaySound(clipList[Random.Range(0, clipList.Count)], AudioChannel.SFX);
     }
 
 

@@ -349,7 +349,6 @@ MonoBehaviour:
   musicChannel: {fileID: 1893463441}
   uiEffectsChannel: {fileID: 1963481340}
   sfxChannel: {fileID: 2122918867}
-  musicClipLengthPlayed: 0
   shouldTriggerEnded: 0
 --- !u!114 &81435478
 MonoBehaviour:
@@ -364,10 +363,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   musicTracks:
-  - {fileID: 8300000, guid: b1d9128cffa59a041996151814757ad7, type: 3}
-  - {fileID: 8300000, guid: d471c33093eb81441b537c5479b08a55, type: 3}
-  - {fileID: 8300000, guid: fcd5a18b1e2f4ea4183a2c079083c7c7, type: 3}
-  - {fileID: 8300000, guid: 618da24dc613f39488bbe9592221b971, type: 3}
+  - {fileID: 8300000, guid: c9f98f3574f2b4741bede336dca3dfc4, type: 3}
+  - {fileID: 8300000, guid: bd3e8591a1281ed468d15c1330e67c43, type: 3}
+  - {fileID: 8300000, guid: 6d4e57a9c1c0dc1488d1da9b1f811c60, type: 3}
+  - {fileID: 8300000, guid: f557ddf16cd6aed4a8d871093a7f4c03, type: 3}
+  - {fileID: 8300000, guid: e72b4ad38ae3c3a47aa2417bcbedabce, type: 3}
+  - {fileID: 8300000, guid: c3ec9cbda692fd2449b26a6d9e643596, type: 3}
+  - {fileID: 8300000, guid: 040d9833ab7481b43bea2cfbb6145bb0, type: 3}
+  - {fileID: 8300000, guid: a604145e62366284d890ed597357388f, type: 3}
+  - {fileID: 8300000, guid: b65289a76ffddb44daf609e492c91f64, type: 3}
+  - {fileID: 8300000, guid: 4a50c6ed27a739544961b1dc25223e55, type: 3}
+  - {fileID: 8300000, guid: f125f09af324560448b64d5f7b283326, type: 3}
   currentTrack: 0
 --- !u!1 &85667930
 GameObject:

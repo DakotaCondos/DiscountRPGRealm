@@ -105,9 +105,9 @@ public class ActionsManager : MonoBehaviour
 
         if (space.hasMandatoryEvent && (!hasInteracted && actor.player.hasMoved))
         {
-            //perhaps just trigger this automatically in the future
             canInteract = true;
             SetButtons();
+            SelectInteract(); // Trigger Automatically
             return;
         }
 
@@ -157,17 +157,13 @@ public class ActionsManager : MonoBehaviour
     }
     public void SelectInteract()
     {
-        print("SelectInteract");
-        // Space is either a chance or trap space
         Space space = turnManager.GetCurrentActor().player.currentSpace;
         if (space.spaceType == SpaceType.Chance)
         {
-            print("ChanceSpace");
             TurnState.TriggerBeginChance(turnManager.GetCurrentActor());
         }
         else if (space.spaceType == SpaceType.Challenge)
         {
-            print("ChallengeSpace");
             TurnState.TriggerBeginChallenge(turnManager.GetCurrentActor());
         }
         else

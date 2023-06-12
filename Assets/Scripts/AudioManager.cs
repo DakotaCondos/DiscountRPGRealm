@@ -18,6 +18,12 @@ public class AudioManager : MonoBehaviour
     private bool isUIEffectsMuted = false;
     private bool isSFXMuted = false;
 
+    [Header("Volume Defaults")]
+    public float musicDefault = 0.5f;
+    public float uiDefault = 0.8f;
+    public float sfxDefault = 1f;
+
+
     public static AudioManager Instance { get; private set; }
     public bool IsMusicMuted { get => isMusicMuted; }
     public bool IsUIEffectsMuted { get => isUIEffectsMuted; }
@@ -38,6 +44,14 @@ public class AudioManager : MonoBehaviour
             Destroy(gameObject);
             return;
         }
+    }
+
+    private void Start()
+    {
+        // Set volume Defaults
+        SetMusicVolume(musicDefault);
+        SetUIEffectsVolume(uiDefault);
+        SetSFXVolume(sfxDefault);
     }
 
     private void Update()

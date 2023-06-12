@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class MusicManager : MonoBehaviour
 {
-    [Header("Music Tracks")]
     public List<AudioClip> musicTracks = new();
     public int currentTrack = 0;
 
