@@ -50,7 +50,7 @@ public class EndBattleHandler : MonoBehaviour
     private void HandleEndBattlePvM(Player player, Monster monster, bool won)
     {
         if (ApplicationManager.Instance.handlerNotificationsEnabled) { ConsolePrinter.PrintToConsole($"HandleEndBattlePvM({player.PlayerName}, {monster.MonsterName}, {won})", Color.cyan); }
-
+        ActionsManager.Instance.panelSwitcher.SetActivePanel(ActionsManager.Instance.mainPanel);
         if (won)
         {
             MonsterManager.Instance.KillMonster(monster, player);
@@ -62,6 +62,7 @@ public class EndBattleHandler : MonoBehaviour
             int moneyLost = (player.money / 5);
             player.AddMoney(-moneyLost);
             MovePlayerToStart(player);
+            MonsterManager.Instance.ScaleMonsterPower(monster);
             TurnManager.Instance.NextTurn();
         }
     }

@@ -35,7 +35,6 @@ public class FightMonsterPanelUI : MonoBehaviour
     public void FightButton()
     {
         TurnState.TriggerBeginBattlePvM(player, monster);
-        ActionsManager.Instance.panelSwitcher.SetActivePanel(ActionsManager.Instance.mainPanel);
         ResetPanel();
     }
 

@@ -26,6 +26,7 @@ public class ActionsManager : MonoBehaviour
     public UIBlock2D shopPanel;
     public UIBlock2D fightPanelPvP;
     public UIBlock2D fightPanelPvM;
+    public UIBlock2D battlePanel;
     public UIBlock2D optionsPanel;
     public UIBlock2D chancePanel;
     public UIBlock2D eventPanel;

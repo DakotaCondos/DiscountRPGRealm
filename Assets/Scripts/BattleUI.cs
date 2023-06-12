@@ -17,7 +17,7 @@ public class BattleUI : MonoBehaviour
     public TextBlock opponentTextBlock;
 
     [Header("Visuals")]
-    public GameObject fightButton;
+    public GameObject continueButton;
     public GameObject spinner;
     public UIBlock2D spinnerChanceBlock;
     public TextBlock winningPlayerTextBlock;
@@ -28,9 +28,23 @@ public class BattleUI : MonoBehaviour
     public int rotationsMax = 30;
     public AnimationCurve animationCurve;
 
+    [Header("ActiveBattleEntities")]
+    public BattleDTO battleDTO;
     private string p1Name;
     private string p2Name;
 
+    public void InitiateBattleSequence(BattleDTO battleDTO)
+    {
+        this.battleDTO = battleDTO;
+        if (battleDTO.playerOpponent != null)
+        {
+            BuildBattleUI(battleDTO.player, battleDTO.playerOpponent, battleDTO.win);
+        }
+        else
+        {
+            BuildBattleUI(battleDTO.player, battleDTO.monster, battleDTO.win);
+        }
+    }
 
     public void BuildBattleUI(Player p1, Player p2, bool win)
     {
@@ -72,12 +86,11 @@ public class BattleUI : MonoBehaviour
 
     private void BeginBattle(bool win, float winDegrees)
     {
+        continueButton.SetActive(false);
         winningPlayerTextBlock.Text = "???";
         int rotations = Random.Range(rotationsMin, rotationsMax);
         float offset = (win) ? Random.value * winDegrees : winDegrees + (Random.value * (360f - winDegrees));
         spinner.transform.rotation = Quaternion.identity;
-        float totalRotation = (rotations * 360f) + offset;
-        print($"TotalRotation: {totalRotation}");
         SpinObject(spinner, (rotations * 360f) + offset, rotationTime, winDegrees);
     }
 
@@ -94,9 +107,9 @@ public class BattleUI : MonoBehaviour
         while (elapsedTime < rotationTime)
         {
             float time = elapsedTime / rotationTime;
-            // Use SmoothStep to make the rotation start fast and end slow
-            float curvedTime = animationCurve.Evaluate(time);
-            float currentRotation = Mathf.Lerp(0, targetRotation, curvedTime);
+            // Use Animation Curve to determine the completion percentage
+            float percentComplete = animationCurve.Evaluate(time);
+            float currentRotation = Mathf.Lerp(0, targetRotation, percentComplete);
 
             Quaternion newRotation = Quaternion.Euler(0f, 0f, currentRotation);
             gameObject.transform.rotation = newRotation;
@@ -118,14 +131,14 @@ public class BattleUI : MonoBehaviour
         // Make sure the final rotation is exactly the target rotation
         gameObject.transform.rotation = Quaternion.Euler(0f, 0f, targetRotation);
 
-        DisplayWinner();
+        continueButton.SetActive(true);
     }
 
 
-    private void DisplayWinner()
+    public void FinishBattle()
     {
-        // make image and namneplate appear
-        //print("Display Winner Stuff Here!");
+        // UI effects go here
+        CombatManager.Instance.BattleDTOHandler(battleDTO);
     }
 
     private void ShowPlayer1()

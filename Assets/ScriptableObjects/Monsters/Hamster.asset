@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Hamster
   m_EditorClassIdentifier: 
   MonsterName: Hamster
-  power: 1
+  power: 2
   doesMove: 1
   battlecry: {fileID: 0}
   monsterTextures:

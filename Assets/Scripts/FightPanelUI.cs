@@ -91,7 +91,6 @@ public class FightPanelUI : MonoBehaviour
     public void Fight()
     {
         TurnState.TriggerBeginBattlePvP(player, opponent);
-        ActionsManager.Instance.panelSwitcher.SetActivePanel(ActionsManager.Instance.mainPanel);
         ResetPanel();
     }
 }

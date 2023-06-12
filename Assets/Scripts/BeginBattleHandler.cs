@@ -21,7 +21,7 @@ public class BeginBattleHandler : MonoBehaviour
     {
         if (ApplicationManager.Instance.handlerNotificationsEnabled) { ConsolePrinter.PrintToConsole($"HandleBeginBattlePvP({player.PlayerName}, {opponent.PlayerName})", Color.cyan); }
 
-
+        ActionsManager.Instance.panelSwitcher.SetActivePanel(ActionsManager.Instance.battlePanel);
         CombatManager.Instance.CreateEncounter(player, opponent);
     }
 
@@ -29,6 +29,7 @@ public class BeginBattleHandler : MonoBehaviour
     {
         if (ApplicationManager.Instance.handlerNotificationsEnabled) { ConsolePrinter.PrintToConsole($"HandleBeginBattlePvM({player.PlayerName}, {monster.MonsterName})", Color.cyan); }
 
+        ActionsManager.Instance.panelSwitcher.SetActivePanel(ActionsManager.Instance.battlePanel);
         CombatManager.Instance.CreateEncounter(player, monster);
     }
 }
