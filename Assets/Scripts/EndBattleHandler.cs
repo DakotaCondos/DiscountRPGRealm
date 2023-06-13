@@ -29,16 +29,28 @@ public class EndBattleHandler : MonoBehaviour
         TurnState.EndBattlePvM -= HandleEndBattlePvM;
     }
 
-    private void HandleEndBattlePvP(Player player, Player opponent, bool won)
+    private async void HandleEndBattlePvP(Player player, Player opponent, bool won)
     {
         if (ApplicationManager.Instance.handlerNotificationsEnabled) { ConsolePrinter.PrintToConsole($"HandleEndBattlePvP({player.PlayerName}, {opponent.PlayerName}, {won})", Color.cyan); }
 
         Player winner = (won) ? player : opponent;
         Player loser = (!won) ? player : opponent;
         HandlePVP(loser, winner);
+        if (won) { actionsManager.SetHasFought(true); }
+
+        print("Starting PlayerEffectsHandler from EndBattleHandler");
+        ActionsManager.Instance.panelSwitcher.SetActivePanel(ActionsManager.Instance.playerEffectsPanel);
+        TaskHelper helper = new();
+        StartCoroutine(PlayerEffectsHandler.Instance.HandleEffects(helper));
+
+        while (!helper.isComplete)
+        {
+            await Task.Delay(100);
+        }
+        print("Ended PlayerEffectsHandler from EndBattleHandler");
+
         if (won)
         {
-            actionsManager.SetHasFought(true);
             actionsManager.DetermineActions(TurnManager.Instance.GetCurrentActor());
         }
         else
@@ -47,22 +59,39 @@ public class EndBattleHandler : MonoBehaviour
         }
     }
 
-    private void HandleEndBattlePvM(Player player, Monster monster, bool won)
+    private async void HandleEndBattlePvM(Player player, Monster monster, bool won)
     {
         if (ApplicationManager.Instance.handlerNotificationsEnabled) { ConsolePrinter.PrintToConsole($"HandleEndBattlePvM({player.PlayerName}, {monster.MonsterName}, {won})", Color.cyan); }
-        ActionsManager.Instance.panelSwitcher.SetActivePanel(ActionsManager.Instance.mainPanel);
         if (won)
         {
             MonsterManager.Instance.KillMonster(monster, player);
             actionsManager.SetHasFought(true);
-            actionsManager.DetermineActions(TurnManager.Instance.GetCurrentActor());
         }
         else
         {
             int moneyLost = (player.money / 5);
-            player.AddMoney(-moneyLost);
+            player.effects.Enqueue(new(PlayerEffectType.Money, -moneyLost));
             MovePlayerToStart(player);
             MonsterManager.Instance.ScaleMonsterPower(monster);
+        }
+
+        print("Starting PlayerEffectsHandler from EndBattleHandler");
+        TaskHelper helper = new();
+        ActionsManager.Instance.panelSwitcher.SetActivePanel(ActionsManager.Instance.playerEffectsPanel);
+        StartCoroutine(PlayerEffectsHandler.Instance.HandleEffects(helper));
+
+        while (!helper.isComplete)
+        {
+            await Task.Delay(100);
+        }
+        print("Ended PlayerEffectsHandler from EndBattleHandler");
+
+        if (won)
+        {
+            actionsManager.DetermineActions(TurnManager.Instance.GetCurrentActor());
+        }
+        else
+        {
             TurnManager.Instance.NextTurn();
         }
     }
@@ -70,8 +99,11 @@ public class EndBattleHandler : MonoBehaviour
     private void HandlePVP(Player losingPlayer, Player WinningPlayer)
     {
         int moneyLost = losingPlayer.money / 2;
-        losingPlayer.AddMoney(-moneyLost);
-        WinningPlayer.AddMoney(moneyLost);
+        if (moneyLost != 0)
+        {
+            losingPlayer.effects.Enqueue(new(PlayerEffectType.Money, -moneyLost));
+            WinningPlayer.effects.Enqueue(new(PlayerEffectType.Money, moneyLost));
+        }
         MovePlayerToStart(losingPlayer);
     }
 

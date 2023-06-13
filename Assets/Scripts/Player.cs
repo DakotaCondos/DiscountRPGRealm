@@ -12,7 +12,6 @@ public class Player : IMoveable, IFightable
     public Texture2D playerTexture; //in this case just a pcture to attach to the UI block for the player piece
 
     public int xp = 0;
-    [SerializeField] int xpRequiredToLevel = 3;
     public int level = 1;
     public int movementBonusPlayer = 0;
     public int movementBonusItems = 0;
@@ -20,11 +19,12 @@ public class Player : IMoveable, IFightable
     public int powerBonusItems = 0;
     public int powerBonusItemsVsPlayer = 0;
     public int powerBonusItemsVsMonster = 0;
-    public int money = 0;
+    public int money = 3;
 
     public Space currentSpace = null;
     public bool hasMoved = false;
 
+    public Queue<PlayerEffect> effects = new();
 
 
     public Player(string playerName, int teamID, Color playerColor, Texture2D playerTexture = null)
@@ -37,10 +37,9 @@ public class Player : IMoveable, IFightable
 
     public void AddXP(int value)
     {
-        xp += value;
-        int levelsGained = xp / xpRequiredToLevel;
-        level += levelsGained;
-        xp %= xpRequiredToLevel;
+        xp = Mathf.Clamp(xp + value, 0, int.MaxValue);
+
+        level = 1 + (int)MathF.Floor((float)xp / 3f);
     }
     public void AddMoney(int value)
     {

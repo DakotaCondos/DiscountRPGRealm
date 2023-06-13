@@ -56,6 +56,7 @@ public class BeginTurnHandler : MonoBehaviour
     {
         if (ApplicationManager.Instance.handlerNotificationsEnabled) { ConsolePrinter.PrintToConsole($"HandleMonsterTurn({actor.player.PlayerName})", Color.cyan); }
 
+        actionsManager.panelSwitcher.SetActivePanel(actionsManager.mainPanel);
         // do monster stuff
         await monsterManager.ProcessMonsterTurn();
         await Task.Delay(500);

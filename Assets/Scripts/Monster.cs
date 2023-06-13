@@ -12,6 +12,7 @@ public class Monster : IMoveable, IFightable
     public bool doesMove;
     public AudioClip battlecry;
     public Space currentSpace = null;
+    public Queue<PlayerEffect> effects = new();
 
     public Monster(string monsterName, Texture2D monsterTexture, int power, bool doesMove, AudioClip battlecry = null)
     {

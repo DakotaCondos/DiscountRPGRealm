@@ -32,6 +32,7 @@ public class ActionsManager : MonoBehaviour
     public UIBlock2D eventPanel;
     public UIBlock2D startPanel;
     public UIBlock2D challengePanel;
+    public UIBlock2D playerEffectsPanel;
 
 
     public static ActionsManager Instance { get; private set; }

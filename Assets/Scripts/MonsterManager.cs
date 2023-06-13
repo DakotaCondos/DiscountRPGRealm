@@ -119,8 +119,8 @@ public class MonsterManager : MonoBehaviour
         int xpToAdd = monster.power / 20;
         if (xpToAdd <= 0) { xpToAdd = 1; }
         int moneyDropped = 4 + (monster.power / 20);
-        player.AddXP(xpToAdd);
-        player.AddMoney(moneyDropped);
+        player.effects.Enqueue(new(PlayerEffectType.XP, xpToAdd));
+        player.effects.Enqueue(new(PlayerEffectType.Money, moneyDropped));
         monsters.Remove(monster);
         monster.currentSpace.RemoveMonsterFromSpace();
         defeatedMonsters++;
@@ -137,29 +137,30 @@ public class MonsterManager : MonoBehaviour
             UpdateMonsterPiece(monster);
             return;
         }
-
+        int powerUp = 0;
         switch (monster.power)
         {
             case <= 10:
-                monster.power += 2;
+                powerUp = 2;
                 break;
             case > 10 and <= 25:
-                monster.power += 3;
+                powerUp = 3;
                 break;
             case > 25 and <= 50:
-                monster.power += 5;
+                powerUp = 5;
                 break;
             case > 50 and <= 75:
-                monster.power += 8;
+                powerUp = 8;
                 break;
             case > 75 and <= 90:
-                monster.power += 10;
+                powerUp = 10;
                 break;
             default:
-                monster.power = (int)(1.025 * monster.power);
+                powerUp = (int)(1.025 * monster.power);
                 break;
         }
-
+        monster.power += powerUp;
+        monster.effects.Enqueue(new(PlayerEffectType.Power, powerUp));
         UpdateMonsterPiece(monster);
     }
 
