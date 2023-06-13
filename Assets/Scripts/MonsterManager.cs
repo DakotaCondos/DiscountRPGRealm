@@ -69,8 +69,6 @@ public class MonsterManager : MonoBehaviour
         }
     }
 
-
-
     private MonsterSO GetMonsterSO(int maxPower)
     {
         List<MonsterSO> eligibleMonsters = monsterSOs.Where(monster => monster.power <= maxPower && monster.doesMove).ToList();
@@ -98,8 +96,17 @@ public class MonsterManager : MonoBehaviour
 
     private async Task SpawnMonster(Space space)
     {
-        int maxPower = (int)((createdMonsters + defeatedMonsters) * 0.5f * GameManager.Instance.Players.Count);
-        MonsterSO blueprint = GetMonsterSO(maxPower);
+        int avgPower = 0;
+        int lowestPower = int.MaxValue;
+        foreach (Player player in GameManager.Instance.Players)
+        {
+            avgPower += player.GetPowerVsMonster();
+            if (lowestPower > player.GetPowerVsMonster()) { lowestPower = player.GetPowerVsMonster(); }
+        }
+        avgPower /= GameManager.Instance.Players.Count;
+        print(avgPower);
+
+        MonsterSO blueprint = GetMonsterSO(avgPower);
         Monster monster = new Monster(blueprint);
 
         TaskHelper helper = new();
@@ -131,34 +138,27 @@ public class MonsterManager : MonoBehaviour
         // Special monsters first
         if (monster.MonsterName == "Slime")
         {
+            int startingPower = monster.power;
             monster.power += 1;
             monster.power *= 2;
             if (monster.power > 100) { monster.power = 100; }
+            if(monster.power - startingPower == 0) { return; } // skip 0 value changes
+            monster.effects.Enqueue(new(PlayerEffectType.Power, monster.power - startingPower));
             UpdateMonsterPiece(monster);
+
             return;
         }
-        int powerUp = 0;
-        switch (monster.power)
+
+
+        int powerUp = monster.power switch
         {
-            case <= 10:
-                powerUp = 2;
-                break;
-            case > 10 and <= 25:
-                powerUp = 3;
-                break;
-            case > 25 and <= 50:
-                powerUp = 5;
-                break;
-            case > 50 and <= 75:
-                powerUp = 8;
-                break;
-            case > 75 and <= 90:
-                powerUp = 10;
-                break;
-            default:
-                powerUp = (int)(1.025 * monster.power);
-                break;
-        }
+            <= 10 => 2,
+            > 10 and <= 25 => 3,
+            > 25 and <= 50 => 5,
+            > 50 and <= 75 => 8,
+            > 75 and <= 90 => 10,
+            _ => (int)(1.025 * monster.power),
+        };
         monster.power += powerUp;
         monster.effects.Enqueue(new(PlayerEffectType.Power, powerUp));
         UpdateMonsterPiece(monster);

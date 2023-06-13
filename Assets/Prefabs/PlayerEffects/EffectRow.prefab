@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7268187548107962356}
   - component: {fileID: 7268187548107962359}
   m_Layer: 0
-  m_Name: UIBlock2D
+  m_Name: Icon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -26,7 +26,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7268187548107962353}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -80.16, y: 0, z: 0}
+  m_LocalPosition: {x: -60.024994, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -72,7 +72,7 @@ MonoBehaviour:
         Type: 0
     Position:
       X:
-        Raw: -80.16
+        Raw: -60.024994
         Type: 0
       Y:
         Raw: 0
@@ -284,9 +284,9 @@ MonoBehaviour:
     Image:
       Adjustment:
         CenterUV: {x: 0, y: 0}
-        UVScale: {x: 1, y: 1}
+        UVScale: {x: 1.05, y: 1.05}
         PixelsPerUnitMultiplier: 1
-        scaleMode: 1
+        scaleMode: 0
       Mode: 1
     SoftenEdges: 1
     FillEnabled: 1
@@ -319,7 +319,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7268187548955669142}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.5, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -517,7 +517,7 @@ MonoBehaviour:
     LightingModel: 0
     ShadowCastingMode: 2
     ReceiveShadows: 1
-  PreviewSize: {x: 1, y: 1, z: 0}
+  PreviewSize: {x: 1, y: 136.40002, z: 0}
   visuals:
     Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
     CornerRadius:
@@ -629,7 +629,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2567597221223135800, guid: 3c8943413792d794c8643a36f916d9c8, type: 3}
       propertyPath: layout.Position.X.Raw
-      value: 88.360016
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2567597221223135802, guid: 3c8943413792d794c8643a36f916d9c8, type: 3}
       propertyPath: m_Pivot.x
@@ -697,7 +697,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2567597221223135802, guid: 3c8943413792d794c8643a36f916d9c8, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 88.360016
+      value: 68.22502
       objectReference: {fileID: 0}
     - target: {fileID: 2567597221223135802, guid: 3c8943413792d794c8643a36f916d9c8, type: 3}
       propertyPath: m_AnchoredPosition.y

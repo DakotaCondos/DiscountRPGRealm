@@ -70,7 +70,7 @@ public class EndBattleHandler : MonoBehaviour
         else
         {
             int moneyLost = (player.money / 5);
-            player.effects.Enqueue(new(PlayerEffectType.Money, -moneyLost));
+            if (moneyLost != 0) { player.effects.Enqueue(new(PlayerEffectType.Money, -moneyLost)); }
             MovePlayerToStart(player);
             MonsterManager.Instance.ScaleMonsterPower(monster);
         }
