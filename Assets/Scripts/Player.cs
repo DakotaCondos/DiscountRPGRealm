@@ -24,6 +24,8 @@ public class Player : IMoveable, IFightable
     public Space currentSpace = null;
     public bool hasMoved = false;
 
+    public Item equippedItem = null;
+
     public Queue<PlayerEffect> effects = new();
 
 
