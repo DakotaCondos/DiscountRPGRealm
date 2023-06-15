@@ -24,7 +24,9 @@ public class Player : IMoveable, IFightable
     public Space currentSpace = null;
     public bool hasMoved = false;
 
+    [Header("Items")]
     public Item equippedItem = null;
+    public List<Item> items = new();
 
     public Queue<PlayerEffect> effects = new();
 
@@ -60,21 +62,21 @@ public class Player : IMoveable, IFightable
 
     public int GetPower()
     {
-        return level * 3 + powerBonusItems + powerBonusPlayer;
+        return Mathf.Clamp(level * 3 + powerBonusItems + powerBonusPlayer, 1, int.MaxValue);
     }
     public int GetPowerVsPlayer()
     {
-        return level * 3 + powerBonusItems + powerBonusPlayer + powerBonusItemsVsPlayer;
+        return Mathf.Clamp(level * 3 + powerBonusItems + powerBonusPlayer + powerBonusItemsVsPlayer, 1, int.MaxValue);
     }
     public int GetPowerVsMonster()
     {
-        return level * 3 + powerBonusItems + powerBonusPlayer + powerBonusItemsVsMonster;
+        return Mathf.Clamp(level * 3 + powerBonusItems + powerBonusPlayer + powerBonusItemsVsMonster, 1, int.MaxValue);
     }
 
     public int GetMovement()
     {
         int movementLevel = (level / 3 >= 1) ? level / 3 : 1;
-        return movementLevel + movementBonusItems + movementBonusPlayer;
+        return Mathf.Clamp(movementLevel + movementBonusItems + movementBonusPlayer, 1, int.MaxValue);
     }
 
     public void Move(Space space, int speed)
