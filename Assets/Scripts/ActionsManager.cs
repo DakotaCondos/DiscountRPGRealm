@@ -155,6 +155,7 @@ public class ActionsManager : MonoBehaviour
     public void SelectInventory()
     {
         print("SelectInventory");
+        panelSwitcher.SetActivePanel(inventoryPanel);
     }
     public void SelectInteract()
     {
@@ -185,6 +186,8 @@ public class ActionsManager : MonoBehaviour
     public void SelectTrade()
     {
         print("SelectTrade");
+        panelSwitcher.SetActivePanel(shopPanel);
+
     }
     public void SelectMove()
     {

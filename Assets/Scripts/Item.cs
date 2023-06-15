@@ -3,7 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[Serializable]
 public class Item
 {
     public string itemName;
@@ -12,6 +11,16 @@ public class Item
     public List<ItemEffects> itemEffects = new();
     public Texture2D image;
     public bool isConsumable;
+
+    public Item(ItemSO itemSO)
+    {
+        itemName = itemSO.itemName;
+        itemDescription = itemSO.itemDescription;
+        itemValue = itemSO.itemValue;
+        itemEffects = itemSO.itemEffects;
+        image = itemSO.image;
+        isConsumable = itemSO.isConsumable;
+    }
 
     public Item(string itemName, string itemDescription, int itemValue, List<ItemEffects> itemEffects, Texture2D image, bool isConsumable = false)
     {
