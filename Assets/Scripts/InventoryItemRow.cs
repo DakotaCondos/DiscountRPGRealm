@@ -18,6 +18,7 @@ public class InventoryItemRow : MonoBehaviour
 
     [Header("Button")]
     public TextBlock buttonTextBlock;
+    public Action<Item> buttonAction;
 
     public void Display(Item item)
     {
@@ -80,6 +81,11 @@ public class InventoryItemRow : MonoBehaviour
 
     public void SelectItem()
     {
-        InventoryManager.Instance.SelectedInventoryItem(item);
+        if (buttonAction is null)
+        {
+            Debug.LogWarning("buttonAction is not assigned");
+            return;
+        }
+        buttonAction(item);
     }
 }

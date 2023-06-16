@@ -2,9 +2,10 @@ using Nova;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
-public class InventoryManager : MonoBehaviour
+public class InventoryManager : SceneSingleton<InventoryManager>
 {
     [Header("General")]
     public Texture2D defaultTexture;
@@ -13,6 +14,7 @@ public class InventoryManager : MonoBehaviour
     public TextBlock playerNameTextBlock;
     public UIBlock2D playerBackingBlock;
     public UIBlock2D playerImageBlock;
+    public Player currentPlayerInventory;
 
     [Header("Stats")]
     public TextBlock powerTextBlock;
@@ -34,18 +36,10 @@ public class InventoryManager : MonoBehaviour
     public List<GameObject> inventoryItemsUI = new();
 
 
-    public static InventoryManager Instance { get; private set; }
-    private void Awake()
+    private new void Awake()
     {
-        if (Instance == null)
-        {
-            Instance = this;
-        }
-        else
-        {
-            Destroy(gameObject);
-            return;
-        }
+        base.Awake();
+        ResetUI();
     }
 
     private void OnEnable()
@@ -56,33 +50,56 @@ public class InventoryManager : MonoBehaviour
 
     private void OnDisable()
     {
-        BuildUI();
+        ResetUI();
     }
-    private void BuildUI(Player player = null)
+
+    private void ResetUI()
     {
-        if (player is null)
+        currentPlayerInventory = null;
+
+        // Reset the Equipped item block
+        SetEquippedItem();
+
+        foreach (var item in inventoryItemsUI)
         {
-            // Reset the Equipped item block
-            EquipItem();
-
-            foreach (var item in inventoryItemsUI)
-            {
-                Destroy(item);
-            }
-            inventoryItemsUI.Clear();
+            Destroy(item);
         }
-        else
+        inventoryItemsUI.Clear();
+    }
+
+    private void BuildUI(Player player)
+    {
+        currentPlayerInventory = player;
+
+        // Sort Items
+        player.items.Sort((item1, item2) => item1.itemName.CompareTo(item2.itemName));
+
+
+        foreach (Item item in player.items)
         {
-            if (player.equippedItem != null) { EquipItem(player.equippedItem); }
-
-            // Sort Items
-            player.items.Sort((item1, item2) => item1.itemName.CompareTo(item2.itemName));
-
-            foreach (Item item in player.items)
-            {
-                CreateInventoryItemRow(item);
-            }
+            CreateInventoryItemRow(item);
         }
+
+        if (player.equippedItem != null)
+        {
+            EquipItem(player.equippedItem);
+        }
+
+        UpdateDisplayDetails(currentPlayerInventory);
+    }
+
+    private void UpdateDisplayDetails(Player player)
+    {
+        // Player
+        playerBackingBlock.Color = player.playerColor;
+        playerImageBlock.SetImage(player.playerTexture);
+        playerNameTextBlock.Text = player.PlayerName;
+
+        // Stats
+        powerTextBlock.Text = player.GetPower().ToString();
+        movementTextBlock.Text = player.GetMovement().ToString();
+        pvmBonusTextBlock.Text = player.powerBonusItemsVsMonster.ToString();
+        pvpBonusTextBlock.Text = player.powerBonusItemsVsMonster.ToString();
     }
 
     private void CreateInventoryItemRow(Item item)
@@ -90,10 +107,21 @@ public class InventoryManager : MonoBehaviour
         GameObject g = Instantiate(inventoryItemRowPrefab, inventoryItemsLocation);
         inventoryItemsUI.Add(g);
 
-        g.GetComponent<InventoryItemRow>().Display(item);
+        var j = g.GetComponent<InventoryItemRow>();
+        j.Display(item);
+        if (j.item.isConsumable)
+        {
+            j.buttonAction = UseItem;
+            j.buttonTextBlock.Text = "Use";
+        }
+        else
+        {
+            j.buttonAction = EquipItem;
+            j.buttonTextBlock.Text = "Equip";
+        }
     }
 
-    private void EquipItem(Item equipItem = null)
+    private void SetEquippedItem(Item equipItem = null)
     {
         UIReferences uiRef = UIReferences.Instance;
         if (equipItem is null)
@@ -133,9 +161,90 @@ public class InventoryManager : MonoBehaviour
         }
     }
 
-    public void SelectedInventoryItem(Item itemSelected)
+    public void EquipItem(Item item)
+    {
+        if (currentPlayerInventory.equippedItem != null)
+        {
+            UnequipItem(currentPlayerInventory.equippedItem);
+        }
+
+        currentPlayerInventory.equippedItem = item;
+        SetEquippedItem(item);
+
+        foreach (GameObject g in inventoryItemsUI)
+        {
+            var j = g.GetComponent<InventoryItemRow>();
+            if (j.item.itemName.Equals(item.itemName))
+            {
+                j.buttonAction = UnequipItem;
+                j.buttonTextBlock.Text = "Unequip";
+                break;
+            }
+        }
+
+        ModifyStats(item);
+        UpdateDisplayDetails(currentPlayerInventory);
+    }
+
+    public void UnequipItem(Item item)
+    {
+        currentPlayerInventory.equippedItem = null;
+        SetEquippedItem(null);
+
+        // Update InventoryItemRow
+        foreach (GameObject g in inventoryItemsUI)
+        {
+            var j = g.GetComponent<InventoryItemRow>();
+            if (j.item.isConsumable) { continue; }
+            j.buttonAction = EquipItem;
+            j.buttonTextBlock.Text = "Equip";
+        }
+
+        // update player stat values
+        ModifyStats(null);
+        UpdateDisplayDetails(currentPlayerInventory);
+    }
+
+    private void ModifyStats(Item item = null)
+    {
+        if (item == null)
+        {
+            currentPlayerInventory.powerBonusItems = 0;
+            currentPlayerInventory.powerBonusItemsVsMonster = 0;
+            currentPlayerInventory.powerBonusItemsVsPlayer = 0;
+            currentPlayerInventory.movementBonusItems = 0;
+            return;
+        }
+
+        foreach (ItemEffects effect in item.itemEffects)
+        {
+            switch (effect.Type)
+            {
+                case ItemEffectType.Power:
+                    currentPlayerInventory.powerBonusItems = effect.value;
+                    break;
+                case ItemEffectType.PowerVsPlayer:
+                    currentPlayerInventory.powerBonusItemsVsPlayer = effect.value;
+                    break;
+                case ItemEffectType.PowerVsMonster:
+                    currentPlayerInventory.powerBonusItemsVsMonster = effect.value;
+                    break;
+                case ItemEffectType.Movement:
+                    currentPlayerInventory.movementBonusItems = effect.value;
+                    break;
+                case ItemEffectType.Teleport:
+                    Debug.LogWarning("Telepor Effects not implemented");
+                    break;
+                default:
+                    break;
+            }
+        }
+
+    }
+
+    public void UseItem(Item item)
     {
         // Print for now
-        ConsolePrinter.PrintToConsole($"Selected inventory item {itemSelected.itemName}", Color.yellow);
+        ConsolePrinter.PrintToConsole($"Selected UseItem {item.itemName}", Color.yellow);
     }
 }

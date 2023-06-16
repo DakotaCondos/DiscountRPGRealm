@@ -58,6 +58,8 @@ public class ShopManager : SceneSingleton<ShopManager>
             DisplayItems(levelsItems[i], true);
         }
 
+        playerInShop.items.Sort((item1, item2) => item1.itemName.CompareTo(item2.itemName));
+
         foreach (var item in playerInShop.items)
         {
             CreateItemRow(item, false);
