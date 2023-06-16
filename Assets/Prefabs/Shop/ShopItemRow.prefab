@@ -37,7 +37,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -128.8692, y: 34.54}
+  m_AnchoredPosition: {x: 161.64479, y: 34.54}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!23 &503572574904833669
@@ -683,7 +683,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 503572575549616271}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.47998, y: 393.69998, z: 0}
+  m_LocalPosition: {x: 0.5, y: -60, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -724,6 +724,7 @@ MonoBehaviour:
   itemNameTextBlock: {fileID: 503572574904833671}
   itemImageBlock: {fileID: 503572575750150867}
   buttonTextBlock: {fileID: 8430176996092254646}
+  forSale: 1
 --- !u!114 &503572575549616269
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -901,7 +902,7 @@ MonoBehaviour:
     LightingModel: 0
     ShadowCastingMode: 2
     ReceiveShadows: 1
-  PreviewSize: {x: 1, y: 1, z: 0}
+  PreviewSize: {x: 1, y: 120, z: 0}
   visuals:
     Color: {r: 0.198, g: 0.198, b: 0.198, a: 1}
     CornerRadius:
@@ -997,7 +998,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 503572575750150869}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -355.52002, y: 0, z: 0}
+  m_LocalPosition: {x: 59.5, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1292,7 +1293,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8430176996063299697}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 355.52002, y: 0, z: 0}
+  m_LocalPosition: {x: -59.5, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1658,8 +1659,8 @@ MonoBehaviour:
   OnClicked:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: InventoryItemRow, Assembly-CSharp
+      - m_Target: {fileID: 503572575549616258}
+        m_TargetAssemblyTypeName: ShopItemRow, Assembly-CSharp
         m_MethodName: SelectItem
         m_Mode: 1
         m_Arguments:

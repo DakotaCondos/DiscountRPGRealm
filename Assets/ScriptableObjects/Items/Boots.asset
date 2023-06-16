@@ -12,8 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee06bd11fe290ab47a1f12101aec1c08, type: 3}
   m_Name: Boots
   m_EditorClassIdentifier: 
-  itemName: 
-  itemValue: 0
-  itemEffects: []
-  image: {fileID: 0}
+  itemName: Boots
+  itemDescription: they are boots
+  itemValue: 2
+  itemEffects:
+  - Type: 3
+    value: 1
+  image: {fileID: 2800000, guid: 0d6d4a54ac2340745b875964594a0053, type: 3}
   isConsumable: 0

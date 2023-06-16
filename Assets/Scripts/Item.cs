@@ -22,6 +22,16 @@ public class Item
         isConsumable = itemSO.isConsumable;
     }
 
+    public Item(Item item)
+    {
+        itemName = item.itemName;
+        itemDescription = item.itemDescription;
+        itemValue = item.itemValue;
+        itemEffects = item.itemEffects;
+        image = item.image;
+        isConsumable = item.isConsumable;
+    }
+
     public Item(string itemName, string itemDescription, int itemValue, List<ItemEffects> itemEffects, Texture2D image, bool isConsumable = false)
     {
         this.itemName = itemName;

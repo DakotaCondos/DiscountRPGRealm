@@ -1,4 +1,5 @@
 using Nova;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -17,6 +18,7 @@ public class ShopItemRow : MonoBehaviour
 
     [Header("Button")]
     public TextBlock buttonTextBlock;
+    public Action<Item> buttonAction;
 
     [Header("Shop")]
     public bool forSale = true;
@@ -38,7 +40,7 @@ public class ShopItemRow : MonoBehaviour
         }
         else
         {
-            buttonTextBlock.Text = $"{item.itemValue / 2}\nBuy";
+            buttonTextBlock.Text = $"{item.itemValue / 2}\nSell";
         }
     }
 
@@ -74,6 +76,11 @@ public class ShopItemRow : MonoBehaviour
 
     public void SelectItem()
     {
-        InventoryManager.Instance.SelectedInventoryItem(item);
+        if (buttonAction is null)
+        {
+            Debug.LogWarning("buttonAction is not assigned");
+            return;
+        }
+        buttonAction(item);
     }
 }
