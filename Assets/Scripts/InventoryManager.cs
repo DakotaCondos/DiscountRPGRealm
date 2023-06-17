@@ -142,6 +142,8 @@ public class InventoryManager : SceneSingleton<InventoryManager>
 
         foreach (ItemEffects effect in equipItem.itemEffects)
         {
+            if (effect.value == 0) { continue; }
+
             Texture2D icon = effect.Type switch
             {
                 ItemEffectType.Power => uiRef.powerIcon,
@@ -155,7 +157,7 @@ public class InventoryManager : SceneSingleton<InventoryManager>
             GameObject g = Instantiate(equippedItemEffectPrefab, equippedItemEffectsLocation);
             UIHelper h = g.GetComponent<UIHelper>();
             h.UIBlock2Ds[0].SetImage(icon);
-            h.TextBlocks[0].Text = (effect.value == 0) ? "" : (effect.value > 0) ? $"+{effect.value}" : effect.value.ToString();
+            h.TextBlocks[0].Text = (effect.value > 0) ? $"+{effect.value}" : effect.value.ToString();
 
             equippedItemEffectsUI.Add(g);
         }

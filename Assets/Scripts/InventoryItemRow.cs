@@ -60,6 +60,8 @@ public class InventoryItemRow : MonoBehaviour
         itemEffectsUI.Clear();
         foreach (ItemEffects effect in item.itemEffects)
         {
+            if (effect.value == 0) { continue; }
+
             Texture2D icon = effect.Type switch
             {
                 ItemEffectType.Power => uiRef.powerIcon,
@@ -75,7 +77,7 @@ public class InventoryItemRow : MonoBehaviour
 
             UIHelper h = g.GetComponent<UIHelper>();
             h.UIBlock2Ds[0].SetImage(icon);
-            h.TextBlocks[0].Text = (effect.value == 0) ? "" : (effect.value > 0) ? $"+{effect.value}" : effect.value.ToString();
+            h.TextBlocks[0].Text = (effect.value > 0) ? $"+{effect.value}" : effect.value.ToString();
         }
     }
 
