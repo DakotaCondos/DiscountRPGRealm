@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee06bd11fe290ab47a1f12101aec1c08, type: 3}
+  m_Name: Magic Staff
+  m_EditorClassIdentifier: 
+  itemName: Magic Staff
+  itemDescription: A weathered staff, once carried by a wise old soul who loves fireworks
+    and grey robes.
+  itemValue: 325
+  itemEffects:
+  - Type: 0
+    value: 50
+  - Type: 2
+    value: 10
+  - Type: 3
+    value: 1
+  image: {fileID: 2800000, guid: 19ad8486fc2b82d4faeff86994fbe28e, type: 3}
+  isConsumable: 0

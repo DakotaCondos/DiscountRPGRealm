@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee06bd11fe290ab47a1f12101aec1c08, type: 3}
+  m_Name: Magic Wand
+  m_EditorClassIdentifier: 
+  itemName: Magic Wand
+  itemDescription: For when you need a little extra 'pokus' in your hocus.
+  itemValue: 130
+  itemEffects:
+  - Type: 0
+    value: 25
+  - Type: 2
+    value: 5
+  - Type: 1
+    value: 5
+  - Type: 3
+    value: 1
+  image: {fileID: 2800000, guid: 15e9676dd240cc34eb4aea7a67ffb2db, type: 3}
+  isConsumable: 0

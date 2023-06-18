@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee06bd11fe290ab47a1f12101aec1c08, type: 3}
+  m_Name: Big Sword
+  m_EditorClassIdentifier: 
+  itemName: Big Sword
+  itemDescription: Who needs finesse when you can swing this beast around like a
+    maniac?
+  itemValue: 35
+  itemEffects:
+  - Type: 0
+    value: 16
+  - Type: 3
+    value: -1
+  image: {fileID: 2800000, guid: 9ba4893359d1c4e4d9d6ae5c911364b5, type: 3}
+  isConsumable: 0

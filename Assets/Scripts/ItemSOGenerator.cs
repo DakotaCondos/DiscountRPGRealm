@@ -46,7 +46,8 @@ public class ItemSOGenerator : MonoBehaviour
             (15, 0, 0, 3, 60, "Tricycle", "A three-wheeled wonder that combines style, stability, and questionable combat effectiveness."),
 
             // Special
-            (25, 5, 5, 1, 130, "Magic Wand", "The wand that makes dreams come true, or at least turns rabbits into top hats."),
+            (10, 5, 5, 1, 95, "Magic Scroll", "Use sesquipedalian phrases until enemies give up. It's like magic."),
+            (25, 5, 5, 1, 130, "Magic Wand", "For when you need a little extra 'pokus' in your hocus."),
             (50, 10, 0, 1, 325, "Magic Staff", "A weathered staff, once carried by a wise old soul who loves fireworks and grey robes."),
             (75, 0, 0, 0, 325, "Revolver", "A gun so powerful it can shoot holes in both reality and the fourth wall."),
             (65, 25, 0, 0, 325, "Dragon Slayer", "A sword so large, dropping it on enemies is enough to defeat them."),

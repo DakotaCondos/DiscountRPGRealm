@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee06bd11fe290ab47a1f12101aec1c08, type: 3}
+  m_Name: Legendary Sword
+  m_EditorClassIdentifier: 
+  itemName: Legendary Sword
+  itemDescription: A sword so legendary, it comes with its own fan club.
+  itemValue: 120
+  itemEffects:
+  - Type: 0
+    value: 55
+  image: {fileID: 2800000, guid: fdb6927c6a3232b448cd7ad2c63ed9f3, type: 3}
+  isConsumable: 0
