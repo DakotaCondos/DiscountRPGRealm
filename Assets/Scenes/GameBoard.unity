@@ -35284,10 +35284,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6214360919537304744, guid: 82ae1bf49a64b914e931d75648e34348, type: 3}
       propertyPath: OnClicked.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6214360919537304744, guid: 82ae1bf49a64b914e931d75648e34348, type: 3}
+      propertyPath: OnClicked.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6214360919537304744, guid: 82ae1bf49a64b914e931d75648e34348, type: 3}
       propertyPath: OnClicked.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 821165216}
+    - target: {fileID: 6214360919537304744, guid: 82ae1bf49a64b914e931d75648e34348, type: 3}
+      propertyPath: OnClicked.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 74153897}
     - target: {fileID: 6214360919537304744, guid: 82ae1bf49a64b914e931d75648e34348, type: 3}
@@ -35295,19 +35303,39 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6214360919537304744, guid: 82ae1bf49a64b914e931d75648e34348, type: 3}
+      propertyPath: OnClicked.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6214360919537304744, guid: 82ae1bf49a64b914e931d75648e34348, type: 3}
       propertyPath: OnClicked.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: DetermineActions
+      objectReference: {fileID: 0}
+    - target: {fileID: 6214360919537304744, guid: 82ae1bf49a64b914e931d75648e34348, type: 3}
+      propertyPath: OnClicked.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
       value: SetActivePanel
       objectReference: {fileID: 0}
     - target: {fileID: 6214360919537304744, guid: 82ae1bf49a64b914e931d75648e34348, type: 3}
       propertyPath: OnClicked.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: ActionsManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6214360919537304744, guid: 82ae1bf49a64b914e931d75648e34348, type: 3}
+      propertyPath: OnClicked.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
       value: PanelSwitcher, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 6214360919537304744, guid: 82ae1bf49a64b914e931d75648e34348, type: 3}
       propertyPath: OnClicked.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6214360919537304744, guid: 82ae1bf49a64b914e931d75648e34348, type: 3}
+      propertyPath: OnClicked.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgument
+      value: 
       objectReference: {fileID: 136196513}
     - target: {fileID: 6214360919537304744, guid: 82ae1bf49a64b914e931d75648e34348, type: 3}
       propertyPath: OnClicked.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 6214360919537304744, guid: 82ae1bf49a64b914e931d75648e34348, type: 3}
+      propertyPath: OnClicked.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: Nova.UIBlock2D, Nova
       objectReference: {fileID: 0}
     - target: {fileID: 6214360919537304745, guid: 82ae1bf49a64b914e931d75648e34348, type: 3}
@@ -62527,6 +62555,7 @@ MonoBehaviour:
   maxOrthographicSize: 250
   snapToOutOfBoundsView: 0
   outOfBoundsView: {fileID: 1000186084}
+  mainGameUI: {fileID: 136196511}
 --- !u!1 &2029693916
 GameObject:
   m_ObjectHideFlags: 0

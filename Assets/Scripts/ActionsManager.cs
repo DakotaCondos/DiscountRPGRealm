@@ -82,11 +82,20 @@ public class ActionsManager : MonoBehaviour
         canEndTurn = false;
     }
 
+    public void DetermineActions()
+    {
+        DetermineActions(turnManager.GetCurrentActor());
+    }
     public void DetermineActions(TurnActor actor)
     {
         ResetState();
         panelSwitcher.SetActivePanel(mainPanel);
         statDisplay.DisplayStats(actor.player.GetPower(), actor.player.GetMovement());
+
+        foreach (Space boardSpace in GameBoard.Instance.allSpaces)
+        {
+            boardSpace.ShowActiveCharacter(actor.player);
+        }
 
         if (!actor.isPlayer)
         {

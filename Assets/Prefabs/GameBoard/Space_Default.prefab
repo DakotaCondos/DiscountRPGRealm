@@ -1369,6 +1369,9 @@ MonoBehaviour:
   playerPieceLocation: {fileID: 6796673612246262850}
   namePlate: {fileID: 6796673612070076722}
   interactableNova: {fileID: 4341353522670308453}
+  _connectionRadius: {fileID: 7556423963047532871}
+  _monsterPieceUIBlock: {fileID: 6796673610885982880}
+  _playerPieceUIBlock: {fileID: 6796673612246262853}
   monsterAtSpace:
     monsterTexture: {fileID: 0}
     power: 0
@@ -2056,7 +2059,7 @@ MonoBehaviour:
   layout:
     Size:
       X:
-        Raw: 5
+        Raw: 8
         Type: 0
       Y:
         Raw: 10

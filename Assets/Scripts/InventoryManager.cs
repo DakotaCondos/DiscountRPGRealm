@@ -341,6 +341,7 @@ public class InventoryManager : SceneSingleton<InventoryManager>
         if (effect == ItemEffectType.Teleport)
         {
             j.TextBlocks[0].Text = "Teleported to starting space";
+            TurnManager.Instance.GetCurrentActor().player.hasMoved = true;
         }
         else
         {

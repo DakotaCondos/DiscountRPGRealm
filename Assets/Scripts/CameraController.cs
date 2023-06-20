@@ -25,6 +25,7 @@ public class CameraController : MonoBehaviour
     public Transform outOfBoundsView;
     private Vector3 startPos;
 
+    public GameObject mainGameUI;
 
     public static CameraController Instance { get; private set; }
 
@@ -72,6 +73,9 @@ public class CameraController : MonoBehaviour
             transform.position = focusPosition;
             return;
         }
+
+        // Check if viewing the gameboard
+        if (!mainGameUI.activeInHierarchy) { return; }
 
         // Get input for X and Y movement
         float moveX = Input.GetAxis("Horizontal");

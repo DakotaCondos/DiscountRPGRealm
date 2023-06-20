@@ -44,12 +44,6 @@ public class BeginTurnHandler : MonoBehaviour
 
         // move the monsters
         actionsManager.DetermineActions(actor);
-
-
-        foreach (Space space in gameBoard.allSpaces)
-        {
-            space.ShowActiveCharacter(actor.player);
-        }
     }
 
     private async void HandleMonsterTurn(TurnActor actor)

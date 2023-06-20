@@ -41,6 +41,9 @@ public class Space : MonoBehaviour
     public Transform playerPieceLocation;
     public TextBlock namePlate;
     public Interactable interactableNova;
+    [SerializeField] private GameObject _connectionRadius;
+    [SerializeField] private UIBlock2D _monsterPieceUIBlock;
+    [SerializeField] private UIBlock2D _playerPieceUIBlock;
 
     // Current State
     public Monster monsterAtSpace;
@@ -74,6 +77,10 @@ public class Space : MonoBehaviour
             }
             AddPlayerToSpace(turnManager.GetCurrentActor().player);
         }
+        // Turn off dev UI elements
+        _connectionRadius.SetActive(false);
+        _playerPieceUIBlock.Border.Enabled = false;
+        _monsterPieceUIBlock.Border.Enabled = false;
     }
 
     public void SelectSpace()
