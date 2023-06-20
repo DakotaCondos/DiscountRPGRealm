@@ -9,34 +9,23 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 411054212294517778, guid: 55911f8bfabc90e40adc3463685b9f45, type: 3}
       propertyPath: layout.Size.X.Raw
-<<<<<<<< HEAD:Assets/Prefabs/GameBoard/Space_Town_lvl3.prefab
-      value: 8.160418
-      objectReference: {fileID: 0}
-    - target: {fileID: 2777017091986820598, guid: 55911f8bfabc90e40adc3463685b9f45, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -7.99492
-========
       value: 7.515626
->>>>>>>> MovementBug:Assets/Prefabs/GameBoard/Space_Start.prefab
       objectReference: {fileID: 0}
     - target: {fileID: 3055687108327356724, guid: 55911f8bfabc90e40adc3463685b9f45, type: 3}
       propertyPath: m_text
       value: Start
       objectReference: {fileID: 0}
-<<<<<<<< HEAD:Assets/Prefabs/GameBoard/Space_Town_lvl3.prefab
-========
     - target: {fileID: 3291337867148982230, guid: 55911f8bfabc90e40adc3463685b9f45, type: 3}
       propertyPath: layout.Size.X.Raw
       value: 8.515626
       objectReference: {fileID: 0}
->>>>>>>> MovementBug:Assets/Prefabs/GameBoard/Space_Start.prefab
     - target: {fileID: 3770613301400985526, guid: 55911f8bfabc90e40adc3463685b9f45, type: 3}
       propertyPath: blueprint
       value: 
       objectReference: {fileID: 11400000, guid: 8b715a5a2b73471448b852ce5eef36fe, type: 2}
     - target: {fileID: 3770613301400985526, guid: 55911f8bfabc90e40adc3463685b9f45, type: 3}
       propertyPath: shopLevel
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3770613301400985526, guid: 55911f8bfabc90e40adc3463685b9f45, type: 3}
       propertyPath: spaceType
@@ -50,21 +39,6 @@ PrefabInstance:
       propertyPath: canMonstersTraverse
       value: 0
       objectReference: {fileID: 0}
-<<<<<<<< HEAD:Assets/Prefabs/GameBoard/Space_Town_lvl3.prefab
-    - target: {fileID: 6771173250908603445, guid: 55911f8bfabc90e40adc3463685b9f45, type: 3}
-      propertyPath: layout.Size.X.Raw
-      value: 8.160418
-      objectReference: {fileID: 0}
-    - target: {fileID: 6796673611022286995, guid: 55911f8bfabc90e40adc3463685b9f45, type: 3}
-      propertyPath: layout.Size.X.Raw
-      value: 0.9
-      objectReference: {fileID: 0}
-    - target: {fileID: 6796673611022286995, guid: 55911f8bfabc90e40adc3463685b9f45, type: 3}
-      propertyPath: layout.Size.Y.Raw
-      value: 4.0101604
-      objectReference: {fileID: 0}
-========
->>>>>>>> MovementBug:Assets/Prefabs/GameBoard/Space_Start.prefab
     - target: {fileID: 6796673611948371074, guid: 55911f8bfabc90e40adc3463685b9f45, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -111,11 +85,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6796673611948371075, guid: 55911f8bfabc90e40adc3463685b9f45, type: 3}
       propertyPath: m_Name
-<<<<<<<< HEAD:Assets/Prefabs/GameBoard/Space_Town_lvl3.prefab
-      value: Space_Town_lvl3
-========
       value: BeginnerTown
->>>>>>>> MovementBug:Assets/Prefabs/GameBoard/Space_Start.prefab
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 55911f8bfabc90e40adc3463685b9f45, type: 3}
