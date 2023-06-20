@@ -15,6 +15,9 @@ public class InventoryManager : SceneSingleton<InventoryManager>
     public UIBlock2D playerBackingBlock;
     public UIBlock2D playerImageBlock;
     public Player currentPlayerInventory;
+    public TextBlock xpTextBlock;
+    public TextBlock lvlTextBlock;
+    public TextBlock moneyTextBlock;
 
     [Header("Stats")]
     public TextBlock powerTextBlock;
@@ -100,6 +103,11 @@ public class InventoryManager : SceneSingleton<InventoryManager>
         movementTextBlock.Text = player.GetMovement().ToString();
         pvmBonusTextBlock.Text = player.powerBonusItemsVsMonster.ToString();
         pvpBonusTextBlock.Text = player.powerBonusItemsVsMonster.ToString();
+
+        // Money Xp Lvl
+        moneyTextBlock.Text = player.money.ToString();
+        lvlTextBlock.Text = $"Level: {player.level}";
+        xpTextBlock.Text = $"Total XP: {player.xp}";
     }
 
     private void CreateInventoryItemRow(Item item)

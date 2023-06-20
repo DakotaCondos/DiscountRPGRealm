@@ -123,9 +123,9 @@ public class MonsterManager : MonoBehaviour
 
     public void KillMonster(Monster monster, Player player)
     {
-        int xpToAdd = monster.power / 20;
+        int xpToAdd = monster.power / 15;
         if (xpToAdd <= 0) { xpToAdd = 1; }
-        int moneyDropped = 4 + (monster.power / 20);
+        int moneyDropped = 3 + (monster.power / 4);
         player.effects.Enqueue(new(PlayerEffectType.XP, xpToAdd));
         player.effects.Enqueue(new(PlayerEffectType.Money, moneyDropped));
         monsters.Remove(monster);
@@ -139,10 +139,10 @@ public class MonsterManager : MonoBehaviour
         if (monster.MonsterName == "Slime")
         {
             int startingPower = monster.power;
-            monster.power += 1;
             monster.power *= 2;
+            monster.power += 1;
             if (monster.power > 100) { monster.power = 100; }
-            if(monster.power - startingPower == 0) { return; } // skip 0 value changes
+            if (monster.power - startingPower == 0) { return; } // skip 0 value changes
             monster.effects.Enqueue(new(PlayerEffectType.Power, monster.power - startingPower));
             UpdateMonsterPiece(monster);
 

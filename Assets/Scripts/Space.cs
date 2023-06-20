@@ -19,7 +19,7 @@ public enum SpaceType
 
 public class Space : MonoBehaviour
 {
-    [Header("Space")]
+    // Setup Variable
     public SpaceType spaceType;
     public bool canMonstersTraverse = true;
     public bool canSpawnMonsters = true;
@@ -27,11 +27,9 @@ public class Space : MonoBehaviour
     public bool hasMandatoryEvent = false;
     public bool isStartingSpace = false;
     public List<Space> ConnectedSpaces = new List<Space>();
-
-    [Header("Blueprint")]
     public SpaceSO blueprint = null;
 
-    [Header("UI")]
+    // Setup Static
     public GameObject lineDrawPoint;
     public GameObject monsterPiecePrefab;
     public Transform monsterPieceLocation;
@@ -42,9 +40,9 @@ public class Space : MonoBehaviour
     public GameObject playerPiecePrefab;
     public Transform playerPieceLocation;
     public TextBlock namePlate;
-    public List<Interactable> interactableNova;
+    public Interactable interactableNova;
 
-    [Header("Current State")]
+    // Current State
     public Monster monsterAtSpace;
     public bool hasMonster = false;
     public GameObject monsterPieceAtSpace;
@@ -85,11 +83,7 @@ public class Space : MonoBehaviour
 
     public void TriggerSelectable(bool value)
     {
-        foreach (Interactable interactable in interactableNova)
-        {
-            interactable.enabled = value;
-        }
-
+        interactableNova.enabled = value;
         if (value)
         {
             StartColorCycle();
