@@ -23,5 +23,5 @@ MonoBehaviour:
   canMonstersTraverse: 1
   canSpawnMonsters: 0
   shopLevel: 0
-  hasMandatoryEvent: 0
+  hasMandatoryEvent: 1
   customSpaceTypeOverride: 0

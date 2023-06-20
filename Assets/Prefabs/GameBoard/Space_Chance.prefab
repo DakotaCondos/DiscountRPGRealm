@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &3795787018009237749
+--- !u!1001 &1087326251169575354
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -23,9 +23,9 @@ PrefabInstance:
       propertyPath: hasMandatoryEvent
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 6771173250908603445, guid: 55911f8bfabc90e40adc3463685b9f45, type: 3}
-      propertyPath: layout.Size.X.Raw
-      value: 10.51875
+    - target: {fileID: 3770613301400985526, guid: 55911f8bfabc90e40adc3463685b9f45, type: 3}
+      propertyPath: canMonstersTraverse
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6796673611948371074, guid: 55911f8bfabc90e40adc3463685b9f45, type: 3}
       propertyPath: m_RootOrder
@@ -74,6 +74,14 @@ PrefabInstance:
     - target: {fileID: 6796673611948371075, guid: 55911f8bfabc90e40adc3463685b9f45, type: 3}
       propertyPath: m_Name
       value: Space_Chance
+      objectReference: {fileID: 0}
+    - target: {fileID: 6796673611948371078, guid: 55911f8bfabc90e40adc3463685b9f45, type: 3}
+      propertyPath: layout.Position.X.Raw
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6796673611948371078, guid: 55911f8bfabc90e40adc3463685b9f45, type: 3}
+      propertyPath: layout.Position.Y.Raw
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 55911f8bfabc90e40adc3463685b9f45, type: 3}
