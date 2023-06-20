@@ -82,7 +82,7 @@ public class BattleUI : MonoBehaviour
         opponentTextBlock.Text = p2.MonsterName;
         p2Name = p2.MonsterName;
 
-        float winDegrees = 360f * ((float)p1.GetPowerVsPlayer() / (float)(p1.GetPowerVsMonster() + p2.power));
+        float winDegrees = 360f * ((float)p1.GetPowerVsMonster() / (float)(p1.GetPowerVsMonster() + p2.power));
         spinnerChanceBlock.RadialFill.FillAngle = winDegrees;
         BeginBattle(win, winDegrees);
     }

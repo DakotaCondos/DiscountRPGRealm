@@ -112,7 +112,7 @@ public class InventoryManager : SceneSingleton<InventoryManager>
         powerTextBlock.Text = player.GetPower().ToString();
         movementTextBlock.Text = player.GetMovement().ToString();
         pvmBonusTextBlock.Text = player.powerBonusItemsVsMonster.ToString();
-        pvpBonusTextBlock.Text = player.powerBonusItemsVsMonster.ToString();
+        pvpBonusTextBlock.Text = player.powerBonusItemsVsPlayer.ToString();
 
         // Money Xp Lvl
         moneyTextBlock.Text = player.money.ToString();
