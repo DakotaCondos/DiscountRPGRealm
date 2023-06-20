@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &6494346298735859689
+--- !u!1001 &8103374488901230566
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -9,19 +9,23 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 411054212294517778, guid: 55911f8bfabc90e40adc3463685b9f45, type: 3}
       propertyPath: layout.Size.X.Raw
-      value: 14.697397
+      value: 12.009895
       objectReference: {fileID: 0}
     - target: {fileID: 3055687108327356724, guid: 55911f8bfabc90e40adc3463685b9f45, type: 3}
       propertyPath: m_text
-      value: Challenge
+      value: Monster
       objectReference: {fileID: 0}
     - target: {fileID: 3291337867148982230, guid: 55911f8bfabc90e40adc3463685b9f45, type: 3}
       propertyPath: layout.Size.X.Raw
-      value: 15.697397
+      value: 13.009895
       objectReference: {fileID: 0}
     - target: {fileID: 3770613301400985526, guid: 55911f8bfabc90e40adc3463685b9f45, type: 3}
       propertyPath: spaceType
-      value: 5
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3770613301400985526, guid: 55911f8bfabc90e40adc3463685b9f45, type: 3}
+      propertyPath: canSpawnMonsters
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6796673611948371074, guid: 55911f8bfabc90e40adc3463685b9f45, type: 3}
       propertyPath: m_RootOrder
@@ -69,7 +73,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6796673611948371075, guid: 55911f8bfabc90e40adc3463685b9f45, type: 3}
       propertyPath: m_Name
-      value: Space_Default (1)
+      value: Space_Monster
       objectReference: {fileID: 0}
     - target: {fileID: 6796673611948371078, guid: 55911f8bfabc90e40adc3463685b9f45, type: 3}
       propertyPath: layout.Position.X.Raw
