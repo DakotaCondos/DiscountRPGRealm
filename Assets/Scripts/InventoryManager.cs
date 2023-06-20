@@ -2,6 +2,7 @@ using Nova;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using UnityEngine;
 
@@ -9,6 +10,7 @@ public class InventoryManager : SceneSingleton<InventoryManager>
 {
     [Header("General")]
     public Texture2D defaultTexture;
+    public GameObject exitButton;
 
     [Header("Player")]
     public TextBlock playerNameTextBlock;
@@ -38,6 +40,13 @@ public class InventoryManager : SceneSingleton<InventoryManager>
     public Transform inventoryItemsLocation;
     public List<GameObject> inventoryItemsUI = new();
 
+    [Header("Popup")]
+    public UIBlock2D popupBlock;
+    public GameObject consumableItemEffectPrefab;
+    public Transform consumableItemEffectsLocation;
+    public List<GameObject> consumableItemEffectsUI = new();
+
+
 
     private new void Awake()
     {
@@ -48,6 +57,7 @@ public class InventoryManager : SceneSingleton<InventoryManager>
     private void OnEnable()
     {
         BuildUI(TurnManager.Instance.GetCurrentActor().player);
+        DisplayPopup(false);
     }
 
 
@@ -204,7 +214,7 @@ public class InventoryManager : SceneSingleton<InventoryManager>
         // Update InventoryItemRow
         foreach (GameObject g in inventoryItemsUI)
         {
-            var j = g.GetComponent<InventoryItemRow>();
+            InventoryItemRow j = g.GetComponent<InventoryItemRow>();
             if (j.item.isConsumable) { continue; }
             j.buttonAction = EquipItem;
             j.buttonTextBlock.Text = "Equip";
@@ -249,12 +259,110 @@ public class InventoryManager : SceneSingleton<InventoryManager>
                     break;
             }
         }
-
     }
 
     public void UseItem(Item item)
     {
-        // Print for now
-        ConsolePrinter.PrintToConsole($"Selected UseItem {item.itemName}", Color.yellow);
+        if (!item.isConsumable)
+        {
+            Debug.LogWarning($"Attempted to use a non-consumable item! ({item.itemName})");
+            return;
+        }
+
+        foreach (ItemEffects effect in item.itemEffects)
+        {
+            int effectValue = effect.value;
+            switch (effect.Type)
+            {
+                case ItemEffectType.Power:
+                    if (effectValue == 0) { effectValue = UnityEngine.Random.Range(-15, 15); }
+                    currentPlayerInventory.AddPower(effect.value);
+                    DisplayConsumableEffect(ItemEffectType.Power, effect.value);
+                    break;
+                case ItemEffectType.Movement:
+                    currentPlayerInventory.AddMovement(effect.value);
+                    DisplayConsumableEffect(ItemEffectType.Power, effect.value);
+                    break;
+                case ItemEffectType.Teleport:
+                    DisplayConsumableEffect(ItemEffectType.Teleport, effect.value);
+                    // Send Player to Start
+                    EndBattleHandler.Instance.MovePlayerToStart(currentPlayerInventory);
+                    break;
+                case ItemEffectType.XP:
+                    if (effectValue == 0) { effectValue = UnityEngine.Random.Range(-15, 15); }
+                    currentPlayerInventory.AddXP(effectValue);
+                    DisplayConsumableEffect(ItemEffectType.XP, effectValue);
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        // update displayed items
+        GameObject itemRowToRemove = inventoryItemsUI.First(row =>
+        {
+            InventoryItemRow itemRow = row.GetComponent<InventoryItemRow>();
+            return itemRow.item.itemName.Equals(item.itemName);
+        });
+
+        if (itemRowToRemove == null)
+        {
+            Debug.LogError("SellItem() could not find item to sell");
+            return;
+        }
+        inventoryItemsUI.Remove(itemRowToRemove);
+        Destroy(itemRowToRemove);
+        UpdateDisplayDetails(currentPlayerInventory);
+
+        // Remove From Player Inventory
+        currentPlayerInventory.items.Remove(item);
+    }
+
+    private void DisplayConsumableEffect(ItemEffectType effect, int value)
+    {
+        UIReferences uiRef = UIReferences.Instance;
+        DisplayPopup(true);
+        Texture2D icon = effect switch
+        {
+            ItemEffectType.Power => uiRef.powerIcon,
+            ItemEffectType.PowerVsPlayer => uiRef.powerPlayerIcon,
+            ItemEffectType.PowerVsMonster => uiRef.powerMonsterIcon,
+            ItemEffectType.Movement => uiRef.movementIcon,
+            ItemEffectType.Teleport => uiRef.teleportIcon,
+            ItemEffectType.XP => uiRef.xpIcon,
+            _ => uiRef.unknownIcon,
+        };
+        GameObject g = Instantiate(consumableItemEffectPrefab, consumableItemEffectsLocation);
+        consumableItemEffectsUI.Add(g);
+
+        UIHelper j = g.GetComponent<UIHelper>();
+        j.UIBlock2Ds[0].SetImage(icon);
+
+        if (effect == ItemEffectType.Teleport)
+        {
+            j.TextBlocks[0].Text = "Teleported to starting space";
+        }
+        else
+        {
+            j.TextBlocks[0].Text = (value <= 0) ? value.ToString() : $"+{value}";
+        }
+    }
+
+    public void DisplayPopup(bool value)
+    {
+        if (value)
+        {
+            exitButton.SetActive(false);
+        }
+        else
+        {
+            foreach (GameObject g in consumableItemEffectsUI)
+            {
+                Destroy(g);
+            }
+            consumableItemEffectsUI.Clear();
+            exitButton.SetActive(true);
+        }
+        popupBlock.gameObject.SetActive(value);
     }
 }

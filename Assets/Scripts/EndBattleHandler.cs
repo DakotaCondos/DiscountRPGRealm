@@ -5,13 +5,14 @@ using System.Threading;
 using System.Threading.Tasks;
 using UnityEngine;
 
-public class EndBattleHandler : MonoBehaviour
+public class EndBattleHandler : SceneSingleton<EndBattleHandler>
 {
     GameBoard gameBoard;
     ActionsManager actionsManager;
     StatDisplay statDisplay;
-    private void Awake()
+    private new void Awake()
     {
+        base.Awake();
         gameBoard = FindObjectOfType<GameBoard>();
         actionsManager = FindObjectOfType<ActionsManager>();
         statDisplay = FindObjectOfType<StatDisplay>();
@@ -107,7 +108,7 @@ public class EndBattleHandler : MonoBehaviour
         MovePlayerToStart(losingPlayer);
     }
 
-    private void MovePlayerToStart(Player player)
+    public void MovePlayerToStart(Player player)
     {
         // move player
         if (ApplicationManager.Instance.handlerNotificationsEnabled) { ConsolePrinter.PrintToConsole($"MovePlayerToStart({player.PlayerName}", Color.cyan); }

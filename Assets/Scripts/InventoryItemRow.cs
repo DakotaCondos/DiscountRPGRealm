@@ -77,7 +77,7 @@ public class InventoryItemRow : MonoBehaviour
 
             UIHelper h = g.GetComponent<UIHelper>();
             h.UIBlock2Ds[0].SetImage(icon);
-            h.TextBlocks[0].Text = (effect.value > 0) ? $"+{effect.value}" : effect.value.ToString();
+            h.TextBlocks[0].Text = (effect.value == 0) ? "???" : (effect.value > 0) ? $"+{effect.value}" : effect.value.ToString();
         }
     }
 

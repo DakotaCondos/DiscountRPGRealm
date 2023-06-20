@@ -10,6 +10,7 @@ public enum ItemEffectType
     PowerVsMonster,
     Movement,
     Teleport,
+    XP,
 }
 
 [Serializable]
