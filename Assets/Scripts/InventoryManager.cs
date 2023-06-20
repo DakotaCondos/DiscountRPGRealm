@@ -192,7 +192,7 @@ public class InventoryManager : SceneSingleton<InventoryManager>
             }
         }
 
-        ModifyStats(item);
+        ModifyStats(currentPlayerInventory, item);
         UpdateDisplayDetails(currentPlayerInventory);
     }
 
@@ -211,18 +211,18 @@ public class InventoryManager : SceneSingleton<InventoryManager>
         }
 
         // update player stat values
-        ModifyStats(null);
+        ModifyStats(currentPlayerInventory, null);
         UpdateDisplayDetails(currentPlayerInventory);
     }
 
-    private void ModifyStats(Item item = null)
+    public void ModifyStats(Player player, Item item = null)
     {
         if (item == null)
         {
-            currentPlayerInventory.powerBonusItems = 0;
-            currentPlayerInventory.powerBonusItemsVsMonster = 0;
-            currentPlayerInventory.powerBonusItemsVsPlayer = 0;
-            currentPlayerInventory.movementBonusItems = 0;
+            player.powerBonusItems = 0;
+            player.powerBonusItemsVsMonster = 0;
+            player.powerBonusItemsVsPlayer = 0;
+            player.movementBonusItems = 0;
             return;
         }
 
@@ -231,16 +231,16 @@ public class InventoryManager : SceneSingleton<InventoryManager>
             switch (effect.Type)
             {
                 case ItemEffectType.Power:
-                    currentPlayerInventory.powerBonusItems = effect.value;
+                    player.powerBonusItems = effect.value;
                     break;
                 case ItemEffectType.PowerVsPlayer:
-                    currentPlayerInventory.powerBonusItemsVsPlayer = effect.value;
+                    player.powerBonusItemsVsPlayer = effect.value;
                     break;
                 case ItemEffectType.PowerVsMonster:
-                    currentPlayerInventory.powerBonusItemsVsMonster = effect.value;
+                    player.powerBonusItemsVsMonster = effect.value;
                     break;
                 case ItemEffectType.Movement:
-                    currentPlayerInventory.movementBonusItems = effect.value;
+                    player.movementBonusItems = effect.value;
                     break;
                 case ItemEffectType.Teleport:
                     Debug.LogWarning("Telepor Effects not implemented");

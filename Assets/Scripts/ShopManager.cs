@@ -143,6 +143,13 @@ public class ShopManager : SceneSingleton<ShopManager>
             return;
         }
 
+        // check if item is equipped
+        if (playerInShop.equippedItem != null && playerInShop.items.Count(i => i.itemName == playerInShop.equippedItem.itemName) <= 1)
+        {
+            playerInShop.equippedItem = null; // 
+            InventoryManager.Instance.ModifyStats(playerInShop, null);
+        }
+
         // add money
         playerInShop.money += item.itemValue / 2;
         CalculateMoney();

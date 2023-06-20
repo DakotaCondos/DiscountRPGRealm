@@ -19657,7 +19657,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &515410002
 Transform:
   m_ObjectHideFlags: 0
@@ -31385,7 +31385,7 @@ MonoBehaviour:
         Raw: 435.79803
         Type: 0
       Y:
-        Raw: 49.60001
+        Raw: 49.600002
         Type: 0
       Z:
         Raw: 0
