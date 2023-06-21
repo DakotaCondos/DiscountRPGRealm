@@ -2,6 +2,7 @@ using Nova;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using UnityEngine;
 
 public class ActionsManager : MonoBehaviour
@@ -159,6 +160,22 @@ public class ActionsManager : MonoBehaviour
         hasInteracted = value;
     }
 
+    private async void ProcessEventEffects()
+    {
+        print("Starting PlayerEffectsHandler from ActionsManager");
+        panelSwitcher.SetActivePanel(playerEffectsPanel);
+        TaskHelper helper = new();
+        StartCoroutine(PlayerEffectsHandler.Instance.HandleEffects(helper));
+
+        while (!helper.isComplete)
+        {
+            await Task.Delay(100);
+        }
+        print("Ended PlayerEffectsHandler from EndBattleHandler");
+        hasInteracted = true;
+        DetermineActions();
+    }
+
     #region ButtonMethods
 
     public void SelectInventory()
@@ -177,12 +194,42 @@ public class ActionsManager : MonoBehaviour
         {
             TurnState.TriggerBeginChallenge(turnManager.GetCurrentActor());
         }
+        else if (space.spaceType == SpaceType.Event)
+        {
+            // +1 gold/power/or xp 
+            PlayerEffectType effect = PlayerEffectType.Money;
+            int value;
+            switch (UnityEngine.Random.Range(0, 100))
+            {
+                case 99:
+                    value = 15;
+                    turnManager.GetCurrentActor().player.effects.Enqueue(new(PlayerEffectType.Power, 5));
+                    turnManager.GetCurrentActor().player.effects.Enqueue(new(PlayerEffectType.XP, 5));
+                    break;
+                case > 90:
+                    effect = PlayerEffectType.Power; ;
+                    value = 1;
+                    break;
+                case > 50:
+                    effect = PlayerEffectType.Money; ;
+                    value = 2;
+                    break;
+                default:
+                    effect = PlayerEffectType.XP; ;
+                    value = 1;
+                    break;
+            }
+            // show the effects
+            turnManager.GetCurrentActor().player.effects.Enqueue(new(effect, value));
+            ProcessEventEffects();
+        }
         else
         {
             // something is not set up correctly
             print("Interact type not id'd");
         }
     }
+
     public void SelectFight()
     {
         print("SelectFight");
