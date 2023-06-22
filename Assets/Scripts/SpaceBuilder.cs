@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using Unity.Mathematics;
 using UnityEngine;
 
 public class SpaceBuilder : MonoBehaviour
@@ -44,12 +45,18 @@ public class SpaceBuilder : MonoBehaviour
 
     private void BuildCustomSpace(Space space)
     {
-        space.SetSpaceName(space.blueprint.spaceName);
-        space.SetSpaceTexture(GetRandomItem(space.blueprint.spaceTextures));
-        space.canMonstersTraverse = space.blueprint.canMonstersTraverse;
-        space.canSpawnMonsters = space.blueprint.canSpawnMonsters;
-        space.shopLevel = space.blueprint.shopLevel;
-        space.spaceType = space.blueprint.customSpaceTypeOverride;
+        if (space.blueprints.Count == 0)
+        {
+            Debug.LogWarning($"Custom Space {name} does not have blueprint assigned");
+            return;
+        }
+        SpaceSO blueprint = space.blueprints[UnityEngine.Random.Range(0, space.blueprints.Count)];
+        space.SetSpaceName(blueprint.spaceName);
+        space.SetSpaceTexture(GetRandomItem(blueprint.spaceTextures));
+        space.canMonstersTraverse = blueprint.canMonstersTraverse;
+        space.canSpawnMonsters = blueprint.canSpawnMonsters;
+        space.shopLevel = blueprint.shopLevel;
+        space.spaceType = blueprint.customSpaceTypeOverride;
     }
 
     public void BuildSpace(Space space, List<SpaceSO> listSOs)
@@ -60,7 +67,6 @@ public class SpaceBuilder : MonoBehaviour
         space.SetSpaceTexture(GetRandomItem(textures));
         space.canMonstersTraverse = blueprint.canMonstersTraverse;
         space.canSpawnMonsters = blueprint.canSpawnMonsters;
-        space.shopLevel = blueprint.shopLevel;
     }
 
     public T GetRandomItem<T>(List<T> items, bool removeFromListAfterSelecting = false)

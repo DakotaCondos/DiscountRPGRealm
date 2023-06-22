@@ -17,6 +17,7 @@ public class ShopManager : SceneSingleton<ShopManager>
     public Player playerInShop = null;
 
     [Header("Shop Items")]
+    public List<ItemSO> ShadowRealmItems = new();
     public List<ItemSO> lvl1Items = new();
     public List<ItemSO> lvl2Items = new();
     public List<ItemSO> lvl3Items = new();
@@ -50,13 +51,20 @@ public class ShopManager : SceneSingleton<ShopManager>
 
     private void BuildShop(int shopLevel)
     {
-        // minimul level for a shop is 1.
-        if (shopLevel < 1) { return; }
-
-        for (int i = 0; i < shopLevel; i++)
+        if (shopLevel == 0) { return; }
+        if (shopLevel == -1) //shadow realm
         {
-            DisplayItems(levelsItems[i], true);
+
         }
+        else
+        {
+            for (int i = 0; i < shopLevel; i++)
+            {
+                DisplayItems(levelsItems[i], true);
+            }
+
+        }
+
 
         playerInShop.items.Sort((item1, item2) => item1.itemName.CompareTo(item2.itemName));
 

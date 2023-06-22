@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using UnityEngine;
 
-public class EndMovementHandler : MonoBehaviour
+public class EndMovementHandler : SceneSingleton<EndMovementHandler>
 {
     GameBoard gameBoard;
     ActionsManager actionsManager;
-    private void Awake()
+    private new void Awake()
     {
+        base.Awake();
         gameBoard = FindObjectOfType<GameBoard>();
         actionsManager = FindObjectOfType<ActionsManager>();
     }

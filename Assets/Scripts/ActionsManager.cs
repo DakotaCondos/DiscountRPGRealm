@@ -1,5 +1,6 @@
 using Nova;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -65,6 +66,16 @@ public class ActionsManager : MonoBehaviour
         actionButtonsPanel.EnableMoveButton(canMove);
         actionButtonsPanel.EnableMoveCancelButton(canCancelMove);
         actionButtonsPanel.EnableEndTurnButton(canEndTurn);
+    }
+    public void DisableButtons()
+    {
+        actionButtonsPanel.EnableInventoryButton(false);
+        actionButtonsPanel.EnableInteractButton(false);
+        actionButtonsPanel.EnableFightButton(false);
+        actionButtonsPanel.EnableTradeButton(false);
+        actionButtonsPanel.EnableMoveButton(false);
+        actionButtonsPanel.EnableMoveCancelButton(false);
+        actionButtonsPanel.EnableEndTurnButton(false);
     }
 
     private void ResetState()
@@ -223,12 +234,19 @@ public class ActionsManager : MonoBehaviour
             turnManager.GetCurrentActor().player.effects.Enqueue(new(effect, value));
             ProcessEventEffects();
         }
+        else if (space.spaceType == SpaceType.Transport)
+        {
+            // begin direct movement to new space
+            canMove = false;
+            space.TeleportToSpace.SelectSpace();
+        }
         else
         {
             // something is not set up correctly
             print("Interact type not id'd");
         }
     }
+
 
     public void SelectFight()
     {

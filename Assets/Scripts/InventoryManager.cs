@@ -284,17 +284,19 @@ public class InventoryManager : SceneSingleton<InventoryManager>
                     DisplayConsumableEffect(ItemEffectType.Power, effect.value);
                     break;
                 case ItemEffectType.Teleport:
-                    DisplayConsumableEffect(ItemEffectType.Teleport, effect.value);
-                    // Send Player to Start
-                    EndBattleHandler.Instance.MovePlayerToStart(currentPlayerInventory);
-                    break;
+                    // Inventory is closed here, OnDisable handles cleanup
+                    currentPlayerInventory.items.Remove(item);
+                    ActionsManager.Instance.panelSwitcher.SetActivePanel(ActionsManager.Instance.mainPanel);
+                    GameBoard.Instance.StartingSpace.SelectSpace();
+                    return;
                 case ItemEffectType.XP:
                     if (effectValue == 0) { effectValue = UnityEngine.Random.Range(-15, 15); }
                     currentPlayerInventory.AddXP(effectValue);
                     DisplayConsumableEffect(ItemEffectType.XP, effectValue);
                     break;
                 default:
-                    break;
+                    print("ItemEffect not found");
+                    return;
             }
         }
 

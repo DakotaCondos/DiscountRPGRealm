@@ -16,6 +16,7 @@ public class GameBoard : MonoBehaviour
     private LineDrawer lineDrawer;
     [SerializeField] float spaceConnectionRadius;
     public ActorPieceMovement actorPieceMovement;
+    public Space StartingSpace;
 
     public void Awake()
     {
@@ -47,7 +48,7 @@ public class GameBoard : MonoBehaviour
 
             // initialize space
             space.Initialize();
-
+            if (space.isStartingSpace) { StartingSpace = space; }
         }
         // Build Connections
         ConnectNearbySpaces(allSpaces, spaceConnectionRadius);

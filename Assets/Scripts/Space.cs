@@ -14,12 +14,14 @@ public enum SpaceType
     Event,
     MonsterSpawn,
     Challenge,
-    Custom
+    Custom,
+    Transport,
 }
 
 public class Space : MonoBehaviour
 {
     // Setup Variable
+    [Header("Setup")]
     public SpaceType spaceType;
     public bool canMonstersTraverse = true;
     public bool canSpawnMonsters = true;
@@ -27,9 +29,11 @@ public class Space : MonoBehaviour
     public bool hasMandatoryEvent = false;
     public bool isStartingSpace = false;
     public List<Space> ConnectedSpaces = new List<Space>();
-    public SpaceSO blueprint = null;
+    public List<SpaceSO> blueprints = null;
+    public Space TeleportToSpace = null;
 
     // Setup Static
+    [Header("Static")]
     public GameObject lineDrawPoint;
     public GameObject monsterPiecePrefab;
     public Transform monsterPieceLocation;
@@ -44,8 +48,10 @@ public class Space : MonoBehaviour
     [SerializeField] private GameObject _connectionRadius;
     [SerializeField] private UIBlock2D _monsterPieceUIBlock;
     [SerializeField] private UIBlock2D _playerPieceUIBlock;
+    [SerializeField] private List<MonsterSO> _staticMonsterSOs = new();
 
     // Current State
+    [Header("Current State")]
     public Monster monsterAtSpace;
     public bool hasMonster = false;
     public GameObject monsterPieceAtSpace;
@@ -77,6 +83,14 @@ public class Space : MonoBehaviour
             }
             AddPlayerToSpace(turnManager.GetCurrentActor().player);
         }
+
+        if (_staticMonsterSOs.Count > 0)
+        {
+            Monster monster = new(_staticMonsterSOs[UnityEngine.Random.Range(0, _staticMonsterSOs.Count)]);
+            MonsterManager.Instance.monsters.Add(monster);
+            AddMonsterToSpace(monster);
+        }
+
         // Turn off dev UI elements
         _connectionRadius.SetActive(false);
         _playerPieceUIBlock.Border.Enabled = false;

@@ -75,6 +75,6 @@ crashlytics-build.properties
 /[Aa]ssets/Nova/*
 /[Aa]ssets/TextMesh Pro/*
 #/[Aa]ssets/Pictures/*
-Assets/Audio/Music/
-Assets/Fantasy Skybox FREE/Cubemaps.meta
-Assets/Fantasy Skybox FREE/
+Assets/Audio/Music/*
+Assets/Fantasy Skybox FREE/*
+

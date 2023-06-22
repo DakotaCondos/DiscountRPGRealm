@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d7ce33eb46845a7489c14ce3ebb1531e, type: 3}
-  m_Name: Shadow Realm
+  m_Name: Shadow Realm Portal
   m_EditorClassIdentifier: 
-  spaceName: Shadow Realm
+  spaceName: Shadow Realm Portal
   spaceTextures:
   - {fileID: 2800000, guid: c728eb6b9502a904d9cb42170792bb67, type: 3}
   - {fileID: 2800000, guid: 96a698ceb7c804449b7eac7d46576b5e, type: 3}
@@ -26,4 +26,4 @@ MonoBehaviour:
   canSpawnMonsters: 0
   shopLevel: 0
   hasMandatoryEvent: 1
-  customSpaceTypeOverride: 3
+  customSpaceTypeOverride: 7

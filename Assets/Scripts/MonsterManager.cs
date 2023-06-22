@@ -39,6 +39,8 @@ public class MonsterManager : MonoBehaviour
         // Move monsters
         foreach (Monster monster in monsters)
         {
+            if (!monster.doesMove) { continue; }
+
             List<Space> availableSpaces = monster.currentSpace.ConnectedSpaces
                 .Where(space => space.canMonstersTraverse && !space.hasMonster)
                 .ToList();
@@ -104,7 +106,6 @@ public class MonsterManager : MonoBehaviour
             if (lowestPower > player.GetPowerVsMonster()) { lowestPower = player.GetPowerVsMonster(); }
         }
         avgPower /= GameManager.Instance.Players.Count;
-        print(avgPower);
 
         MonsterSO blueprint = GetMonsterSO(avgPower);
         Monster monster = new Monster(blueprint);
@@ -157,7 +158,7 @@ public class MonsterManager : MonoBehaviour
             > 25 and <= 50 => 5,
             > 50 and <= 75 => 8,
             > 75 and <= 90 => 10,
-            _ => (int)(1.025 * monster.power),
+            _ => (int)(0.025 * monster.power),
         };
         monster.power += powerUp;
         monster.effects.Enqueue(new(PlayerEffectType.Power, powerUp));

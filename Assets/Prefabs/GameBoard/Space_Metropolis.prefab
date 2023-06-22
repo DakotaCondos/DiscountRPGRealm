@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &2330122492483114927
+--- !u!1001 &242032691924564093
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -9,44 +9,28 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 411054212294517778, guid: 55911f8bfabc90e40adc3463685b9f45, type: 3}
       propertyPath: layout.Size.X.Raw
-      value: 7.515626
+      value: 15.744792
       objectReference: {fileID: 0}
     - target: {fileID: 3055687108327356724, guid: 55911f8bfabc90e40adc3463685b9f45, type: 3}
       propertyPath: m_text
-      value: Start
+      value: Metropolis
       objectReference: {fileID: 0}
     - target: {fileID: 3291337867148982230, guid: 55911f8bfabc90e40adc3463685b9f45, type: 3}
       propertyPath: layout.Size.X.Raw
-      value: 8.515626
+      value: 16.744793
       objectReference: {fileID: 0}
     - target: {fileID: 3770613301400985526, guid: 55911f8bfabc90e40adc3463685b9f45, type: 3}
-      propertyPath: blueprint
-      value: 
-      objectReference: {fileID: 11400000, guid: 8b715a5a2b73471448b852ce5eef36fe, type: 2}
-    - target: {fileID: 3770613301400985526, guid: 55911f8bfabc90e40adc3463685b9f45, type: 3}
       propertyPath: shopLevel
-      value: 1
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3770613301400985526, guid: 55911f8bfabc90e40adc3463685b9f45, type: 3}
       propertyPath: spaceType
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 3770613301400985526, guid: 55911f8bfabc90e40adc3463685b9f45, type: 3}
-      propertyPath: isStartingSpace
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3770613301400985526, guid: 55911f8bfabc90e40adc3463685b9f45, type: 3}
       propertyPath: canMonstersTraverse
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3770613301400985526, guid: 55911f8bfabc90e40adc3463685b9f45, type: 3}
-      propertyPath: blueprints.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3770613301400985526, guid: 55911f8bfabc90e40adc3463685b9f45, type: 3}
-      propertyPath: blueprints.Array.data[0]
-      value: 
-      objectReference: {fileID: 11400000, guid: 8b715a5a2b73471448b852ce5eef36fe, type: 2}
     - target: {fileID: 6796673611948371074, guid: 55911f8bfabc90e40adc3463685b9f45, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -93,7 +77,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6796673611948371075, guid: 55911f8bfabc90e40adc3463685b9f45, type: 3}
       propertyPath: m_Name
-      value: Space_Start
+      value: Space_Metropolis
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 55911f8bfabc90e40adc3463685b9f45, type: 3}
