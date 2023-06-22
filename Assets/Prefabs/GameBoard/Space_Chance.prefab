@@ -9,11 +9,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 411054212294517778, guid: 55911f8bfabc90e40adc3463685b9f45, type: 3}
       propertyPath: layout.Size.X.Raw
-      value: 10.51875
+      value: 15.306771
       objectReference: {fileID: 0}
     - target: {fileID: 3055687108327356724, guid: 55911f8bfabc90e40adc3463685b9f45, type: 3}
       propertyPath: m_text
-      value: Chance
+      value: Adventure
+      objectReference: {fileID: 0}
+    - target: {fileID: 3291337867148982230, guid: 55911f8bfabc90e40adc3463685b9f45, type: 3}
+      propertyPath: layout.Size.X.Raw
+      value: 16.30677
       objectReference: {fileID: 0}
     - target: {fileID: 3770613301400985526, guid: 55911f8bfabc90e40adc3463685b9f45, type: 3}
       propertyPath: spaceType

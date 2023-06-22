@@ -11,6 +11,7 @@ public class SpaceBuilder : MonoBehaviour
     public List<SpaceSO> eventSpaces;
     public List<SpaceSO> monsterSpawnSpaces;
     public List<SpaceSO> trapSpaces;
+    public List<SpaceSO> transportSpaces;
 
 
     public void BuildSpace(Space space)
@@ -38,6 +39,9 @@ public class SpaceBuilder : MonoBehaviour
             case SpaceType.Custom:
                 BuildCustomSpace(space);
                 break;
+            case SpaceType.Transport:
+                BuildSpace(space, transportSpaces, false);
+                break;
             default:
                 break;
         }
@@ -59,9 +63,9 @@ public class SpaceBuilder : MonoBehaviour
         space.spaceType = blueprint.customSpaceTypeOverride;
     }
 
-    public void BuildSpace(Space space, List<SpaceSO> listSOs)
+    public void BuildSpace(Space space, List<SpaceSO> listSOs, bool removeFromListAfterSelecting = true)
     {
-        SpaceSO blueprint = GetRandomItem(listSOs, true);
+        SpaceSO blueprint = GetRandomItem(listSOs, removeFromListAfterSelecting);
         space.SetSpaceName(blueprint.spaceName);
         List<Texture2D> textures = blueprint.spaceTextures;
         space.SetSpaceTexture(GetRandomItem(textures));
