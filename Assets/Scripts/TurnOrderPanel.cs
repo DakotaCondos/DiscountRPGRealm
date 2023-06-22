@@ -1,3 +1,4 @@
+using Nova;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -5,21 +6,29 @@ using UnityEngine;
 
 public class TurnOrderPanel : MonoBehaviour
 {
-    public NameBlock activePlayer;
-    public List<NameBlock> upcomingPlayerBlocks;
-    public GameObject playerBlockPrefab;
-    public Transform playerBlockLocation;
-    [SerializeField] TurnManager turnManager;
-    public Color[] colorIDs;
+    private TurnManager turnManager;
 
+    [Header("Active Player")]
+    [SerializeField] private UIBlock2D _nameBlock;
+    [SerializeField] private UIBlock2D _image;
+    [SerializeField] private TextBlock _textBlock;
+
+    [Header("Upcoming Players")]
+    [SerializeField] private GameObject _upcomingPlayerRowPrefab;
+    private List<UIHelper> _upcomingPlayerUIHelpers = new();
+    public Transform playerBlockLocation;
+    private void Awake()
+    {
+        turnManager = TurnManager.Instance;
+    }
     private void Start()
     {
-        List<TurnActor> list = turnManager.GetUpcomingPlayers();
-        for (int i = 0; i < list.Count; i++)
+        int numUpcomingPlayers = turnManager.GetUpcomingPlayers().Count;
+        for (int i = 0; i < numUpcomingPlayers; i++)
         {
-            TurnActor item = list[i];
-            GameObject g = Instantiate(playerBlockPrefab, playerBlockLocation);
-            upcomingPlayerBlocks.Add(g.GetComponent<NameBlock>());
+            GameObject g = Instantiate(_upcomingPlayerRowPrefab, playerBlockLocation);
+            UIHelper j = g.GetComponent<UIHelper>();
+            _upcomingPlayerUIHelpers.Add(j);
         }
 
         UpdatePanel();
@@ -27,21 +36,29 @@ public class TurnOrderPanel : MonoBehaviour
 
     public void UpdatePanel()
     {
-        //update Active Player Block
-        UpdateBlock(activePlayer, turnManager.GetCurrentActor().player);
+        // Update CurrentPlayer
+        Player activePlayer = turnManager.GetCurrentActor().player;
+        _textBlock.Text = activePlayer.PlayerName;
+        _nameBlock.Border.Color = activePlayer.playerColor;
+        _nameBlock.Gradient.Color = activePlayer.playerColor;
+        _image.Border.Color = activePlayer.playerColor;
+        _image.SetImage(activePlayer.playerTexture);
 
+        // Update Upcoming Players
         List<TurnActor> upcomingPlayers = turnManager.GetUpcomingPlayers();
         for (int i = 0; i < upcomingPlayers.Count; i++)
         {
-            UpdateBlock(upcomingPlayerBlocks[i], upcomingPlayers[i].player);
+            UIHelperUpdate(_upcomingPlayerUIHelpers[i], upcomingPlayers[i].player);
         }
     }
 
-    private void UpdateBlock(NameBlock nameBlock, Player player)
+    private void UIHelperUpdate(UIHelper uiHelper, Player player)
     {
-        nameBlock.SetGradient(player.playerColor);
-        nameBlock.SetLabel(player.PlayerName);
+        Color c = player.playerColor;
+        uiHelper.TextBlocks[0].Text = player.PlayerName;
+        uiHelper.UIBlock2Ds[0].Border.Color = c;
+        uiHelper.UIBlock2Ds[0].Gradient.Color = c;
+        uiHelper.UIBlock2Ds[1].Border.Color = c;
+        uiHelper.UIBlock2Ds[1].SetImage(player.playerTexture);
     }
-
-
 }

@@ -41,7 +41,7 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: 5eb226b1354dd39429c9cfce584addcc, type: 2}
     - target: {fileID: 3770613301400985526, guid: 55911f8bfabc90e40adc3463685b9f45, type: 3}
       propertyPath: _staticMonsterSOs.Array.size
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3770613301400985526, guid: 55911f8bfabc90e40adc3463685b9f45, type: 3}
       propertyPath: _staticMonsterSOs.Array.data[0]
@@ -93,7 +93,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6796673611948371075, guid: 55911f8bfabc90e40adc3463685b9f45, type: 3}
       propertyPath: m_Name
-      value: Space_Default (8)
+      value: Space_Teleport
       objectReference: {fileID: 0}
     - target: {fileID: 6796673611948371078, guid: 55911f8bfabc90e40adc3463685b9f45, type: 3}
       propertyPath: layout.Position.X.Raw

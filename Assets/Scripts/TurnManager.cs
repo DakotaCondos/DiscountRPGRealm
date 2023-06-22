@@ -37,7 +37,7 @@ public class TurnManager : MonoBehaviour
         ShufflePlayers();
 
         // Add Creatures TurnActor to end
-        players.Add(new TurnActor(new Player("Monsters", 7, Color.red), false));
+        players.Add(new TurnActor(new Player("Monsters", 7, Color.red, UIReferences.Instance.monsterIcon), false));
 
         // Fill the turn order queue
         foreach (TurnActor player in players)
