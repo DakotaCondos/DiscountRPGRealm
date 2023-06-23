@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &6505201943949276124
+--- !u!1001 &2991475765095959845
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -9,59 +9,31 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 411054212294517778, guid: 55911f8bfabc90e40adc3463685b9f45, type: 3}
       propertyPath: layout.Size.X.Raw
-      value: 12.552083
+      value: 14.892709
       objectReference: {fileID: 0}
     - target: {fileID: 3055687108327356724, guid: 55911f8bfabc90e40adc3463685b9f45, type: 3}
       propertyPath: m_text
-      value: Teleport
+      value: Final Boss
       objectReference: {fileID: 0}
     - target: {fileID: 3291337867148982230, guid: 55911f8bfabc90e40adc3463685b9f45, type: 3}
       propertyPath: layout.Size.X.Raw
-      value: 13.552083
+      value: 15.892709
       objectReference: {fileID: 0}
     - target: {fileID: 3770613301400985526, guid: 55911f8bfabc90e40adc3463685b9f45, type: 3}
       propertyPath: spaceType
-      value: 7
+      value: 9
       objectReference: {fileID: 0}
-    - target: {fileID: 3770613301400985526, guid: 55911f8bfabc90e40adc3463685b9f45, type: 3}
-      propertyPath: IsBlocking
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3770613301400985526, guid: 55911f8bfabc90e40adc3463685b9f45, type: 3}
-      propertyPath: TeleportToSpace
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 3770613301400985526, guid: 55911f8bfabc90e40adc3463685b9f45, type: 3}
-      propertyPath: hasMandatoryEvent
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3770613301400985526, guid: 55911f8bfabc90e40adc3463685b9f45, type: 3}
-      propertyPath: blueprints.Array.size
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3770613301400985526, guid: 55911f8bfabc90e40adc3463685b9f45, type: 3}
-      propertyPath: blueprints.Array.data[0]
-      value: 
-      objectReference: {fileID: 11400000, guid: 5eb226b1354dd39429c9cfce584addcc, type: 2}
-    - target: {fileID: 3770613301400985526, guid: 55911f8bfabc90e40adc3463685b9f45, type: 3}
-      propertyPath: _staticMonsterSOs.Array.size
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3770613301400985526, guid: 55911f8bfabc90e40adc3463685b9f45, type: 3}
-      propertyPath: _staticMonsterSOs.Array.data[0]
-      value: 
-      objectReference: {fileID: 11400000, guid: e8eb9696ef8d8224eb8896e8460ff572, type: 2}
     - target: {fileID: 6796673611948371074, guid: 55911f8bfabc90e40adc3463685b9f45, type: 3}
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6796673611948371074, guid: 55911f8bfabc90e40adc3463685b9f45, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 6796673611948371074, guid: 55911f8bfabc90e40adc3463685b9f45, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -39
       objectReference: {fileID: 0}
     - target: {fileID: 6796673611948371074, guid: 55911f8bfabc90e40adc3463685b9f45, type: 3}
       propertyPath: m_LocalPosition.z
@@ -97,15 +69,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6796673611948371075, guid: 55911f8bfabc90e40adc3463685b9f45, type: 3}
       propertyPath: m_Name
-      value: Space_Teleport
+      value: Space_EndGame
       objectReference: {fileID: 0}
     - target: {fileID: 6796673611948371078, guid: 55911f8bfabc90e40adc3463685b9f45, type: 3}
       propertyPath: layout.Position.X.Raw
-      value: 0
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 6796673611948371078, guid: 55911f8bfabc90e40adc3463685b9f45, type: 3}
       propertyPath: layout.Position.Y.Raw
-      value: 0
+      value: -39
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 55911f8bfabc90e40adc3463685b9f45, type: 3}

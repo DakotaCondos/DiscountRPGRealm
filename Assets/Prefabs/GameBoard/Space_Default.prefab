@@ -1055,7 +1055,7 @@ MonoBehaviour:
         Raw: 12
         Type: 0
       Y:
-        Raw: 4.0101604
+        Raw: 2.0050802
         Type: 0
       Z:
         Raw: 0
@@ -1357,7 +1357,8 @@ MonoBehaviour:
   hasMandatoryEvent: 0
   isStartingSpace: 0
   ConnectedSpaces: []
-  blueprint: {fileID: 0}
+  blueprints: []
+  TeleportToSpace: {fileID: 0}
   lineDrawPoint: {fileID: 7700039954475058900}
   monsterPiecePrefab: {fileID: 1121418259994116492, guid: 4fdd60b3be24c1a46acf2f701ec6621f, type: 3}
   monsterPieceLocation: {fileID: 6796673610885982881}
@@ -1372,6 +1373,7 @@ MonoBehaviour:
   _connectionRadius: {fileID: 7556423963047532871}
   _monsterPieceUIBlock: {fileID: 6796673610885982880}
   _playerPieceUIBlock: {fileID: 6796673612246262853}
+  _staticMonsterSOs: []
   monsterAtSpace:
     monsterTexture: {fileID: 0}
     power: 0
@@ -1744,7 +1746,7 @@ MonoBehaviour:
         Raw: 12
         Type: 0
       Y:
-        Raw: 4.0101604
+        Raw: 2.0050802
         Type: 0
       Z:
         Raw: 0
@@ -1922,9 +1924,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Default Space!
-
-    new line'
+  m_text: Default Space!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f1eaba59f4eef0646af1d2c27a22cde8, type: 2}
   m_sharedMaterial: {fileID: -8232903261261657317, guid: f1eaba59f4eef0646af1d2c27a22cde8, type: 2}
@@ -2567,8 +2567,8 @@ MonoBehaviour:
   visuals:
     Color: {r: 1, g: 1, b: 1, a: 1}
     CornerRadius:
-      Raw: 0.375
-      Type: 0
+      Raw: 0.18
+      Type: 1
     RadialFill:
       Center:
         X:

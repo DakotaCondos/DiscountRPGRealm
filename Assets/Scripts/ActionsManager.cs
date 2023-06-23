@@ -98,11 +98,11 @@ public class ActionsManager : MonoBehaviour
     {
         DetermineActions(turnManager.GetCurrentActor());
     }
+
     public void DetermineActions(TurnActor actor)
     {
         ResetState();
         panelSwitcher.SetActivePanel(mainPanel);
-        statDisplay.DisplayStats(actor.player.GetPower(), actor.player.GetMovement());
 
         foreach (Space boardSpace in GameBoard.Instance.allSpaces)
         {
@@ -116,6 +116,8 @@ public class ActionsManager : MonoBehaviour
             return;
         }
 
+        statDisplay.DisplayStats(actor.player.GetPower(), actor.player.GetMovement());
+
         Space space = actor.player.currentSpace;
 
         if (space.hasMonster)
@@ -123,6 +125,12 @@ public class ActionsManager : MonoBehaviour
             SetButtons();
             TriggerMonsterFightUI(actor.player, space.monsterAtSpace);
             return;
+        }
+
+        if (space.spaceType == SpaceType.EndGame)
+        {
+            // Do end game stuff
+            ConsolePrinter.PrintToConsole($"{actor.player.PlayerName} Wins!", Color.magenta);
         }
 
         if (space.hasMandatoryEvent && (!hasInteracted && actor.player.hasMoved))
@@ -141,16 +149,26 @@ public class ActionsManager : MonoBehaviour
             return;
         }
 
-        canInventory = true;
-        canTrade = space.shopLevel > 0;
-        canMove = !actor.player.hasMoved;
-        canEndTurn = !canMove;
+        if (space.spaceType == SpaceType.Jail)
+        {
+            //do nothing for now
+            print("You are in jail");
+            //return;
+        }
 
         // If space has >1 Team0(No Team) players or other teams players
         if (space.spaceType != SpaceType.Town && !hasFought)
         {
             canFight = space.GetFightableEntities(actor.player).Count > 0;
         }
+
+        canInventory = true;
+        canTrade = space.shopLevel > 0;
+
+        // setCanendturn end trun
+        canMove = !actor.player.hasMoved;
+        canEndTurn = !canMove;
+
 
         SetButtons();
     }

@@ -16,6 +16,8 @@ public enum SpaceType
     Challenge,
     Custom,
     Transport,
+    Jail,
+    EndGame,
 }
 
 public class Space : MonoBehaviour

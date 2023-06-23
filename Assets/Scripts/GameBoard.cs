@@ -162,6 +162,9 @@ public class GameBoard : MonoBehaviour
 
     public List<Space> FindPath(Space startSpace, Space endSpace)
     {
+        // Give a direct path when teleporting
+        if (startSpace.spaceType == SpaceType.Transport) { return new List<Space> { startSpace, endSpace }; }
+
         // Use a dictionary to keep track of visited spaces and their previous spaces
         Dictionary<Space, Space> visitedSpaces = new Dictionary<Space, Space>();
         Queue<Space> queue = new Queue<Space>();
