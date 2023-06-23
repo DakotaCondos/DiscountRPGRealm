@@ -1,6 +1,7 @@
 using Nova;
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using UnityEngine;
 
 public class ActorPieceMovement : MonoBehaviour
@@ -19,12 +20,15 @@ public class ActorPieceMovement : MonoBehaviour
     private int currentPointIndex = 0;
 
     private CameraController cameraController;
+    private GameObject _midpointObject;
+
 
     private void Awake()
     {
         GameBoard = FindObjectOfType<GameBoard>();
         cameraController = FindObjectOfType<CameraController>();
         gameObject.SetActive(false);
+        _midpointObject = new GameObject("MidpointObject");
     }
 
     public void MoveActor(TurnActor turnActor, Space start, Space end, TaskHelper helper)
@@ -40,10 +44,10 @@ public class ActorPieceMovement : MonoBehaviour
         backPlate.Color = colorIDs[7];
         picture.SetImage(monster.monsterTexture);
         helper.flag = true;
-        Moving(start, end, helper);
+        Moving(start, end, helper, false); // dont follow monster movement as to jaring 
     }
 
-    private void Moving(Space start, Space end, TaskHelper helper)
+    private void Moving(Space start, Space end, TaskHelper helper, bool cameraFollowMovement = true)
     {
         //get movement point
         List<Space> path = GameBoard.FindPath(start, end);
@@ -54,9 +58,29 @@ public class ActorPieceMovement : MonoBehaviour
         }
 
         gameObject.SetActive(true);
-        cameraController.SetFocusObject(gameObject);
+
+        if (!cameraFollowMovement)
+        {
+            // Get the positions of the two objects
+            Vector3 position1 = start.gameObject.transform.position;
+            Vector3 position2 = end.gameObject.transform.position;
+
+            // Calculate the midpoint between the two positions
+            Vector3 midpoint = (position1 + position2) / 2f;
+            _midpointObject.transform.position = midpoint;
+
+            // Look at midpoint
+            cameraController.SetFocusObject(_midpointObject);
+        }
+        else
+        {
+            // Follow moving piece
+            cameraController.SetFocusObject(gameObject);
+        }
+
         // move piece
         StartCoroutine(MoveToPoints(points.ToArray(), helper));
+
     }
 
     private IEnumerator MoveToPoints(Transform[] points, TaskHelper helper)
