@@ -46,6 +46,9 @@ public class InventoryManager : SceneSingleton<InventoryManager>
     public Transform consumableItemEffectsLocation;
     public List<GameObject> consumableItemEffectsUI = new();
 
+    [Header("Scrollers")]
+    [SerializeField] private List<Scroller> _scrollers = new();
+
 
 
     private new void Awake()
@@ -58,6 +61,12 @@ public class InventoryManager : SceneSingleton<InventoryManager>
     {
         BuildUI(TurnManager.Instance.GetCurrentActor().player);
         DisplayPopup(false);
+
+        foreach (Scroller scroller in _scrollers)
+        {
+            scroller.CancelScroll();
+            scroller.UIBlock.AutoLayout.Offset = 0;
+        }
     }
 
 

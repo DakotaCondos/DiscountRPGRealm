@@ -25,6 +25,9 @@ public class ShopManager : SceneSingleton<ShopManager>
     public List<ItemSO> lvl5Items = new();
     public List<ItemSO>[] levelsItems;
 
+    [Header("Scrollers")]
+    [SerializeField] private List<Scroller> _scrollers = new();
+
     private new void Awake()
     {
         base.Awake();
@@ -36,6 +39,12 @@ public class ShopManager : SceneSingleton<ShopManager>
         playerInShop = TurnManager.Instance.GetCurrentActor().player;
         BuildShop(playerInShop.currentSpace.shopLevel);
         CalculateMoney();
+
+        foreach (Scroller scroller in _scrollers)
+        {
+            scroller.CancelScroll();
+            scroller.UIBlock.AutoLayout.Offset = 0;
+        }
     }
 
 
