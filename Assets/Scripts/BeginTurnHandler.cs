@@ -36,6 +36,7 @@ public class BeginTurnHandler : MonoBehaviour
         if (ApplicationManager.Instance.handlerNotificationsEnabled) { ConsolePrinter.PrintToConsole($"HandleBeginTurn({actor.player.PlayerName})", Color.cyan); }
 
         if (!actor.isPlayer) { TurnState.TriggerMonsterTurn(actor); return; }
+        actionsManager.panelSwitcher.SetActivePanel(actionsManager.mainPanel);
 
         actor.player.hasMoved = false;
         actionsManager.DetermineActions(actor);

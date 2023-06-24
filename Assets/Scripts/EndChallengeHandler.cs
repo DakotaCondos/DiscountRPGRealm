@@ -33,14 +33,13 @@ public class EndChallengeHandler : MonoBehaviour
             }
         }
 
-        ActionsManager.Instance.panelSwitcher.SetActivePanel(ActionsManager.Instance.mainPanel);
-
         if (endTurn)
         {
             TurnManager.Instance.NextTurn();
         }
         else
         {
+            ActionsManager.Instance.panelSwitcher.SetActivePanel(ActionsManager.Instance.mainPanel);
             // Update Actions
             ActionsManager.Instance.SetHasInteracted(true);
             ActionsManager.Instance.DetermineActions(actor);
