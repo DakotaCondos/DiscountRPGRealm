@@ -34,6 +34,7 @@ public class PlayerEffectsHandler : MonoBehaviour
     public AudioClip movementBad;
     public AudioClip powerGood;
     public AudioClip powerBad;
+    public AudioClip itemSound;
 
     public static PlayerEffectsHandler Instance { get; private set; }
     private void Awake()
@@ -169,6 +170,12 @@ public class PlayerEffectsHandler : MonoBehaviour
                 ui.UIBlock2Ds[0].SetImage(moneyIcon);
                 if (updateStat) { player.AddMoney(effect.effectQuantity); }
                 clip = (effect.effectQuantity > 0) ? moneyGood : moneyBad;
+                break;
+            case PlayerEffectType.Item:
+                ui.UIBlock2Ds[0].SetImage(effect.itemSO.image);
+                ui.UIBlock2Ds[0].CornerRadius = 16;
+                if (updateStat) { player.items.Add(new(effect.itemSO)); }
+                clip = itemSound;
                 break;
             default:
                 break;

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using UnityEngine;
 
 public class EndChallengeHandler : MonoBehaviour
@@ -14,12 +15,25 @@ public class EndChallengeHandler : MonoBehaviour
         TurnState.EndChallenge -= HandleEndChallenge;
     }
 
-    private void HandleEndChallenge(TurnActor actor, bool endTurn, bool idkYet)
+    private async void HandleEndChallenge(TurnActor actor, bool endTurn, bool idkYet)
     {
         if (ApplicationManager.Instance.handlerNotificationsEnabled) { ConsolePrinter.PrintToConsole($"HandleEndChallenge({actor.player.PlayerName})", Color.cyan); }
         // Handle EndChallenge event here
-        ActionsManager.Instance.panelSwitcher.SetActivePanel(ActionsManager.Instance.mainPanel);
         CameraController.Instance.snapToOutOfBoundsView = false;
+
+        if (!endTurn)
+        {
+            print("Starting PlayerEffectsHandler from GuessingGame");
+            TaskHelper helper = new();
+            ActionsManager.Instance.panelSwitcher.SetActivePanel(ActionsManager.Instance.playerEffectsPanel);
+            StartCoroutine(PlayerEffectsHandler.Instance.HandleEffects(helper));
+            while (!helper.isComplete)
+            {
+                await Task.Delay(100);
+            }
+        }
+
+        ActionsManager.Instance.panelSwitcher.SetActivePanel(ActionsManager.Instance.mainPanel);
 
         if (endTurn)
         {

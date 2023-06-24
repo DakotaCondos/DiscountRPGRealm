@@ -5,9 +5,9 @@ using UnityEngine;
 
 public class GuessingGame : MonoBehaviour
 {
-    private int currentRound = 1; // Current round
+    [SerializeField] private int _currentRound = 1; // Current round
     public int totalRounds = 5; // Number of rounds to play
-    private bool hasLost = false;
+    private bool _hasLost = false;
     [Header("Game Details")]
     [SerializeField] int secretNumber; // Secret number for each round
     [SerializeField] int shownNumber; // Shown number for each round
@@ -41,18 +41,24 @@ public class GuessingGame : MonoBehaviour
     public AudioClip correctSound;
     public AudioClip numberShuffleSound;
 
+    [Header("Winnable Items")]
+    public List<ItemSO> tier1 = new();
+    public List<ItemSO> tier2 = new();
+    public List<ItemSO> tier3 = new();
+    public List<ItemSO> tier4 = new();
+
     public void SetupGame(int rounds)
     {
-        currentRound = 0;
+        _currentRound = 0;
         totalRounds = rounds;
-        hasLost = false;
+        _hasLost = false;
         ActionsManager.Instance.panelSwitcher.SetActivePanel(ActionsManager.Instance.challengePanel);
         StartNewRound();
     }
 
     public void StartNewRound()
     {
-        currentRound++;
+        _currentRound++;
 
         // Generate a random secret number
         secretNumber = Random.Range(1, 100);
@@ -73,7 +79,7 @@ public class GuessingGame : MonoBehaviour
         bodyTextBlock.Text = "Guess";
         bodyBlock.Color = defaultColor;
 
-        footerTextBlock.Text = $"Round {currentRound} of {totalRounds}";
+        footerTextBlock.Text = $"Round {_currentRound} of {totalRounds}";
 
         DisableAllButtons();
         upButton.transform.localScale = Vector3.zero;
@@ -114,7 +120,7 @@ public class GuessingGame : MonoBehaviour
 
         if (result)
         {
-            if (currentRound < totalRounds)
+            if (_currentRound < totalRounds)
             {
                 // setup next round
                 bodyTextBlock.Text = "Correct";
@@ -128,14 +134,13 @@ public class GuessingGame : MonoBehaviour
                 GiveReward();
                 bodyTextBlock.Text = "Winner!";
                 bodyBlock.Color = winColor;
-                exitButton.SetActive(true);
                 AudioManager.Instance.PlaySound(winnerSound, AudioChannel.SFX);
             }
         }
         else
         {
             // you lose
-            hasLost = true;
+            _hasLost = true;
             bodyTextBlock.Text = "Incorrect";
             bodyBlock.Color = incorrectColor;
             exitButton.SetActive(true);
@@ -151,14 +156,59 @@ public class GuessingGame : MonoBehaviour
         nextRoundButton.SetActive(false);
     }
 
+    [ContextMenu("Give Reward")]
     private void GiveReward()
     {
-        print("RewardGoesHere");
+        Player currentplayer = TurnManager.Instance.GetCurrentActor().player;
+        switch (_currentRound)
+        {
+            case <= 2:
+                currentplayer.effects.Enqueue(new(PlayerEffectType.Money, _currentRound));
+                break;
+            case 3:
+                currentplayer.effects.Enqueue(new(PlayerEffectType.Money, _currentRound));
+                currentplayer.effects.Enqueue(new(PlayerEffectType.XP, 1));
+                break;
+            case 4:
+                currentplayer.effects.Enqueue(new(PlayerEffectType.Money, _currentRound));
+                currentplayer.effects.Enqueue(new(PlayerEffectType.XP, 2));
+                break;
+            case 5:
+                currentplayer.effects.Enqueue(new(PlayerEffectType.Money, _currentRound));
+                currentplayer.effects.Enqueue(new(PlayerEffectType.XP, 3));
+                break;
+            case 6:
+                currentplayer.effects.Enqueue(new(PlayerEffectType.Money, _currentRound));
+                currentplayer.effects.Enqueue(new(PlayerEffectType.XP, 3));
+                break;
+            case 7:
+                currentplayer.effects.Enqueue(new(PlayerEffectType.XP, 3));
+                currentplayer.effects.Enqueue(new(PlayerEffectType.Money, _currentRound));
+                currentplayer.effects.Enqueue(new(PlayerEffectType.Item, 1, tier1[Random.Range(0, tier1.Count)]));
+                break;
+            case 8:
+                currentplayer.effects.Enqueue(new(PlayerEffectType.Money, _currentRound));
+                currentplayer.effects.Enqueue(new(PlayerEffectType.XP, 3));
+                currentplayer.effects.Enqueue(new(PlayerEffectType.Item, 1, tier2[Random.Range(0, tier2.Count)]));
+                break;
+            case 9:
+                currentplayer.effects.Enqueue(new(PlayerEffectType.Money, _currentRound));
+                currentplayer.effects.Enqueue(new(PlayerEffectType.XP, 3));
+                currentplayer.effects.Enqueue(new(PlayerEffectType.Item, 1, tier3[Random.Range(0, tier3.Count)]));
+                break;
+            case >= 10:
+                currentplayer.effects.Enqueue(new(PlayerEffectType.Money, _currentRound));
+                currentplayer.effects.Enqueue(new(PlayerEffectType.XP, 3));
+                currentplayer.effects.Enqueue(new(PlayerEffectType.Item, 1, tier4[Random.Range(0, tier4.Count)]));
+                break;
+        }
+
+        exitButton.SetActive(true);
     }
 
     public void Exit()
     {
         bool idkYet = true;
-        TurnState.TriggerEndChallenge(TurnManager.Instance.GetCurrentActor(), hasLost, idkYet);
+        TurnState.TriggerEndChallenge(TurnManager.Instance.GetCurrentActor(), _hasLost, idkYet);
     }
 }

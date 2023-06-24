@@ -284,9 +284,9 @@ MonoBehaviour:
     Image:
       Adjustment:
         CenterUV: {x: 0, y: 0}
-        UVScale: {x: 1.05, y: 1.05}
+        UVScale: {x: 1, y: 1}
         PixelsPerUnitMultiplier: 1
-        scaleMode: 0
+        scaleMode: 2
       Mode: 1
     SoftenEdges: 1
     FillEnabled: 1
@@ -397,16 +397,16 @@ MonoBehaviour:
     Margin:
       Left:
         Raw: 0
-        Type: 0
+        Type: 1
       Right:
         Raw: 0
-        Type: 0
+        Type: 1
       Bottom:
-        Raw: 0
-        Type: 0
+        Raw: 0.05
+        Type: 1
       Top:
         Raw: 0
-        Type: 0
+        Type: 1
       Front:
         Raw: 0
         Type: 0

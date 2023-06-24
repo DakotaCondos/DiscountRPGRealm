@@ -8,16 +8,19 @@ public enum PlayerEffectType
     Power,
     Movement,
     Money,
+    Item,
 }
 
 public class PlayerEffect
 {
     public PlayerEffectType type;
     public int effectQuantity;
+    public ItemSO itemSO;
 
-    public PlayerEffect(PlayerEffectType type, int effectQuantity)
+    public PlayerEffect(PlayerEffectType type, int effectQuantity, ItemSO itemSO = null)
     {
         this.type = type;
         this.effectQuantity = effectQuantity;
+        this.itemSO = itemSO;
     }
 }
