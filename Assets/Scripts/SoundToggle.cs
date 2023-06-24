@@ -7,32 +7,23 @@ public class SoundToggle : MonoBehaviour
 {
     [SerializeField] UIBlock2D unMuted;
     [SerializeField] UIBlock2D muted;
-    PersistentLink persistentLink;
     private bool isMuted = false;
     [SerializeField] AudioChannel audioChannel = AudioChannel.Music;
 
-    private void Awake()
-    {
-        persistentLink = FindObjectOfType<PersistentLink>();
-        if (persistentLink == null) Debug.LogWarning("SoundToggle could not find PersistentLink");
-    }
-
     private void Start()
     {
-        if (persistentLink == null) return;
-
         switch (audioChannel)
         {
             case AudioChannel.Music:
-                isMuted = persistentLink.AudioManager.IsMusicMuted;
+                isMuted = AudioManager.Instance.IsMusicMuted;
                 break;
 
             case AudioChannel.UI:
-                isMuted = persistentLink.AudioManager.IsUIEffectsMuted;
+                isMuted = AudioManager.Instance.IsUIEffectsMuted;
                 break;
 
             case AudioChannel.SFX:
-                isMuted = persistentLink.AudioManager.IsSFXMuted;
+                isMuted = AudioManager.Instance.IsSFXMuted;
                 break;
 
             default:
@@ -51,15 +42,15 @@ public class SoundToggle : MonoBehaviour
         switch (audioChannel)
         {
             case AudioChannel.Music:
-                persistentLink.AudioManager.ToggleMusicMute();
+                AudioManager.Instance.ToggleMusicMute();
                 break;
 
             case AudioChannel.UI:
-                persistentLink.AudioManager.ToggleUIEffectsMute();
+                AudioManager.Instance.ToggleUIEffectsMute();
                 break;
 
             case AudioChannel.SFX:
-                persistentLink.AudioManager.ToggleSFXMute();
+                AudioManager.Instance.ToggleSFXMute();
                 break;
 
             default:
@@ -69,5 +60,27 @@ public class SoundToggle : MonoBehaviour
 
         unMuted.gameObject.SetActive(!isMuted);
         muted.gameObject.SetActive(isMuted);
+    }
+
+    public void SetVolume(float value)
+    {
+        switch (audioChannel)
+        {
+            case AudioChannel.Music:
+                AudioManager.Instance.SetMusicVolume(value);
+                break;
+
+            case AudioChannel.UI:
+                AudioManager.Instance.SetUIEffectsVolume(value);
+                break;
+
+            case AudioChannel.SFX:
+                AudioManager.Instance.SetSFXVolume(value);
+                break;
+
+            default:
+                Debug.LogError("Invalid audio channel!");
+                break;
+        }
     }
 }
