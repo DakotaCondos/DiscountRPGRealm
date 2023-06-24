@@ -30,6 +30,11 @@ public class Player : IMoveable, IFightable
 
     public Queue<PlayerEffect> effects = new();
 
+    [Header("History")]
+    public int PVMwins = 0;
+    public int PVMlosses = 0;
+    public int PVPwins = 0;
+    public int PVPlosses = 0;
 
     public Player(string playerName, int teamID, Color playerColor, Texture2D playerTexture = null)
     {

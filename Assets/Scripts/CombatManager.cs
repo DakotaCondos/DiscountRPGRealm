@@ -41,8 +41,20 @@ public class CombatManager : MonoBehaviour
 
     public void CreateEncounter(Player player, Player opponent)
     {
-        // Results (may change this later)
+        // Results
         bool win = Fight(player, opponent);
+
+        if (win)
+        {
+            player.PVPwins++;
+            opponent.PVPlosses++;
+        }
+        else
+        {
+            opponent.PVPwins++;
+            player.PVPlosses++;
+        }
+
         BattleDTO battleDTO = new()
         {
             player = player,
@@ -57,8 +69,18 @@ public class CombatManager : MonoBehaviour
 
     public void CreateEncounter(Player player, Monster opponent)
     {
-        // Results (may change this later)
+        // Results
         bool win = Fight(player, opponent);
+
+        if (win)
+        {
+            player.PVMwins++;
+        }
+        else
+        {
+            player.PVMlosses++;
+        }
+
         BattleDTO battleDTO = new()
         {
             player = player,

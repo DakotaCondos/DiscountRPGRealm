@@ -365,7 +365,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46ebc6d7a9ef2cb48b0d39757f3c2b8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  musicTracks:
+  musicTracks: []
+  MainGameTracks:
   - {fileID: 8300000, guid: c9f98f3574f2b4741bede336dca3dfc4, type: 3}
   - {fileID: 8300000, guid: f557ddf16cd6aed4a8d871093a7f4c03, type: 3}
   - {fileID: 8300000, guid: e72b4ad38ae3c3a47aa2417bcbedabce, type: 3}
@@ -377,7 +378,11 @@ MonoBehaviour:
   - {fileID: 8300000, guid: b65289a76ffddb44daf609e492c91f64, type: 3}
   - {fileID: 8300000, guid: 4a50c6ed27a739544961b1dc25223e55, type: 3}
   - {fileID: 8300000, guid: f125f09af324560448b64d5f7b283326, type: 3}
+  EndGameTracks:
+  - {fileID: 8300000, guid: 567d4fa3fa3a37b42b506c9612bf5baf, type: 3}
+  - {fileID: 8300000, guid: 253d3a88092f6c24b9eb58fd7d4e1d63, type: 3}
   currentTrack: 0
+  trackset: 0
 --- !u!1 &85667930
 GameObject:
   m_ObjectHideFlags: 0

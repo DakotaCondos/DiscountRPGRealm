@@ -5,8 +5,11 @@ using UnityEngine;
 
 public class MusicManager : MonoBehaviour
 {
-    public List<AudioClip> musicTracks = new();
+    public List<AudioClip> musicTracks;
+    public List<AudioClip> MainGameTracks = new();
+    public List<AudioClip> EndGameTracks = new();
     public int currentTrack = 0;
+    public int trackset = 0;
 
     public static MusicManager Instance { get; private set; }
     private void Awake()
@@ -21,6 +24,7 @@ public class MusicManager : MonoBehaviour
             Destroy(gameObject);
             return;
         }
+        musicTracks = MainGameTracks;
     }
 
     private void OnEnable() => AudioManager.MusicTrackEnded += HandleMusicTrackEnded;
@@ -40,5 +44,19 @@ public class MusicManager : MonoBehaviour
     private void PlayNextTrack()
     {
         AudioManager.Instance.PlaySound(musicTracks[currentTrack], AudioChannel.Music, false);
+    }
+
+    public void MainGameMusic()
+    {
+        musicTracks = MainGameTracks;
+        currentTrack = 0;
+        PlayNextTrack();
+    }
+
+    public void EndGameMusic()
+    {
+        musicTracks = EndGameTracks;
+        currentTrack = 0;
+        PlayNextTrack();
     }
 }

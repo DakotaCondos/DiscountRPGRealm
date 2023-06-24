@@ -31,7 +31,7 @@ public class ActionsManager : MonoBehaviour
     public UIBlock2D battlePanel;
     public UIBlock2D optionsPanel;
     public UIBlock2D chancePanel;
-    public UIBlock2D eventPanel;
+    public UIBlock2D endGamePanel;
     public UIBlock2D startPanel;
     public UIBlock2D challengePanel;
     public UIBlock2D playerEffectsPanel;
@@ -129,8 +129,7 @@ public class ActionsManager : MonoBehaviour
 
         if (space.spaceType == SpaceType.EndGame)
         {
-            // Do end game stuff
-            ConsolePrinter.PrintToConsole($"{actor.player.PlayerName} Wins!", Color.magenta);
+            panelSwitcher.SetActivePanel(endGamePanel);
         }
 
         if (space.hasMandatoryEvent && (!hasInteracted && actor.player.hasMoved))
