@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80f437e1ba0d71140832eaaf33e28913, type: 3}
+  m_Name: Marble Golem
+  m_EditorClassIdentifier: 
+  MonsterName: Marble Golem
+  power: 90
+  doesMove: 0
+  battlecry: {fileID: 0}
+  monsterTextures:
+  - {fileID: 2800000, guid: f2592e6840f51e44a8d1fd6d27fcadb4, type: 3}
+  - {fileID: 2800000, guid: 9a10113ffd4945c45a47b352f126da7b, type: 3}
+  - {fileID: 2800000, guid: 58c5faa8220fd1447a2769460591945e, type: 3}
+  - {fileID: 2800000, guid: b672eeeb87b4ab44fb4db086e67ccf17, type: 3}

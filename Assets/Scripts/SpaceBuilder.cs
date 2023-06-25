@@ -56,7 +56,7 @@ public class SpaceBuilder : MonoBehaviour
         }
         SpaceSO blueprint = space.blueprints[UnityEngine.Random.Range(0, space.blueprints.Count)];
         space.SetSpaceName(blueprint.spaceName);
-        space.SetSpaceTexture(GetRandomItem(blueprint.spaceTextures));
+        space.SetSpaceTexture(GetRandomItem(blueprint.spaceTextures, false));
         space.canMonstersTraverse = blueprint.canMonstersTraverse;
         space.canSpawnMonsters = blueprint.canSpawnMonsters;
         space.shopLevel = blueprint.shopLevel;

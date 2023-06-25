@@ -31,7 +31,7 @@ public class Space : MonoBehaviour
     public bool hasMandatoryEvent = false;
     public bool isStartingSpace = false;
     public List<Space> ConnectedSpaces = new List<Space>();
-    public List<SpaceSO> blueprints = null;
+    public List<SpaceSO> blueprints = new();
     public Space TeleportToSpace = null;
 
     // Setup Static
