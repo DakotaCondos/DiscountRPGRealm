@@ -2371,6 +2371,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8215425293182977637, guid: 44a68a8cb14e69245812f8c62100911e, type: 3}
   m_PrefabInstance: {fileID: 201074624}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &201074626 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8215425293182977632, guid: 44a68a8cb14e69245812f8c62100911e, type: 3}
+  m_PrefabInstance: {fileID: 201074624}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &209613922
 GameObject:
   m_ObjectHideFlags: 0
@@ -6819,6 +6824,7 @@ MonoBehaviour:
   playerRowPrefab: {fileID: 2984933608424098986, guid: e44dc17185e2b6d4fad86b3963c2707d, type: 3}
   playerRowLocation: {fileID: 1366430219}
   messageBlock: {fileID: 67429287}
+  addPlayerButton: {fileID: 201074626}
 --- !u!1 &851918667
 GameObject:
   m_ObjectHideFlags: 0

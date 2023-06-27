@@ -11,6 +11,7 @@ public class PlayersStartupPanel : MonoBehaviour
     public GameObject playerRowPrefab;
     public Transform playerRowLocation;
     public TextBlock messageBlock;
+    public GameObject addPlayerButton;
 
     private List<string> funnyNames = new List<string>()
     {
@@ -192,11 +193,13 @@ public class PlayersStartupPanel : MonoBehaviour
         if (menuPrefabInstance != null) { return; }
         menuPrefabInstance = Instantiate(menuPrefab, gameObject.transform);
         menuPrefabInstance.GetComponent<AddPlayerPanel>().playersStartupPanel = this;
+        addPlayerButton.SetActive(false);
     }
 
     public void DestroyMenu()
     {
         Destroy(menuPrefabInstance);
+        addPlayerButton.SetActive(true);
     }
 
     public void CreatePlayer(string playerName, int team, Color color)

@@ -13,7 +13,17 @@ public class PanelSwitcher : MonoBehaviour
     {
         if (activePanel != null)
         {
-            SetActivePanel(activePanel);
+            foreach (UIBlock2D p in panels)
+            {
+                if (p == activePanel)
+                {
+                    p.gameObject.SetActive(true);
+                }
+                else
+                {
+                    p.gameObject.SetActive(false);
+                }
+            }
             return;
         }
 
@@ -26,6 +36,13 @@ public class PanelSwitcher : MonoBehaviour
 
     public void SetActivePanel(UIBlock2D panel)
     {
+        if (activePanel != null && panel.Equals(activePanel)) { return; }
+
+        if (ApplicationManager.Instance.handlerNotificationsEnabled)
+        {
+            ConsolePrinter.PrintToConsole($"SetActivePanel({panel.name})", Color.white);
+        }
+
         foreach (UIBlock2D p in panels)
         {
             if (p == panel)
@@ -37,6 +54,7 @@ public class PanelSwitcher : MonoBehaviour
                 p.gameObject.SetActive(false);
             }
         }
+        activePanel = panel;
     }
 
 }
