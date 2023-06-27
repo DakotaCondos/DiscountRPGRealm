@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7ce33eb46845a7489c14ce3ebb1531e, type: 3}
+  m_Name: Magma Cave
+  m_EditorClassIdentifier: 
+  spaceName: Magma Cave
+  spaceTextures:
+  - {fileID: 2800000, guid: 1001741bf96dd7440a335ecc754247a7, type: 3}
+  - {fileID: 2800000, guid: 5c26b92a12ddc1e4e9b1848e9e13d0ed, type: 3}
+  - {fileID: 2800000, guid: 504836aff6ff5e7469a5dd1c331a06fd, type: 3}
+  - {fileID: 2800000, guid: d0d25b8f8dd58104ba02796e4ff8464a, type: 3}
+  canMonstersTraverse: 1
+  canSpawnMonsters: 1
+  shopLevel: 0
+  hasMandatoryEvent: 0
+  customSpaceTypeOverride: 0

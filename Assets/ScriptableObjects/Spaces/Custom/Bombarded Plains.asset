@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7ce33eb46845a7489c14ce3ebb1531e, type: 3}
+  m_Name: Bombarded Plains
+  m_EditorClassIdentifier: 
+  spaceName: Bombarded Plains
+  spaceTextures:
+  - {fileID: 2800000, guid: 190b837d220d62046a864017e2703283, type: 3}
+  - {fileID: 2800000, guid: a78caa85f24bb0847b0605e658c92ce9, type: 3}
+  - {fileID: 2800000, guid: 4863ed78f4e821840b4b1c2b463fc625, type: 3}
+  - {fileID: 2800000, guid: 77cacfd6b11d7f946b391c669ecd6668, type: 3}
+  canMonstersTraverse: 1
+  canSpawnMonsters: 0
+  shopLevel: 0
+  hasMandatoryEvent: 0
+  customSpaceTypeOverride: 0

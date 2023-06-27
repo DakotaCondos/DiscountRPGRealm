@@ -162,7 +162,7 @@ public class ActionsManager : MonoBehaviour
         }
 
         canInventory = true;
-        canTrade = space.shopLevel > 0;
+        canTrade = space.shopLevel != 0;
 
         // setCanendturn end trun
         canMove = !actor.player.hasMoved;

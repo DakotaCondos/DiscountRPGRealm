@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7ce33eb46845a7489c14ce3ebb1531e, type: 3}
+  m_Name: Twisted Tree
+  m_EditorClassIdentifier: 
+  spaceName: Twisted Tree
+  spaceTextures:
+  - {fileID: 2800000, guid: 5c7b42dcb972b4c438528acc3f6698d4, type: 3}
+  - {fileID: 2800000, guid: 30ee3041f1212744fbfd6dfbd01821a8, type: 3}
+  - {fileID: 2800000, guid: f78277776a5936c4789ae9439852d32e, type: 3}
+  - {fileID: 2800000, guid: cc6dfa8c49a7a604f8829a80ffb3f00a, type: 3}
+  canMonstersTraverse: 1
+  canSpawnMonsters: 1
+  shopLevel: 0
+  hasMandatoryEvent: 0
+  customSpaceTypeOverride: 0

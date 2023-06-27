@@ -63,7 +63,7 @@ public class ShopManager : SceneSingleton<ShopManager>
         if (shopLevel == 0) { return; }
         if (shopLevel == -1) //shadow realm
         {
-
+            DisplayItems(ShadowRealmItems, true);
         }
         else
         {
@@ -71,7 +71,6 @@ public class ShopManager : SceneSingleton<ShopManager>
             {
                 DisplayItems(levelsItems[i], true);
             }
-
         }
 
 

@@ -36,6 +36,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3770613301400985526, guid: 55911f8bfabc90e40adc3463685b9f45, type: 3}
+      propertyPath: canMonstersTraverse
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3770613301400985526, guid: 55911f8bfabc90e40adc3463685b9f45, type: 3}
       propertyPath: blueprints.Array.size
       value: 0
       objectReference: {fileID: 0}

@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7ce33eb46845a7489c14ce3ebb1531e, type: 3}
+  m_Name: ShadowRealmCity
+  m_EditorClassIdentifier: 
+  spaceName: Shadowhaven
+  spaceTextures:
+  - {fileID: 2800000, guid: a133f1a3b6239924fa37d655f0211209, type: 3}
+  - {fileID: 2800000, guid: fe4b7332794c98e4e8d6a2ef628ea669, type: 3}
+  - {fileID: 2800000, guid: a260e793a97685a42b1718d556f2deac, type: 3}
+  - {fileID: 2800000, guid: a6d7498ebb4b03440ad30b95f0489c89, type: 3}
+  - {fileID: 2800000, guid: c82135d24c8417b428ce6db77dc0e4d7, type: 3}
+  - {fileID: 2800000, guid: 18a544494319674439200bd99fcde7af, type: 3}
+  - {fileID: 2800000, guid: b68b5dfadde135b49b8aab251ead4174, type: 3}
+  - {fileID: 2800000, guid: 554f5222ec3fdbf458a2d0eb9088c962, type: 3}
+  canMonstersTraverse: 0
+  canSpawnMonsters: 0
+  shopLevel: -1
+  hasMandatoryEvent: 0
+  customSpaceTypeOverride: 1

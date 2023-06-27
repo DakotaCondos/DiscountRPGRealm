@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7ce33eb46845a7489c14ce3ebb1531e, type: 3}
+  m_Name: Mists of Madness
+  m_EditorClassIdentifier: 
+  spaceName: Mists of Madness
+  spaceTextures:
+  - {fileID: 2800000, guid: 8a04ece9ceeff924faaf79feebe72b6f, type: 3}
+  - {fileID: 2800000, guid: dd06d36ee989c9f48849a87d669f7fe0, type: 3}
+  - {fileID: 2800000, guid: a5caba2a5bea99d429b10bb3fca7c7fd, type: 3}
+  - {fileID: 2800000, guid: 7190e1cb9ef9d584aa7cc0f9f83f3e5e, type: 3}
+  canMonstersTraverse: 1
+  canSpawnMonsters: 1
+  shopLevel: 0
+  hasMandatoryEvent: 0
+  customSpaceTypeOverride: 0

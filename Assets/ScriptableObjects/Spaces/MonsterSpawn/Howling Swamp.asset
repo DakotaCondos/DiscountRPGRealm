@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7ce33eb46845a7489c14ce3ebb1531e, type: 3}
+  m_Name: Howling Swamp
+  m_EditorClassIdentifier: 
+  spaceName: Howling Swamp
+  spaceTextures:
+  - {fileID: 2800000, guid: d17716901a9620040ac22f7215d7d877, type: 3}
+  - {fileID: 2800000, guid: ef725b27c1682a446875c33c7513c479, type: 3}
+  - {fileID: 2800000, guid: 2f8dd9a9ddc75314fa21d47ec4f7e93f, type: 3}
+  - {fileID: 2800000, guid: 97e540dd4ebf48a4eac47919492940d1, type: 3}
+  canMonstersTraverse: 1
+  canSpawnMonsters: 1
+  shopLevel: 0
+  hasMandatoryEvent: 0
+  customSpaceTypeOverride: 0
