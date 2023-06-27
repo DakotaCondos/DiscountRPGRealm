@@ -1577,6 +1577,7 @@ MonoBehaviour:
   powerMonsterIcon: {fileID: 2800000, guid: 23e88a23a86fdeb449c0ee22659b3298, type: 3}
   powerPlayerIcon: {fileID: 2800000, guid: 5d286eb5a71eaf94486fb44cd158d58a, type: 3}
   monsterIcon: {fileID: 2800000, guid: 23e88a23a86fdeb449c0ee22659b3298, type: 3}
+  monsterIconImage: {fileID: 2800000, guid: 3d832568101302c418aca1de14534cbf, type: 3}
   moneyIcon: {fileID: 2800000, guid: 865fc3ccd4f138640a0f7323e3a7ceeb, type: 3}
   xpIcon: {fileID: 2800000, guid: d6d86429a2bb0fe40a8016a7f4496679, type: 3}
   unknownIcon: {fileID: 2800000, guid: a9effeae2a6307a42a9c49024dfee6d5, type: 3}

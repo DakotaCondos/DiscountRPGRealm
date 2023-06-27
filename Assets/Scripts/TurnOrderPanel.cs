@@ -37,12 +37,15 @@ public class TurnOrderPanel : MonoBehaviour
     public void UpdatePanel()
     {
         // Update CurrentPlayer
-        Player activePlayer = turnManager.GetCurrentActor().player;
+        TurnActor turnActor = turnManager.GetCurrentActor();
+        Player activePlayer = turnActor.player;
         _textBlock.Text = activePlayer.PlayerName;
         _nameBlock.Border.Color = activePlayer.playerColor;
         _nameBlock.Gradient.Color = activePlayer.playerColor;
         _image.Border.Color = activePlayer.playerColor;
+
         _image.SetImage(activePlayer.playerTexture);
+
 
         // Update Upcoming Players
         List<TurnActor> upcomingPlayers = turnManager.GetUpcomingPlayers();

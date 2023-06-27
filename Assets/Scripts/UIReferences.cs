@@ -10,6 +10,7 @@ public class UIReferences : MonoBehaviour
     public Texture2D powerMonsterIcon;
     public Texture2D powerPlayerIcon;
     public Texture2D monsterIcon;
+    public Texture2D monsterIconImage;
     public Texture2D moneyIcon;
     public Texture2D xpIcon;
     public Texture2D unknownIcon;
