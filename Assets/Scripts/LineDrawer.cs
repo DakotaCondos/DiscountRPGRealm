@@ -20,6 +20,7 @@ public class LineDrawer : MonoBehaviour
         lineRenderer.textureMode = LineTextureMode.Tile;
         lineRenderer.startWidth = lineWidth;
         lineRenderer.endWidth = lineWidth;
+        lineRenderer.alignment = LineAlignment.TransformZ;
 
         List<Vector3> positions = new List<Vector3>();
 
