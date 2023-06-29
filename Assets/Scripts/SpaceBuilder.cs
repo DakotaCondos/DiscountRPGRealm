@@ -12,6 +12,7 @@ public class SpaceBuilder : MonoBehaviour
     public List<SpaceSO> monsterSpawnSpaces;
     public List<SpaceSO> trapSpaces;
     public List<SpaceSO> transportSpaces;
+    public List<SpaceSO> shadowRealmSpaces;
 
 
     public void BuildSpace(Space space)
@@ -42,6 +43,11 @@ public class SpaceBuilder : MonoBehaviour
             case SpaceType.Transport:
                 BuildSpace(space, transportSpaces, false);
                 break;
+            case SpaceType.Jail:
+                BuildSpace(space, shadowRealmSpaces, false);
+                break;
+            case SpaceType.EndGame:
+                break;
             default:
                 break;
         }
@@ -54,6 +60,7 @@ public class SpaceBuilder : MonoBehaviour
             Debug.LogWarning($"Custom Space {name} does not have blueprint assigned");
             return;
         }
+        if (ApplicationManager.Instance.handlerNotificationsEnabled) { print($"Building space {space.name}"); }
         SpaceSO blueprint = space.blueprints[UnityEngine.Random.Range(0, space.blueprints.Count)];
         space.SetSpaceName(blueprint.spaceName);
         space.SetSpaceTexture(GetRandomItem(blueprint.spaceTextures, false));
@@ -65,6 +72,7 @@ public class SpaceBuilder : MonoBehaviour
 
     public void BuildSpace(Space space, List<SpaceSO> listSOs, bool removeFromListAfterSelecting = true)
     {
+        if (ApplicationManager.Instance.handlerNotificationsEnabled) { print($"Building space {space.name}"); }
         SpaceSO blueprint = GetRandomItem(listSOs, removeFromListAfterSelecting);
         space.SetSpaceName(blueprint.spaceName);
         List<Texture2D> textures = blueprint.spaceTextures;

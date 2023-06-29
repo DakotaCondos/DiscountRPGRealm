@@ -35,6 +35,7 @@ public class ActionsManager : MonoBehaviour
     public UIBlock2D startPanel;
     public UIBlock2D challengePanel;
     public UIBlock2D playerEffectsPanel;
+    public UIBlock2D shadowRealmPanel;
 
 
     public static ActionsManager Instance { get; private set; }
@@ -148,13 +149,6 @@ public class ActionsManager : MonoBehaviour
             return;
         }
 
-        if (space.spaceType == SpaceType.Jail)
-        {
-            //do nothing for now
-            print("You are in jail");
-            //return;
-        }
-
         // If space has >1 Team0(No Team) players or other teams players
         if (space.spaceType != SpaceType.Town && !hasFought)
         {
@@ -256,6 +250,11 @@ public class ActionsManager : MonoBehaviour
             // begin direct movement to new space
             canMove = false;
             space.TeleportToSpace.SelectSpace();
+        }
+        else if (space.spaceType == SpaceType.Jail)
+        {
+            canMove = false;
+            panelSwitcher.SetActivePanel(shadowRealmPanel);
         }
         else
         {

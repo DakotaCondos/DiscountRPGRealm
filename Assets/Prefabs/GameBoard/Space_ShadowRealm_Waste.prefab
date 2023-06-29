@@ -1351,7 +1351,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spaceType: 8
-  canMonstersTraverse: 1
+  canMonstersTraverse: 0
   canSpawnMonsters: 0
   shopLevel: 0
   hasMandatoryEvent: 1
