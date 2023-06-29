@@ -2825,7 +2825,7 @@ Transform:
   - {fileID: 2025155681}
   - {fileID: 925596335}
   m_Father: {fileID: 74153902}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &46626228
 MonoBehaviour:
@@ -3205,7 +3205,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 68460331}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -1}
+  m_LocalPosition: {x: 0, y: 0, z: -3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3245,7 +3245,7 @@ MonoBehaviour:
         Raw: 0
         Type: 0
       Z:
-        Raw: -1
+        Raw: -3
         Type: 0
     Padding:
       Left:
@@ -3379,7 +3379,7 @@ MonoBehaviour:
       alignment: -1
       ExpandToGrid: 0
   visibility:
-    ZIndex: 1
+    ZIndex: 0
     BlockType: 1
     Visible: 1
   surface:
@@ -4289,6 +4289,7 @@ Transform:
   m_Children:
   - {fileID: 136196512}
   - {fileID: 2046320199}
+  - {fileID: 515410002}
   - {fileID: 1097935337}
   - {fileID: 1788507757}
   - {fileID: 447854865}
@@ -19810,7 +19811,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  duration: 1
+  duration: 0.5
 --- !u!114 &381971557
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21717,7 +21718,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 420948390}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -1}
+  m_LocalPosition: {x: 0, y: 0, z: -3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -21757,7 +21758,7 @@ MonoBehaviour:
         Raw: 0
         Type: 0
       Z:
-        Raw: -1
+        Raw: -3
         Type: 0
     Padding:
       Left:
@@ -21891,7 +21892,7 @@ MonoBehaviour:
       alignment: -1
       ExpandToGrid: 0
   visibility:
-    ZIndex: 1
+    ZIndex: 0
     BlockType: 1
     Visible: 1
   surface:
@@ -22989,7 +22990,7 @@ Transform:
   - {fileID: 113691013}
   - {fileID: 1995160790}
   m_Father: {fileID: 74153902}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &447854866
 MonoBehaviour:
@@ -26134,8 +26135,8 @@ Transform:
   - {fileID: 1392434312}
   - {fileID: 513998911}
   - {fileID: 1397764818}
-  m_Father: {fileID: 2046320199}
-  m_RootOrder: 0
+  m_Father: {fileID: 74153902}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &515410003
 MonoBehaviour:
@@ -30543,7 +30544,7 @@ Transform:
   - {fileID: 1401567287}
   - {fileID: 1931826981}
   m_Father: {fileID: 74153902}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &629029079
 MonoBehaviour:
@@ -33890,7 +33891,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 744553990}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 0, y: 0, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -33931,7 +33932,7 @@ MonoBehaviour:
         Raw: 0
         Type: 0
       Z:
-        Raw: 1
+        Raw: 3
         Type: 0
     Padding:
       Left:
@@ -46023,7 +46024,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1053341256}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -1}
+  m_LocalPosition: {x: 0, y: 0, z: -3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -46063,7 +46064,7 @@ MonoBehaviour:
         Raw: 0
         Type: 0
       Z:
-        Raw: -1
+        Raw: -3
         Type: 0
     Padding:
       Left:
@@ -46197,7 +46198,7 @@ MonoBehaviour:
       alignment: -1
       ExpandToGrid: 0
   visibility:
-    ZIndex: 1
+    ZIndex: 0
     BlockType: 1
     Visible: 1
   surface:
@@ -46801,8 +46802,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 45
-  m_fontSizeBase: 45
+  m_fontSize: 450
+  m_fontSizeBase: 450
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -46827,7 +46828,7 @@ MonoBehaviour:
   checkPaddingRequired: 0
   m_isRichText: 1
   m_parseCtrlCharacters: 1
-  m_isOrthographic: 1
+  m_isOrthographic: 0
   m_isCullingEnabled: 0
   m_horizontalMapping: 0
   m_verticalMapping: 0
@@ -47927,7 +47928,7 @@ Transform:
   - {fileID: 262475510}
   - {fileID: 1318124584}
   m_Father: {fileID: 74153902}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1097935338
 MonoBehaviour:
@@ -50034,7 +50035,7 @@ Transform:
   - {fileID: 1098634185}
   - {fileID: 801467322}
   m_Father: {fileID: 74153902}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1137606559
 GameObject:
@@ -54155,8 +54156,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 45
-  m_fontSizeBase: 45
+  m_fontSize: 450
+  m_fontSizeBase: 450
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -54181,7 +54182,7 @@ MonoBehaviour:
   checkPaddingRequired: 0
   m_isRichText: 1
   m_parseCtrlCharacters: 1
-  m_isOrthographic: 1
+  m_isOrthographic: 0
   m_isCullingEnabled: 0
   m_horizontalMapping: 0
   m_verticalMapping: 0
@@ -54807,9 +54808,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1248096694}
   - component: {fileID: 1248096698}
-  - component: {fileID: 1248096697}
   - component: {fileID: 1248096696}
   - component: {fileID: 1248096695}
+  - component: {fileID: 1248096697}
   m_Layer: 0
   m_Name: Card (2)
   m_TagString: Untagged
@@ -54861,7 +54862,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  duration: 1
+  duration: 0.5
 --- !u!114 &1248096696
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -57769,7 +57770,7 @@ Transform:
   - {fileID: 1750884848}
   - {fileID: 2039621301}
   m_Father: {fileID: 74153902}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1335171774
 MonoBehaviour:
@@ -58162,7 +58163,7 @@ Transform:
   - {fileID: 1246227721}
   - {fileID: 1181792094}
   m_Father: {fileID: 74153902}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1337635622
 MonoBehaviour:
@@ -61120,8 +61121,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 45
-  m_fontSizeBase: 45
+  m_fontSize: 450
+  m_fontSizeBase: 450
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -61146,7 +61147,7 @@ MonoBehaviour:
   checkPaddingRequired: 0
   m_isRichText: 1
   m_parseCtrlCharacters: 1
-  m_isOrthographic: 1
+  m_isOrthographic: 0
   m_isCullingEnabled: 0
   m_horizontalMapping: 0
   m_verticalMapping: 0
@@ -62101,7 +62102,7 @@ Transform:
   - {fileID: 991557693}
   - {fileID: 1962439796}
   m_Father: {fileID: 74153902}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1469127947
 MonoBehaviour:
@@ -62118,6 +62119,7 @@ MonoBehaviour:
   _card1: {fileID: 381971554}
   _card2: {fileID: 1888951016}
   _card3: {fileID: 1248096693}
+  _buttonsRow: {fileID: 991557692}
   _returnCard: 0
 --- !u!114 &1469127948
 MonoBehaviour:
@@ -66918,7 +66920,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1603480016}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 0, y: 0, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -66959,7 +66961,7 @@ MonoBehaviour:
         Raw: 0
         Type: 0
       Z:
-        Raw: 1
+        Raw: 3
         Type: 0
     Padding:
       Left:
@@ -69786,7 +69788,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1645652314}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 0, y: 0, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -69827,7 +69829,7 @@ MonoBehaviour:
         Raw: 0
         Type: 0
       Z:
-        Raw: 1
+        Raw: 3
         Type: 0
     Padding:
       Left:
@@ -71048,7 +71050,7 @@ Transform:
   - {fileID: 1194260756}
   - {fileID: 1739976149}
   m_Father: {fileID: 74153902}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1666912616
 GameObject:
@@ -72382,7 +72384,7 @@ Transform:
   m_Children:
   - {fileID: 227188748}
   m_Father: {fileID: 74153902}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1713728513
 MonoBehaviour:
@@ -76024,7 +76026,7 @@ Transform:
   - {fileID: 1923402929}
   - {fileID: 2013954013}
   m_Father: {fileID: 74153902}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1788507758
 MonoBehaviour:
@@ -80118,7 +80120,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  duration: 1
+  duration: 0.5
 --- !u!114 &1888951019
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -88481,8 +88483,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 515410002}
+  m_Children: []
   m_Father: {fileID: 74153902}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

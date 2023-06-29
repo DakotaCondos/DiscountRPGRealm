@@ -2,6 +2,7 @@ using Nova;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using UnityEngine;
 
 public class ShadowRealm : MonoBehaviour
@@ -11,13 +12,20 @@ public class ShadowRealm : MonoBehaviour
     [SerializeField] private GameObject _card2;
     [SerializeField] private GameObject _card3;
 
+    [Header("Buttons")]
+    [SerializeField] private GameObject _buttonsRow;
+
+
+
     [Header("CurrentGame")]
     [SerializeField] private int _returnCard;
 
     private void OnEnable()
     {
         CameraController.Instance.snapToOutOfBoundsView = true;
+        Camera.main.orthographic = false;
         _returnCard = UnityEngine.Random.Range(0, 3);
+        _buttonsRow.SetActive(true);
     }
     private void OnDisable()
     {
@@ -26,8 +34,8 @@ public class ShadowRealm : MonoBehaviour
         _card3.GetComponent<CardFlip>().ResetCard();
 
         CameraController.Instance.snapToOutOfBoundsView = false;
+        Camera.main.orthographic = true;
         ActionsManager.Instance.panelSwitcher.SetActivePanel(ActionsManager.Instance.mainPanel);
-        TurnManager.Instance.NextTurn();
     }
 
 
@@ -38,6 +46,8 @@ public class ShadowRealm : MonoBehaviour
 
     private void Select(int selection)
     {
+        _buttonsRow.SetActive(false);
+
         GameObject selectedCard = selection switch
         {
             0 => _card1,
@@ -57,8 +67,20 @@ public class ShadowRealm : MonoBehaviour
         selectedCard.GetComponent<CardFlip>().FlipCard();
     }
 
-    public void CardCallback(int card)
+    public async void CardCallback(int card)
     {
-        print($"CalledBack {card}");
+        await Task.Delay(1200);
+
+        if (card == _returnCard)
+        {
+            gameObject.SetActive(false);
+            GameBoard.Instance.StartingSpace.SelectSpace();
+        }
+        else
+        {
+            gameObject.SetActive(false);
+            TurnManager.Instance.NextTurn();
+        }
+
     }
 }
