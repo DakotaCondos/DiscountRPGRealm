@@ -34,6 +34,7 @@ public class Space : MonoBehaviour
     public List<SpaceSO> blueprints = new();
     public Space TeleportToSpace = null;
     public bool customConnections = false;
+    public Texture2D image;
 
     // Setup Static
     [Header("Static")]
@@ -125,6 +126,7 @@ public class Space : MonoBehaviour
 
     public void SetSpaceTexture(Texture2D texture)
     {
+        image = texture;
         spaceGraphicPanel.SetImage(texture);
     }
 

@@ -23,7 +23,10 @@ public class FightPanelUI : MonoBehaviour
     private List<Player> opponents = new();
     private Player player;
     private Player opponent;
+    public UIBlock2D backgroundImageBlock;
 
+
+    private void OnEnable() => backgroundImageBlock.SetImage(TurnManager.Instance.GetCurrentActor().player.currentSpace.image);
 
     public void CreateButtons(List<Player> players)
     {

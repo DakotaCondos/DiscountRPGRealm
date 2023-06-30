@@ -19,6 +19,11 @@ public class FightMonsterPanelUI : MonoBehaviour
     Player player;
     Monster monster;
 
+    public UIBlock2D backgroundImageBlock;
+
+
+    private void OnEnable() => backgroundImageBlock.SetImage(TurnManager.Instance.GetCurrentActor().player.currentSpace.image);
+
     public void CreatePvM(Player player, Monster monster)
     {
         playerBackingBlock.Color = player.playerColor;
