@@ -33,6 +33,7 @@ public class Space : MonoBehaviour
     public List<Space> ConnectedSpaces = new List<Space>();
     public List<SpaceSO> blueprints = new();
     public Space TeleportToSpace = null;
+    public bool customConnections = false;
 
     // Setup Static
     [Header("Static")]

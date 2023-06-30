@@ -5,16 +5,12 @@ using UnityEngine;
 
 public class EndTurnHandler : MonoBehaviour
 {
-    GameBoard gameBoard;
-    ActionsManager actionsManager;
-    StatDisplay statDisplay;
+    TeleportManager teleportManager;
     TurnOrderPanel turnOrderPanel;
 
     private void Awake()
     {
-        gameBoard = FindObjectOfType<GameBoard>();
-        actionsManager = FindObjectOfType<ActionsManager>();
-        statDisplay = FindObjectOfType<StatDisplay>();
+        teleportManager = FindObjectOfType<TeleportManager>(true);
         turnOrderPanel = FindObjectOfType<TurnOrderPanel>(true);
     }
 
@@ -32,6 +28,7 @@ public class EndTurnHandler : MonoBehaviour
     {
         if (ApplicationManager.Instance.handlerNotificationsEnabled) { ConsolePrinter.PrintToConsole($"HandleEndTurn({actor.player.PlayerName})", Color.cyan); }
 
+        teleportManager.EvaluateSpaces(actor.player);
         turnOrderPanel.UpdatePanel();
     }
 }

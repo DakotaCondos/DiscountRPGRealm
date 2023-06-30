@@ -75,6 +75,7 @@ public class ActorPieceMovement : MonoBehaviour
         else
         {
             // Follow moving piece
+            transform.position = points[0].position;
             cameraController.SetFocusObject(gameObject);
         }
 

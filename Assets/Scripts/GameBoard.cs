@@ -58,6 +58,7 @@ public class GameBoard : MonoBehaviour
     {
         a.ConnectedSpaces.Add(b);
         b.ConnectedSpaces.Add(a);
+        lineDrawer.DrawLine(a.lineDrawPoint, b.lineDrawPoint);
     }
 
     // debug step display distances
@@ -70,13 +71,12 @@ public class GameBoard : MonoBehaviour
         {
             foreach (Space space in allSpaces)
             {
-                if (currentSpace.Equals(space)) { continue; }
+                if (currentSpace.Equals(space) || currentSpace.customConnections || space.customConnections) { continue; }
                 if (currentSpace.ConnectedSpaces.Contains(space)) { continue; }
                 stringBuilder.AppendLine($"{currentSpace.namePlate.Text} -> {space.namePlate.Text} = {Vector3.Distance(currentSpace.lineDrawPoint.transform.position, space.lineDrawPoint.transform.position)}");
                 if (Vector3.Distance(currentSpace.lineDrawPoint.transform.position, space.lineDrawPoint.transform.position) <= spaceConnectionRadius)
                 {
                     ConnectSpaces(currentSpace, space);
-                    lineDrawer.DrawLine(currentSpace.lineDrawPoint, space.lineDrawPoint);
                 }
             }
         }
