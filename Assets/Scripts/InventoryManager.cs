@@ -11,6 +11,8 @@ public class InventoryManager : SceneSingleton<InventoryManager>
     [Header("General")]
     public Texture2D defaultTexture;
     public GameObject exitButton;
+    public UIBlock2D backgroundImageBlock;
+
 
     [Header("Player")]
     public TextBlock playerNameTextBlock;
@@ -61,6 +63,7 @@ public class InventoryManager : SceneSingleton<InventoryManager>
     {
         BuildUI(TurnManager.Instance.GetCurrentActor().player);
         DisplayPopup(false);
+        backgroundImageBlock.SetImage(TurnManager.Instance.GetCurrentActor().player.currentSpace.image);
 
         foreach (Scroller scroller in _scrollers)
         {

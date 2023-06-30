@@ -15,6 +15,8 @@ public class ShopManager : SceneSingleton<ShopManager>
     public List<GameObject> sellItemRows = new();
     public TextBlock playerMoneyTextBlock;
     public Player playerInShop = null;
+    public UIBlock2D backgroundImageBlock;
+
 
     [Header("Shop Items")]
     public List<ItemSO> ShadowRealmItems = new();
@@ -39,6 +41,8 @@ public class ShopManager : SceneSingleton<ShopManager>
         playerInShop = TurnManager.Instance.GetCurrentActor().player;
         BuildShop(playerInShop.currentSpace.shopLevel);
         CalculateMoney();
+        backgroundImageBlock.SetImage(TurnManager.Instance.GetCurrentActor().player.currentSpace.image);
+
 
         foreach (Scroller scroller in _scrollers)
         {

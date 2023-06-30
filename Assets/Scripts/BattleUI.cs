@@ -36,6 +36,11 @@ public class BattleUI : MonoBehaviour
     private string p1Name;
     private string p2Name;
 
+    public UIBlock2D backgroundImageBlock;
+
+
+    private void OnEnable() => backgroundImageBlock.SetImage(TurnManager.Instance.GetCurrentActor().player.currentSpace.image);
+
     public void InitiateBattleSequence(BattleDTO battleDTO)
     {
         this.battleDTO = battleDTO;

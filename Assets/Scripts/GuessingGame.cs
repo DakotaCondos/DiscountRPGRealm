@@ -23,6 +23,8 @@ public class GuessingGame : MonoBehaviour
     public GameObject downButton;
     public GameObject exitButton;
     public GameObject nextRoundButton;
+    public UIBlock2D backgroundImageBlock;
+
 
     [Header("Response Colors")]
     public Color correctColor;
@@ -46,6 +48,9 @@ public class GuessingGame : MonoBehaviour
     public List<ItemSO> tier2 = new();
     public List<ItemSO> tier3 = new();
     public List<ItemSO> tier4 = new();
+
+
+    private void OnEnable() => backgroundImageBlock.SetImage(TurnManager.Instance.GetCurrentActor().player.currentSpace.image);
 
     public void SetupGame(int rounds)
     {

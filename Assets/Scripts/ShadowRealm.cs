@@ -15,6 +15,8 @@ public class ShadowRealm : MonoBehaviour
     [Header("Buttons")]
     [SerializeField] private GameObject _buttonsRow;
 
+    [Header("Background")]
+    public UIBlock2D backgroundImageBlock;
 
 
     [Header("CurrentGame")]
@@ -26,6 +28,8 @@ public class ShadowRealm : MonoBehaviour
         Camera.main.orthographic = false;
         _returnCard = UnityEngine.Random.Range(0, 3);
         _buttonsRow.SetActive(true);
+        backgroundImageBlock.SetImage(TurnManager.Instance.GetCurrentActor().player.currentSpace.image);
+
     }
     private void OnDisable()
     {
@@ -69,7 +73,7 @@ public class ShadowRealm : MonoBehaviour
 
     public async void CardCallback(int card)
     {
-        await Task.Delay(1200);
+        await Task.Delay(2000);
 
         if (card == _returnCard)
         {
