@@ -9,7 +9,8 @@ public enum ChanceCardType
     GainingExperience,
     LosingExperience,
     GainingPower,
-    LosingPower
+    LosingPower,
+    ShadowRealm
 }
 
 [CreateAssetMenu(fileName = "ChanceCard", menuName = "ScriptableObjects/ChanceCards")]

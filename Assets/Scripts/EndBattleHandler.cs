@@ -70,7 +70,7 @@ public class EndBattleHandler : SceneSingleton<EndBattleHandler>
         }
         else
         {
-            int moneyLost = (player.money / 5);
+            int moneyLost = Mathf.Clamp(player.money / 5, 0, 10);
             if (moneyLost != 0) { player.effects.Enqueue(new(PlayerEffectType.Money, -moneyLost)); }
             MovePlayerToStart(player);
             MonsterManager.Instance.ScaleMonsterPower(monster);

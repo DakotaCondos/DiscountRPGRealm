@@ -36,6 +36,8 @@ public class CardMiniGame : MonoBehaviour
     [SerializeField] float revealTime = 1f;
     [SerializeField] CameraController cameraController;
     [SerializeField] Transform cardTransform;
+    [SerializeField] GameObject responseBlock;
+    [SerializeField] GameObject shadowRealmResponseBlock;
     public void CreateChanceGame(TurnActor actor)
     {
         outcomeDisplay.SetActive(false);
@@ -58,6 +60,9 @@ public class CardMiniGame : MonoBehaviour
                 player.AddXP(chanceResult.Item2);
                 cardType = (chanceResult.Item2 > 0) ? ChanceCardType.GainingExperience : ChanceCardType.LosingExperience;
                 break;
+            case RewardType.ShadowRealm:
+                cardType = ChanceCardType.ShadowRealm;
+                break;
             default:
                 Debug.LogWarning("RewardType not found!");
                 cardType = (chanceResult.Item2 > 0) ? ChanceCardType.GainingMoney : ChanceCardType.LosingMoney;
@@ -71,10 +76,21 @@ public class CardMiniGame : MonoBehaviour
 
     private void SetupResult()
     {
-        Texture2D image = (chanceResult.Item1 == RewardType.Money) ?
-            image = moneyIcon : (chanceResult.Item1 == RewardType.Power) ?
-            image = powerIcon : image = xpIcon;
+        if (chanceResult.Item1 == RewardType.ShadowRealm)
+        {
+            responseBlock.SetActive(false);
+            shadowRealmResponseBlock.SetActive(true);
 
+            ActionsManager.Instance.sendToShadowRealm = true;
+
+            return;
+        }
+
+        responseBlock.SetActive(true);
+        shadowRealmResponseBlock.SetActive(false);
+
+        Texture2D image = (chanceResult.Item1 == RewardType.Money) ? moneyIcon :
+            (chanceResult.Item1 == RewardType.Power) ? powerIcon : xpIcon;
 
         rewardTypeIcon.SetImage(image);
 

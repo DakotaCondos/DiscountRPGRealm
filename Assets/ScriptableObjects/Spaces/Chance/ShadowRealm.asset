@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 706ffabbc0b81c7478ec6c05c59456e5, type: 3}
+  m_Name: ShadowRealm
+  m_EditorClassIdentifier: 
+  CardType: 6
+  cardTitle: ShadowRealm
+  images:
+  - {fileID: 2800000, guid: c728eb6b9502a904d9cb42170792bb67, type: 3}
+  - {fileID: 2800000, guid: 96a698ceb7c804449b7eac7d46576b5e, type: 3}
+  - {fileID: 2800000, guid: 635b0b65632a8534299b76ae765d395c, type: 3}
+  - {fileID: 2800000, guid: 14c942fea788dbb4283f20c1d10c532e, type: 3}
+  - {fileID: 2800000, guid: 65a12799a7242dd438d424eaa33d404e, type: 3}
+  - {fileID: 2800000, guid: 598b0283370fe6c4591ca8ce9c3e7bec, type: 3}
+  - {fileID: 2800000, guid: 3dd751038b577fa41945f58b1869baa3, type: 3}
+  - {fileID: 2800000, guid: f6ff34207bb1cd64ca301b9f26177c25, type: 3}

@@ -4,7 +4,8 @@ public enum RewardType
 {
     Money,
     Power,
-    XP
+    XP,
+    ShadowRealm
 }
 
 public static class ChanceSelector
@@ -21,15 +22,17 @@ public static class ChanceSelector
 
     public static (RewardType, int) SelectReward()
     {
-        int randomRewardIndex = Random.Range(0, 3); // 0: Money, 1: Power, 2: XP
+        int randomRewardIndex = Random.Range(0, 10); // 0: Money, 1: Power, 2: XP
 
         switch (randomRewardIndex)
         {
             case 0:
+                return (RewardType.ShadowRealm, 0);
+            case <= 3:
                 return (RewardType.Money, SelectMoneyReward());
-            case 1:
+            case <= 6:
                 return (RewardType.Power, SelectPowerReward());
-            case 2:
+            case <= 9:
                 return (RewardType.XP, SelectXPReward());
             default:
                 Debug.LogError("Invalid reward index: " + randomRewardIndex);

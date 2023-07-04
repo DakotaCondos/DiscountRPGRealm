@@ -17,6 +17,7 @@ public class GameBoard : MonoBehaviour
     [SerializeField] float spaceConnectionRadius;
     public ActorPieceMovement actorPieceMovement;
     public Space StartingSpace;
+    public Space ShadowRealmCitySpace;
 
     public void Awake()
     {

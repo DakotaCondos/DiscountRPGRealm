@@ -37,6 +37,8 @@ public class ActionsManager : MonoBehaviour
     public UIBlock2D playerEffectsPanel;
     public UIBlock2D shadowRealmPanel;
 
+    public bool sendToShadowRealm = false;
+
 
     public static ActionsManager Instance { get; private set; }
 
@@ -118,6 +120,15 @@ public class ActionsManager : MonoBehaviour
         }
 
         statDisplay.DisplayStats(actor.player.GetPower(), actor.player.GetMovement());
+
+        if (sendToShadowRealm)
+        {
+            canMove = false;
+            sendToShadowRealm = false;
+            // begin direct movement to ShadowRealm space
+            GameBoard.Instance.ShadowRealmCitySpace.SelectSpace();
+            return;
+        }
 
         Space space = actor.player.currentSpace;
 
