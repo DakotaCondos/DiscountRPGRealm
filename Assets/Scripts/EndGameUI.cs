@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class EndGameUI : MonoBehaviour
 {
@@ -112,5 +113,10 @@ public class EndGameUI : MonoBehaviour
     {
         _playerDisplayIndex--;
         DisplayPlayer(_playerDisplayIndex);
+    }
+
+    public void Exit()
+    {
+        SceneManager.LoadScene("Main Menu");
     }
 }
