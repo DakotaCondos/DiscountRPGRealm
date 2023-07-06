@@ -29,6 +29,41 @@ public class EndGameUI : MonoBehaviour
     [SerializeField] private GameObject _leftButton;
     [SerializeField] private GameObject _rightButton;
 
+    [Header("Credits")]
+    [SerializeField] private GameObject _creditsBlock;
+    [SerializeField] private GameObject _creditItemPrefab;
+    [SerializeField] private GameObject _nameplatePrefab;
+    [SerializeField] private GameObject _squareBlockPrefab;
+    [SerializeField] private GameObject _roundBlockPrefab;
+    [SerializeField] private Transform _creditStartLocation;
+    [SerializeField] private Transform _creditEndLocation;
+    [SerializeField] private List<MonsterSO> _monsterSOs;
+    [SerializeField] private List<SpaceSO> _spaceSOs;
+    [SerializeField] private List<ChanceCardSO> _chanceCardSOs;
+    [SerializeField] private List<ItemSO> _itemSOs;
+    [SerializeField] private Queue<ScriptableObject> _creditItemQueue = new();
+    public Transform TriggerNextCreditLocation;
+    public Transform DestroyCreditLocation;
+
+    [Header("CreditItem")]
+    [SerializeField] private ScriptableObject _currentCreditItem = null;
+    [SerializeField] private List<Texture2D> _creditItemTextures = new();
+
+    private void Start()
+    {
+        // Create creditItem Queue
+        List<ScriptableObject> combinedList = new();
+        combinedList.AddRange(_monsterSOs);
+        combinedList.AddRange(_spaceSOs);
+        combinedList.AddRange(_chanceCardSOs);
+        combinedList.AddRange(_itemSOs);
+
+        // Randomize order and add to queue
+        ListShuffler.Shuffle(combinedList);
+        combinedList.ForEach(item => _creditItemQueue.Enqueue(item));
+
+
+    }
 
     private void OnEnable()
     {
@@ -118,5 +153,16 @@ public class EndGameUI : MonoBehaviour
     public void Exit()
     {
         SceneManager.LoadScene("Main Menu");
+    }
+
+    public void TriggerNextCredit()
+    {
+        ConsolePrinter.PrintToConsole("TriggerNextCredit", Color.green);
+        // If currently creating an item
+
+
+        // Check items are available
+
+        // Create Block
     }
 }
