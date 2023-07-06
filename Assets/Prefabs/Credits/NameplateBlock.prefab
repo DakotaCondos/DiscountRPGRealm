@@ -131,17 +131,17 @@ MonoBehaviour:
         Type: 0
     Padding:
       Left:
-        Raw: 0
-        Type: 0
+        Raw: 0.05
+        Type: 1
       Right:
-        Raw: 0
-        Type: 0
+        Raw: 0.05
+        Type: 1
       Bottom:
-        Raw: 0
-        Type: 0
+        Raw: 0.05
+        Type: 1
       Top:
-        Raw: 0
-        Type: 0
+        Raw: 0.05
+        Type: 1
       Front:
         Raw: 0
         Type: 0

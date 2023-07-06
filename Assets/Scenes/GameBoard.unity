@@ -19159,6 +19159,37 @@ MonoBehaviour:
   moveCancelButton: {fileID: 1003839302}
   menuButton: {fileID: 186527174}
   endTurnButton: {fileID: 692596936}
+--- !u!1 &329312743
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 329312744}
+  m_Layer: 0
+  m_Name: CreditStartContinuingPosition
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &329312744
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 329312743}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -750, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2102154374}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &333713546
 GameObject:
   m_ObjectHideFlags: 0
@@ -55357,7 +55388,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1113523884}
   m_Layer: 0
-  m_Name: CreditStartLocation
+  m_Name: CreditStartNewPosition
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -55371,7 +55402,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1113523883}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -900, z: -0}
+  m_LocalPosition: {x: 0, y: -875, z: -0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -63821,37 +63852,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ccd57ae885e984419d40d63541fda7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &1275294262
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1275294263}
-  m_Layer: 0
-  m_Name: CreditEndLocation
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1275294263
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1275294262}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 900, z: -0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 2102154374}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1276016493
 GameObject:
   m_ObjectHideFlags: 0
@@ -84213,12 +84213,14 @@ MonoBehaviour:
   _leftButton: {fileID: 1972524921}
   _rightButton: {fileID: 2137727434}
   _creditsBlock: {fileID: 2102154373}
-  _creditItemPrefab: {fileID: 2890659035531835017, guid: 5a18aa055e45b2e459579c637c29660c, type: 3}
+  _creditItemPrefab: {fileID: 1307398413508581086, guid: ce6d8c6ca5ad67840bfe77f0eaad9177, type: 3}
   _nameplatePrefab: {fileID: 7032275142384389321, guid: 7ffe08db91ac3b84a879b63d16a8fc0e, type: 3}
   _squareBlockPrefab: {fileID: 4855755343211110172, guid: 3389406dd19839f4db1d3da6e95fcc85, type: 3}
   _roundBlockPrefab: {fileID: 6681956401767553850, guid: 398880d86fb1dc14b9b7d9aa82d08b71, type: 3}
-  _creditStartLocation: {fileID: 1113523884}
-  _creditEndLocation: {fileID: 1275294263}
+  _creditNewStartPosition: {fileID: 1113523884}
+  _creditContinuingStartPosition: {fileID: 329312744}
+  TriggerNextCreditLocation: {fileID: 605350652}
+  DestroyCreditLocation: {fileID: 1465951180}
   _monsterSOs:
   - {fileID: 11400000, guid: 24730825c1a12bc4896603399d1a90c7, type: 2}
   - {fileID: 11400000, guid: c8bec0b1966745d43b06fa9a2eb2670b, type: 2}
@@ -84487,10 +84489,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 81787736c8c00b4459d0e81a980a8225, type: 2}
   - {fileID: 11400000, guid: f5678f4fbe6309f438cbc36e508aa96a, type: 2}
   - {fileID: 11400000, guid: 82d1c442b3716ec4ba0ff3e02d6db4b5, type: 2}
-  TriggerNextCreditLocation: {fileID: 605350652}
-  DestroyCreditLocation: {fileID: 1465951180}
   _currentCreditItem: {fileID: 0}
-  _creditItemTextures: []
+  _useSquareCredit: 1
 --- !u!1001 &1714703623
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -104800,7 +104800,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1113523884}
-  - {fileID: 1275294263}
+  - {fileID: 329312744}
   - {fileID: 605350652}
   - {fileID: 1465951180}
   - {fileID: 2890659034673079457}
@@ -108861,7 +108861,7 @@ GameObject:
   - component: {fileID: 2890659034673079463}
   - component: {fileID: 2890659034673079462}
   m_Layer: 0
-  m_Name: CreditsItem (1)
+  m_Name: CreditItem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

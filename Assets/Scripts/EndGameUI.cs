@@ -1,4 +1,5 @@
 using Nova;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -35,19 +36,20 @@ public class EndGameUI : MonoBehaviour
     [SerializeField] private GameObject _nameplatePrefab;
     [SerializeField] private GameObject _squareBlockPrefab;
     [SerializeField] private GameObject _roundBlockPrefab;
-    [SerializeField] private Transform _creditStartLocation;
-    [SerializeField] private Transform _creditEndLocation;
+    [SerializeField] private Transform _creditNewStartPosition;
+    [SerializeField] private Transform _creditContinuingStartPosition;
+    public Transform TriggerNextCreditLocation;
+    public Transform DestroyCreditLocation;
     [SerializeField] private List<MonsterSO> _monsterSOs;
     [SerializeField] private List<SpaceSO> _spaceSOs;
     [SerializeField] private List<ChanceCardSO> _chanceCardSOs;
     [SerializeField] private List<ItemSO> _itemSOs;
     [SerializeField] private Queue<ScriptableObject> _creditItemQueue = new();
-    public Transform TriggerNextCreditLocation;
-    public Transform DestroyCreditLocation;
 
     [Header("CreditItem")]
     [SerializeField] private ScriptableObject _currentCreditItem = null;
-    [SerializeField] private List<Texture2D> _creditItemTextures = new();
+    [SerializeField] private bool _useSquareCredit = true;
+    [SerializeField] private Queue<Texture2D> _creditItemTextures = new();
 
     private void Start()
     {
@@ -157,12 +159,124 @@ public class EndGameUI : MonoBehaviour
 
     public void TriggerNextCredit()
     {
-        ConsolePrinter.PrintToConsole("TriggerNextCredit", Color.green);
-        // If currently creating an item
+        if (ApplicationManager.Instance.handlerNotificationsEnabled)
+        {
+            ConsolePrinter.PrintToConsole($"TriggerNextCredit: {_creditItemQueue.Count} in Queue", Color.green);
+        }
 
+        if (_currentCreditItem == null || _creditItemTextures.Count == 0)
+        {
+            if (_creditItemQueue.Count == 0) { return; }
 
-        // Check items are available
+            _currentCreditItem = _creditItemQueue.Dequeue();
+        }
 
-        // Create Block
+        // Create CreditItem
+        GameObject g = Instantiate(_creditItemPrefab, _creditsBlock.transform);
+        g.transform.position = (_creditItemTextures.Count == 0) ? _creditNewStartPosition.position : _creditContinuingStartPosition.position;
+        CreditItem creditItem = g.GetComponent<CreditItem>();
+        creditItem._endGameUI = this;
+
+        if (_creditItemTextures.Count == 0)
+        {
+            NewCreditSequence(_currentCreditItem, creditItem);
+        }
+        else
+        {
+            ContinuingCreditSequence(creditItem);
+        }
+    }
+
+    private void NewCreditSequence(ScriptableObject currentCreditItem, CreditItem creditItem)
+    {
+        Type type = currentCreditItem.GetType();
+
+        if (type.Equals(typeof(MonsterSO)))
+        {
+            _useSquareCredit = false;
+            MonsterSO monsterSO = (MonsterSO)currentCreditItem;
+            monsterSO.monsterTextures.ForEach(item => _creditItemTextures.Enqueue(item));
+            CreateTitleCredit(monsterSO.MonsterName, creditItem);
+            return;
+        }
+        if (type.Equals(typeof(SpaceSO)))
+        {
+            _useSquareCredit = true;
+            SpaceSO spaceSO = (SpaceSO)currentCreditItem;
+            spaceSO.spaceTextures.ForEach(item => _creditItemTextures.Enqueue(item));
+            CreateTitleCredit(spaceSO.spaceName, creditItem);
+            return;
+        }
+        if (type.Equals(typeof(ChanceCardSO)))
+        {
+            _useSquareCredit = true;
+            ChanceCardSO chanceCardSO = (ChanceCardSO)currentCreditItem;
+            chanceCardSO.images.ForEach(item => _creditItemTextures.Enqueue(item));
+            CreateTitleCredit(chanceCardSO.cardTitle, creditItem);
+            return;
+        }
+        if (type.Equals(typeof(ItemSO)))
+        {
+            _useSquareCredit = true;
+            ItemSO itemSO = (ItemSO)currentCreditItem;
+            // Items have only 1 image
+            CreateNamePlate(creditItem._leftBlock, itemSO.itemName);
+            CreateSquareBlock(creditItem._rightBlock, itemSO.image);
+            _currentCreditItem = null;
+            return;
+        }
+    }
+
+    private void ContinuingCreditSequence(CreditItem creditItem)
+    {
+        if (_useSquareCredit)
+        {
+            CreateSquareBlock(creditItem._leftBlock, _creditItemTextures.Dequeue());
+            if (_creditItemTextures.Count > 0)
+            {
+                CreateSquareBlock(creditItem._rightBlock, _creditItemTextures.Dequeue());
+            }
+            else
+            {
+                _currentCreditItem = null;
+            }
+        }
+        else
+        {
+            CreateRoundBlock(creditItem._leftBlock, _creditItemTextures.Dequeue());
+            if (_creditItemTextures.Count > 0)
+            {
+                CreateRoundBlock(creditItem._rightBlock, _creditItemTextures.Dequeue());
+            }
+            else
+            {
+                _currentCreditItem = null;
+            }
+        }
+    }
+
+    private void CreateTitleCredit(string title, CreditItem creditItem)
+    {
+        creditItem._textBlock.Text = $"<size=200%>{title}";
+        creditItem._textBlock.Margin.Bottom = 20;
+        creditItem.GetComponent<UIBlock2D>().AutoSize.Y = AutoSize.Shrink;
+    }
+
+    private void CreateRoundBlock(UIBlock2D uiBlock, Texture2D texture2D)
+    {
+        GameObject g = Instantiate(_roundBlockPrefab, uiBlock.gameObject.transform);
+        g.GetComponent<UIBlock2D>().SetImage(texture2D);
+
+    }
+    private void CreateSquareBlock(UIBlock2D uiBlock, Texture2D texture2D)
+    {
+        GameObject g = Instantiate(_squareBlockPrefab, uiBlock.gameObject.transform);
+        g.GetComponent<UIBlock2D>().SetImage(texture2D);
+
+    }
+    private void CreateNamePlate(UIBlock2D uiBlock, string name)
+    {
+        GameObject g = Instantiate(_nameplatePrefab, uiBlock.gameObject.transform);
+        g.GetComponent<UIHelper>().TextBlocks[0].Text = name;
     }
 }
