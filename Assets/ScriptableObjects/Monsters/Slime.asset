@@ -15,7 +15,7 @@ MonoBehaviour:
   MonsterName: Slime
   power: 1
   doesMove: 1
-  battlecry: {fileID: 8300000, guid: 15fe3556465983d42bcfc2b0453cbdd1, type: 3}
+  battlecry: {fileID: 0}
   monsterTextures:
   - {fileID: 2800000, guid: 4fc9d768c85081640a42b41526a5541f, type: 3}
   - {fileID: 2800000, guid: d0357407da36bd246bead95055542b6e, type: 3}
