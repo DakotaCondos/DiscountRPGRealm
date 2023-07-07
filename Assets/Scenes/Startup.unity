@@ -297,7 +297,7 @@ MonoBehaviour:
   - {fileID: 2800000, guid: 108921819f1ece94f8ffd4a441b4eeac, type: 3}
   - {fileID: 2800000, guid: 008507c25ac2e1446a6ff588b4fc9660, type: 3}
   - {fileID: 2800000, guid: 3238716e15d5dbb47ad9c5962e0f274e, type: 3}
-  handlerNotificationsEnabled: 0
+  handlerNotificationsEnabled: 1
 --- !u!1 &81435475
 GameObject:
   m_ObjectHideFlags: 0

@@ -15,7 +15,7 @@ MonoBehaviour:
   itemName: Big Axe
   itemDescription: Because sometimes you need to make a statement by cleaving things
     in half.
-  itemValue: 35
+  itemValue: 30
   itemEffects:
   - Type: 0
     value: 14

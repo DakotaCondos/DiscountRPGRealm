@@ -46,6 +46,7 @@ public class SpaceBuilder : MonoBehaviour
                 BuildSpace(space, shadowRealmSpaces, false);
                 break;
             case SpaceType.EndGame:
+                BuildCustomSpace(space);
                 break;
             default:
                 break;

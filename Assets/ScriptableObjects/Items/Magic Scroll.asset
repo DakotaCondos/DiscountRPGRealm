@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Magic Scroll
   itemDescription: Use sesquipedalian phrases until enemies give up. It's like magic.
-  itemValue: 95
+  itemValue: 35
   itemEffects:
   - Type: 0
     value: 10

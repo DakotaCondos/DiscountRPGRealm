@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Magic Wand
   itemDescription: For when you need a little extra 'pokus' in your hocus.
-  itemValue: 130
+  itemValue: 65
   itemEffects:
   - Type: 0
     value: 25

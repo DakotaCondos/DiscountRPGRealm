@@ -417,6 +417,7 @@ MonoBehaviour:
   _endGameUI: {fileID: 0}
   _triggerNextCredit: 1
   _localPos: {x: 0, y: 0, z: 0}
+  ScrollSpeedMultiplier: 1
   _textBlock: {fileID: 1307398413495335630}
   _leftBlock: {fileID: 1307398414688894209}
   _rightBlock: {fileID: 1307398414630318741}

@@ -15,7 +15,7 @@ MonoBehaviour:
   itemName: Big Sword
   itemDescription: Who needs finesse when you can swing this beast around like a
     maniac?
-  itemValue: 35
+  itemValue: 30
   itemEffects:
   - Type: 0
     value: 16

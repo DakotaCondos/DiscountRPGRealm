@@ -48,6 +48,7 @@ public class EndGameUI : MonoBehaviour
     [SerializeField] private ScriptableObject _currentCreditItem = null;
     [SerializeField] private bool _useSquareCredit = true;
     [SerializeField] private Queue<Texture2D> _creditItemTextures = new();
+    private Queue<CreditItem> _inactiveCreditItemPool = new();
 
     private void Start()
     {
@@ -169,10 +170,22 @@ public class EndGameUI : MonoBehaviour
             _currentCreditItem = _creditItemQueue.Dequeue();
         }
 
+
         // Create CreditItem
-        GameObject g = Instantiate(_creditItemPrefab, _creditsBlock.transform);
-        g.transform.position = (_creditItemTextures.Count == 0) ? _creditNewStartPosition.position : _creditContinuingStartPosition.position;
-        CreditItem creditItem = g.GetComponent<CreditItem>();
+        Vector3 creditStartPosition = (_creditItemTextures.Count == 0) ? _creditNewStartPosition.position : _creditContinuingStartPosition.position;
+        CreditItem creditItem;
+        if (_inactiveCreditItemPool.Count > 0)
+        {
+            creditItem = _inactiveCreditItemPool.Dequeue();
+            creditItem.transform.position = creditStartPosition;
+            creditItem.gameObject.SetActive(true);
+        }
+        else
+        {
+            GameObject g = Instantiate(_creditItemPrefab, creditStartPosition, Quaternion.identity, _creditsBlock.transform);
+            creditItem = g.GetComponent<CreditItem>();
+        }
+
         creditItem._endGameUI = this;
 
         if (_creditItemTextures.Count == 0)
@@ -276,5 +289,11 @@ public class EndGameUI : MonoBehaviour
     {
         GameObject g = Instantiate(_nameplatePrefab, uiBlock.gameObject.transform);
         g.GetComponent<UIHelper>().TextBlocks[0].Text = name;
+    }
+
+    public void AddToInactiveCreditItemPool(CreditItem creditItem)
+    {
+
+
     }
 }

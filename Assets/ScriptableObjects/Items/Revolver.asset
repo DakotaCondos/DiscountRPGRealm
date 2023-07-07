@@ -15,7 +15,7 @@ MonoBehaviour:
   itemName: Revolver
   itemDescription: A gun so powerful it can shoot holes in both reality and the fourth
     wall.
-  itemValue: 325
+  itemValue: 125
   itemEffects:
   - Type: 0
     value: 75

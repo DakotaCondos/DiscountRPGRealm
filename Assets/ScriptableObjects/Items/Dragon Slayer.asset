@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Dragon Slayer
   itemDescription: A sword so large, dropping it on enemies is enough to defeat them.
-  itemValue: 325
+  itemValue: 160
   itemEffects:
   - Type: 0
     value: 65

@@ -9,6 +9,8 @@ public class CreditItem : MonoBehaviour
     [SerializeField] private Vector3 _localPos;
     private Transform _triggerNext;
     private Transform _triggerDestroy;
+    public float ScrollSpeedMultiplier = 3.0f;
+    public bool ShouldDestroyOnCompletion = false;
 
     [Header("Blocks")]
     public TextBlock _textBlock;
@@ -26,8 +28,7 @@ public class CreditItem : MonoBehaviour
 
     void Update()
     {
-        // Move Credit Up
-        _localPos = new Vector3(0, _localPos.y + Time.deltaTime * 300, 0); // Time.deltaTime * 100
+        _localPos = new Vector3(0, _localPos.y + Time.deltaTime * 100 * ScrollSpeedMultiplier, 0);
         transform.localPosition = _localPos;
 
         if (_triggerNextCredit && _bottomTransform.gameObject.transform.position.y > _triggerNext.position.y)
@@ -37,7 +38,34 @@ public class CreditItem : MonoBehaviour
         }
         if (_bottomTransform.gameObject.transform.position.y > _triggerDestroy.position.y)
         {
-            Destroy(gameObject);
+            if (ShouldDestroyOnCompletion)
+            {
+                Destroy(gameObject);
+            }
+            else
+            {
+                ResetCreditItem();
+            }
         }
     }
+
+    public void ResetCreditItem()
+    {
+        DestroyAllChildren(_leftBlock.gameObject);
+        DestroyAllChildren(_rightBlock.gameObject);
+        _textBlock.Text = "";
+        gameObject.SetActive(false);
+        _endGameUI.AddToInactiveCreditItemPool(this);
+    }
+
+    private void DestroyAllChildren(GameObject parentObject)
+    {
+        int childCount = parentObject.transform.childCount;
+        for (int i = childCount - 1; i >= 0; i--)
+        {
+            Transform child = parentObject.transform.GetChild(i);
+            Destroy(child.gameObject);
+        }
+    }
+
 }

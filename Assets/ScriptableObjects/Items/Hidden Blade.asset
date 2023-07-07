@@ -15,7 +15,7 @@ MonoBehaviour:
   itemName: Hidden Blade
   itemDescription: The perfect accessory for any assassin, with a minor risk of finger
     amputation.
-  itemValue: 325
+  itemValue: 160
   itemEffects:
   - Type: 0
     value: 65

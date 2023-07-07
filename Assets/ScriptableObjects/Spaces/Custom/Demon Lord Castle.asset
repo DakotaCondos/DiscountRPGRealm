@@ -22,4 +22,4 @@ MonoBehaviour:
   canSpawnMonsters: 0
   shopLevel: 0
   hasMandatoryEvent: 0
-  customSpaceTypeOverride: 0
+  customSpaceTypeOverride: 9

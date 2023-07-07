@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Poison Dagger
   itemDescription: The dagger that keeps on giving, lethal and sneaky.
-  itemValue: 35
+  itemValue: 30
   itemEffects:
   - Type: 0
     value: 14

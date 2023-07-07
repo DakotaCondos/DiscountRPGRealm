@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Sketchy Potion
   itemDescription: The secret ingredient is equal parts mystery and mild regret.
-  itemValue: 12
+  itemValue: 6
   itemEffects:
   - Type: 5
     value: 0

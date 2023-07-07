@@ -15,7 +15,7 @@ MonoBehaviour:
   itemName: Magic Staff
   itemDescription: A weathered staff, once carried by a wise old soul who loves fireworks
     and grey robes.
-  itemValue: 325
+  itemValue: 95
   itemEffects:
   - Type: 0
     value: 50
