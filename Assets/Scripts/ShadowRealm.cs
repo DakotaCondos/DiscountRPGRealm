@@ -21,7 +21,7 @@ public class ShadowRealm : MonoBehaviour
 
     private void OnEnable()
     {
-        CameraController.Instance.snapToOutOfBoundsView = true;
+        CameraController.Instance.SetFocusObject(GameBoard.Instance.OutOfBoundsSnapPoint);
         Camera.main.orthographic = false;
         _returnCard = UnityEngine.Random.Range(0, 3);
         _buttonsRow.SetActive(true);
@@ -34,7 +34,7 @@ public class ShadowRealm : MonoBehaviour
         _card2.GetComponent<CardFlip>().ResetCard();
         _card3.GetComponent<CardFlip>().ResetCard();
 
-        CameraController.Instance.snapToOutOfBoundsView = false;
+        CameraController.Instance.ClearFocusObject(TurnManager.Instance.GetCurrentActor().player.currentSpace.gameObject);
         Camera.main.orthographic = true;
         ActionsManager.Instance.panelSwitcher.SetActivePanel(ActionsManager.Instance.mainPanel);
     }

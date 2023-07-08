@@ -65,6 +65,7 @@ public class MonsterManager : MonoBehaviour
 
             if (spawnChance >= Random.value)
             {
+                CameraController.Instance.ClearFocusObject(space.gameObject);
                 await SpawnMonster(space);
                 await Task.Delay(500); // Let your brain process what just happened
             }

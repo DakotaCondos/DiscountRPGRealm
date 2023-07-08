@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class CameraController : MonoBehaviour
@@ -20,12 +21,11 @@ public class CameraController : MonoBehaviour
     private GameObject focusObject = null;
     private float defaultZ = 0;
 
-    public bool snapToOutOfBoundsView = false;
-    private bool trackingStart = false;
-    public Transform outOfBoundsView;
-    private Vector3 startPos;
-
     public GameObject mainGameUI;
+
+    [SerializeField] private Vector3 _lastFramePos = Vector3.zero;
+    [SerializeField] private Vector3 _currentFramePos = Vector3.zero;
+    [SerializeField] private Vector3 _badFramePos = new(42, 42, 42);
 
     public static CameraController Instance { get; private set; }
 
@@ -50,27 +50,14 @@ public class CameraController : MonoBehaviour
 
     void Update()
     {
-        if (snapToOutOfBoundsView)
+        if (focusObject != null && focusObject.activeInHierarchy)
         {
-            if (!trackingStart)
-            {
-                trackingStart = true;
-                startPos = new(transform.position.x, transform.position.y, defaultZ);
-            }
-            transform.position = outOfBoundsView.position;
-            return;
-        }
-        else if (trackingStart)
-        {
-            transform.position = startPos;
-            trackingStart = false;
-        }
 
-        if (focusObject != null)
-        {
             Vector3 focusPosition = focusObject.transform.position;
             focusPosition.z = defaultZ;
             transform.position = focusPosition;
+            CheckJitter();
+
             return;
         }
 
@@ -102,15 +89,38 @@ public class CameraController : MonoBehaviour
         newOrthographicSize = Mathf.Clamp(newOrthographicSize, minOrthographicSize, maxOrthographicSize);
 
         mainCamera.orthographicSize = newOrthographicSize;
+
+        CheckJitter();
+    }
+
+    private void CheckJitter()
+    {
+        float jitterLimit = 100;
+        _currentFramePos = transform.position;
+        float frameOffset = Vector3.Distance(_lastFramePos, _currentFramePos);
+        if (frameOffset > jitterLimit)
+        {
+            ConsolePrinter.PrintToConsole($"Jitter distance:{frameOffset} CurrentFrame: {_currentFramePos} LastFrame: {_lastFramePos}", Color.cyan);
+            _badFramePos = _currentFramePos;
+        }
+        _lastFramePos = _currentFramePos;
     }
 
     public void SetFocusObject(GameObject gameObject)
     {
         focusObject = gameObject;
+        print(gameObject.name);
     }
 
-    public void ClearFocusObject()
+    public void ClearFocusObject(GameObject gameobjectToLookAt = null)
     {
         focusObject = null;
+        if (gameobjectToLookAt != null)
+        {
+
+            Vector3 targetPos = gameobjectToLookAt.transform.position;
+            transform.position = new(targetPos.x, targetPos.y, transform.position.z);
+        }
     }
+
 }

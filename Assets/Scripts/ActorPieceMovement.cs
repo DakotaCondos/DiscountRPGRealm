@@ -1,6 +1,7 @@
 using Nova;
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using UnityEngine;
 
 public class ActorPieceMovement : MonoBehaviour
@@ -30,11 +31,14 @@ public class ActorPieceMovement : MonoBehaviour
         _midpointObject = new GameObject("MidpointObject");
     }
 
-    public void MoveActor(TurnActor turnActor, Space start, Space end, TaskHelper helper)
+    public async void MoveActor(TurnActor turnActor, Space start, Space end, TaskHelper helper)
     {
+        transform.position = start.pieceMovePoint.position;
         //Change PivotPiece to look like actor
         backPlate.Color = colorIDs[turnActor.player.TeamID];
         picture.SetImage(turnActor.player.playerTexture);
+        gameObject.SetActive(true);
+        await Task.Delay(10);
         Moving(start, end, helper);
     }
     public void MoveMonster(Monster monster, Space start, Space end, TaskHelper helper)
@@ -43,11 +47,13 @@ public class ActorPieceMovement : MonoBehaviour
         backPlate.Color = colorIDs[7];
         picture.SetImage(monster.monsterTexture);
         helper.flag = true;
+        gameObject.SetActive(true);
         Moving(start, end, helper, false); // dont follow monster movement as to jaring 
     }
 
     private void Moving(Space start, Space end, TaskHelper helper, bool cameraFollowMovement = true)
     {
+
         //get movement point
         List<Space> path = GameBoard.FindPath(start, end);
         List<Transform> points = new();
@@ -56,7 +62,6 @@ public class ActorPieceMovement : MonoBehaviour
             points.Add(space.pieceMovePoint.transform);
         }
 
-        gameObject.SetActive(true);
 
         if (!cameraFollowMovement)
         {
@@ -68,7 +73,6 @@ public class ActorPieceMovement : MonoBehaviour
             Vector3 midpoint = (position1 + position2) / 2f;
             _midpointObject.transform.position = midpoint;
 
-            // Look at midpoint
             cameraController.SetFocusObject(_midpointObject);
         }
         else
@@ -118,7 +122,6 @@ public class ActorPieceMovement : MonoBehaviour
     {
         Vector3 startPosition = transform.position;
         float elapsedTime = 0f;
-
         while (elapsedTime < jumpTime)
         {
             float t = elapsedTime / jumpTime;

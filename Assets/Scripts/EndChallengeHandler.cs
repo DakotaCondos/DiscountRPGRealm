@@ -17,7 +17,7 @@ public class EndChallengeHandler : MonoBehaviour
     {
         if (ApplicationManager.Instance.handlerNotificationsEnabled) { ConsolePrinter.PrintToConsole($"HandleEndChallenge({actor.player.PlayerName})", Color.cyan); }
         // Handle EndChallenge event here
-        CameraController.Instance.snapToOutOfBoundsView = false;
+        CameraController.Instance.ClearFocusObject(actor.player.currentSpace.gameObject);
 
         if (!endTurn)
         {

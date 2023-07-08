@@ -29,7 +29,7 @@ public class EndChanceHandler : MonoBehaviour
         // Handle EndChallenge event here
         actionsManager.SetHasInteracted(true);
         actionsManager.panelSwitcher.SetActivePanel(actionsManager.mainPanel);
-        cameraController.snapToOutOfBoundsView = false;
+        CameraController.Instance.ClearFocusObject(actor.player.currentSpace.gameObject);
         actionsManager.DetermineActions(actor);
     }
 }

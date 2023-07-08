@@ -33,13 +33,13 @@ public class MonsterPieceSpawner : MonoBehaviour
         picture.SetImage(monster.monsterTexture);
         transform.position = space.spawnStartPoint.position;
         gameObject.SetActive(true);
-        cameraController.SetFocusObject(gameObject);
+
         if (spawnSound != null)
         {
             AudioManager.Instance.PlaySound(spawnSound, AudioChannel.SFX);
         }
         await ObjectTransformUtility.TransitionObjectSmooth(gameObject, space.spawnStartPoint, space.pieceMovePoint, time);
-        cameraController.ClearFocusObject();
+
         taskHelper.isComplete = true;
         gameObject.SetActive(false);
     }
