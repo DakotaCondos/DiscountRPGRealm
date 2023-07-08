@@ -151,11 +151,6 @@ public class EndGameUI : MonoBehaviour
         DisplayPlayer(_playerDisplayIndex);
     }
 
-    public void Exit()
-    {
-        SceneManager.LoadScene("Main Menu");
-    }
-
     public void TriggerNextCredit()
     {
         if (ApplicationManager.Instance.handlerNotificationsEnabled)
@@ -293,7 +288,6 @@ public class EndGameUI : MonoBehaviour
 
     public void AddToInactiveCreditItemPool(CreditItem creditItem)
     {
-
-
+        _inactiveCreditItemPool.Enqueue(creditItem);
     }
 }

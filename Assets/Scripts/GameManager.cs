@@ -32,17 +32,8 @@ public class GameManager : MonoBehaviour
         Players.Remove(player);
     }
 
-    [ContextMenu("Print Players")]
-    public void PrintPlayers()
+    public void ResetGame()
     {
-        if (Players.Count == 0) { print("No Players in list"); }
-
-        StringBuilder sb = new StringBuilder();
-        foreach (var item in Players)
-        {
-            sb.AppendLine($"{item.PlayerName} : Team {item.TeamID}");
-        }
-
-        print(sb);
+        Players.Clear();
     }
 }

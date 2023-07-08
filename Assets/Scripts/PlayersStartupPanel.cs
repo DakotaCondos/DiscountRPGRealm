@@ -213,6 +213,12 @@ public class PlayersStartupPanel : MonoBehaviour
         playerRow.playerNameBlock.Text = playerName;
         playerRow.teamBlock.Text = team.ToString();
         playerRow.player = player;
+        float alpha = playerRow.gradiantBlock.Gradient.Color.a;
+        Color rowColor = color;
+        rowColor.a = alpha;
+        playerRow.gradiantBlock.Gradient.Color = rowColor;
+        playerRow.imageBlock.SetImage(player.playerTexture);
+        playerRow.imageBlock.Border.Color = color;
 
         SetMessage("");
     }

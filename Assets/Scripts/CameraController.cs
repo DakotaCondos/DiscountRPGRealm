@@ -22,11 +22,6 @@ public class CameraController : MonoBehaviour
     private float defaultZ = 0;
 
     public GameObject mainGameUI;
-
-    [SerializeField] private Vector3 _lastFramePos = Vector3.zero;
-    [SerializeField] private Vector3 _currentFramePos = Vector3.zero;
-    [SerializeField] private Vector3 _badFramePos = new(42, 42, 42);
-
     public static CameraController Instance { get; private set; }
 
     private void Awake()
@@ -56,7 +51,6 @@ public class CameraController : MonoBehaviour
             Vector3 focusPosition = focusObject.transform.position;
             focusPosition.z = defaultZ;
             transform.position = focusPosition;
-            CheckJitter();
 
             return;
         }
@@ -89,21 +83,6 @@ public class CameraController : MonoBehaviour
         newOrthographicSize = Mathf.Clamp(newOrthographicSize, minOrthographicSize, maxOrthographicSize);
 
         mainCamera.orthographicSize = newOrthographicSize;
-
-        CheckJitter();
-    }
-
-    private void CheckJitter()
-    {
-        float jitterLimit = 100;
-        _currentFramePos = transform.position;
-        float frameOffset = Vector3.Distance(_lastFramePos, _currentFramePos);
-        if (frameOffset > jitterLimit)
-        {
-            ConsolePrinter.PrintToConsole($"Jitter distance:{frameOffset} CurrentFrame: {_currentFramePos} LastFrame: {_lastFramePos}", Color.cyan);
-            _badFramePos = _currentFramePos;
-        }
-        _lastFramePos = _currentFramePos;
     }
 
     public void SetFocusObject(GameObject gameObject)

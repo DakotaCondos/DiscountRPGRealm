@@ -6812,9 +6812,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 821661703}
+  - component: {fileID: 821661704}
   - component: {fileID: 821661702}
   - component: {fileID: 821661701}
-  - component: {fileID: 821661704}
   m_Layer: 0
   m_Name: EnterPlayers
   m_TagString: Untagged
@@ -11099,7 +11099,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1238723248
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11695,7 +11695,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1366430218}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -10.8, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -11733,7 +11733,7 @@ MonoBehaviour:
         Raw: 0
         Type: 1
       Y:
-        Raw: 0
+        Raw: -0.01
         Type: 1
       Z:
         Raw: 0
@@ -11848,8 +11848,8 @@ MonoBehaviour:
   autoLayout:
     Axis: 2
     Spacing:
-      Raw: 0.01
-      Type: 1
+      Raw: 3.5
+      Type: 0
     SpacingMinMax:
       Min: 0
       Max: Infinity
@@ -13640,7 +13640,7 @@ MonoBehaviour:
     ReceiveShadows: 1
   PreviewSize: {x: 1, y: 1, z: 0}
   visuals:
-    Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+    Color: {r: 0.198, g: 0.198, b: 0.198, a: 1}
     CornerRadius:
       Raw: 16
       Type: 0
@@ -13705,7 +13705,7 @@ MonoBehaviour:
         scaleMode: 1
       Mode: 1
     SoftenEdges: 1
-    FillEnabled: 0
+    FillEnabled: 1
   texture: {fileID: 0}
   sprite: {fileID: 0}
 --- !u!114 &1619814931

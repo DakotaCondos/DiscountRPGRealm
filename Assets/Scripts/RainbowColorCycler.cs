@@ -18,7 +18,6 @@ public class RainbowColorCycler : MonoBehaviour
         {
             // If not, assign this instance as the Singleton instance
             Instance = this;
-            DontDestroyOnLoad(gameObject);
         }
         else
         {
