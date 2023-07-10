@@ -1,3 +1,4 @@
+using Nova;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,6 +8,7 @@ public class PlinkoGame : SceneSingleton<PlinkoGame>
     [Header("Ball")]
     [SerializeField] private GameObject _ball;
     [SerializeField] private Transform _ballStartTransform;
+    [SerializeField] private UIBlock2D _ballUIBlock;
     private Rigidbody _ballRigidBody;
     private SphereCollider _ballCollider;
 
@@ -27,6 +29,10 @@ public class PlinkoGame : SceneSingleton<PlinkoGame>
     [SerializeField] private float _timeHitSoundPlayed = 0;
     [SerializeField] private float _minDelayHitSound = 0.2f;
 
+    [Header("Background")]
+    [SerializeField] private UIBlock2D _backgroundBlock;
+
+    public static event Action<bool> GameResult;
 
     private new void Awake()
     {
@@ -53,6 +59,7 @@ public class PlinkoGame : SceneSingleton<PlinkoGame>
         _ballRigidBody.velocity = Vector3.zero;
         _ballRigidBody.angularVelocity = Vector3.zero;
         _ball.transform.position = _ballStartTransform.position;
+        _ball.transform.rotation = Quaternion.identity;
         SetCollidersActive(true);
     }
 
@@ -69,6 +76,7 @@ public class PlinkoGame : SceneSingleton<PlinkoGame>
         _ballCollider.material = _noBounceMaterial;
         PlaySound(_failSound);
         SetCollidersActive(false);
+        GameResult?.Invoke(false);
     }
 
     public void TriggerCenter()
@@ -77,6 +85,7 @@ public class PlinkoGame : SceneSingleton<PlinkoGame>
         _ballCollider.material = _noBounceMaterial;
         PlaySound(_successSound);
         SetCollidersActive(false);
+        GameResult?.Invoke(true);
     }
 
     private void SetCollidersActive(bool value)
@@ -108,5 +117,21 @@ public class PlinkoGame : SceneSingleton<PlinkoGame>
     public void PlaySound(AudioClip clip)
     {
         AudioManager.Instance.PlaySound(clip, AudioChannel.SFX);
+    }
+
+    public void SetBackgroundImage(Texture2D image)
+    {
+        _backgroundBlock.SetImage(image);
+    }
+
+    public void SetBallImage(Texture2D image)
+    {
+        _ballUIBlock.SetImage(image);
+    }
+
+    public void SetBallColor(Color color)
+    {
+        color.a = 1;
+        _ballUIBlock.Border.Color = color;
     }
 }
