@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 706ffabbc0b81c7478ec6c05c59456e5, type: 3}
   m_Name: The Cursed Crown of Inconvenience
   m_EditorClassIdentifier: 
-  CardType: 4
+  CardType: 3
   cardTitle: The Cursed Crown of Inconvenience
   images:
   - {fileID: 2800000, guid: b8082d224b93a5943bc581da94ef8a38, type: 3}

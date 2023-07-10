@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 706ffabbc0b81c7478ec6c05c59456e5, type: 3}
   m_Name: Magical Item Swap Meet
   m_EditorClassIdentifier: 
-  CardType: 4
+  CardType: 0
   cardTitle: Magical Item Swap Meet
   images:
   - {fileID: 2800000, guid: 933ec9fa5d635cd489806488f97ff083, type: 3}

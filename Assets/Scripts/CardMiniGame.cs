@@ -105,7 +105,7 @@ public class CardMiniGame : MonoBehaviour
         cardFlip.ResetCard();
         // Switch screen here
         ActionsManager.Instance.panelSwitcher.SetActivePanel(ActionsManager.Instance.chancePanel);
-        CameraController.Instance.SetFocusObject(GameBoard.Instance.OutOfBoundsSnapPoint);
+        CameraController.Instance.SetFocusObject(GameBoard.Instance.OutOfBoundsSnapPointLight);
 
         // Stub out for now
         StartCardCycle(gameTime);

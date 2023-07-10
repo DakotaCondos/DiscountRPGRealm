@@ -23,7 +23,7 @@ public class BeginChallengeHandler : MonoBehaviour
         if (ApplicationManager.Instance.handlerNotificationsEnabled) { ConsolePrinter.PrintToConsole($"HandleBeginChallenge({actor.player.PlayerName})", Color.cyan); }
         // Handle BeginChallenge event here
         int difficulty = Random.Range(1, 11);
-        CameraController.Instance.SetFocusObject(GameBoard.Instance.OutOfBoundsSnapPoint);
+        CameraController.Instance.SetFocusObject(GameBoard.Instance.OutOfBoundsSnapPointLight);
         guessingGame.SetupGame(difficulty);
     }
 }

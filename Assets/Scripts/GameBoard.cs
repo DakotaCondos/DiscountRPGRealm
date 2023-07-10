@@ -16,7 +16,8 @@ public class GameBoard : MonoBehaviour
     public ActorPieceMovement actorPieceMovement;
     public Space StartingSpace;
     public Space ShadowRealmCitySpace;
-    [SerializeField] public GameObject OutOfBoundsSnapPoint;
+    [SerializeField] public GameObject OutOfBoundsSnapPointLight;
+    [SerializeField] public GameObject OutOfBoundsSnapPointDark;
 
     public void Awake()
     {
