@@ -13,6 +13,7 @@ public class MonsterManager : MonoBehaviour
     public MonsterSO defaultMonster;
     public float spawnChance = 0.25f; // Percentage chance to spawn a monster
     public float moveChance = 0.25f; // Percentage chance to move a monster
+    [SerializeField] private MonsterSO _finalBoss;
 
     public static MonsterManager Instance { get; private set; }
 
@@ -125,6 +126,12 @@ public class MonsterManager : MonoBehaviour
 
     public void KillMonster(Monster monster, Player player)
     {
+        if (monster.MonsterName.Equals(_finalBoss.MonsterName))
+        {
+            defeatedMonsters++;
+            return;
+        }
+
         int xpToAdd = monster.power / 15;
         if (xpToAdd <= 0) { xpToAdd = 1; }
         int moneyDropped = 3 + (monster.power / 4);

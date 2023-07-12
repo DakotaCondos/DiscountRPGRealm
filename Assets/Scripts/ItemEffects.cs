@@ -8,6 +8,7 @@ public enum ItemEffectType
     Movement,
     Teleport,
     XP,
+    PlayerPicture,
 }
 
 [Serializable]

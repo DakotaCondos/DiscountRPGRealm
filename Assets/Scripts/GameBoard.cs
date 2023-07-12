@@ -34,8 +34,7 @@ public class GameBoard : MonoBehaviour
         spaceBuilder = GetComponent<SpaceBuilder>();
         lineDrawer = GetComponent<LineDrawer>();
 
-        // May manually assign spaces to groups later for different Zones related to game areas
-        allSpaces = FindObjectsOfType<Space>(true).ToList();
+        allSpaces = FindObjectsOfType<Space>().ToList();
         actorPieceMovement = FindObjectOfType<ActorPieceMovement>(true);
     }
 

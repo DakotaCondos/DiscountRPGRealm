@@ -303,6 +303,11 @@ public class InventoryManager : SceneSingleton<InventoryManager>
                     currentPlayerInventory.AddXP(effectValue);
                     DisplayConsumableEffect(ItemEffectType.XP, effectValue);
                     break;
+                case ItemEffectType.PlayerPicture:
+                    ApplicationManager applicationManager = ApplicationManager.Instance;
+                    currentPlayerInventory.playerTexture = applicationManager.playerTokens[Random.Range(0, applicationManager.playerTokens.Count)];
+                    UpdateDisplayDetails(currentPlayerInventory);
+                    break;
                 default:
                     print("ItemEffect not found");
                     return;
