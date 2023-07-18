@@ -88,7 +88,12 @@ public class Space : MonoBehaviour
 
         if (_staticMonsterSOs.Count > 0)
         {
-            Monster monster = new(_staticMonsterSOs[UnityEngine.Random.Range(0, _staticMonsterSOs.Count)]);
+            Monster monster = new(_staticMonsterSOs[Random.Range(0, _staticMonsterSOs.Count)]);
+
+            //difficulty modifier
+            int difficultyModifier = (int)GameManager.Instance.gameDifficulty;
+            monster.power = Mathf.RoundToInt(monster.power * (difficultyModifier / 100f));
+
             MonsterManager.Instance.monsters.Add(monster);
             AddMonsterToSpace(monster);
         }

@@ -22995,7 +22995,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -288, y: -0, z: -288, w: -0}
+  m_margin: {x: -267.45, y: -0, z: -267.45, w: -0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   _SortingLayer: 0
@@ -23075,7 +23075,7 @@ MonoBehaviour:
   layout:
     Size:
       X:
-        Raw: 1
+        Raw: 0.92864585
         Type: 1
       Y:
         Raw: 122.76
@@ -23114,16 +23114,16 @@ MonoBehaviour:
         Type: 0
     Margin:
       Left:
-        Raw: 0
+        Raw: 20.55
         Type: 0
       Right:
-        Raw: 0
+        Raw: 20.55
         Type: 0
       Bottom:
-        Raw: 0
+        Raw: 20.55
         Type: 0
       Top:
-        Raw: 0
+        Raw: 20.55
         Type: 0
       Front:
         Raw: 0
@@ -60145,7 +60145,6 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 4778ca383c03d6d48ae8ea43f607926f, type: 3}
   - {fileID: 8300000, guid: 6421a3e6e38888145a6b032bd2f3404c, type: 3}
   - {fileID: 8300000, guid: 0312490baf274c5489d18e928741a9d1, type: 3}
-  - {fileID: 8300000, guid: a182be020630c4641a589670905d9925, type: 3}
   - {fileID: 8300000, guid: 9e2b11675da9e7c458c86b0d0edb7e73, type: 3}
   backgroundImageBlock: {fileID: 1740988861}
 --- !u!114 &1129456927

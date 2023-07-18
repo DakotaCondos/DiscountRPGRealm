@@ -112,6 +112,10 @@ public class MonsterManager : MonoBehaviour
         MonsterSO blueprint = GetMonsterSO(avgPower);
         Monster monster = new Monster(blueprint);
 
+        //difficulty modifier
+        int difficultyModifier = (int)GameManager.Instance.gameDifficulty;
+        monster.power = Mathf.RoundToInt(monster.power * (difficultyModifier / 100f));
+
         TaskHelper helper = new();
         await MonsterPieceSpawner.Instance.SpawnMonster(monster, space, helper);
         while (!helper.isComplete)
@@ -129,12 +133,36 @@ public class MonsterManager : MonoBehaviour
         if (monster.MonsterName.Equals(_finalBoss.MonsterName))
         {
             defeatedMonsters++;
+            monsters.Remove(monster);
+            monster.currentSpace.RemoveMonsterFromSpace();
             return;
         }
 
         int xpToAdd = monster.power / 15;
         if (xpToAdd <= 0) { xpToAdd = 1; }
         int moneyDropped = 3 + (monster.power / 4);
+
+        // Difficulty Modifiers
+        switch (GameManager.Instance.gameDifficulty)
+        {
+            case GameDifficulty.Relaxed:
+                moneyDropped += 2;
+                xpToAdd += 2;
+                break;
+            case GameDifficulty.Easy:
+                moneyDropped += 1;
+                xpToAdd += 1;
+                break;
+            case GameDifficulty.Normal:
+                break;
+            case GameDifficulty.Hard:
+                break;
+            case GameDifficulty.Insaine:
+                break;
+            default:
+                break;
+        }
+
         player.effects.Enqueue(new(PlayerEffectType.XP, xpToAdd));
         player.effects.Enqueue(new(PlayerEffectType.Money, moneyDropped));
         monsters.Remove(monster);
