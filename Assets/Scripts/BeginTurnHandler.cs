@@ -28,17 +28,18 @@ public class BeginTurnHandler : MonoBehaviour
 
     }
 
-    private void HandleBeginTurn(TurnActor actor)
+    private async void HandleBeginTurn(TurnActor actor)
     {
         if (ApplicationManager.Instance.handlerNotificationsEnabled) { ConsolePrinter.PrintToConsole($"HandleBeginTurn({actor.player.PlayerName})", Color.cyan); }
+
+        await AnimationPanelManager.Instance.BeginTurnAnimation(actor);
 
         if (!actor.isPlayer) { TurnState.TriggerMonsterTurn(actor); return; }
         actionsManager.panelSwitcher.SetActivePanel(actionsManager.mainPanel);
 
         actor.player.hasMoved = false;
         actionsManager.DetermineActions(actor);
-        Vector3 playerSpacePos = actor.player.currentSpace.transform.position;
-        Camera.main.transform.position = new Vector3(playerSpacePos.x, playerSpacePos.y, Camera.main.transform.position.z);
+
 
         // move the monsters
         actionsManager.DetermineActions(actor);

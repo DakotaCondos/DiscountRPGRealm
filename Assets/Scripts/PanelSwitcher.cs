@@ -55,4 +55,13 @@ public class PanelSwitcher : MonoBehaviour
         activePanel = panel;
     }
 
+    public void HideAll()
+    {
+        foreach (UIBlock2D panel in panels)
+        {
+            panel.gameObject.SetActive(false);
+            activePanel = null;
+        }
+    }
+
 }

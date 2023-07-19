@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7ce33eb46845a7489c14ce3ebb1531e, type: 3}
   m_Name: ShadowRealmWaste
   m_EditorClassIdentifier: 
-  spaceName: Shadowhaven
+  spaceName: Shadow Realm
   spaceTextures:
   - {fileID: 2800000, guid: ac85efe411e81f94eaf9ff6c42e5415a, type: 3}
   - {fileID: 2800000, guid: dbef2b6909314af48b99c27c0a65f8a5, type: 3}
