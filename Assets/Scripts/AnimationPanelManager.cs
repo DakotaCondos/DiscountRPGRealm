@@ -22,6 +22,8 @@ public class AnimationPanelManager : SceneSingleton<AnimationPanelManager>
 
         if (actor.isPlayer) { CameraController.Instance.ClearFocusObject(player.currentSpace.gameObject); }
 
+        ActionsManager.Instance.panelSwitcher.SetActivePanel(ActionsManager.Instance.mainPanel);
+
         await Task.Delay(Mathf.RoundToInt(1000 * _beginTurnAnimation.AnimationTimeSeconds));
         _panelSwitcher.HideAll();
         _beginTurnAnimation.StopAnimation();
