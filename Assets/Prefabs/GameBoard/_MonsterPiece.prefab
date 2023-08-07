@@ -26,7 +26,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 991575069}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -3.1941354, z: 0}
+  m_LocalPosition: {x: 0, y: -4.83726, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -64,10 +64,10 @@ MonoBehaviour:
   layout:
     Size:
       X:
-        Raw: 4.187706
+        Raw: 7.1973624
         Type: 0
       Y:
-        Raw: 1.8619792
+        Raw: 3.5054803
         Type: 0
       Z:
         Raw: 0
@@ -77,23 +77,23 @@ MonoBehaviour:
         Raw: 0
         Type: 0
       Y:
-        Raw: 0
+        Raw: -2.59
         Type: 0
       Z:
         Raw: 0
         Type: 0
     Padding:
       Left:
-        Raw: 0.15
+        Raw: 0.1
         Type: 1
       Right:
-        Raw: 0.15
+        Raw: 0.1
         Type: 1
       Bottom:
-        Raw: 0.2
+        Raw: 0
         Type: 1
       Top:
-        Raw: 0.2
+        Raw: 0
         Type: 1
       Front:
         Raw: 0
@@ -192,7 +192,7 @@ MonoBehaviour:
   autoLayout:
     Axis: 1
     Spacing:
-      Raw: 0.25
+      Raw: 0.1
       Type: 1
     SpacingMinMax:
       Min: 0
@@ -228,7 +228,7 @@ MonoBehaviour:
   visuals:
     Color: {r: 0.198, g: 0.198, b: 0.198, a: 1}
     CornerRadius:
-      Raw: 1
+      Raw: 0.4
       Type: 1
     RadialFill:
       Center:
@@ -242,7 +242,7 @@ MonoBehaviour:
       FillAngle: 90
       Enabled: 0
     Gradient:
-      Color: {r: 1, g: 1, b: 1, a: 1}
+      Color: {r: 0, g: 0, b: 0, a: 1}
       Center:
         X:
           Raw: 0
@@ -252,20 +252,20 @@ MonoBehaviour:
           Type: 1
       Radius:
         X:
-          Raw: 0.5
+          Raw: 0
           Type: 1
         Y:
-          Raw: 0.5
+          Raw: 0.512
           Type: 1
       Rotation: 0
-      Enabled: 0
+      Enabled: 1
     Border:
-      Color: {r: 1, g: 1, b: 1, a: 1}
+      Color: {r: 0, g: 0, b: 0, a: 1}
       Width:
-        Raw: 1
-        Type: 0
-      Enabled: 0
-      Direction: 2
+        Raw: 0.1699
+        Type: 1
+      Enabled: 1
+      Direction: 1
     Shadow:
       Color: {r: 0, g: 0, b: 0, a: 0.5}
       Width:
@@ -331,7 +331,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1.0551082, y: 0}
+  m_AnchoredPosition: {x: 1.3369447, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!23 &1616434771
@@ -354,7 +354,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2180264, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
+  - {fileID: -8232903261261657317, guid: f1eaba59f4eef0646af1d2c27a22cde8, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -405,17 +405,17 @@ MonoBehaviour:
   layout:
     Size:
       X:
-        Raw: 1.1162791
+        Raw: 3.0839999
         Type: 0
       Y:
-        Raw: 1.1171875
+        Raw: 3.5054803
         Type: 0
       Z:
         Raw: 0
         Type: 0
     Position:
       X:
-        Raw: 0
+        Raw: 2.6738899
         Type: 0
       Y:
         Raw: 0
@@ -588,8 +588,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 25
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: f1eaba59f4eef0646af1d2c27a22cde8, type: 2}
+  m_sharedMaterial: {fileID: -8232903261261657317, guid: f1eaba59f4eef0646af1d2c27a22cde8, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -613,8 +613,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 1
-  m_fontSizeBase: 1
+  m_fontSize: 2.57
+  m_fontSizeBase: 2.57
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -684,7 +684,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1872279477}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.8346585, y: 0, z: 0}
+  m_LocalPosition: {x: -1.8273008, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -720,10 +720,10 @@ MonoBehaviour:
   layout:
     Size:
       X:
-        Raw: 1.1171875
+        Raw: 1.8414003
         Type: 0
       Y:
-        Raw: 1
+        Raw: 0.6
         Type: 1
       Z:
         Raw: 0
@@ -840,7 +840,7 @@ MonoBehaviour:
       Z: 0
     AutoSize:
       X: 0
-      Y: 1
+      Y: 0
       Z: 0
     RotateSize: 0
     AspectRatio: {x: 1, y: 1, z: 0}
@@ -1496,7 +1496,7 @@ MonoBehaviour:
         Max: Infinity
     Alignment:
       X: -1
-      Y: 0
+      Y: 1
       Z: 0
     AutoSize:
       X: 1
@@ -1626,7 +1626,12 @@ MonoBehaviour:
   imageBlock: {fileID: 1121418260159214028}
   hoverLabel: {fileID: 1121418259678889349}
   powerLabel: {fileID: 1616434769}
-  monster: {fileID: 0}
+  monster:
+    monsterTexture: {fileID: 0}
+    power: 0
+    doesMove: 0
+    battlecry: {fileID: 0}
+    currentSpace: {fileID: 0}
 --- !u!1 &1121418260159214018
 GameObject:
   m_ObjectHideFlags: 0

@@ -83,32 +83,32 @@ public class BeginTurnHandler : MonoBehaviour
                 CurveXP(0.1f);
                 break;
             case GameDifficulty.Normal:
+                CurveXP(0.1f);
                 break;
             case GameDifficulty.Hard:
+                CurveXP(0.05f);
                 break;
-            case GameDifficulty.Insaine:
-                break;
-            default:
+            case GameDifficulty.Insane:
                 break;
         }
     }
 
     private void CurveXP(float value)
     {
-        List<Player> players = new();
+        List<Player> humanPlayers = new();
 
         int totalXP = 0;
         foreach (Player player in GameManager.Instance.Players)
         {
             if (player.TeamID != 7)
             {
-                players.Add(player);
+                humanPlayers.Add(player);
                 totalXP += player.xp;
             }
         }
-        int avgXP = totalXP / players.Count;
+        int avgXP = totalXP / humanPlayers.Count;
 
-        foreach (Player player in players)
+        foreach (Player player in humanPlayers)
         {
             int xpDelta = avgXP - player.xp;
             if (xpDelta <= 0) { continue; }
@@ -131,7 +131,7 @@ public class BeginTurnHandler : MonoBehaviour
                 break;
             case GameDifficulty.Hard:
                 break;
-            case GameDifficulty.Insaine:
+            case GameDifficulty.Insane:
                 break;
             default:
                 break;

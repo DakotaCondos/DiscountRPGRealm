@@ -845,7 +845,7 @@ MonoBehaviour:
       Max: Infinity
     AutoSpace: 1
     ReverseOrder: 0
-    alignment: 0
+    alignment: 1
     Offset: 0
     Cross:
       Axis: 0
@@ -1359,6 +1359,8 @@ MonoBehaviour:
   ConnectedSpaces: []
   blueprints: []
   TeleportToSpace: {fileID: 0}
+  customConnections: 0
+  image: {fileID: 0}
   lineDrawPoint: {fileID: 7700039954475058900}
   monsterPiecePrefab: {fileID: 1121418259994116492, guid: 4fdd60b3be24c1a46acf2f701ec6621f, type: 3}
   monsterPieceLocation: {fileID: 6796673610885982881}

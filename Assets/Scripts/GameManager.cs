@@ -8,7 +8,7 @@ public enum GameDifficulty
     Easy = 80,
     Normal = 100,
     Hard = 110,
-    Insaine = 120,
+    Insane = 120,
 }
 
 public class GameManager : MonoBehaviour

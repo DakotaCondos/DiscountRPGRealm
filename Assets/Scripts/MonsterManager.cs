@@ -157,7 +157,7 @@ public class MonsterManager : MonoBehaviour
                 break;
             case GameDifficulty.Hard:
                 break;
-            case GameDifficulty.Insaine:
+            case GameDifficulty.Insane:
                 break;
             default:
                 break;
